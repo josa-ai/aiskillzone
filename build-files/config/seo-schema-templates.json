@@ -1,0 +1,114 @@
+{
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "JOSA.AI",
+    "url": "https://josa.ai",
+    "logo": "https://josa.ai/images/logo-horizontal.png",
+    "description": "AI implementation partner for small businesses in Central Florida. We build AI into your business — websites, voice AI, automation, training, and more.",
+    "slogan": "AI. Delivered.",
+    "foundingLocation": "Lakeland, FL",
+    "areaServed": [
+      "Lakeland, FL",
+      "Winter Haven, FL",
+      "Bartow, FL",
+      "Haines City, FL",
+      "Auburndale, FL",
+      "Lake Wales, FL",
+      "Tampa, FL",
+      "St. Petersburg, FL",
+      "Orlando, FL"
+    ],
+    "sameAs": [],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "areaServed": "US-FL",
+      "availableLanguage": ["English", "Spanish"]
+    }
+  },
+  "localBusiness": {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "JOSA.AI",
+    "url": "https://josa.ai",
+    "image": "https://josa.ai/images/logo-complete.png",
+    "description": "AI implementation partner serving small businesses, entrepreneurs, and product brands across Central Florida. Custom websites, voice AI, automation, training, and more.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lakeland",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "28.0395",
+      "longitude": "-81.9498"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Lakeland" },
+      { "@type": "City", "name": "Winter Haven" },
+      { "@type": "City", "name": "Tampa" },
+      { "@type": "City", "name": "Orlando" },
+      { "@type": "City", "name": "St. Petersburg" },
+      { "@type": "City", "name": "Bartow" },
+      { "@type": "City", "name": "Haines City" },
+      { "@type": "City", "name": "Auburndale" },
+      { "@type": "City", "name": "Lake Wales" }
+    ],
+    "priceRange": "$$",
+    "openingHours": "Mo-Fr 09:00-18:00"
+  },
+  "serviceTemplate": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "JOSA.AI"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Florida"
+    },
+    "serviceType": "REPLACE_WITH_SERVICE_TYPE",
+    "name": "REPLACE_WITH_SERVICE_NAME",
+    "description": "REPLACE_WITH_DESCRIPTION",
+    "url": "REPLACE_WITH_URL"
+  },
+  "faqTemplate": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "REPLACE_WITH_QUESTION",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "REPLACE_WITH_ANSWER"
+        }
+      }
+    ]
+  },
+  "blogPostTemplate": {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "REPLACE_WITH_TITLE",
+    "description": "REPLACE_WITH_DESCRIPTION",
+    "author": {
+      "@type": "Person",
+      "name": "Ernesto Josato"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "JOSA.AI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://josa.ai/images/logo-horizontal.png"
+      }
+    },
+    "datePublished": "REPLACE_WITH_DATE",
+    "dateModified": "REPLACE_WITH_DATE",
+    "image": "REPLACE_WITH_IMAGE_URL",
+    "url": "REPLACE_WITH_URL"
+  }
+}
