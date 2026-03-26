@@ -46,13 +46,13 @@ export async function createImageTask(
     throw new Error(`API Error ${response.status}: ${errorText}`);
   }
 
-  const data: CreateTaskResponse = await response.json();
+  const responseData = await response.json();
 
-  if (!data.taskId) {
-    throw new Error("No taskId returned from API");
+  if (!responseData.data?.taskId) {
+    throw new Error("No taskId returned from API: " + JSON.stringify(responseData));
   }
 
-  return { taskId: data.taskId, recordId: data.recordId };
+  return { taskId: responseData.data.taskId, recordId: responseData.data.recordId };
 }
 
 export async function generateHeroImages(
