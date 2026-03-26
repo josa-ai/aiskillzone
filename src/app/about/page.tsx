@@ -72,7 +72,7 @@ export default function AboutPage() {
         <div 
           className="absolute inset-0" 
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.35) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.23) 1.5px, transparent 1.5px)',
             backgroundSize: '20px 20px'
           }}
         />
@@ -116,7 +116,7 @@ export default function AboutPage() {
         <div 
           className="absolute inset-0" 
           style={{
-            backgroundImage: 'linear-gradient(rgba(141, 75, 187, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(141, 75, 187, 0.2) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(141, 75, 187, 0.13) 1px, transparent 1px), linear-gradient(90deg, rgba(141, 75, 187, 0.13) 1px, transparent 1px)',
             backgroundSize: '28px 28px'
           }}
         />

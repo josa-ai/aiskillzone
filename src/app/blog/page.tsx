@@ -58,7 +58,7 @@ export default function BlogPage() {
         <div 
           className="absolute inset-0" 
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.35) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.23) 1.5px, transparent 1.5px)',
             backgroundSize: '20px 20px'
           }}
         />
