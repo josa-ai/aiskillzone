@@ -29,15 +29,13 @@ export default function BlogPage() {
       <section className="relative overflow-hidden bg-brand-midnight-plum">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(141,75,187,0.45),transparent)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(168,130,238,0.6),transparent)]"
         />
         <div
           aria-hidden="true"
-          className="hero-with-image absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `linear-gradient(rgba(66, 28, 82, 0.85), rgba(66, 28, 82, 0.9)), url('/images/heroes/blog-hero.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(168, 130, 238, 0.3) 0%, transparent 40%)`,
           }}
         />
         <div className="relative mx-auto max-w-5xl px-6 py-20 md:py-28">
@@ -73,7 +71,7 @@ export default function BlogPage() {
             {blogPosts.map((post) => (
               <Card
                 key={post.slug}
-                className="border-0 bg-brand-frosted-blue/40 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
+                className="flex min-h-[200px] flex-col border-0 bg-brand-frosted-blue/40 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
               >
                 <CardContent className="flex flex-col gap-3 p-6 sm:p-8">
                   <div className="flex flex-wrap items-center gap-3">

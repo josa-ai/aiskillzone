@@ -17,19 +17,13 @@ export default function ServicesPage() {
       <section className="relative overflow-hidden bg-brand-midnight-plum">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(141,75,187,0.45),transparent)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(168,130,238,0.6),transparent)]"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_80%_100%,rgba(59,130,246,0.2),transparent)]"
-        />
-        <div
-          aria-hidden="true"
-          className="hero-with-image absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `linear-gradient(rgba(66, 28, 82, 0.85), rgba(66, 28, 82, 0.9)), url('/images/heroes/services-hero.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(168, 130, 238, 0.3) 0%, transparent 40%)`,
           }}
         />
 

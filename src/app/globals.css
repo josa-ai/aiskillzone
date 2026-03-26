@@ -473,17 +473,17 @@
    JOSA.AI Section Background Textures
    ======================================== */
 
-/* Subtle dot pattern for light sections */
+/* Dot pattern for light sections */
 .bg-texture-dots {
-  background-image: radial-gradient(circle, rgba(141, 75, 187, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(141, 75, 187, 0.15) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 /* Grid pattern for sections */
 .bg-texture-grid {
   background-image: 
-    linear-gradient(rgba(141, 75, 187, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(141, 75, 187, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(141, 75, 187, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(141, 75, 187, 0.1) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
