@@ -71,9 +71,9 @@ export default function BlogPage() {
             {blogPosts.map((post) => (
               <Card
                 key={post.slug}
-                className="flex min-h-[200px] flex-col border-0 bg-brand-frosted-blue/40 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
+                className="flex min-h-[280px] flex-col border-0 bg-brand-frosted-blue/40 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
               >
-                <CardContent className="flex flex-col gap-3 p-6 sm:p-8">
+                <CardContent className="flex flex-1 flex-col gap-3 p-6 sm:p-8">
                   <div className="flex flex-wrap items-center gap-3">
                     <time
                       dateTime={post.date}

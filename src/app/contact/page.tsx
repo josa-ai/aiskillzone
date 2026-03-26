@@ -125,8 +125,8 @@ export default function ContactPage() {
                 Prefer to reach out directly? Here&rsquo;s how.
               </p>
 
-              <Card className="mt-8 min-h-[300px] border-0 bg-brand-frosted-blue/40 ring-1 ring-brand-soft-lavender/60">
-                <CardContent className="space-y-6 p-6">
+              <Card className="mt-8 flex min-h-[300px] flex-col border-0 bg-brand-frosted-blue/40 ring-1 ring-brand-soft-lavender/60">
+                <CardContent className="flex flex-1 flex-col space-y-6 p-6">
                   {contactInfo.map((item) => (
                     <div key={item.label} className="flex items-start gap-4">
                       <span
