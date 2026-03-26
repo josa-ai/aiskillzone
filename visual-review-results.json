@@ -1,0 +1,1526 @@
+{
+  "fontSizes": [
+    {
+      "page": "Homepage",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "P",
+          "fontSize": 14,
+          "text": "Serving small businesses in Lakeland, Winter Haven",
+          "parent": "DIV"
+        },
+        {
+          "tag": "P",
+          "fontSize": 14,
+          "text": "Powered by industry-leading AI & technology",
+          "parent": "SECTION"
+        },
+        {
+          "tag": "DIV",
+          "fontSize": 14,
+          "text": "Customers can't reach youThat call that came in wh",
+          "parent": "DIV"
+        },
+        {
+          "tag": "DIV",
+          "fontSize": 14,
+          "text": "Customers can't reach youThat call that came in wh",
+          "parent": "DIV"
+        }
+      ]
+    },
+    {
+      "page": "About",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "NAV",
+          "fontSize": 14,
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"Breadcru",
+          "parent": "DIV"
+        },
+        {
+          "tag": "OL",
+          "fontSize": 14,
+          "text": "Home/About",
+          "parent": "NAV"
+        },
+        {
+          "tag": "LI",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "OL"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "LI"
+        }
+      ]
+    },
+    {
+      "page": "Services",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "DIV",
+          "fontSize": 14,
+          "text": "Website DesignCustom-built websites that convert. ",
+          "parent": "DIV"
+        },
+        {
+          "tag": "DIV",
+          "fontSize": 14,
+          "text": "Website DesignCustom-built websites that convert. ",
+          "parent": "DIV"
+        },
+        {
+          "tag": "P",
+          "fontSize": 14,
+          "text": "Custom-built websites that convert. No templates, ",
+          "parent": "DIV"
+        },
+        {
+          "tag": "DIV",
+          "fontSize": 14,
+          "text": "Learn more",
+          "parent": "DIV"
+        }
+      ]
+    },
+    {
+      "page": "Service - Website Design",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "NAV",
+          "fontSize": 14,
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"Breadcru",
+          "parent": "DIV"
+        },
+        {
+          "tag": "OL",
+          "fontSize": 14,
+          "text": "Home/Services/Website Design",
+          "parent": "NAV"
+        },
+        {
+          "tag": "LI",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "OL"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "LI"
+        }
+      ]
+    },
+    {
+      "page": "Service - Voice AI",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "NAV",
+          "fontSize": 14,
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"Breadcru",
+          "parent": "DIV"
+        },
+        {
+          "tag": "OL",
+          "fontSize": 14,
+          "text": "Home/Services/Voice AI",
+          "parent": "NAV"
+        },
+        {
+          "tag": "LI",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "OL"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "LI"
+        }
+      ]
+    },
+    {
+      "page": "Service - AI Automation",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "NAV",
+          "fontSize": 14,
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"Breadcru",
+          "parent": "DIV"
+        },
+        {
+          "tag": "OL",
+          "fontSize": 14,
+          "text": "Home/Services/AI Automation",
+          "parent": "NAV"
+        },
+        {
+          "tag": "LI",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "OL"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "LI"
+        }
+      ]
+    },
+    {
+      "page": "Blog",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "NAV",
+          "fontSize": 14,
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"Breadcru",
+          "parent": "DIV"
+        },
+        {
+          "tag": "OL",
+          "fontSize": 14,
+          "text": "Home/Blog",
+          "parent": "NAV"
+        },
+        {
+          "tag": "LI",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "OL"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "LI"
+        }
+      ]
+    },
+    {
+      "page": "Contact",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "NAV",
+          "fontSize": 14,
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"Breadcru",
+          "parent": "DIV"
+        },
+        {
+          "tag": "OL",
+          "fontSize": 14,
+          "text": "Home/Contact",
+          "parent": "NAV"
+        },
+        {
+          "tag": "LI",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "OL"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "LI"
+        }
+      ]
+    },
+    {
+      "page": "Portfolio",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "NAV",
+          "fontSize": 14,
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"Breadcru",
+          "parent": "DIV"
+        },
+        {
+          "tag": "OL",
+          "fontSize": 14,
+          "text": "Home/Portfolio",
+          "parent": "NAV"
+        },
+        {
+          "tag": "LI",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "OL"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "LI"
+        }
+      ]
+    },
+    {
+      "page": "Blog Post/blog/5-ways-ai-saves-time",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "NAV",
+          "fontSize": 14,
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"Breadcru",
+          "parent": "DIV"
+        },
+        {
+          "tag": "OL",
+          "fontSize": 14,
+          "text": "Home/Blog/5 Ways AI Can Save Your Small Business 1",
+          "parent": "NAV"
+        },
+        {
+          "tag": "LI",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "OL"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "LI"
+        }
+      ]
+    },
+    {
+      "page": "Blog Post/blog/why-your-website-needs-aeo",
+      "elements": [
+        {
+          "tag": "BUTTON",
+          "fontSize": 14,
+          "text": "Services",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "About",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Portfolio",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Blog",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Contact",
+          "parent": "DIV"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Book a Call",
+          "parent": "DIV"
+        },
+        {
+          "tag": "NAV",
+          "fontSize": 14,
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"Breadcru",
+          "parent": "DIV"
+        },
+        {
+          "tag": "OL",
+          "fontSize": 14,
+          "text": "Home/Blog/Why Your Website Needs AEO (AI Engine Op",
+          "parent": "NAV"
+        },
+        {
+          "tag": "LI",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "OL"
+        },
+        {
+          "tag": "A",
+          "fontSize": 14,
+          "text": "Home",
+          "parent": "LI"
+        }
+      ]
+    }
+  ],
+  "cardInconsistencies": [
+    {
+      "page": "Homepage",
+      "type": "size_variance",
+      "details": {
+        "heights": [
+          213.5,
+          161.5,
+          264.25,
+          212.25,
+          264.25,
+          212.25,
+          264.25,
+          212.25,
+          337.75,
+          193.75,
+          360.5,
+          216.5,
+          360.5,
+          216.5,
+          337.75,
+          193.75
+        ],
+        "widthVariance": 518,
+        "heightVariance": 199,
+        "minHeight": 161.5,
+        "maxHeight": 360.5
+      }
+    },
+    {
+      "page": "About",
+      "type": "size_variance",
+      "details": {
+        "heights": [
+          249.75,
+          201.75,
+          249.75,
+          179,
+          249.75,
+          201.75,
+          249.75,
+          179
+        ],
+        "widthVariance": 48,
+        "heightVariance": 70.75,
+        "minHeight": 179,
+        "maxHeight": 249.75
+      }
+    },
+    {
+      "page": "Services",
+      "type": "size_variance",
+      "details": {
+        "heights": [
+          337.75,
+          193.75,
+          360.5,
+          216.5,
+          360.5,
+          216.5,
+          337.75,
+          193.75,
+          315,
+          171,
+          315,
+          171,
+          315,
+          171,
+          292.25,
+          148.25,
+          315,
+          171
+        ],
+        "widthVariance": 142,
+        "heightVariance": 212.25,
+        "minHeight": 148.25,
+        "maxHeight": 360.5
+      }
+    },
+    {
+      "page": "Service - Website Design",
+      "type": "size_variance",
+      "details": {
+        "heights": [
+          315,
+          171,
+          315,
+          171,
+          315,
+          171
+        ],
+        "widthVariance": 48,
+        "heightVariance": 144,
+        "minHeight": 171,
+        "maxHeight": 315
+      }
+    },
+    {
+      "page": "Service - Voice AI",
+      "type": "size_variance",
+      "details": {
+        "heights": [
+          315,
+          171,
+          292.25,
+          148.25,
+          315,
+          171
+        ],
+        "widthVariance": 48,
+        "heightVariance": 166.75,
+        "minHeight": 148.25,
+        "maxHeight": 315
+      }
+    },
+    {
+      "page": "Service - AI Automation",
+      "type": "size_variance",
+      "details": {
+        "heights": [
+          315,
+          171,
+          315,
+          171,
+          292.25,
+          148.25
+        ],
+        "widthVariance": 48,
+        "heightVariance": 166.75,
+        "minHeight": 148.25,
+        "maxHeight": 315
+      }
+    },
+    {
+      "page": "Blog",
+      "type": "size_variance",
+      "details": {
+        "heights": [
+          268,
+          236,
+          268,
+          236,
+          268,
+          236
+        ],
+        "widthVariance": 0,
+        "heightVariance": 32,
+        "minHeight": 236,
+        "maxHeight": 268
+      }
+    },
+    {
+      "page": "Contact",
+      "type": "size_variance",
+      "details": {
+        "heights": [
+          331.75,
+          299.75
+        ],
+        "widthVariance": 0,
+        "heightVariance": 32,
+        "minHeight": 299.75,
+        "maxHeight": 331.75
+      }
+    },
+    {
+      "page": "Portfolio",
+      "type": "size_variance",
+      "details": {
+        "heights": [
+          440.25,
+          216.25,
+          440.25,
+          211,
+          440.25,
+          188.25,
+          440.25,
+          216.25,
+          440.25,
+          188.25,
+          440.25,
+          216.25
+        ],
+        "widthVariance": 0,
+        "heightVariance": 252,
+        "minHeight": 188.25,
+        "maxHeight": 440.25
+      }
+    }
+  ],
+  "heroSections": [
+    {
+      "page": "Homepage",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 756.5625,
+          "hasH1": true,
+          "h1Text": "We don’t just talk about AI.We build it into your business.",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": false,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "About",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 343,
+          "hasH1": true,
+          "h1Text": "Meet the team behind JOSA.AI.",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "Services",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 591.5,
+          "hasH1": true,
+          "h1Text": "All the services you need to move your business forward.",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "Service - Website Design",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 616.5,
+          "hasH1": true,
+          "h1Text": "Your website should work as hard as you do.",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "Service - Voice AI",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 541.5,
+          "hasH1": true,
+          "h1Text": "Never miss a customer call again.",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "Service - AI Automation",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 616.5,
+          "hasH1": true,
+          "h1Text": "Stop doing the same thing over and over.",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "Blog",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 343,
+          "hasH1": true,
+          "h1Text": "AI insights for your business.",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "Contact",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 343,
+          "hasH1": true,
+          "h1Text": "Let’s talk about your business.",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "Portfolio",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 343,
+          "hasH1": true,
+          "h1Text": "Our work speaks for itself.",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "Blog Post/blog/5-ways-ai-saves-time",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 360,
+          "hasH1": true,
+          "h1Text": "5 Ways AI Can Save Your Small Business 10+ Hours a Week",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    },
+    {
+      "page": "Blog Post/blog/why-your-website-needs-aeo",
+      "heroes": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 360,
+          "hasH1": true,
+          "h1Text": "Why Your Website Needs AEO (AI Engine Optimization) in 2025",
+          "hasGradientBackground": true,
+          "hasBackgroundImage": true,
+          "isPlain": false
+        }
+      ]
+    }
+  ],
+  "sectionBackgrounds": [
+    {
+      "page": "Homepage",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 756.5625,
+          "childCount": 3,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 148,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 776.5,
+          "childCount": 6,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 3,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 724.5,
+          "childCount": 4,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 4,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 608,
+          "childCount": 7,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 5,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 384,
+          "childCount": 7,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        }
+      ]
+    },
+    {
+      "page": "About",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 343,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 668.5,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "lab(93.5061 -5.26226 -9.84185 / 0.3)",
+          "height": 569.75,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 3,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 308,
+          "childCount": 7,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        }
+      ]
+    },
+    {
+      "page": "Services",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 591.5,
+          "childCount": 3,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 680.5,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "lab(93.5061 -5.26226 -9.84185 / 0.3)",
+          "height": 974,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 3,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 308,
+          "childCount": 7,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        }
+      ]
+    },
+    {
+      "page": "Service - Website Design",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 616.5,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 405,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "lab(93.5061 -5.26226 -9.84185 / 0.3)",
+          "height": 434.25,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 3,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 734.25,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 4,
+          "backgroundColor": "rgb(227, 212, 243)",
+          "height": 572,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 5,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 384,
+          "childCount": 7,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 6,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 635,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        }
+      ]
+    },
+    {
+      "page": "Service - Voice AI",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 541.5,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 405,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "lab(93.5061 -5.26226 -9.84185 / 0.3)",
+          "height": 405,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 3,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 734.25,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 4,
+          "backgroundColor": "rgb(227, 212, 243)",
+          "height": 572,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 5,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 336,
+          "childCount": 7,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 6,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 635,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        }
+      ]
+    },
+    {
+      "page": "Service - AI Automation",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 616.5,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 405,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "lab(93.5061 -5.26226 -9.84185 / 0.3)",
+          "height": 405,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 3,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 734.25,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 4,
+          "backgroundColor": "rgb(227, 212, 243)",
+          "height": 572,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 5,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 308,
+          "childCount": 7,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 6,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 635,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        }
+      ]
+    },
+    {
+      "page": "Blog",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 343,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 1256,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "rgb(227, 212, 243)",
+          "height": 356,
+          "childCount": 3,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        }
+      ]
+    },
+    {
+      "page": "Contact",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 343,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 772,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        }
+      ]
+    },
+    {
+      "page": "Portfolio",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 343,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 1336.5,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "height": 308,
+          "childCount": 7,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        }
+      ]
+    },
+    {
+      "page": "Blog Post/blog/5-ways-ai-saves-time",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 360,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 1920,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "rgb(227, 212, 243)",
+          "height": 356,
+          "childCount": 3,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        }
+      ]
+    },
+    {
+      "page": "Blog Post/blog/why-your-website-needs-aeo",
+      "sections": [
+        {
+          "index": 0,
+          "backgroundColor": "rgb(66, 28, 82)",
+          "height": 360,
+          "childCount": 2,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        },
+        {
+          "index": 1,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "height": 1816,
+          "childCount": 1,
+          "hasDecorations": false,
+          "isPlainWhite": true
+        },
+        {
+          "index": 2,
+          "backgroundColor": "rgb(227, 212, 243)",
+          "height": 356,
+          "childCount": 3,
+          "hasDecorations": false,
+          "isPlainWhite": false
+        }
+      ]
+    }
+  ],
+  "overallIssues": []
+}

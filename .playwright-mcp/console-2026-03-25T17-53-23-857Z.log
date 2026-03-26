@@ -1,0 +1,14 @@
+[     208ms] [ERROR] Base UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:65:214)
+    at Navbar (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:718:227)
+    at RootLayout (about://React/Server/file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__084c~ud._.js?23:701:268) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[     221ms] [WARNING] Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license
+Pass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   69147ms] [ERROR] Base UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:65:214)
+    at Navbar (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:718:227)
+    at RootLayout (about://React/Server/file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__084c~ud._.js?23:701:268) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[   69161ms] [WARNING] Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license
+Pass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   69315ms] [WARNING] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio @ http://localhost:3000/_next/static/chunks/node_modules_0y5pcbl._.js:10679
+[  109308ms] [WARNING] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

@@ -1,0 +1,558 @@
+[     569ms] [ERROR] Base UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:65:214)
+    at Navbar (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:718:227)
+    at RootLayout (about://React/Server/file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__084c~ud._.js?29:701:268) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  208072ms] ReferenceError: TestimonialCard is not defined
+    at <anonymous> (about://React/Server/file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__089535j._.js?128:816:331)
+    at Array.map (<anonymous>:1:18)
+    at Home (about://React/Server/file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__089535j._.js?129:816:60)
+    at resolveErrorDev (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:1919:105)
+    at processFullStringRow (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:2434:29)
+    at processFullBinaryRow (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:2393:9)
+    at processBinaryChunk (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:2502:221)
+    at progress (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:2689:13)
+[  214017ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  214246ms] [ERROR] Base UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:65:214)
+    at Navbar (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:718:227)
+    at RootLayout (about://React/Server/file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__084c~ud._.js?25:701:268) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  297624ms] [ERROR] ./src/components/HeroSection.tsx:5:28
+`ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+   3 | import { AnimatedSection } from "@/components/AnimatedSection";
+   4 |
+>  5 | const HeroRemotionClient = dynamic(
+     |                            ^^^^^^^
+>  6 |   () =>
+     | ^^^^^^^
+>  7 |     import("@/components/HeroRemotionClient").then(
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  8 |       (mod) => mod.HeroRemotionClient
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  9 |     ),
+     | ^^^^^^
+> 10 |   {
+     | ^^^
+> 11 |     ssr: false,
+     | ^^^^^^^^^^^^^^^
+> 12 |     loading: () => (
+     | ^^^^^^^^^^^^^^^^^^^^
+> 13 |       <>
+     | ^^^^^^^^
+> 14 |         {/* Static gradient fallback while Remotion loads */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 15 |         <div
+     | ^^^^^^^^^^^^
+> 16 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |           className="pointer-events-none absolute inset-0 gradient-mesh-dark"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |         />
+     | ^^^^^^^^^^
+> 19 |         <div className="pointer-events-none absolute inset-0 grain-overlay" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 20 |         <div
+     | ^^^^^^^^^^^^
+> 21 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 22 |           className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full ...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |           style={{ animation: "float 8s ease-in-out infinite" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         />
+     | ^^^^^^^^^^
+> 25 |         <div
+     | ^^^^^^^^^^^^
+> 26 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |           className="pointer-events-none absolute -right-24 top-1/3 h-56 w-56 rounded-full...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           style={{ animation: "float 10s ease-in-out infinite 2s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |         />
+     | ^^^^^^^^^^
+> 30 |         <div
+     | ^^^^^^^^^^^^
+> 31 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |           className="pointer-events-none absolute bottom-1/4 left-1/2 h-48 w-48 -translate...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |           style={{ animation: "float 12s ease-in-out infinite 4s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |         />
+     | ^^^^^^^^^^
+> 35 |       </>
+     | ^^^^^^^^^
+> 36 |     ),
+     | ^^^^^^
+> 37 |   }
+     | ^^^
+> 38 | );
+     | ^
+  39 |
+  40 | export function HeroSection() {
+  41 |   return (
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/HeroSection.tsx
+    ./src/app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  297764ms] [ERROR] ./src/components/HeroSection.tsx:5:28
+`ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+   3 | import { AnimatedSection } from "@/components/AnimatedSection";
+   4 |
+>  5 | const HeroRemotionClient = dynamic(
+     |                            ^^^^^^^
+>  6 |   () =>
+     | ^^^^^^^
+>  7 |     import("@/components/HeroRemotionClient").then(
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  8 |       (mod) => mod.HeroRemotionClient
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  9 |     ),
+     | ^^^^^^
+> 10 |   {
+     | ^^^
+> 11 |     ssr: false,
+     | ^^^^^^^^^^^^^^^
+> 12 |     loading: () => (
+     | ^^^^^^^^^^^^^^^^^^^^
+> 13 |       <>
+     | ^^^^^^^^
+> 14 |         {/* Static gradient fallback while Remotion loads */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 15 |         <div
+     | ^^^^^^^^^^^^
+> 16 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |           className="pointer-events-none absolute inset-0 gradient-mesh-dark"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |         />
+     | ^^^^^^^^^^
+> 19 |         <div className="pointer-events-none absolute inset-0 grain-overlay" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 20 |         <div
+     | ^^^^^^^^^^^^
+> 21 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 22 |           className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full ...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |           style={{ animation: "float 8s ease-in-out infinite" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         />
+     | ^^^^^^^^^^
+> 25 |         <div
+     | ^^^^^^^^^^^^
+> 26 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |           className="pointer-events-none absolute -right-24 top-1/3 h-56 w-56 rounded-full...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           style={{ animation: "float 10s ease-in-out infinite 2s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |         />
+     | ^^^^^^^^^^
+> 30 |         <div
+     | ^^^^^^^^^^^^
+> 31 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |           className="pointer-events-none absolute bottom-1/4 left-1/2 h-48 w-48 -translate...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |           style={{ animation: "float 12s ease-in-out infinite 4s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |         />
+     | ^^^^^^^^^^
+> 35 |       </>
+     | ^^^^^^^^^
+> 36 |     ),
+     | ^^^^^^
+> 37 |   }
+     | ^^^
+> 38 | );
+     | ^
+  39 |
+  40 | export function HeroSection() {
+  41 |   return (
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/HeroSection.tsx
+    ./src/app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  297889ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=wnywt:0
+[  297897ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=wnywt:0
+[  297904ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=wnywt:0
+[  297912ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=wnywt:0
+[  297919ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=wnywt:0
+[  297941ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  298010ms] Error: ./src/components/HeroSection.tsx:5:28
+`ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+   3 | import { AnimatedSection } from "@/components/AnimatedSection";
+   4 |
+>  5 | const HeroRemotionClient = dynamic(
+     |                            ^^^^^^^
+>  6 |   () =>
+     | ^^^^^^^
+>  7 |     import("@/components/HeroRemotionClient").then(
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  8 |       (mod) => mod.HeroRemotionClient
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  9 |     ),
+     | ^^^^^^
+> 10 |   {
+     | ^^^
+> 11 |     ssr: false,
+     | ^^^^^^^^^^^^^^^
+> 12 |     loading: () => (
+     | ^^^^^^^^^^^^^^^^^^^^
+> 13 |       <>
+     | ^^^^^^^^
+> 14 |         {/* Static gradient fallback while Remotion loads */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 15 |         <div
+     | ^^^^^^^^^^^^
+> 16 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |           className="pointer-events-none absolute inset-0 gradient-mesh-dark"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |         />
+     | ^^^^^^^^^^
+> 19 |         <div className="pointer-events-none absolute inset-0 grain-overlay" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 20 |         <div
+     | ^^^^^^^^^^^^
+> 21 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 22 |           className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full ...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |           style={{ animation: "float 8s ease-in-out infinite" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         />
+     | ^^^^^^^^^^
+> 25 |         <div
+     | ^^^^^^^^^^^^
+> 26 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |           className="pointer-events-none absolute -right-24 top-1/3 h-56 w-56 rounded-full...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           style={{ animation: "float 10s ease-in-out infinite 2s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |         />
+     | ^^^^^^^^^^
+> 30 |         <div
+     | ^^^^^^^^^^^^
+> 31 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |           className="pointer-events-none absolute bottom-1/4 left-1/2 h-48 w-48 -translate...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |           style={{ animation: "float 12s ease-in-out infinite 4s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |         />
+     | ^^^^^^^^^^
+> 35 |       </>
+     | ^^^^^^^^^
+> 36 |     ),
+     | ^^^^^^
+> 37 |   }
+     | ^^^
+> 38 | );
+     | ^
+  39 |
+  40 | export function HeroSection() {
+  41 |   return (
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/HeroSection.tsx
+    ./src/app/page.tsx
+
+
+    at <unknown> (Error: ./src/components/HeroSection.tsx:5:28)
+    at Object.getCompilationErrors (file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1189:59)
+    at DevBundlerService.getCompilationError (file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/node_modules/next/dist/server/base-server.js:1745:26)
+[  298012ms] [ERROR] ./src/components/HeroSection.tsx:5:28
+`ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+   3 | import { AnimatedSection } from "@/components/AnimatedSection";
+   4 |
+>  5 | const HeroRemotionClient = dynamic(
+     |                            ^^^^^^^
+>  6 |   () =>
+     | ^^^^^^^
+>  7 |     import("@/components/HeroRemotionClient").then(
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  8 |       (mod) => mod.HeroRemotionClient
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  9 |     ),
+     | ^^^^^^
+> 10 |   {
+     | ^^^
+> 11 |     ssr: false,
+     | ^^^^^^^^^^^^^^^
+> 12 |     loading: () => (
+     | ^^^^^^^^^^^^^^^^^^^^
+> 13 |       <>
+     | ^^^^^^^^
+> 14 |         {/* Static gradient fallback while Remotion loads */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 15 |         <div
+     | ^^^^^^^^^^^^
+> 16 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |           className="pointer-events-none absolute inset-0 gradient-mesh-dark"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |         />
+     | ^^^^^^^^^^
+> 19 |         <div className="pointer-events-none absolute inset-0 grain-overlay" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 20 |         <div
+     | ^^^^^^^^^^^^
+> 21 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 22 |           className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full ...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |           style={{ animation: "float 8s ease-in-out infinite" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         />
+     | ^^^^^^^^^^
+> 25 |         <div
+     | ^^^^^^^^^^^^
+> 26 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |           className="pointer-events-none absolute -right-24 top-1/3 h-56 w-56 rounded-full...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           style={{ animation: "float 10s ease-in-out infinite 2s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |         />
+     | ^^^^^^^^^^
+> 30 |         <div
+     | ^^^^^^^^^^^^
+> 31 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |           className="pointer-events-none absolute bottom-1/4 left-1/2 h-48 w-48 -translate...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |           style={{ animation: "float 12s ease-in-out infinite 4s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |         />
+     | ^^^^^^^^^^
+> 35 |       </>
+     | ^^^^^^^^^
+> 36 |     ),
+     | ^^^^^^
+> 37 |   }
+     | ^^^
+> 38 | );
+     | ^
+  39 |
+  40 | export function HeroSection() {
+  41 |   return (
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/HeroSection.tsx
+    ./src/app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  298059ms] [ERROR] ./src/components/HeroSection.tsx:5:28
+`ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+   3 | import { AnimatedSection } from "@/components/AnimatedSection";
+   4 |
+>  5 | const HeroRemotionClient = dynamic(
+     |                            ^^^^^^^
+>  6 |   () =>
+     | ^^^^^^^
+>  7 |     import("@/components/HeroRemotionClient").then(
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  8 |       (mod) => mod.HeroRemotionClient
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  9 |     ),
+     | ^^^^^^
+> 10 |   {
+     | ^^^
+> 11 |     ssr: false,
+     | ^^^^^^^^^^^^^^^
+> 12 |     loading: () => (
+     | ^^^^^^^^^^^^^^^^^^^^
+> 13 |       <>
+     | ^^^^^^^^
+> 14 |         {/* Static gradient fallback while Remotion loads */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 15 |         <div
+     | ^^^^^^^^^^^^
+> 16 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |           className="pointer-events-none absolute inset-0 gradient-mesh-dark"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |         />
+     | ^^^^^^^^^^
+> 19 |         <div className="pointer-events-none absolute inset-0 grain-overlay" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 20 |         <div
+     | ^^^^^^^^^^^^
+> 21 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 22 |           className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full ...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |           style={{ animation: "float 8s ease-in-out infinite" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         />
+     | ^^^^^^^^^^
+> 25 |         <div
+     | ^^^^^^^^^^^^
+> 26 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |           className="pointer-events-none absolute -right-24 top-1/3 h-56 w-56 rounded-full...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           style={{ animation: "float 10s ease-in-out infinite 2s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |         />
+     | ^^^^^^^^^^
+> 30 |         <div
+     | ^^^^^^^^^^^^
+> 31 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |           className="pointer-events-none absolute bottom-1/4 left-1/2 h-48 w-48 -translate...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |           style={{ animation: "float 12s ease-in-out infinite 4s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |         />
+     | ^^^^^^^^^^
+> 35 |       </>
+     | ^^^^^^^^^
+> 36 |     ),
+     | ^^^^^^
+> 37 |   }
+     | ^^^
+> 38 | );
+     | ^
+  39 |
+  40 | export function HeroSection() {
+  41 |   return (
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/HeroSection.tsx
+    ./src/app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  298365ms] [ERROR] ./src/components/HeroSection.tsx:5:28
+`ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+   3 | import { AnimatedSection } from "@/components/AnimatedSection";
+   4 |
+>  5 | const HeroRemotionClient = dynamic(
+     |                            ^^^^^^^
+>  6 |   () =>
+     | ^^^^^^^
+>  7 |     import("@/components/HeroRemotionClient").then(
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  8 |       (mod) => mod.HeroRemotionClient
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  9 |     ),
+     | ^^^^^^
+> 10 |   {
+     | ^^^
+> 11 |     ssr: false,
+     | ^^^^^^^^^^^^^^^
+> 12 |     loading: () => (
+     | ^^^^^^^^^^^^^^^^^^^^
+> 13 |       <>
+     | ^^^^^^^^
+> 14 |         {/* Static gradient fallback while Remotion loads */}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 15 |         <div
+     | ^^^^^^^^^^^^
+> 16 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 17 |           className="pointer-events-none absolute inset-0 gradient-mesh-dark"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |         />
+     | ^^^^^^^^^^
+> 19 |         <div className="pointer-events-none absolute inset-0 grain-overlay" />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 20 |         <div
+     | ^^^^^^^^^^^^
+> 21 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 22 |           className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full ...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |           style={{ animation: "float 8s ease-in-out infinite" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |         />
+     | ^^^^^^^^^^
+> 25 |         <div
+     | ^^^^^^^^^^^^
+> 26 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |           className="pointer-events-none absolute -right-24 top-1/3 h-56 w-56 rounded-full...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |           style={{ animation: "float 10s ease-in-out infinite 2s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |         />
+     | ^^^^^^^^^^
+> 30 |         <div
+     | ^^^^^^^^^^^^
+> 31 |           aria-hidden="true"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |           className="pointer-events-none absolute bottom-1/4 left-1/2 h-48 w-48 -translate...
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |           style={{ animation: "float 12s ease-in-out infinite 4s" }}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |         />
+     | ^^^^^^^^^^
+> 35 |       </>
+     | ^^^^^^^^^
+> 36 |     ),
+     | ^^^^^^
+> 37 |   }
+     | ^^^
+> 38 | );
+     | ^
+  39 |
+  40 | export function HeroSection() {
+  41 |   return (
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/HeroSection.tsx
+    ./src/app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  314420ms] [ERROR] Base UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:65:214)
+    at Navbar (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:718:227)
+    at RootLayout (about://React/Server/file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__084c~ud._.js?23:701:268) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  314437ms] [WARNING] Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license
+Pass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  350547ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  350816ms] [ERROR] Base UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:65:214)
+    at Navbar (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:718:227)
+    at RootLayout (about://React/Server/file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__084c~ud._.js?23:701:268) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  350829ms] [WARNING] Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license
+Pass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  398677ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  398947ms] [ERROR] Base UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:65:214)
+    at Navbar (http://localhost:3000/_next/static/chunks/src_0~uym6h._.js:718:227)
+    at RootLayout (about://React/Server/file:///Users/ernesto/CodeProjects/Josa-AI_Rebrand/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__084c~ud._.js?23:701:268) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  398958ms] [WARNING] Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license
+Pass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
