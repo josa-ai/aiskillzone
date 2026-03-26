@@ -105,64 +105,201 @@ export function HomepageContent() {
             />
           </AnimatedSection>
 
-          <div className="mt-14 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {problems.map((problem, index) => (
-              <AnimatedSection
-                key={problem.title}
-                delay={index * 0.1}
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {/* Bento Grid Layout */}
+            {/* Row 1: Large featured card (spans 2 cols) + 1 regular card */}
+            <AnimatedSection
+              delay={0}
+              className="md:col-span-2 lg:col-span-2"
+            >
+              <motion.div
+                whileHover={{ scale: 1.02, y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="h-full"
               >
-                <motion.div
-                  whileHover={{ scale: 1.02, y: -4 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="h-full"
-                >
-                  <Card className="group relative flex h-full min-h-[280px] flex-col overflow-hidden border-2 border-transparent bg-white p-6 shadow-xl shadow-brand-royal-purple/10 transition-all duration-300 hover:border-brand-royal-purple/30 hover:shadow-2xl hover:shadow-brand-mauve-purple/20">
-                    {/* Gradient accent bar */}
-                    <motion.div
-                      className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-brand-royal-purple via-brand-mauve-purple to-brand-tech-blue"
-                      initial={{ scaleY: 0 }}
-                      whileInView={{ scaleY: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                    />
+                <Card className="group relative flex h-full min-h-[280px] flex-col overflow-hidden border-2 border-transparent bg-white p-6 shadow-xl shadow-brand-royal-purple/10 transition-all duration-300 hover:border-brand-royal-purple/30 hover:shadow-2xl hover:shadow-brand-mauve-purple/20 lg:min-h-[320px]">
+                  {/* Gradient accent bar */}
+                  <motion.div
+                    className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-brand-royal-purple via-brand-mauve-purple to-brand-tech-blue"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0 }}
+                  />
 
-                    {/* Decorative background glow */}
-                    <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-royal-purple/10 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+                  {/* Decorative background glow */}
+                  <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-royal-purple/10 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
 
-                    <CardContent className="relative flex flex-1 flex-col gap-4 p-0 pl-4">
-                      {/* Icon with glow */}
-                      <div className="relative inline-flex">
-                        <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-royal-purple/10 to-brand-tech-blue/10 transition-transform duration-300 group-hover:scale-110">
-                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-royal-purple to-brand-tech-blue opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
-                          <ProblemIcon
-                            type={problem.icon}
-                            className="h-8 w-8 text-brand-royal-purple"
-                          />
-                        </div>
+                  <CardContent className="relative flex flex-1 flex-col gap-4 p-0 pl-4">
+                    {/* Icon with glow */}
+                    <div className="relative inline-flex">
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-royal-purple/10 to-brand-tech-blue/10 transition-transform duration-300 group-hover:scale-110">
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-royal-purple to-brand-tech-blue opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
+                        <ProblemIcon
+                          type={problems[0].icon}
+                          className="h-8 w-8 text-brand-royal-purple"
+                        />
                       </div>
+                    </div>
 
-                      <div className="flex flex-1 flex-col">
-                        <h3 className="text-lg font-bold text-brand-deep-navy transition-colors duration-300 group-hover:text-brand-royal-purple">
-                          {problem.title}
-                        </h3>
-                        <p className="mt-2 flex-1 text-base leading-relaxed text-brand-deep-navy/70">
-                          {problem.description}
-                        </p>
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="text-xl font-bold text-brand-deep-navy transition-colors duration-300 group-hover:text-brand-royal-purple lg:text-2xl">
+                        {problems[0].title}
+                      </h3>
+                      <p className="mt-2 flex-1 text-base leading-relaxed text-brand-deep-navy/70 lg:text-lg">
+                        {problems[0].description}
+                      </p>
+                    </div>
+                  </CardContent>
+
+                  {/* Bottom accent */}
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-brand-royal-purple to-brand-tech-blue"
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </Card>
+              </motion.div>
+            </AnimatedSection>
+
+            {/* Card 2 */}
+            <AnimatedSection delay={0.1}>
+              <motion.div
+                whileHover={{ scale: 1.02, y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="h-full"
+              >
+                <Card className="group relative flex h-full min-h-[280px] flex-col overflow-hidden border-2 border-transparent bg-white p-6 shadow-xl shadow-brand-royal-purple/10 transition-all duration-300 hover:border-brand-royal-purple/30 hover:shadow-2xl hover:shadow-brand-mauve-purple/20 lg:min-h-[320px]">
+                  <motion.div
+                    className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-brand-royal-purple via-brand-mauve-purple to-brand-tech-blue"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                  />
+                  <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-royal-purple/10 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+                  <CardContent className="relative flex flex-1 flex-col gap-4 p-0 pl-4">
+                    <div className="relative inline-flex">
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-royal-purple/10 to-brand-tech-blue/10 transition-transform duration-300 group-hover:scale-110">
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-royal-purple to-brand-tech-blue opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
+                        <ProblemIcon
+                          type={problems[1].icon}
+                          className="h-8 w-8 text-brand-royal-purple"
+                        />
                       </div>
-                    </CardContent>
+                    </div>
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="text-lg font-bold text-brand-deep-navy transition-colors duration-300 group-hover:text-brand-royal-purple">
+                        {problems[1].title}
+                      </h3>
+                      <p className="mt-2 flex-1 text-base leading-relaxed text-brand-deep-navy/70">
+                        {problems[1].description}
+                      </p>
+                    </div>
+                  </CardContent>
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-brand-royal-purple to-brand-tech-blue"
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </Card>
+              </motion.div>
+            </AnimatedSection>
 
-                    {/* Bottom accent */}
-                    <motion.div
-                      className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-brand-royal-purple to-brand-tech-blue"
-                      initial={{ width: 0 }}
-                      whileHover={{ width: "100%" }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </Card>
-                </motion.div>
-              </AnimatedSection>
-            ))}
+            {/* Row 2: 2 regular cards */}
+            <AnimatedSection delay={0.2}>
+              <motion.div
+                whileHover={{ scale: 1.02, y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="h-full"
+              >
+                <Card className="group relative flex h-full min-h-[280px] flex-col overflow-hidden border-2 border-transparent bg-white p-6 shadow-xl shadow-brand-royal-purple/10 transition-all duration-300 hover:border-brand-royal-purple/30 hover:shadow-2xl hover:shadow-brand-mauve-purple/20">
+                  <motion.div
+                    className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-brand-royal-purple via-brand-mauve-purple to-brand-tech-blue"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  />
+                  <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-royal-purple/10 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+                  <CardContent className="relative flex flex-1 flex-col gap-4 p-0 pl-4">
+                    <div className="relative inline-flex">
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-royal-purple/10 to-brand-tech-blue/10 transition-transform duration-300 group-hover:scale-110">
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-royal-purple to-brand-tech-blue opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
+                        <ProblemIcon
+                          type={problems[2].icon}
+                          className="h-8 w-8 text-brand-royal-purple"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="text-lg font-bold text-brand-deep-navy transition-colors duration-300 group-hover:text-brand-royal-purple">
+                        {problems[2].title}
+                      </h3>
+                      <p className="mt-2 flex-1 text-base leading-relaxed text-brand-deep-navy/70">
+                        {problems[2].description}
+                      </p>
+                    </div>
+                  </CardContent>
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-brand-royal-purple to-brand-tech-blue"
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </Card>
+              </motion.div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.3}>
+              <motion.div
+                whileHover={{ scale: 1.02, y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="h-full"
+              >
+                <Card className="group relative flex h-full min-h-[280px] flex-col overflow-hidden border-2 border-transparent bg-white p-6 shadow-xl shadow-brand-royal-purple/10 transition-all duration-300 hover:border-brand-royal-purple/30 hover:shadow-2xl hover:shadow-brand-mauve-purple/20">
+                  <motion.div
+                    className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-brand-royal-purple via-brand-mauve-purple to-brand-tech-blue"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  />
+                  <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-royal-purple/10 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+                  <CardContent className="relative flex flex-1 flex-col gap-4 p-0 pl-4">
+                    <div className="relative inline-flex">
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-royal-purple/10 to-brand-tech-blue/10 transition-transform duration-300 group-hover:scale-110">
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-royal-purple to-brand-tech-blue opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
+                        <ProblemIcon
+                          type={problems[3].icon}
+                          className="h-8 w-8 text-brand-royal-purple"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex flex-1 flex-col">
+                      <h3 className="text-lg font-bold text-brand-deep-navy transition-colors duration-300 group-hover:text-brand-royal-purple">
+                        {problems[3].title}
+                      </h3>
+                      <p className="mt-2 flex-1 text-base leading-relaxed text-brand-deep-navy/70">
+                        {problems[3].description}
+                      </p>
+                    </div>
+                  </CardContent>
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-brand-royal-purple to-brand-tech-blue"
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </Card>
+              </motion.div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
