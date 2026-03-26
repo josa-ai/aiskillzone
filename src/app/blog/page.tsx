@@ -55,7 +55,13 @@ export default function BlogPage() {
 
       {/* ── Blog Posts Grid ── */}
       <section className="relative bg-white py-20 md:py-28">
-        <div className="absolute inset-0 bg-texture-dots opacity-30" />
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.35) 1.5px, transparent 1.5px)',
+            backgroundSize: '20px 20px'
+          }}
+        />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <SectionHeading
             title="Latest posts."

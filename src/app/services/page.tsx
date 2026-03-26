@@ -41,7 +41,13 @@ export default function ServicesPage() {
 
       {/* ── Primary Services ── */}
       <section className="relative bg-white py-20 md:py-28">
-        <div className="absolute inset-0 bg-texture-dots opacity-30" />
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.35) 1.5px, transparent 1.5px)',
+            backgroundSize: '20px 20px'
+          }}
+        />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <SectionHeading title="Our core services." centered />
 
@@ -62,7 +68,13 @@ export default function ServicesPage() {
 
       {/* ── Secondary Services ── */}
       <section className="relative bg-brand-frosted-blue/30 py-20 md:py-28">
-        <div className="absolute inset-0 bg-texture-grid opacity-20" />
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: 'linear-gradient(rgba(141, 75, 187, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(141, 75, 187, 0.2) 1px, transparent 1px)',
+            backgroundSize: '28px 28px'
+          }}
+        />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <SectionHeading title="We also offer:" centered />
 

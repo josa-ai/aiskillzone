@@ -69,7 +69,13 @@ export default function AboutPage() {
 
       {/* ── About Content ── */}
       <section className="relative bg-white py-20 md:py-28">
-        <div className="absolute inset-0 bg-texture-dots opacity-50" />
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.35) 1.5px, transparent 1.5px)',
+            backgroundSize: '20px 20px'
+          }}
+        />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <SectionHeading title="Built by someone who gets it." centered />
 
@@ -107,7 +113,13 @@ export default function AboutPage() {
 
       {/* ── Values Section ── */}
       <section className="relative bg-brand-frosted-blue/30 py-20 md:py-28">
-        <div className="absolute inset-0 bg-texture-grid opacity-30" />
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: 'linear-gradient(rgba(141, 75, 187, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(141, 75, 187, 0.2) 1px, transparent 1px)',
+            backgroundSize: '28px 28px'
+          }}
+        />
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading title="What we stand for." centered />
 

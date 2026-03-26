@@ -97,7 +97,13 @@ export default function ContactPage() {
 
       {/* ── Contact Section ── */}
       <section id="book" className="relative bg-white py-20 md:py-28">
-        <div className="absolute inset-0 bg-texture-dots opacity-20" />
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.35) 1.5px, transparent 1.5px)',
+            backgroundSize: '20px 20px'
+          }}
+        />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Left: Contact Form */}
