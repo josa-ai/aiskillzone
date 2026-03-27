@@ -3,28 +3,43 @@ import { NextRequest, NextResponse } from "next/server";
 
 const KIE_API_KEY = process.env.KI_EAI_API_KEY ?? "";
 
-// Kie.ai callback payload: { code, msg, data: { taskId, info: { resultImageUrl, originImageUrl } } }
+// Actual Kie.ai nano-banana-2 callback payload:
+// { code, msg, data: { taskId, state, resultJson: '{"resultUrls":["https://tempfile..."]}', ... } }
 interface KieCallbackPayload {
   code: number;
   msg?: string;
   data?: {
     taskId?: string;
+    state?: string;
+    resultJson?: string;
+    // Fallback fields from other Kie.ai models
     info?: {
       resultImageUrl?: string;
-      originImageUrl?: string;
       result_urls?: string[];
     } | null;
   };
 }
 
 function extractImageUrl(payload: KieCallbackPayload): string | null {
-  const info = payload.data?.info;
-  if (!info) return null;
-  return info.resultImageUrl || info.result_urls?.[0] || null;
+  const data = payload.data;
+  if (!data) return null;
+
+  // nano-banana-2 format: resultJson is a stringified JSON with resultUrls
+  if (data.resultJson) {
+    try {
+      const parsed = JSON.parse(data.resultJson) as { resultUrls?: string[] };
+      if (parsed.resultUrls?.[0]) return parsed.resultUrls[0];
+    } catch {
+      // fall through
+    }
+  }
+
+  // Fallback: other Kie.ai models use data.info
+  return data.info?.resultImageUrl || data.info?.result_urls?.[0] || null;
 }
 
 async function getDownloadUrl(imageUrl: string): Promise<string> {
-  // Kie.ai resultImageUrls are short-lived signed URLs — convert to a direct download link
+  // Convert short-lived tempfile URL to a direct download link
   const res = await fetch("https://api.kie.ai/api/v1/common/download-url", {
     method: "POST",
     headers: {
@@ -33,7 +48,7 @@ async function getDownloadUrl(imageUrl: string): Promise<string> {
     },
     body: JSON.stringify({ url: imageUrl }),
   });
-  if (!res.ok) return imageUrl; // fall back to original URL
+  if (!res.ok) return imageUrl;
   const json = await res.json() as { code?: number; data?: string };
   return (json.code === 200 && json.data) ? json.data : imageUrl;
 }
@@ -48,12 +63,9 @@ export async function POST(request: NextRequest) {
     const taskId = payload.data?.taskId ?? "none";
     const imageUrl = extractImageUrl(payload);
 
-    // Save raw payload to Blob for debugging
-    await put(`debug/${slug}-${Date.now()}.json`, rawText, { access: "public", contentType: "application/json", addRandomSuffix: false });
     console.log(`KIE|${slug}|code=${payload.code}|${imageUrl ?? "NO_URL"}|taskId=${taskId}`);
 
     if (payload.code === 200 && imageUrl) {
-      // Get a fresh direct download URL from Kie.ai
       const downloadUrl = await getDownloadUrl(imageUrl);
       console.log(`KIE|${slug}|DOWNLOAD_URL|${downloadUrl}`);
 
