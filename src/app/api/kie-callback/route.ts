@@ -1,3 +1,4 @@
+import { put } from "@vercel/blob";
 import { NextRequest, NextResponse } from "next/server";
 
 interface KieCallbackPayload {
@@ -22,22 +23,46 @@ export async function POST(request: NextRequest) {
   let rawText = "";
   try {
     rawText = await request.text();
-    const payload = JSON.parse(rawText) as KieCallbackPayload & Record<string, unknown>;
+    const raw = JSON.parse(rawText) as Record<string, unknown>;
 
-    // Single log line with everything — easier to find in Vercel logs
-    const status: string = payload.status ?? (payload.taskStatus as string) ?? "unknown";
-    const imageUrl = extractImageUrl(payload.output ?? (payload.data as KieCallbackPayload["output"]));
-    console.log(`KIE|${slug}|${status}|${imageUrl ?? "NO_URL"}|taskId=${payload.taskId ?? "none"}`);
+    // Kie.ai wraps the payload: { code: 200, data: { taskId, status, output } }
+    // Fall back to flat structure just in case
+    const data = (raw.data as Record<string, unknown> | undefined) ?? raw;
+
+    const status: string =
+      (data.status as string) ??
+      (data.taskStatus as string) ??
+      "unknown";
+    const output = data.output as KieCallbackPayload["output"] | undefined;
+    const imageUrl = extractImageUrl(output);
+    const taskId = (data.taskId as string) ?? (data.recordId as string) ?? "none";
+
+    console.log(`KIE|${slug}|${status}|${imageUrl ?? "NO_URL"}|taskId=${taskId}`);
 
     if (status === "completed" || status === "success" || status === "succeed") {
       if (!imageUrl) {
         return NextResponse.json({ error: "completed but no image URL" }, { status: 422 });
       }
-      return NextResponse.json({ success: true, slug, url: imageUrl });
+
+      // Fetch the image from Kie.ai and upload to Vercel Blob
+      const imgRes = await fetch(imageUrl);
+      if (!imgRes.ok) {
+        console.error(`KIE|${slug}|FETCH_FAIL|${imgRes.status}|${imageUrl}`);
+        return NextResponse.json({ error: `image fetch failed: ${imgRes.status}` }, { status: 502 });
+      }
+      const blob = await imgRes.blob();
+      const { url: blobUrl } = await put(`heroes/${slug}.jpg`, blob, {
+        access: "public",
+        contentType: "image/jpeg",
+        addRandomSuffix: false,
+      });
+
+      console.log(`KIE|${slug}|SAVED|${blobUrl}`);
+      return NextResponse.json({ success: true, slug, url: blobUrl });
     }
 
     if (status === "failed" || status === "error") {
-      return NextResponse.json({ error: payload.output?.error ?? "failed" }, { status: 200 });
+      return NextResponse.json({ error: output?.error ?? "failed" }, { status: 200 });
     }
 
     return NextResponse.json({ received: true, slug, status });
