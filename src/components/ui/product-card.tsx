@@ -55,12 +55,12 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
           transformStyle: "preserve-3d",
           perspective: 800,
         }}
-        className={cn("w-full cursor-pointer rounded-2xl", className)}
+        className={cn("h-full w-full cursor-pointer rounded-2xl", className)}
       >
         {/* Card face */}
         <div
           style={{ transform: "translateZ(16px)" }}
-          className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+          className="relative h-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
         >
           {/* Subtle grid texture */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:28px_28px]" />

@@ -55,7 +55,7 @@ export function ServiceCard({ title, description, icon, link, variant = "primary
   const iconNode = IconComponent ? <IconComponent className="h-full w-full" /> : <span className="text-3xl">{icon}</span>;
 
   return (
-    <Link href={link} className="group block">
+    <Link href={link} className="group block h-full">
       <ProductHighlightCard
         categoryIcon={iconNode}
         category={category}
