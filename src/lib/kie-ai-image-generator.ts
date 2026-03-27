@@ -61,19 +61,20 @@ export async function generateHeroImages(
   onProgress?: (page: string, taskId: string) => void
 ): Promise<{ page: string; taskId: string }[]> {
   const heroPrompts: Record<string, string> = {
-    "about": "Modern professional office space with holographic AI displays, soft purple and blue ambient lighting, clean minimalist design, photorealistic, 16:9 aspect ratio",
-    "services": "Futuristic digital service marketplace with glowing purple interfaces, AI neural network visualizations, floating holographic icons, tech-forward atmosphere, photorealistic, 16:9 aspect ratio",
-    "website-design": "Creative web design workspace with large curved monitors showing colorful UI mockups, purple accent lighting, modern furniture, photorealistic, 16:9 aspect ratio",
-    "voice-ai": "Voice recognition technology visualization with sound waves and audio frequency patterns in purple and blue, futuristic AI assistant interface, photorealistic, 16:9 aspect ratio",
-    "ai-automation": "Automated workflow visualization with robots and AI processing chains, purple tech atmosphere, data streams and automation indicators, photorealistic, 16:9 aspect ratio",
-    "chatbot-development": "Conversational AI chatbot interface with friendly animated bot character, chat bubbles and natural language processing visuals, modern purple tech style, photorealistic, 16:9 aspect ratio",
-    "ecommerce-solutions": "Modern e-commerce platform with sleek product displays, shopping interface with purple accents, secure payment visuals, photorealistic, 16:9 aspect ratio",
-    "seo-optimization": "Search engine optimization visualization with growing charts, keywords floating in digital space, purple tech analytics dashboard, photorealistic, 16:9 aspect ratio",
-    "brand-identity": "Brand identity design studio with logo mockups, color palettes, typography samples, purple creative workspace, photorealistic, 16:9 aspect ratio",
-    "mobile-app-development": "Mobile app development workspace with smartphones displaying app interfaces, code on screens, purple accent lighting, photorealistic, 16:9 aspect ratio",
-    "blog": "Modern blogging and content creation workspace with notepad and pen, digital content management visuals, warm purple lighting, photorealistic, 16:9 aspect ratio",
-    "contact": "Professional contact center with communication visuals, phone and email icons, supportive team atmosphere, purple tech style, photorealistic, 16:9 aspect ratio",
-    "portfolio": "Impressive portfolio gallery with award-winning project displays, modern exhibition space, purple ambient lighting, photorealistic, 16:9 aspect ratio",
+    "about": "Professional business meeting in a modern Central Florida office, warm purple ambient lighting, collaborative team atmosphere, photorealistic, cinematic lighting",
+    "services": "Futuristic AI service hub with glowing purple holographic interfaces and neural network visualizations, tech-forward atmosphere, photorealistic, cinematic",
+    "website-design": "Creative web design studio with large curved monitors showing colorful UI mockups, purple accent lighting, modern workspace, photorealistic",
+    "voice-ai": "Futuristic voice AI visualization with glowing sound waves and audio frequency patterns in purple and blue, digital assistant hologram, photorealistic",
+    "ai-automation": "Automated workflow visualization with robotic arms and glowing data streams in purple, factory-meets-tech atmosphere, photorealistic, cinematic",
+    "ai-training": "Modern workshop classroom with professionals learning AI on laptops, educator presenting holographic AI diagrams, purple tech environment, photorealistic",
+    "ecommerce-consulting": "Sleek e-commerce dashboard with product displays and shopping analytics on large screens, purple tech accents, professional retail tech, photorealistic",
+    "brand-strategy": "Creative branding studio with logo mockups, color palettes pinned to boards, typography samples, purple ambient workspace, photorealistic",
+    "digital-products": "Digital product creation workspace with ebooks and lead magnet mockups on screens, purple creative studio lighting, photorealistic",
+    "custom-apps": "Software development workspace with multiple monitors showing app code and UI wireframes, purple tech lighting, focused developer environment, photorealistic",
+    "business-tools": "Modern CRM dashboard on a large monitor with customer data visualizations and reputation metrics, purple business tech atmosphere, photorealistic",
+    "blog": "Cozy modern workspace with coffee and laptop showing digital content, soft purple accent lighting, content creation theme, photorealistic",
+    "contact": "Friendly business consultation with handshake in a warm modern office, purple tech accents, approachable professional atmosphere, photorealistic",
+    "portfolio": "Impressive digital portfolio gallery with glowing project displays on sleek screens, purple ambient exhibition lighting, photorealistic, cinematic",
   };
 
   const results: { page: string; taskId: string }[] = [];

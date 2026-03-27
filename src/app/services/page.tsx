@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ServiceCard } from "@/components/ServiceCard";
 import { CTABanner } from "@/components/CTABanner";
@@ -15,6 +16,13 @@ export default function ServicesPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-brand-midnight-plum">
+        <Image
+          src="/images/heroes/services.jpg"
+          alt=""
+          fill
+          className="object-cover object-center opacity-40"
+          priority
+        />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(168,130,238,0.6),transparent)]"

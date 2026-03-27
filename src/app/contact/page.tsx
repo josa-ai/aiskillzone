@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Suspense } from "react";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { ContactForm } from "@/components/ContactForm";
@@ -69,6 +70,13 @@ export default function ContactPage() {
 
       {/* ── Hero Section ── */}
       <section className="relative overflow-hidden bg-brand-midnight-plum">
+        <Image
+          src="/images/heroes/contact.jpg"
+          alt=""
+          fill
+          className="object-cover object-center opacity-40"
+          priority
+        />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(168,130,238,0.6),transparent)]"
