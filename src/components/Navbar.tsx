@@ -96,8 +96,8 @@ export function Navbar() {
             <Image
               src="/images/logo-horizontal.png"
               alt="JOSA.AI"
-              width={160}
-              height={160}
+              width={2011}
+              height={754}
               className="h-16 w-auto transition-all group-hover:drop-shadow-lg"
               priority
             />
@@ -288,8 +288,8 @@ export function Navbar() {
                   <Image
                     src="/images/logo-horizontal.png"
                     alt="JOSA.AI"
-                    width={130}
-                    height={130}
+                    width={2011}
+                    height={754}
                     className="h-8 w-auto"
                   />
                 </SheetTitle>
