@@ -10,6 +10,7 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
 import { JsonLd } from "@/components/JsonLd";
+import { IncludeCard } from "@/components/ui/include-card";
 
 /* ────────────────────────────────────────────────────────────────────────────
    Service detail data
@@ -20,7 +21,7 @@ interface ServiceDetail {
   problem: string;
   agitation: string;
   solution: string;
-  includes: string[];
+  includes: { title: string; icon: string }[];
   faqs: { question: string; answer: string }[];
   cta: { title: string; description: string; ctaText: string };
   relatedSlugs: string[];
@@ -36,12 +37,12 @@ const serviceDetails: Record<string, ServiceDetail> = {
     solution:
       "We build custom websites from the ground up — no templates, no bloat. Every site comes with SEO, AEO (AI Engine Optimization), and ADA compliance built in as standard, never as an upcharge. Your site will be mobile-optimized, integrated with your CRM, and designed to convert visitors into customers. Starting at $400 with a 2–4 week timeline.",
     includes: [
-      "Custom design and development — no templates",
-      "SEO and AEO built into every page",
-      "ADA compliance included at no extra cost",
-      "Mobile-first responsive design",
-      "CRM integration and lead capture forms",
-      "Analytics and performance tracking setup",
+      { title: "Custom design and development — no templates", icon: "Paintbrush" },
+      { title: "SEO and AEO built into every page", icon: "Search" },
+      { title: "ADA compliance included at no extra cost", icon: "Accessibility" },
+      { title: "Mobile-first responsive design", icon: "Smartphone" },
+      { title: "CRM integration and lead capture forms", icon: "FormInput" },
+      { title: "Analytics and performance tracking setup", icon: "BarChart3" },
     ],
     faqs: [
       {
@@ -83,12 +84,12 @@ const serviceDetails: Record<string, ServiceDetail> = {
     solution:
       "Our Voice AI answers your phone 24/7 with a natural-sounding voice that represents your brand. It handles frequently asked questions, qualifies leads, books appointments directly on your calendar, and can even take orders. When a call needs a human touch, it seamlessly transfers to you or your team. Your customers get instant answers. You get qualified leads.",
     includes: [
-      "24/7 AI-powered call answering",
-      "Custom voice and personality matching your brand",
-      "FAQ handling and information delivery",
-      "Lead qualification and scoring",
-      "Appointment booking with calendar integration",
-      "Seamless transfer to live team members when needed",
+      { title: "24/7 AI-powered call answering", icon: "Phone" },
+      { title: "Custom voice and personality matching your brand", icon: "Mic" },
+      { title: "FAQ handling and information delivery", icon: "MessageCircle" },
+      { title: "Lead qualification and scoring", icon: "UserCheck" },
+      { title: "Appointment booking with calendar integration", icon: "CalendarCheck" },
+      { title: "Seamless transfer to live team members when needed", icon: "ArrowRightLeft" },
     ],
     faqs: [
       {
@@ -130,12 +131,12 @@ const serviceDetails: Record<string, ServiceDetail> = {
     solution:
       "We build custom automations tailored to your specific business processes. Not generic templates — actual workflows designed around how your business operates. Whether it's automating email responses, marketing sequences, order processing, or tasks unique to your industry, we'll identify what's eating your time and build systems that handle it.",
     includes: [
-      "Custom workflow design and implementation",
-      "Email automation and response sequences",
-      "Marketing workflow automation",
-      "Order processing and fulfillment triggers",
-      "Data entry and CRM update automation",
-      "Industry-specific process automation",
+      { title: "Custom workflow design and implementation", icon: "GitBranch" },
+      { title: "Email automation and response sequences", icon: "Mail" },
+      { title: "Marketing workflow automation", icon: "Megaphone" },
+      { title: "Order processing and fulfillment triggers", icon: "ShoppingCart" },
+      { title: "Data entry and CRM update automation", icon: "Database" },
+      { title: "Industry-specific process automation", icon: "Settings2" },
     ],
     faqs: [
       {
@@ -177,12 +178,12 @@ const serviceDetails: Record<string, ServiceDetail> = {
     solution:
       "We run hands-on workshops that teach your team how to actually use AI in their daily work. Not theory, not hype — practical skills they can use immediately. We cover tools like ChatGPT, prompt engineering, and AI-powered workflows specific to your industry. Taught by someone who builds AI solutions every day, not someone who read a book about it.",
     includes: [
-      "Hands-on workshops tailored to your team's roles",
-      "ChatGPT and prompt engineering training",
-      "Industry-specific AI use cases and workflows",
-      "Practical exercises with real business scenarios",
-      "Reference materials and prompt libraries",
-      "Follow-up support and Q&A sessions",
+      { title: "Hands-on workshops tailored to your team's roles", icon: "Users" },
+      { title: "ChatGPT and prompt engineering training", icon: "Bot" },
+      { title: "Industry-specific AI use cases and workflows", icon: "Lightbulb" },
+      { title: "Practical exercises with real business scenarios", icon: "ClipboardList" },
+      { title: "Reference materials and prompt libraries", icon: "BookOpen" },
+      { title: "Follow-up support and Q&A sessions", icon: "HelpCircle" },
     ],
     faqs: [
       {
@@ -224,12 +225,12 @@ const serviceDetails: Record<string, ServiceDetail> = {
     solution:
       "With 20+ years of e-commerce experience, we help product brands get set up, optimized, and scaling on the right platforms. Whether you're launching your first Shopify store or expanding to TikTok Shop and Amazon, we handle the strategy, onboarding, listing optimization, and ongoing performance tuning.",
     includes: [
-      "Platform selection and strategy consulting",
-      "Marketplace onboarding (Shopify, Amazon, Walmart, TikTok Shop)",
-      "Product listing optimization and SEO",
-      "Pricing and competitive analysis",
-      "Advertising strategy and campaign setup",
-      "Ongoing performance monitoring and optimization",
+      { title: "Platform selection and strategy consulting", icon: "ShoppingBag" },
+      { title: "Marketplace onboarding (Shopify, Amazon, Walmart, TikTok Shop)", icon: "Store" },
+      { title: "Product listing optimization and SEO", icon: "Tag" },
+      { title: "Pricing and competitive analysis", icon: "TrendingUp" },
+      { title: "Advertising strategy and campaign setup", icon: "Target" },
+      { title: "Ongoing performance monitoring and optimization", icon: "LineChart" },
     ],
     faqs: [
       {
@@ -272,12 +273,12 @@ const serviceDetails: Record<string, ServiceDetail> = {
     solution:
       "We develop your brand voice, messaging framework, and campaign strategy so everything you put out into the world sounds like you — and connects with your audience. This is usually bundled into website or marketing projects, but it's also available as a focused standalone engagement for businesses that need to get their story straight.",
     includes: [
-      "Brand voice and tone development",
-      "Messaging framework and key differentiators",
-      "Target audience definition and personas",
-      "Campaign strategy and content direction",
-      "Competitive positioning analysis",
-      "Brand guidelines document",
+      { title: "Brand voice and tone development", icon: "MessageSquare" },
+      { title: "Messaging framework and key differentiators", icon: "Layers" },
+      { title: "Target audience definition and personas", icon: "UserCircle" },
+      { title: "Campaign strategy and content direction", icon: "Map" },
+      { title: "Competitive positioning analysis", icon: "Crosshair" },
+      { title: "Brand guidelines document", icon: "FileText" },
     ],
     faqs: [
       {
@@ -319,12 +320,12 @@ const serviceDetails: Record<string, ServiceDetail> = {
     solution:
       "We create polished digital products that capture leads and showcase your expertise. PDF guides, downloadable templates, email courses, checklists, and other resources designed to provide real value to your audience while building your email list and nurturing potential customers automatically.",
     includes: [
-      "Strategy and topic selection for maximum impact",
-      "Content development and copywriting assistance",
-      "Professional design and formatting",
-      "Landing page creation for lead capture",
-      "Email automation for delivery and follow-up",
-      "Analytics and conversion tracking",
+      { title: "Strategy and topic selection for maximum impact", icon: "Compass" },
+      { title: "Content development and copywriting assistance", icon: "PenLine" },
+      { title: "Professional design and formatting", icon: "LayoutTemplate" },
+      { title: "Landing page creation for lead capture", icon: "Monitor" },
+      { title: "Email automation for delivery and follow-up", icon: "Send" },
+      { title: "Analytics and conversion tracking", icon: "PieChart" },
     ],
     faqs: [
       {
@@ -366,12 +367,12 @@ const serviceDetails: Record<string, ServiceDetail> = {
     solution:
       "We build small, focused web applications designed around your specific workflow. Clean, modern, and built to do exactly what you need — nothing more, nothing less. Whether it's an internal tool, a customer-facing portal, or a specialized calculator, we build it right and make it easy to use.",
     includes: [
-      "Discovery and requirements analysis",
-      "UI/UX design tailored to your workflow",
-      "Clean, modern web application development",
-      "User authentication and role management",
-      "Integration with existing tools and databases",
-      "Testing, deployment, and documentation",
+      { title: "Discovery and requirements analysis", icon: "ScanSearch" },
+      { title: "UI/UX design tailored to your workflow", icon: "Layers" },
+      { title: "Clean, modern web application development", icon: "Code2" },
+      { title: "User authentication and role management", icon: "Lock" },
+      { title: "Integration with existing tools and databases", icon: "Plug" },
+      { title: "Testing, deployment, and documentation", icon: "CheckCircle2" },
     ],
     faqs: [
       {
@@ -413,12 +414,12 @@ const serviceDetails: Record<string, ServiceDetail> = {
     solution:
       "We set up and configure an integrated business platform that consolidates your CRM, community and course hosting, reputation management, and communication tools into one system. One login, one dashboard, one source of truth for your customer relationships. We handle the setup, migration, and training so your team can hit the ground running.",
     includes: [
-      "CRM setup and configuration for your business",
-      "Community and course hosting platform",
-      "Reputation management and review automation",
-      "Email and SMS marketing integration",
-      "Pipeline and workflow automation",
-      "Data migration from existing tools",
+      { title: "CRM setup and configuration for your business", icon: "Users" },
+      { title: "Community and course hosting platform", icon: "GraduationCap" },
+      { title: "Reputation management and review automation", icon: "Star" },
+      { title: "Email and SMS marketing integration", icon: "MailCheck" },
+      { title: "Pipeline and workflow automation", icon: "GitBranch" },
+      { title: "Data migration from existing tools", icon: "ArrowRightLeft" },
     ],
     faqs: [
       {
@@ -605,28 +606,23 @@ export default async function ServiceDetailPage({
       {/* ── Solution (PAS — Solution) ── */}
       <section className="relative bg-white py-10 md:py-14">
         <GradientDots duration={45} dotSize={3} spacing={16} />
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <SectionHeading title="How we solve it." centered={false} />
-          <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
-            {data.solution}
-          </p>
-
-          <h3 className="mt-10 text-xl font-bold text-brand-deep-navy">
-            What&rsquo;s included:
-          </h3>
-          <ul className="mt-4 space-y-3">
-            {data.includes.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span
-                  className="mt-1 block size-2 shrink-0 rounded-full bg-brand-royal-purple"
-                  aria-hidden="true"
-                />
-                <span className="text-base leading-relaxed text-brand-deep-navy/80">
-                  {item}
-                </span>
-              </li>
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-3xl">
+            <SectionHeading title="How we solve it." centered={false} />
+            <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
+              {data.solution}
+            </p>
+          </div>
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {data.includes.map((item, i) => (
+              <IncludeCard
+                key={item.title}
+                title={item.title}
+                icon={item.icon}
+                index={i}
+              />
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
