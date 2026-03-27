@@ -590,13 +590,15 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── Agitation (PAS — Agitation) ── */}
-      <section className="relative bg-brand-frosted-blue/30 py-20 md:py-28">
-        <GradientDots duration={50} dotSize={6} spacing={14} />
+      <section className="relative bg-white py-20 md:py-28">
+        <GradientDots duration={40} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <SectionHeading title="What's it costing you?" centered={false} />
-          <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
-            {data.agitation}
-          </p>
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+            <SectionHeading title="What's it costing you?" centered={false} />
+            <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
+              {data.agitation}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -629,12 +631,14 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── FAQ ── */}
-      <section className="relative bg-brand-soft-lavender py-20 md:py-28">
-        <GradientDots duration={55} dotSize={6} spacing={14} />
-        <div className="mx-auto max-w-3xl px-6">
-          <SectionHeading title="Frequently asked questions." centered={false} />
-          <div className="mt-10">
-            <FAQAccordion faqs={data.faqs} />
+      <section className="relative bg-white py-20 md:py-28">
+        <GradientDots duration={40} dotSize={6} spacing={12} />
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+            <SectionHeading title="Frequently asked questions." centered={false} />
+            <div className="mt-10">
+              <FAQAccordion faqs={data.faqs} />
+            </div>
           </div>
         </div>
       </section>

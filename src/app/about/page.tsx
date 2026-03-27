@@ -115,34 +115,36 @@ export default function AboutPage() {
       </section>
 
       {/* ── Values Section ── */}
-      <section className="relative bg-brand-frosted-blue/30 py-20 md:py-28">
-        <GradientDots duration={50} dotSize={6} spacing={14} />
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading title="What we stand for." centered />
+      <section className="relative bg-white py-20 md:py-28">
+        <GradientDots duration={40} dotSize={6} spacing={12} />
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+            <SectionHeading title="What we stand for." centered />
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value) => (
-              <Card
-                key={value.title}
-                className="flex min-h-[240px] flex-col border-0 bg-white p-6 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
-              >
-                <CardContent className="flex flex-1 flex-col gap-3 p-0">
-                  <span
-                    className="text-3xl"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    {value.icon}
-                  </span>
-                  <h3 className="text-lg font-bold text-brand-deep-navy">
-                    {value.title}
-                  </h3>
-                  <p className="flex-1 text-base leading-relaxed text-brand-deep-navy/70">
-                    {value.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {values.map((value) => (
+                <Card
+                  key={value.title}
+                  className="flex min-h-[240px] flex-col border-0 bg-white p-6 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
+                >
+                  <CardContent className="flex flex-1 flex-col gap-3 p-0">
+                    <span
+                      className="text-3xl"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      {value.icon}
+                    </span>
+                    <h3 className="text-lg font-bold text-brand-deep-navy">
+                      {value.title}
+                    </h3>
+                    <p className="flex-1 text-base leading-relaxed text-brand-deep-navy/70">
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

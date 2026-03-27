@@ -70,22 +70,24 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Secondary Services ── */}
-      <section className="relative bg-brand-frosted-blue/30 py-20 md:py-28">
-        <GradientDots duration={50} dotSize={6} spacing={14} />
+      <section className="relative bg-white py-20 md:py-28">
+        <GradientDots duration={40} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <SectionHeading title="We also offer:" centered />
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+            <SectionHeading title="We also offer:" centered />
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {secondaryServices.map((service) => (
-              <ServiceCard
-                key={service.slug}
-                title={service.shortTitle}
-                description={service.description}
-                icon={service.icon}
-                link={`/services/${service.slug}`}
-                variant="secondary"
-              />
-            ))}
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {secondaryServices.map((service) => (
+                <ServiceCard
+                  key={service.slug}
+                  title={service.shortTitle}
+                  description={service.description}
+                  icon={service.icon}
+                  link={`/services/${service.slug}`}
+                  variant="secondary"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
