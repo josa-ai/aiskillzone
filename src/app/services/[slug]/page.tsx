@@ -559,7 +559,7 @@ export default async function ServiceDetailPage({
           }}
         />
 
-        <div className="relative mx-auto max-w-5xl px-6 py-20 md:py-28 lg:py-32">
+        <div className="relative mx-auto max-w-5xl px-6 py-8 md:py-10">
           <p className="text-lg font-medium text-brand-cool-azure">
             {data.icon} {data.shortTitle}
           </p>
@@ -579,7 +579,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── Problem (PAS — Problem) ── */}
-      <section className="relative bg-white py-20 md:py-28">
+      <section className="relative bg-white py-10 md:py-14">
         <GradientDots duration={40} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <SectionHeading title="The problem." centered={false} />
@@ -590,7 +590,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── Agitation (PAS — Agitation) ── */}
-      <section className="relative bg-white py-20 md:py-28">
+      <section className="relative bg-white py-10 md:py-14">
         <GradientDots duration={40} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
@@ -603,7 +603,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── Solution (PAS — Solution) ── */}
-      <section className="relative bg-white py-20 md:py-28">
+      <section className="relative bg-white py-10 md:py-14">
         <GradientDots duration={45} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <SectionHeading title="How we solve it." centered={false} />
@@ -631,7 +631,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── FAQ ── */}
-      <section className="relative bg-white py-20 md:py-28">
+      <section className="relative bg-white py-10 md:py-14">
         <GradientDots duration={40} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
@@ -654,7 +654,7 @@ export default async function ServiceDetailPage({
 
       {/* ── Related Services ── */}
       {relatedServices.length > 0 && (
-        <section className="bg-white py-20 md:py-28">
+        <section className="bg-white py-10 md:py-14">
           <div className="mx-auto max-w-6xl px-6">
             <SectionHeading title="Related services." centered />
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
