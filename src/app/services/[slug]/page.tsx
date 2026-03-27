@@ -580,7 +580,7 @@ export default async function ServiceDetailPage({
 
       {/* ── Problem (PAS — Problem) ── */}
       <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={6} spacing={12} />
+        <GradientDots duration={40} dotSize={3} spacing={16} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <SectionHeading title="The problem." centered={false} />
           <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
@@ -591,7 +591,7 @@ export default async function ServiceDetailPage({
 
       {/* ── Agitation (PAS — Agitation) ── */}
       <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={6} spacing={12} />
+        <GradientDots duration={40} dotSize={3} spacing={16} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
             <SectionHeading title="What's it costing you?" centered={false} />
@@ -604,7 +604,7 @@ export default async function ServiceDetailPage({
 
       {/* ── Solution (PAS — Solution) ── */}
       <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={45} dotSize={6} spacing={12} />
+        <GradientDots duration={45} dotSize={3} spacing={16} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <SectionHeading title="How we solve it." centered={false} />
           <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
@@ -632,7 +632,7 @@ export default async function ServiceDetailPage({
 
       {/* ── FAQ ── */}
       <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={6} spacing={12} />
+        <GradientDots duration={40} dotSize={3} spacing={16} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
             <SectionHeading title="Frequently asked questions." centered={false} />

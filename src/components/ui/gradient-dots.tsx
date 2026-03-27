@@ -14,15 +14,15 @@ type GradientDotsProps = React.ComponentProps<typeof motion.div> & {
     backgroundColor?: string;
 };
 
-// Brand palette colors cycled through by each gradient layer
-const C1 = 'rgba(141, 75, 187, 0.45)';   // royal purple
-const C2 = 'rgba(168, 130, 238, 0.35)';  // mauve purple
-const C3 = 'rgba(59, 130, 246, 0.30)';   // tech blue
-const C4 = 'rgba(227, 212, 243, 0.50)';  // soft lavender
+// Brand palette colors — kept subtle so dots never compete with text
+const C1 = 'rgba(141, 75, 187, 0.22)';   // royal purple
+const C2 = 'rgba(168, 130, 238, 0.17)';  // mauve purple
+const C3 = 'rgba(59, 130, 246, 0.15)';   // tech blue
+const C4 = 'rgba(227, 212, 243, 0.25)';  // soft lavender
 
 export function GradientDots({
-    dotSize = 8,
-    spacing = 10,
+    dotSize = 3,
+    spacing = 16,
     duration = 30,
     backgroundColor = '#ffffff',
     className,

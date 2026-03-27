@@ -36,7 +36,7 @@ export default function ServicesPage() {
           }}
         />
 
-        <div className="relative mx-auto max-w-5xl px-6 py-24 text-center md:py-32 lg:py-40">
+        <div className="relative mx-auto max-w-5xl px-6 py-8 text-center md:py-10">
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
             All the services you need to move your business forward.
           </h1>
@@ -49,8 +49,8 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Primary Services ── */}
-      <section className="relative bg-white py-20 md:py-28">
-        <GradientDots duration={40} dotSize={6} spacing={12} />
+      <section className="relative bg-white py-10 md:py-14">
+        <GradientDots duration={40} dotSize={3} spacing={16} />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <SectionHeading title="Our core services." centered />
 
@@ -70,8 +70,8 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Secondary Services ── */}
-      <section className="relative bg-white py-20 md:py-28">
-        <GradientDots duration={40} dotSize={6} spacing={12} />
+      <section className="relative bg-white py-10 md:py-14">
+        <GradientDots duration={40} dotSize={3} spacing={16} />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
             <SectionHeading title="We also offer:" centered />

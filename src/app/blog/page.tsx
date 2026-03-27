@@ -47,7 +47,7 @@ export default function BlogPage() {
             backgroundImage: `radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(168, 130, 238, 0.3) 0%, transparent 40%)`,
           }}
         />
-        <div className="relative mx-auto max-w-5xl px-6 py-20 md:py-28">
+        <div className="relative mx-auto max-w-5xl px-6 py-8 md:py-10">
           <div className="mb-6">
             <Breadcrumb
               items={[
@@ -63,8 +63,8 @@ export default function BlogPage() {
       </section>
 
       {/* ── Blog Posts Grid ── */}
-      <section className="relative bg-white py-20 md:py-28">
-        <GradientDots duration={40} dotSize={6} spacing={12} />
+      <section className="relative bg-white py-10 md:py-14">
+        <GradientDots duration={40} dotSize={3} spacing={16} />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <SectionHeading
             title="Latest posts."

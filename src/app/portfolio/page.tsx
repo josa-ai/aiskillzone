@@ -97,7 +97,7 @@ export default function PortfolioPage() {
 
       {/* ── Portfolio Grid ── */}
       <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={6} spacing={12} />
+        <GradientDots duration={40} dotSize={3} spacing={16} />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <SectionHeading
             title="Recent projects."
