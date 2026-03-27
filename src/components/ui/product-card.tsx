@@ -17,7 +17,7 @@ interface ProductHighlightCardProps {
 
 export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHighlightCardProps>(
   (
-    { className, categoryIcon, category, title, description, floatingIcon, variant = "primary" },
+    { className, categoryIcon, category, title, description, floatingIcon },
     ref
   ) => {
     const mouseX = useMotionValue(175);
@@ -30,8 +30,8 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
       mouseY.set(clientY - top);
     };
 
-    const rotateX = useTransform(mouseY, [0, 350], [8, -8]);
-    const rotateY = useTransform(mouseX, [0, 350], [-8, 8]);
+    const rotateX = useTransform(mouseY, [0, 350], [6, -6]);
+    const rotateY = useTransform(mouseX, [0, 350], [-6, 6]);
     const springConfig = { stiffness: 300, damping: 20 };
     const springRotateX = useSpring(rotateX, springConfig);
     const springRotateY = useSpring(rotateY, springConfig);
@@ -43,7 +43,7 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
       <motion.div
         ref={ref}
         onMouseMove={handleMouseMove}
-        onMouseEnter={() => glowOpacity.set(0.45)}
+        onMouseEnter={() => glowOpacity.set(0.6)}
         onMouseLeave={() => {
           mouseX.set(175);
           mouseY.set(175);
@@ -56,32 +56,24 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
           perspective: 800,
         }}
         className={cn(
-          "relative h-[340px] w-full cursor-pointer rounded-2xl shadow-xl transition-shadow duration-300 hover:shadow-2xl",
-          variant === "primary"
-            ? "shadow-brand-royal-purple/20 hover:shadow-brand-mauve-purple/30"
-            : "shadow-brand-royal-purple/10 hover:shadow-brand-mauve-purple/20",
+          "relative h-[340px] w-full cursor-pointer rounded-2xl",
           className
         )}
       >
-        {/* Card face — elevated via translateZ */}
+        {/* Card face */}
         <div
           style={{ transform: "translateZ(20px)", transformStyle: "preserve-3d" }}
-          className={cn(
-            "absolute inset-0 overflow-hidden rounded-2xl",
-            variant === "primary"
-              ? "bg-gradient-to-br from-brand-royal-purple via-brand-mauve-purple to-[#5B2D8E]"
-              : "bg-gradient-to-br from-brand-soft-lavender via-white to-brand-soft-lavender"
-          )}
+          className="absolute inset-0 overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm transition-shadow duration-300 hover:shadow-md"
         >
-          {/* Diagonal grid texture */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff14_1px,transparent_1px),linear-gradient(to_bottom,#ffffff14_1px,transparent_1px)] bg-[size:28px_28px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_60%,transparent_100%)]" />
+          {/* Subtle grid texture */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000006_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)] bg-[size:28px_28px]" />
 
           {/* Mouse-following glow */}
           <motion.div
             className="pointer-events-none absolute inset-0 rounded-2xl"
             style={{
               opacity: glowOpacity,
-              background: `radial-gradient(120px at ${glowX}% ${glowY}%, rgba(255,255,255,0.25), transparent 70%)`,
+              background: `radial-gradient(200px at ${glowX}% ${glowY}%, rgba(139,92,246,0.06), transparent 70%)`,
             }}
           />
 
@@ -89,71 +81,36 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
           <div className="relative z-10 flex h-full flex-col justify-between p-6">
             {/* Top: category icon + label */}
             <div className="flex items-center gap-2">
-              <div
-                className={cn(
-                  "flex h-14 w-14 items-center justify-center rounded-2xl",
-                  variant === "primary" ? "bg-white/20" : "bg-brand-royal-purple/10"
-                )}
-              >
-                <div
-                  className={cn(
-                    "h-7 w-7",
-                    variant === "primary" ? "text-white" : "text-brand-royal-purple"
-                  )}
-                >
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 bg-gray-50 text-brand-royal-purple">
+                <div className="h-4 w-4">
                   {categoryIcon}
                 </div>
               </div>
-              <span
-                className={cn(
-                  "text-xs font-semibold uppercase tracking-wider",
-                  variant === "primary" ? "text-white/60" : "text-brand-deep-navy/50"
-                )}
-              >
+              <span className="text-sm font-medium text-gray-500">
                 {category}
               </span>
             </div>
 
-            {/* Bottom: title + description + link */}
-            <div>
-              <h3
-                className={cn(
-                  "text-2xl font-bold tracking-tight",
-                  variant === "primary" ? "text-white" : "text-brand-deep-navy"
-                )}
-              >
+            {/* Bottom: title + description */}
+            <div className="relative">
+              <h3 className="text-3xl font-bold tracking-tight text-gray-900">
                 {title}
               </h3>
-              <p
-                className={cn(
-                  "mt-2 max-w-[80%] text-sm leading-relaxed",
-                  variant === "primary" ? "text-white/75" : "text-brand-deep-navy/65"
-                )}
-              >
+              <p className="mt-2 max-w-[65%] text-sm leading-relaxed text-gray-500">
                 {description}
               </p>
-              <div
-                className={cn(
-                  "mt-4 flex items-center gap-1 text-sm font-semibold transition-all duration-200",
-                  variant === "primary"
-                    ? "text-white/80 group-hover:text-white"
-                    : "text-brand-royal-purple"
-                )}
-              >
+              <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-brand-royal-purple transition-all duration-200 hover:text-brand-mauve-purple">
                 Learn more <span className="ml-0.5">→</span>
               </div>
             </div>
           </div>
 
-          {/* Floating large icon — pops out bottom-right */}
+          {/* Floating large icon — bottom-right */}
           <motion.div
-            style={{ transform: "translateZ(50px)" }}
-            whileHover={{ scale: 1.12, y: -12, x: 6 }}
+            style={{ transform: "translateZ(40px)" }}
+            whileHover={{ scale: 1.08, y: -8, x: 4 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className={cn(
-              "pointer-events-none absolute -bottom-8 -right-8 h-40 w-40",
-              variant === "primary" ? "text-white/15" : "text-brand-royal-purple/15"
-            )}
+            className="pointer-events-none absolute -bottom-6 -right-6 h-44 w-44 text-brand-royal-purple/20"
           >
             {floatingIcon}
           </motion.div>
