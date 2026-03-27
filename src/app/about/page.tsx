@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GradientDots } from "@/components/ui/gradient-dots";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CTABanner } from "@/components/CTABanner";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -77,13 +78,7 @@ export default function AboutPage() {
 
       {/* ── About Content ── */}
       <section className="relative bg-white py-20 md:py-28">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.23) 1.5px, transparent 1.5px)',
-            backgroundSize: '20px 20px'
-          }}
-        />
+        <GradientDots duration={40} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <SectionHeading title="Built by someone who gets it." centered />
 
@@ -121,13 +116,7 @@ export default function AboutPage() {
 
       {/* ── Values Section ── */}
       <section className="relative bg-brand-frosted-blue/30 py-20 md:py-28">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'linear-gradient(rgba(141, 75, 187, 0.13) 1px, transparent 1px), linear-gradient(90deg, rgba(141, 75, 187, 0.13) 1px, transparent 1px)',
-            backgroundSize: '28px 28px'
-          }}
-        />
+        <GradientDots duration={50} dotSize={6} spacing={14} />
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading title="What we stand for." centered />
 

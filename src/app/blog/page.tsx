@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { GradientDots } from "@/components/ui/gradient-dots";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CTABanner } from "@/components/CTABanner";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -63,13 +64,7 @@ export default function BlogPage() {
 
       {/* ── Blog Posts Grid ── */}
       <section className="relative bg-white py-20 md:py-28">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.23) 1.5px, transparent 1.5px)',
-            backgroundSize: '20px 20px'
-          }}
-        />
+        <GradientDots duration={40} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <SectionHeading
             title="Latest posts."

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Suspense } from "react";
+import { GradientDots } from "@/components/ui/gradient-dots";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
@@ -105,13 +106,7 @@ export default function ContactPage() {
 
       {/* ── Contact Section ── */}
       <section id="book" className="relative bg-white py-20 md:py-28">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.23) 1.5px, transparent 1.5px)',
-            backgroundSize: '20px 20px'
-          }}
-        />
+        <GradientDots duration={40} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Left: Contact Form */}

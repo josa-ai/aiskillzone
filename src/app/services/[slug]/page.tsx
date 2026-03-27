@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { GradientDots } from "@/components/ui/gradient-dots";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { services } from "@/lib/services-data";
@@ -579,13 +580,7 @@ export default async function ServiceDetailPage({
 
       {/* ── Problem (PAS — Problem) ── */}
       <section className="relative bg-white py-20 md:py-28">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.23) 1.5px, transparent 1.5px)',
-            backgroundSize: '20px 20px'
-          }}
-        />
+        <GradientDots duration={40} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <SectionHeading title="The problem." centered={false} />
           <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
@@ -596,13 +591,7 @@ export default async function ServiceDetailPage({
 
       {/* ── Agitation (PAS — Agitation) ── */}
       <section className="relative bg-brand-frosted-blue/30 py-20 md:py-28">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'linear-gradient(rgba(141, 75, 187, 0.13) 1px, transparent 1px), linear-gradient(90deg, rgba(141, 75, 187, 0.13) 1px, transparent 1px)',
-            backgroundSize: '28px 28px'
-          }}
-        />
+        <GradientDots duration={50} dotSize={6} spacing={14} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <SectionHeading title="What's it costing you?" centered={false} />
           <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
@@ -613,13 +602,7 @@ export default async function ServiceDetailPage({
 
       {/* ── Solution (PAS — Solution) ── */}
       <section className="relative bg-white py-20 md:py-28">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(141, 75, 187, 0.23) 1.5px, transparent 1.5px)',
-            backgroundSize: '20px 20px'
-          }}
-        />
+        <GradientDots duration={45} dotSize={6} spacing={12} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <SectionHeading title="How we solve it." centered={false} />
           <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
@@ -647,13 +630,7 @@ export default async function ServiceDetailPage({
 
       {/* ── FAQ ── */}
       <section className="relative bg-brand-soft-lavender py-20 md:py-28">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'linear-gradient(rgba(141, 75, 187, 0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(141, 75, 187, 0.10) 1px, transparent 1px)',
-            backgroundSize: '28px 28px'
-          }}
-        />
+        <GradientDots duration={55} dotSize={6} spacing={14} />
         <div className="mx-auto max-w-3xl px-6">
           <SectionHeading title="Frequently asked questions." centered={false} />
           <div className="mt-10">
