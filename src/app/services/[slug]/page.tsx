@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { GradientDots } from "@/components/ui/gradient-dots";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { services } from "@/lib/services-data";
@@ -580,21 +579,27 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── Problem (PAS — Problem) ── */}
-      <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={3} spacing={16} />
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <SectionHeading title="The problem." centered={false} />
-          <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
-            {data.problem}
-          </p>
+      <section className="bg-white py-10 md:py-14">
+        <div className="mx-auto max-w-3xl px-6">
+          <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
+            The Challenge
+          </span>
+          <div className="border-l-4 border-brand-royal-purple pl-6">
+            <SectionHeading title="The problem." centered={false} />
+            <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
+              {data.problem}
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ── Agitation (PAS — Agitation) ── */}
-      <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={3} spacing={16} />
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+      <section className="bg-white py-10 md:py-14">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="overflow-hidden rounded-2xl border-t-4 border-brand-royal-purple bg-gray-50 p-8 md:p-10">
+            <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
+              The Cost
+            </span>
             <SectionHeading title="What's it costing you?" centered={false} />
             <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
               {data.agitation}
@@ -604,9 +609,8 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── Solution (PAS — Solution) ── */}
-      <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={45} dotSize={3} spacing={16} />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
+      <section className="bg-white py-10 md:py-14">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <SectionHeading title="How we solve it." centered />
             <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
@@ -628,10 +632,12 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── FAQ ── */}
-      <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={3} spacing={16} />
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+      <section className="bg-white py-10 md:py-14">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="overflow-hidden rounded-2xl bg-gray-50 p-8 md:p-10">
+            <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
+              FAQs
+            </span>
             <SectionHeading title="Frequently asked questions." centered={false} />
             <div className="mt-10">
               <FAQAccordion faqs={data.faqs} />
@@ -651,7 +657,7 @@ export default async function ServiceDetailPage({
 
       {/* ── Related Services ── */}
       {relatedServices.length > 0 && (
-        <section className="bg-white py-10 md:py-14">
+        <section className="bg-gray-50 py-10 md:py-14">
           <div className="mx-auto max-w-6xl px-6">
             <SectionHeading title="Related services." centered />
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Suspense } from "react";
-import { GradientDots } from "@/components/ui/gradient-dots";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
@@ -105,9 +104,8 @@ export default function ContactPage() {
       </section>
 
       {/* ── Contact Section ── */}
-      <section id="book" className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={3} spacing={16} />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
+      <section id="book" className="bg-white py-10 md:py-14">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Left: Contact Form */}
             <div>
@@ -134,7 +132,7 @@ export default function ContactPage() {
                 Prefer to reach out directly? Here&rsquo;s how.
               </p>
 
-              <Card className="mt-8 flex min-h-[300px] flex-col border-0 bg-brand-frosted-blue/40 ring-1 ring-brand-soft-lavender/60">
+              <Card className="mt-8 flex min-h-[300px] flex-col border-0 bg-gray-50">
                 <CardContent className="flex flex-1 flex-col space-y-6 p-6">
                   {contactInfo.map((item) => (
                     <div key={item.label} className="flex items-start gap-4">

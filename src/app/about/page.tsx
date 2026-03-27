@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { GradientDots } from "@/components/ui/gradient-dots";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CTABanner } from "@/components/CTABanner";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -77,9 +76,8 @@ export default function AboutPage() {
       </section>
 
       {/* ── About Content ── */}
-      <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={3} spacing={16} />
-        <div className="relative z-10 mx-auto max-w-4xl px-6">
+      <section className="bg-white py-10 md:py-14">
+        <div className="mx-auto max-w-4xl px-6">
           <SectionHeading title="Built by someone who gets it." centered />
 
           <div className="mt-10 space-y-6 text-lg leading-relaxed text-brand-deep-navy/80">
@@ -90,7 +88,7 @@ export default function AboutPage() {
               firsthand how the right technology can transform a business — and
               how the wrong approach can waste time and money.
             </p>
-            <p>
+            <p className="rounded-xl border-l-4 border-brand-royal-purple bg-gray-50 py-4 pl-6 pr-4 font-medium text-brand-deep-navy">
               After years of helping businesses navigate digital transformation,
               the mission became clear:{" "}
               <strong className="text-brand-deep-navy">
@@ -115,17 +113,16 @@ export default function AboutPage() {
       </section>
 
       {/* ── Values Section ── */}
-      <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={3} spacing={16} />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+      <section className="bg-white py-10 md:py-14">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="rounded-2xl bg-gray-50 p-8 md:p-10">
             <SectionHeading title="What we stand for." centered />
 
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((value) => (
                 <Card
                   key={value.title}
-                  className="flex min-h-[240px] flex-col border-0 bg-white p-6 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
+                  className="flex min-h-[240px] flex-col border-0 border-t-4 border-brand-royal-purple bg-white p-6 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
                 >
                   <CardContent className="flex flex-1 flex-col gap-3 p-0">
                     <span
