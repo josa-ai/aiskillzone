@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
   Accessibility,
@@ -118,18 +119,22 @@ interface IncludeCardProps {
   title: string;
   icon: string;
   index: number;
+  serviceSlug: string;
 }
 
-export function IncludeCard({ title, icon, index }: IncludeCardProps) {
-  const Icon = ICON_MAP[icon] ?? Paintbrush;
-  const gradient = GRADIENTS[index % GRADIENTS.length];
+export function IncludeCard({ title, index, serviceSlug }: IncludeCardProps) {
+  const imagePath = `/images/services/includes/${serviceSlug}/${index}.jpg`;
 
   return (
     <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md hover:shadow-brand-soft-lavender/30">
-      <div
-        className={`flex h-36 items-center justify-center bg-gradient-to-br ${gradient}`}
-      >
-        <Icon className="h-10 w-10 text-white/90" />
+      <div className="relative h-40">
+        <Image
+          src={imagePath}
+          alt={title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
       </div>
       <div className="p-4">
         <p className="text-sm font-semibold leading-snug text-brand-deep-navy">

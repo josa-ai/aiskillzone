@@ -607,8 +607,8 @@ export default async function ServiceDetailPage({
       <section className="relative bg-white py-10 md:py-14">
         <GradientDots duration={45} dotSize={3} spacing={16} />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading title="How we solve it." centered={false} />
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionHeading title="How we solve it." centered />
             <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
               {data.solution}
             </p>
@@ -620,6 +620,7 @@ export default async function ServiceDetailPage({
                 title={item.title}
                 icon={item.icon}
                 index={i}
+                serviceSlug={data.slug}
               />
             ))}
           </div>
