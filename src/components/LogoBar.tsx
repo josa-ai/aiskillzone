@@ -1,137 +1,20 @@
 "use client";
 
+import Image from "next/image";
+
 const logos = [
-  {
-    name: "Claude",
-    svg: (
-      <svg viewBox="0 0 100 24" className="h-6 w-auto" aria-label="Claude">
-        <text
-          x="50"
-          y="17"
-          textAnchor="middle"
-          fontFamily="system-ui, sans-serif"
-          fontSize="16"
-          fontWeight="600"
-          fill="currentColor"
-        >
-          Claude
-        </text>
-      </svg>
-    ),
-  },
-  {
-    name: "OpenAI",
-    svg: (
-      <svg viewBox="0 0 100 24" className="h-6 w-auto" aria-label="OpenAI">
-        <text
-          x="50"
-          y="17"
-          textAnchor="middle"
-          fontFamily="system-ui, sans-serif"
-          fontSize="16"
-          fontWeight="600"
-          fill="currentColor"
-        >
-          OpenAI
-        </text>
-      </svg>
-    ),
-  },
-  {
-    name: "Gemini",
-    svg: (
-      <svg viewBox="0 0 100 24" className="h-6 w-auto" aria-label="Gemini">
-        <text
-          x="50"
-          y="17"
-          textAnchor="middle"
-          fontFamily="system-ui, sans-serif"
-          fontSize="16"
-          fontWeight="600"
-          fill="currentColor"
-        >
-          Gemini
-        </text>
-      </svg>
-    ),
-  },
-  {
-    name: "Minimax",
-    svg: (
-      <svg viewBox="0 0 110 24" className="h-6 w-auto" aria-label="Minimax">
-        <text
-          x="55"
-          y="17"
-          textAnchor="middle"
-          fontFamily="system-ui, sans-serif"
-          fontSize="16"
-          fontWeight="600"
-          fill="currentColor"
-        >
-          Minimax
-        </text>
-      </svg>
-    ),
-  },
-  {
-    name: "Next.js",
-    svg: (
-      <svg viewBox="0 0 110 24" className="h-6 w-auto" aria-label="Next.js">
-        <text
-          x="55"
-          y="17"
-          textAnchor="middle"
-          fontFamily="system-ui, sans-serif"
-          fontSize="16"
-          fontWeight="600"
-          fill="currentColor"
-        >
-          ▲ Next.js
-        </text>
-      </svg>
-    ),
-  },
-  {
-    name: "Vercel",
-    svg: (
-      <svg viewBox="0 0 100 24" className="h-6 w-auto" aria-label="Vercel">
-        <text
-          x="50"
-          y="17"
-          textAnchor="middle"
-          fontFamily="system-ui, sans-serif"
-          fontSize="16"
-          fontWeight="600"
-          fill="currentColor"
-        >
-          ▲ Vercel
-        </text>
-      </svg>
-    ),
-  },
-  {
-    name: "Supabase",
-    svg: (
-      <svg viewBox="0 0 120 24" className="h-6 w-auto" aria-label="Supabase">
-        <text
-          x="60"
-          y="17"
-          textAnchor="middle"
-          fontFamily="system-ui, sans-serif"
-          fontSize="16"
-          fontWeight="600"
-          fill="currentColor"
-        >
-          Supabase
-        </text>
-      </svg>
-    ),
-  },
+  { name: "Claude",   file: "/images/logos/anthropic.svg",    w: 24, h: 24 },
+  { name: "OpenAI",   file: "/images/logos/openai.svg",       w: 24, h: 24 },
+  { name: "Gemini",   file: "/images/logos/googlegemini.svg", w: 24, h: 24 },
+  { name: "Minimax",  file: "/images/logos/minimax.svg",      w: 24, h: 24 },
+  { name: "Next.js",  file: "/images/logos/nextdotjs.svg",    w: 24, h: 24 },
+  { name: "Vercel",   file: "/images/logos/vercel.svg",       w: 24, h: 24 },
+  { name: "Supabase", file: "/images/logos/supabase.svg",     w: 24, h: 24 },
 ];
 
 function Separator() {
   return (
-    <span className="mx-6 text-brand-soft-lavender/60 select-none" aria-hidden="true">
+    <span className="mx-8 text-brand-soft-lavender/60 select-none" aria-hidden="true">
       &bull;
     </span>
   );
@@ -157,10 +40,18 @@ export function LogoBar() {
         >
           {[...logos, ...logos].map((logo, i) => (
             <div key={`${logo.name}-${i}`} className="flex items-center">
-              <div
-                className="flex-shrink-0 text-brand-deep-navy transition-all duration-300 grayscale opacity-50 hover:grayscale-0 hover:opacity-100"
-              >
-                {logo.svg}
+              <div className="flex shrink-0 items-center gap-2.5 grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100">
+                <Image
+                  src={logo.file}
+                  alt={logo.name}
+                  width={logo.w}
+                  height={logo.h}
+                  className="h-6 w-auto"
+                  unoptimized
+                />
+                <span className="text-sm font-semibold text-brand-deep-navy">
+                  {logo.name}
+                </span>
               </div>
               <Separator />
             </div>
