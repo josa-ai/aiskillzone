@@ -1,6 +1,8 @@
 import { put } from "@vercel/blob";
 import { NextRequest, NextResponse } from "next/server";
 
+const KIE_API_KEY = process.env.KI_EAI_API_KEY ?? "";
+
 // Kie.ai callback payload: { code, msg, data: { taskId, info: { resultImageUrl, originImageUrl } } }
 interface KieCallbackPayload {
   code: number;
@@ -21,6 +23,21 @@ function extractImageUrl(payload: KieCallbackPayload): string | null {
   return info.resultImageUrl || info.result_urls?.[0] || null;
 }
 
+async function getDownloadUrl(imageUrl: string): Promise<string> {
+  // Kie.ai resultImageUrls are short-lived signed URLs — convert to a direct download link
+  const res = await fetch("https://api.kie.ai/api/v1/common/download-url", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${KIE_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ url: imageUrl }),
+  });
+  if (!res.ok) return imageUrl; // fall back to original URL
+  const json = await res.json() as { code?: number; data?: string };
+  return (json.code === 200 && json.data) ? json.data : imageUrl;
+}
+
 export async function POST(request: NextRequest) {
   const slug = request.nextUrl.searchParams.get("slug") ?? "unknown";
   let rawText = "";
@@ -34,10 +51,13 @@ export async function POST(request: NextRequest) {
     console.log(`KIE|${slug}|code=${payload.code}|${imageUrl ?? "NO_URL"}|taskId=${taskId}`);
 
     if (payload.code === 200 && imageUrl) {
-      // Fetch the image from Kie.ai and upload to Vercel Blob
-      const imgRes = await fetch(imageUrl);
+      // Get a fresh direct download URL from Kie.ai
+      const downloadUrl = await getDownloadUrl(imageUrl);
+      console.log(`KIE|${slug}|DOWNLOAD_URL|${downloadUrl}`);
+
+      const imgRes = await fetch(downloadUrl);
       if (!imgRes.ok) {
-        console.error(`KIE|${slug}|FETCH_FAIL|${imgRes.status}|${imageUrl}`);
+        console.error(`KIE|${slug}|FETCH_FAIL|${imgRes.status}|${downloadUrl}`);
         return NextResponse.json({ error: `image fetch failed: ${imgRes.status}` }, { status: 502 });
       }
       const blob = await imgRes.blob();
@@ -56,7 +76,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: payload.msg ?? "failed" }, { status: 200 });
     }
 
-    // code 200 but no image URL yet (shouldn't happen but handle gracefully)
     return NextResponse.json({ received: true, slug, code: payload.code });
   } catch (error) {
     console.error(`KIE|${slug}|PARSE_ERROR|${String(error)}|raw=${rawText.slice(0, 200)}`);
