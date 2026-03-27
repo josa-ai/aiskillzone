@@ -18,38 +18,31 @@ function extractImageUrl(output: KieCallbackPayload["output"]): string | null {
 }
 
 export async function POST(request: NextRequest) {
+  const slug = request.nextUrl.searchParams.get("slug") ?? "unknown";
+  let rawText = "";
   try {
-    // Slug can be passed as a query param: /api/kie-callback?slug=about
-    const slug =
-      request.nextUrl.searchParams.get("slug") ?? "unknown";
+    rawText = await request.text();
+    const payload = JSON.parse(rawText) as KieCallbackPayload & Record<string, unknown>;
 
-    const payload: KieCallbackPayload = await request.json();
-    console.log(`[kie-callback] RAW slug=${slug}`, JSON.stringify(payload));
+    // Single log line with everything — easier to find in Vercel logs
+    const status: string = payload.status ?? (payload.taskStatus as string) ?? "unknown";
+    const imageUrl = extractImageUrl(payload.output ?? (payload.data as KieCallbackPayload["output"]));
+    console.log(`KIE|${slug}|${status}|${imageUrl ?? "NO_URL"}|taskId=${payload.taskId ?? "none"}`);
 
-    const status = payload.status;
-
-    if (status === "completed" || status === "success") {
-      const imageUrl = extractImageUrl(payload.output);
+    if (status === "completed" || status === "success" || status === "succeed") {
       if (!imageUrl) {
-        console.log(`[kie-callback] COMPLETED_NO_URL slug=${slug} taskId=${payload.taskId}`);
         return NextResponse.json({ error: "completed but no image URL" }, { status: 422 });
       }
-      // This log line is parsed by the local download script
-      console.log(`[kie-callback] IMAGE_READY|${slug}|${imageUrl}`);
       return NextResponse.json({ success: true, slug, url: imageUrl });
     }
 
-    if (status === "failed") {
-      const err = payload.output?.error ?? "unknown";
-      console.log(`[kie-callback] FAILED|${slug}|${err}`);
-      return NextResponse.json({ error: err }, { status: 200 });
+    if (status === "failed" || status === "error") {
+      return NextResponse.json({ error: payload.output?.error ?? "failed" }, { status: 200 });
     }
 
-    // pending / processing — just acknowledge
-    console.log(`[kie-callback] STATUS|${slug}|${status}`);
     return NextResponse.json({ received: true, slug, status });
   } catch (error) {
-    console.error("[kie-callback] parse error:", error);
+    console.error(`KIE|${slug}|PARSE_ERROR|${String(error)}|raw=${rawText.slice(0, 200)}`);
     return NextResponse.json({ error: String(error) }, { status: 500 });
   }
 }
