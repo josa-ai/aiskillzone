@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
     const imageUrl = extractImageUrl(output);
     const taskId = (data.taskId as string) ?? (data.recordId as string) ?? "none";
 
+    console.log(`KIE_RAW|${slug}|${rawText.slice(0, 800)}`);
     console.log(`KIE|${slug}|${status}|${imageUrl ?? "NO_URL"}|taskId=${taskId}`);
 
     if (status === "completed" || status === "success" || status === "succeed") {
