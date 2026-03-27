@@ -1,21 +1,24 @@
 import { put } from "@vercel/blob";
 import { NextRequest, NextResponse } from "next/server";
 
+// Kie.ai callback payload: { code, msg, data: { taskId, info: { resultImageUrl, originImageUrl } } }
 interface KieCallbackPayload {
-  taskId: string;
-  recordId: string;
-  status: "pending" | "processing" | "completed" | "failed" | "success";
-  output?: {
-    images?: string[];
-    image_url?: string;
-    url?: string;
-    error?: string;
+  code: number;
+  msg?: string;
+  data?: {
+    taskId?: string;
+    info?: {
+      resultImageUrl?: string;
+      originImageUrl?: string;
+      result_urls?: string[];
+    } | null;
   };
 }
 
-function extractImageUrl(output: KieCallbackPayload["output"]): string | null {
-  if (!output) return null;
-  return output.images?.[0] ?? output.image_url ?? output.url ?? null;
+function extractImageUrl(payload: KieCallbackPayload): string | null {
+  const info = payload.data?.info;
+  if (!info) return null;
+  return info.resultImageUrl || info.result_urls?.[0] || null;
 }
 
 export async function POST(request: NextRequest) {
@@ -23,28 +26,14 @@ export async function POST(request: NextRequest) {
   let rawText = "";
   try {
     rawText = await request.text();
-    const raw = JSON.parse(rawText) as Record<string, unknown>;
+    const payload = JSON.parse(rawText) as KieCallbackPayload;
 
-    // Kie.ai wraps the payload: { code: 200, data: { taskId, status, output } }
-    // Fall back to flat structure just in case
-    const data = (raw.data as Record<string, unknown> | undefined) ?? raw;
+    const taskId = payload.data?.taskId ?? "none";
+    const imageUrl = extractImageUrl(payload);
 
-    const status: string =
-      (data.status as string) ??
-      (data.taskStatus as string) ??
-      "unknown";
-    const output = data.output as KieCallbackPayload["output"] | undefined;
-    const imageUrl = extractImageUrl(output);
-    const taskId = (data.taskId as string) ?? (data.recordId as string) ?? "none";
+    console.log(`KIE|${slug}|code=${payload.code}|${imageUrl ?? "NO_URL"}|taskId=${taskId}`);
 
-    console.log(`KIE_RAW|${slug}|${rawText.slice(0, 800)}`);
-    console.log(`KIE|${slug}|${status}|${imageUrl ?? "NO_URL"}|taskId=${taskId}`);
-
-    if (status === "completed" || status === "success" || status === "succeed") {
-      if (!imageUrl) {
-        return NextResponse.json({ error: "completed but no image URL" }, { status: 422 });
-      }
-
+    if (payload.code === 200 && imageUrl) {
       // Fetch the image from Kie.ai and upload to Vercel Blob
       const imgRes = await fetch(imageUrl);
       if (!imgRes.ok) {
@@ -62,11 +51,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true, slug, url: blobUrl });
     }
 
-    if (status === "failed" || status === "error") {
-      return NextResponse.json({ error: output?.error ?? "failed" }, { status: 200 });
+    if (payload.code !== 200) {
+      console.error(`KIE|${slug}|FAILED|code=${payload.code}|${payload.msg}`);
+      return NextResponse.json({ error: payload.msg ?? "failed" }, { status: 200 });
     }
 
-    return NextResponse.json({ received: true, slug, status });
+    // code 200 but no image URL yet (shouldn't happen but handle gracefully)
+    return NextResponse.json({ received: true, slug, code: payload.code });
   } catch (error) {
     console.error(`KIE|${slug}|PARSE_ERROR|${String(error)}|raw=${rawText.slice(0, 200)}`);
     return NextResponse.json({ error: String(error) }, { status: 500 });
