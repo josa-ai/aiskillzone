@@ -48,6 +48,7 @@ export async function POST(request: NextRequest) {
     const taskId = payload.data?.taskId ?? "none";
     const imageUrl = extractImageUrl(payload);
 
+    console.log(`KIE_RAW|${slug}|${rawText.slice(0, 600)}`);
     console.log(`KIE|${slug}|code=${payload.code}|${imageUrl ?? "NO_URL"}|taskId=${taskId}`);
 
     if (payload.code === 200 && imageUrl) {
