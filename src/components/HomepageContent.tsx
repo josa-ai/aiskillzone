@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { LogoBar } from "@/components/LogoBar";
@@ -105,12 +106,33 @@ export function HomepageContent() {
             />
           </AnimatedSection>
 
-          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {/* Bento Grid Layout */}
-            {/* Row 1: Large featured card (spans 2 cols) + 1 regular card */}
+          <div className="mt-14 flex flex-col gap-4 lg:flex-row">
+            {/* Left: Photo panel */}
+            <AnimatedSection delay={0} className="lg:w-2/5 flex-shrink-0">
+              <div className="relative h-72 overflow-hidden rounded-2xl shadow-xl shadow-brand-royal-purple/15 lg:h-full lg:min-h-[640px]">
+                <Image
+                  src="/images/frustrated-owner.jpg"
+                  alt="Frustrated business owner overwhelmed by work"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                {/* Subtle gradient overlay at bottom */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-midnight-plum/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-lg font-bold leading-snug text-white">Sound familiar?</p>
+                  <p className="mt-1 text-sm text-white/80">Most small business owners feel this way. There&apos;s a better way.</p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Right: 2×2 bento cards */}
+            <div className="grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2">
+
+            {/* Card 1 */}
             <AnimatedSection
-              delay={0}
-              className="md:col-span-2 lg:col-span-2"
+              delay={0.1}
+              className=""
             >
               <motion.div
                 whileHover={{ scale: 1.02, y: -4 }}
@@ -165,7 +187,7 @@ export function HomepageContent() {
             </AnimatedSection>
 
             {/* Card 2 */}
-            <AnimatedSection delay={0.1}>
+            <AnimatedSection delay={0.2}>
               <motion.div
                 whileHover={{ scale: 1.02, y: -4 }}
                 whileTap={{ scale: 0.98 }}
@@ -210,8 +232,8 @@ export function HomepageContent() {
               </motion.div>
             </AnimatedSection>
 
-            {/* Row 2: 2 regular cards */}
-            <AnimatedSection delay={0.2}>
+            {/* Card 3 */}
+            <AnimatedSection delay={0.3}>
               <motion.div
                 whileHover={{ scale: 1.02, y: -4 }}
                 whileTap={{ scale: 0.98 }}
@@ -256,7 +278,8 @@ export function HomepageContent() {
               </motion.div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.3}>
+            {/* Card 4 */}
+            <AnimatedSection delay={0.4}>
               <motion.div
                 whileHover={{ scale: 1.02, y: -4 }}
                 whileTap={{ scale: 0.98 }}
@@ -269,7 +292,7 @@ export function HomepageContent() {
                     initial={{ scaleY: 0 }}
                     whileInView={{ scaleY: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
                   />
                   <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-royal-purple/10 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
                   <CardContent className="relative flex flex-1 flex-col gap-4 p-0 pl-4">
@@ -300,7 +323,8 @@ export function HomepageContent() {
                 </Card>
               </motion.div>
             </AnimatedSection>
-          </div>
+            </div>{/* end cards grid */}
+          </div>{/* end flex row */}
         </div>
       </section>
 
