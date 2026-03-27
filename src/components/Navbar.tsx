@@ -98,7 +98,7 @@ export function Navbar() {
               alt="JOSA.AI"
               width={160}
               height={160}
-              className="h-10 w-auto transition-all group-hover:drop-shadow-lg"
+              className="h-16 w-auto transition-all group-hover:drop-shadow-lg"
               priority
             />
           </motion.div>
@@ -243,10 +243,12 @@ export function Navbar() {
                 }`}
               >
                 {link.label}
-                <motion.span
-                  className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-brand-royal-purple transition-all group-hover:w-full"
-                  animate={{ width: isActive(link.href) ? "100%" : 0 }}
-                  style={{ left: "50%", transform: "translateX(-50%)" }}
+                <span
+                  className={`absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-brand-royal-purple origin-left transition-transform duration-200 ${
+                    isActive(link.href)
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
                 />
               </Link>
             </motion.div>
