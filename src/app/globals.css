@@ -518,3 +518,14 @@
   background-size: 100% 40px;
   background-repeat: no-repeat;
 }
+
+/* Service detail page — section background tints */
+.bg-lavender-tint-light {
+  background: linear-gradient(135deg, #F3EBF9 0%, #EDE4F7 100%);
+}
+.bg-lavender-tint-medium {
+  background: linear-gradient(180deg, #EDE4F7 0%, #E3D4F3 100%);
+}
+.bg-cta-bridge {
+  background: linear-gradient(180deg, #E3D4F3 0%, #421C52 100%);
+}

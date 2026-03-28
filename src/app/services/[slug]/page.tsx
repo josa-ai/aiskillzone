@@ -579,45 +579,68 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── Problem (PAS — Problem) ── */}
-      <section className="bg-white py-10 md:py-14">
-        <div className="mx-auto max-w-3xl px-6">
-          <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
-            The Challenge
-          </span>
-          <div className="border-l-4 border-brand-royal-purple pl-6">
-            <SectionHeading title="The problem." centered={false} />
-            <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
-              {data.problem}
-            </p>
+      <section className="bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="relative">
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute -top-4 right-0 select-none text-[120px] font-black leading-none text-brand-soft-lavender/50"
+            >
+              01
+            </span>
+            <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
+              The Challenge
+            </span>
+            <div className="border-l-4 border-brand-royal-purple pl-6">
+              <SectionHeading title="The problem." centered={false} />
+              <p className="mt-6 text-xl font-medium leading-relaxed text-brand-deep-navy">
+                {data.problem.split(". ")[0]}.
+              </p>
+              <p className="mt-3 text-lg leading-relaxed text-brand-deep-navy/70">
+                {data.problem.split(". ").slice(1).join(". ")}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── Agitation (PAS — Agitation) ── */}
-      <section className="bg-white py-10 md:py-14">
-        <div className="mx-auto max-w-3xl px-6">
-          <div className="overflow-hidden rounded-2xl border-t-4 border-brand-royal-purple bg-gray-50 p-8 md:p-10">
-            <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
-              The Cost
-            </span>
-            <SectionHeading title="What's it costing you?" centered={false} />
-            <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
-              {data.agitation}
-            </p>
+      <section className="bg-lavender-tint-light py-12 md:py-16">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl shadow-brand-royal-purple/10">
+            <div className="h-1.5 w-full bg-gradient-to-r from-brand-royal-purple via-brand-mauve-purple to-brand-tech-blue" />
+            <div className="p-8 md:p-12">
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute right-6 top-6 select-none text-[100px] font-black leading-none text-brand-soft-lavender/40"
+              >
+                02
+              </span>
+              <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
+                The Cost
+              </span>
+              <SectionHeading title="What's it costing you?" centered={false} />
+              <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
+                {data.agitation}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── Solution (PAS — Solution) ── */}
-      <section className="bg-white py-10 md:py-14">
+      <section className="bg-white py-12 md:py-18">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
+            <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
+              What&apos;s Included
+            </span>
             <SectionHeading title="How we solve it." centered />
             <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
               {data.solution}
             </p>
           </div>
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {data.includes.map((item, i) => (
               <IncludeCard
                 key={item.title}
@@ -632,19 +655,31 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── FAQ ── */}
-      <section className="bg-white py-10 md:py-14">
-        <div className="mx-auto max-w-3xl px-6">
-          <div className="overflow-hidden rounded-2xl bg-gray-50 p-8 md:p-10">
+      <section className="bg-lavender-tint-medium py-12 md:py-16">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg shadow-brand-royal-purple/10 md:p-12">
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute right-6 top-6 select-none text-[100px] font-black leading-none text-brand-soft-lavender/40"
+            >
+              04
+            </span>
             <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
               FAQs
             </span>
             <SectionHeading title="Frequently asked questions." centered={false} />
-            <div className="mt-10">
-              <FAQAccordion faqs={data.faqs} />
+            <p className="mt-3 text-base text-brand-deep-navy/60">
+              Everything you need to know before we talk.
+            </p>
+            <div className="mt-8">
+              <FAQAccordion faqs={data.faqs} variant="branded" />
             </div>
           </div>
         </div>
       </section>
+
+      {/* ── Gradient bridge ── */}
+      <div aria-hidden="true" className="bg-cta-bridge h-24 w-full" />
 
       {/* ── CTA ── */}
       <CTABanner
@@ -657,10 +692,13 @@ export default async function ServiceDetailPage({
 
       {/* ── Related Services ── */}
       {relatedServices.length > 0 && (
-        <section className="bg-gray-50 py-10 md:py-14">
+        <section className="bg-gray-50 py-12 md:py-16">
           <div className="mx-auto max-w-6xl px-6">
             <SectionHeading title="Related services." centered />
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <p className="mx-auto mt-3 max-w-xl text-center text-base text-brand-deep-navy/60">
+              Other ways we help businesses like yours grow.
+            </p>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {relatedServices.map((rs) =>
                 rs ? (
                   <ServiceCard

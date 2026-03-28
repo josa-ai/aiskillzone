@@ -13,9 +13,10 @@ interface FAQ {
 interface FAQAccordionProps {
   faqs: FAQ[];
   showSchema?: boolean;
+  variant?: "default" | "branded";
 }
 
-export function FAQAccordion({ faqs, showSchema = true }: FAQAccordionProps) {
+export function FAQAccordion({ faqs, showSchema = true, variant = "default" }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -53,7 +54,12 @@ export function FAQAccordion({ faqs, showSchema = true }: FAQAccordionProps) {
           return (
             <div
               key={index}
-              className="rounded-lg border border-brand-cool-azure overflow-hidden"
+              className={cn(
+                "overflow-hidden rounded-lg border",
+                variant === "branded"
+                  ? "border-brand-royal-purple/30 bg-white/70"
+                  : "border-brand-cool-azure"
+              )}
             >
               <button
                 id={buttonId}
@@ -62,8 +68,10 @@ export function FAQAccordion({ faqs, showSchema = true }: FAQAccordionProps) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 className={cn(
-                  "flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-brand-deep-navy font-medium transition-colors hover:bg-brand-soft-lavender",
-                  isOpen && "bg-brand-soft-lavender"
+                  "flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-medium text-brand-deep-navy transition-colors",
+                  variant === "branded"
+                    ? cn("hover:bg-brand-royal-purple/10", isOpen && "bg-brand-royal-purple/10")
+                    : cn("hover:bg-brand-soft-lavender", isOpen && "bg-brand-soft-lavender")
                 )}
               >
                 <span>{faq.question}</span>
