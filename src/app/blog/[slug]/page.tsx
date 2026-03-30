@@ -201,7 +201,7 @@ export default async function BlogPostPage({
         title="Need help implementing AI in your business?"
         description="We'll walk you through what's possible and what makes sense for your situation."
         ctaText="Book a free discovery call"
-        ctaLink="/contact"
+        ctaLink="https://link.josa.ai/widget/bookings/tech-audit-calendar"
         variant="secondary"
       />
     </>

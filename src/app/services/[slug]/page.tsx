@@ -570,7 +570,7 @@ export default async function ServiceDetailPage({
             {data.description}
           </p>
           <Link
-            href="/contact"
+            href="https://link.josa.ai/widget/bookings/tech-audit-calendar"
             className="mt-8 inline-flex items-center justify-center rounded-lg bg-brand-royal-purple px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-brand-mauve-purple"
           >
             Book a free discovery call
@@ -686,7 +686,7 @@ export default async function ServiceDetailPage({
         title={data.cta.title}
         description={data.cta.description}
         ctaText={data.cta.ctaText}
-        ctaLink="/contact"
+        ctaLink="https://link.josa.ai/widget/bookings/tech-audit-calendar"
         variant="primary"
       />
 
