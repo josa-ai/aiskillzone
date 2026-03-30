@@ -259,7 +259,7 @@ export function Navbar() {
             whileTap={{ scale: 0.98 }}
           >
             <Button
-              render={<Link href="/contact#book" />}
+              render={<Link href="https://link.josa.ai/widget/bookings/tech-audit-calendar" />}
               className="ml-2 rounded-lg bg-primary text-white transition-all hover:bg-brand-mauve-purple hover:shadow-lg hover:shadow-brand-mauve-purple/20"
             >
               Book a Call
@@ -382,7 +382,7 @@ export function Navbar() {
                   <SheetClose
                     render={
                       <Link
-                        href="/contact#book"
+                        href="https://link.josa.ai/widget/bookings/tech-audit-calendar"
                         className="block w-full rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-brand-mauve-purple"
                       />
                     }

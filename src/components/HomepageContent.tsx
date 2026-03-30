@@ -464,7 +464,7 @@ export function HomepageContent() {
         title="Ready to see what AI can do for your business?"
         description="You don't have to figure this out alone. We'll walk you through what's possible, what makes sense for your situation, and what the next steps look like."
         ctaText="Book a free discovery call"
-        ctaLink="/contact"
+        ctaLink="https://link.josa.ai/widget/bookings/tech-audit-calendar"
         variant="primary"
       />
       <div className="bg-brand-midnight-plum px-6 pb-12 text-center">

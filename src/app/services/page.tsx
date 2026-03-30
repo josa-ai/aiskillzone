@@ -97,7 +97,7 @@ export default function ServicesPage() {
         title="Not sure what you need?"
         description="Let's talk about your business and figure out the right solution together."
         ctaText="Book a free discovery call"
-        ctaLink="/contact"
+        ctaLink="https://link.josa.ai/widget/bookings/tech-audit-calendar"
         variant="primary"
       />
     </>

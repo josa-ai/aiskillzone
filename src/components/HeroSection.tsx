@@ -72,7 +72,7 @@ export function HeroSection() {
         <AnimatedSection delay={0.4} duration={0.6}>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
+              href="https://link.josa.ai/widget/bookings/tech-audit-calendar"
               className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand-royal-purple/30 transition-all hover:bg-brand-mauve-purple hover:shadow-xl hover:shadow-brand-mauve-purple/30 hover:-translate-y-0.5"
             >
               Book a free discovery call

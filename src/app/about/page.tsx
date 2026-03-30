@@ -151,7 +151,7 @@ export default function AboutPage() {
         title="Want to work together?"
         description="Book a free discovery call and let's talk about how AI can help your business."
         ctaText="Book a free discovery call"
-        ctaLink="/contact"
+        ctaLink="https://link.josa.ai/widget/bookings/tech-audit-calendar"
         variant="primary"
       />
     </>
