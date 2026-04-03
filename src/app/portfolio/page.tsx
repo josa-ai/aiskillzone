@@ -95,7 +95,7 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 max-w-7xl mx-auto px-8 relative">
+      <section className="pt-28 md:pt-32 pb-12 md:pb-20 max-w-7xl mx-auto px-4 md:px-8 relative">
         <div className="absolute top-0 right-0 -z-10 opacity-20">
           <div className="w-[500px] h-[500px] rounded-full bg-[#0061ff] blur-[100px]" />
         </div>
@@ -106,7 +106,7 @@ export default function PortfolioPage() {
               Portfolio
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight leading-[1.1] mb-8 font-heading">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight leading-[1.1] mb-6 md:mb-8 font-heading">
             Proven Impact
           </h1>
           <p className="text-xl text-on-surface-variant leading-relaxed font-light">
@@ -118,7 +118,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Project Masonry Gallery */}
-      <section className="max-w-7xl mx-auto px-8 pb-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pb-12 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-0">
           {portfolioItems.map((item) => (
             <div key={item.title} className="masonry-item group flex flex-col">

@@ -138,7 +138,7 @@ export function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -8, scale: 0.95 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute left-0 top-full z-50 mt-2 w-80 rounded-xl border border-slate-200 bg-white/95 backdrop-blur-xl p-4 shadow-xl"
+                  className="absolute right-0 top-full z-50 mt-2 w-72 rounded-xl border border-slate-200 bg-white/95 backdrop-blur-xl p-4 shadow-xl"
                   role="menu"
                   aria-label="Services menu"
                 >

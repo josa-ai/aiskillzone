@@ -305,7 +305,7 @@ export default async function ServiceDetailPage({
     <>
       {/* ── Hero ── */}
       <section className="relative flex items-center overflow-hidden bg-surface pt-20">
-        <div className="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-16">
           <div className="z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low mb-6">
               <span className="w-2 h-2 rounded-full bg-[#004bca] animate-pulse" />
@@ -313,7 +313,7 @@ export default async function ServiceDetailPage({
                 {data.category === "primary" ? "Core Service" : "Additional Service"}
               </span>
             </div>
-            <h1 className="font-heading text-5xl md:text-7xl font-extrabold text-on-surface tracking-tighter leading-tight mb-6">
+            <h1 className="font-heading text-3xl sm:text-5xl md:text-7xl font-extrabold text-on-surface tracking-tighter leading-tight mb-6">
               {data.shortTitle.split(" ")[0]}{" "}
               <span className="text-[#004bca]">
                 {data.shortTitle.split(" ").slice(1).join(" ") || data.shortTitle}
@@ -366,7 +366,7 @@ export default async function ServiceDetailPage({
 
       {/* ── 01 The Problem ── */}
       <section className="bg-surface-container-low py-16 md:py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <div className="relative">
               <div className="text-[8rem] font-heading font-extrabold text-[#004bca]/5 absolute -top-20 -left-8 select-none leading-none">
@@ -407,7 +407,7 @@ export default async function ServiceDetailPage({
 
       {/* ── 02 The Cost ── */}
       <section className="bg-surface py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative max-w-xs mx-auto lg:mx-0">
             <div className="absolute inset-0 bg-[#994700]/5 rounded-full blur-2xl" />
             <div className="relative z-10 flex items-center justify-center">
@@ -440,7 +440,7 @@ export default async function ServiceDetailPage({
 
       {/* ── 03 How We Solve It ── */}
       <section className="bg-surface-container-low py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="mb-12 text-center max-w-2xl mx-auto">
             <div className="relative inline-block">
               <div className="text-[8rem] font-heading font-extrabold text-[#00642d]/5 absolute -top-16 left-1/2 -translate-x-1/2 select-none leading-none">
@@ -493,7 +493,7 @@ export default async function ServiceDetailPage({
 
       {/* ── FAQ ── */}
       <section className="py-16 md:py-20 bg-surface">
-        <div className="max-w-4xl mx-auto px-8">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
           <h2 className="font-heading text-4xl font-bold text-on-surface mb-12 text-center">
             Frequently Asked Questions
           </h2>
@@ -504,7 +504,7 @@ export default async function ServiceDetailPage({
       {/* ── Related Services ── */}
       {data.relatedSlugs.length > 0 && (
         <section className="py-20 bg-surface-container-low">
-          <div className="max-w-7xl mx-auto px-8">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
             <h2 className="font-heading text-3xl font-bold text-on-surface mb-8 text-center">
               Related Services
             </h2>

@@ -12,7 +12,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-8 overflow-hidden bg-mesh-gradient">
+      <section className="relative pt-28 md:pt-32 pb-12 md:pb-20 px-4 md:px-8 overflow-hidden bg-mesh-gradient">
         <div className="max-w-7xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low rounded-full mb-6">
             <span className="w-2 h-2 rounded-full bg-[#004bca] animate-pulse" />
@@ -20,7 +20,7 @@ export default function ServicesPage() {
               Our Expertise
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold font-heading tracking-tight leading-[1.1] text-on-surface mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold font-heading tracking-tight leading-[1.1] text-on-surface mb-6">
             Strategic{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004bca] to-[#0061ff]">
               Solutions
@@ -35,7 +35,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Core Services */}
-      <section className="py-24 px-8 bg-surface-container-low">
+      <section className="py-14 md:py-24 px-4 md:px-8 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-extrabold font-heading mb-4">
             Core Services
@@ -65,7 +65,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-24 px-8">
+      <section className="py-14 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-extrabold font-heading mb-4">
             Additional Services

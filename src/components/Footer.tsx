@@ -4,9 +4,9 @@ import { primaryServices } from "@/lib/services-data";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-100 w-full pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div className="col-span-1">
+    <footer className="bg-slate-100 w-full pt-12 md:pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="col-span-2 md:col-span-1">
           <Link href="/" className="inline-block mb-6">
             <Image
               src="/images/logo-aiskillzone.png"
@@ -77,7 +77,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 md:mt-16 pt-8 border-t border-slate-200">
         <p className="text-sm leading-relaxed text-slate-500 text-center">
           &copy; 2026 AISkillZone. All rights reserved.
         </p>

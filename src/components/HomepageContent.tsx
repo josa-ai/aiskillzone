@@ -56,10 +56,10 @@ export function HomepageContent() {
       <HeroSection />
 
       {/* Money on the Table */}
-      <section className="py-24 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold font-heading mb-4">
+      <section className="py-14 md:py-24 bg-surface-container-low">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold font-heading mb-4">
               Money on the Table
             </h2>
             <p className="text-on-surface-variant max-w-2xl mx-auto">
@@ -73,7 +73,7 @@ export function HomepageContent() {
               return (
                 <div
                   key={problem.title}
-                  className="bg-surface-container-lowest p-8 rounded-3xl group hover:shadow-[0_20px_40px_rgba(25,28,30,0.06)] transition-all duration-500 hover:-translate-y-2"
+                  className="bg-surface-container-lowest p-6 md:p-8 rounded-3xl group hover:shadow-[0_20px_40px_rgba(25,28,30,0.06)] transition-all duration-500 hover:-translate-y-2"
                 >
                   <div
                     className={`w-12 h-12 rounded-2xl ${problem.color} flex items-center justify-center mb-6`}
@@ -94,11 +94,11 @@ export function HomepageContent() {
       </section>
 
       {/* Strategic Solutions Bento */}
-      <section className="py-24 px-8 overflow-hidden">
+      <section className="py-14 md:py-24 px-4 md:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
-              <h2 className="text-4xl md:text-5xl font-extrabold font-heading mb-4">
+              <h2 className="text-3xl md:text-5xl font-extrabold font-heading mb-4">
                 Strategic Solutions
               </h2>
               <p className="text-on-surface-variant max-w-xl">
@@ -116,7 +116,7 @@ export function HomepageContent() {
             {/* Website Design — large */}
             <Link
               href="/services/website-design"
-              className="md:col-span-2 relative bg-surface-container-low rounded-[2.5rem] p-10 overflow-hidden group block"
+              className="md:col-span-2 relative bg-surface-container-low rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 overflow-hidden group block"
             >
               <div className="relative z-10">
                 <div className="w-14 h-14 bg-[#004bca] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#004bca]/20">
@@ -145,7 +145,7 @@ export function HomepageContent() {
             {/* Voice AI */}
             <Link
               href="/services/voice-ai"
-              className="bg-surface-container-lowest p-10 rounded-[2.5rem] border border-outline-variant/10 hover:shadow-xl transition-all block"
+              className="bg-surface-container-lowest p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-outline-variant/10 hover:shadow-xl transition-all block"
             >
               <div className="w-14 h-14 bg-[#994700] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#994700]/20">
                 <Mic className="w-7 h-7 text-white" />
@@ -167,7 +167,7 @@ export function HomepageContent() {
             {/* AI Automation */}
             <Link
               href="/services/ai-automation"
-              className="bg-surface-container-lowest p-10 rounded-[2.5rem] border border-outline-variant/10 hover:shadow-xl transition-all block"
+              className="bg-surface-container-lowest p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-outline-variant/10 hover:shadow-xl transition-all block"
             >
               <div className="w-14 h-14 bg-[#00642d] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#00642d]/20">
                 <Bot className="w-7 h-7 text-white" />
@@ -189,7 +189,7 @@ export function HomepageContent() {
             {/* AI Training — large gradient */}
             <Link
               href="/services/ai-training"
-              className="md:col-span-2 bg-gradient-to-br from-[#004bca] to-[#0061ff] p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row items-center gap-10 block"
+              className="md:col-span-2 bg-gradient-to-br from-[#004bca] to-[#0061ff] p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] text-white flex flex-col md:flex-row items-center gap-6 md:gap-10 block"
             >
               <div className="flex-1">
                 <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8">
