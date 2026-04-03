@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { services } from "@/lib/services-data";
 import { FAQAccordion } from "@/components/FAQAccordion";
@@ -340,10 +341,15 @@ export default async function ServiceDetailPage({
             </div>
           </div>
           <div className="relative hidden lg:block">
-            <div className="aspect-square rounded-3xl overflow-hidden bg-surface-container relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#004bca]/10 to-[#0061ff]/5 flex items-center justify-center">
-                <span className="text-8xl">{data.icon}</span>
-              </div>
+            <div className="aspect-[3/2] rounded-3xl overflow-hidden bg-surface-container relative group">
+              <Image
+                src={`/images/services/${data.slug}.jpg`}
+                alt={data.shortTitle}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface/30 to-transparent" />
             </div>
             {/* Floating Insight Chip */}
             <div className="absolute -bottom-6 -left-6 bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-[0_20px_40px_rgba(25,28,30,0.06)] border border-white/20 max-w-[240px]">
@@ -386,11 +392,14 @@ export default async function ServiceDetailPage({
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <div className="aspect-video bg-white rounded-3xl shadow-sm p-8 flex flex-col justify-center items-center">
-              <div className="text-6xl mb-4">{data.icon}</div>
-              <p className="text-center text-xs font-bold text-on-surface-variant uppercase tracking-widest">
-                {data.shortTitle}
-              </p>
+            <div className="aspect-video rounded-3xl shadow-sm overflow-hidden relative">
+              <Image
+                src={`/images/problems/${data.slug}.jpg`}
+                alt={`${data.shortTitle} problem visualization`}
+                fill
+                className="object-cover"
+                sizes="50vw"
+              />
             </div>
           </div>
         </div>
