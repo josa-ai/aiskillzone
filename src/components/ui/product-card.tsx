@@ -78,7 +78,7 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
           <div className="relative z-10 flex flex-col gap-3 p-5">
             {/* Top: category icon + label */}
             <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 bg-gray-50 text-brand-royal-purple">
+              <div className="flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 bg-gray-50 text-[#004bca]">
                 <div className="h-3.5 w-3.5">
                   {categoryIcon}
                 </div>
@@ -99,7 +99,7 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
             </p>
 
             {/* Learn more */}
-            <div className="flex items-center gap-1 text-[13px] font-semibold text-brand-royal-purple transition-colors duration-200 hover:text-brand-mauve-purple">
+            <div className="flex items-center gap-1 text-[13px] font-semibold text-[#004bca] transition-colors duration-200 hover:text-[#0061ff]">
               Learn more <span className="ml-0.5">→</span>
             </div>
           </div>

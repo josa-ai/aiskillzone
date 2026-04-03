@@ -29,19 +29,19 @@ export function CTABanner({
       className={cn(
         "relative overflow-hidden py-16 px-6 md:px-12 lg:px-24",
         variant === "primary"
-          ? "bg-gradient-to-br from-brand-midnight-plum via-brand-royal-purple/90 to-brand-deep-navy text-white"
-          : "bg-brand-soft-lavender text-brand-deep-navy"
+          ? "bg-gradient-to-br from-[#191c1e] via-[#004bca]/90 to-[#191c1e] text-white"
+          : "bg-[#f2f4f6] text-[#191c1e]"
       )}
     >
       {/* Primary variant decorations */}
       {variant === "primary" && (
         <>
           {/* Glowing orbs */}
-          <GlowingOrb className="-left-20 -top-20" color="#8D4BBB" size={400} />
-          <GlowingOrb className="-right-20 -bottom-20" color="#3B82F6" size={350} />
+          <GlowingOrb className="-left-20 -top-20" color="#004bca" size={400} />
+          <GlowingOrb className="-right-20 -bottom-20" color="#0061ff" size={350} />
 
           {/* Floating particles */}
-          <ParticleField count={15} color="#A882EE" className="opacity-60" />
+          <ParticleField count={15} color="#0061ff" className="opacity-60" />
 
           {/* Geometric accents */}
           <div className="pointer-events-none absolute inset-0">
@@ -55,7 +55,7 @@ export function CTABanner({
               transition={{ duration: 3, repeat: Infinity }}
             />
             <motion.div
-              className="absolute right-1/4 top-1/3 h-3 w-3 rounded-full bg-brand-mauve-purple/30"
+              className="absolute right-1/4 top-1/3 h-3 w-3 rounded-full bg-[#0061ff]/30"
               animate={{
                 scale: [1, 1.3, 1],
                 opacity: [0.3, 0.6, 0.3],
@@ -63,7 +63,7 @@ export function CTABanner({
               transition={{ duration: 4, repeat: Infinity, delay: 1 }}
             />
             <motion.div
-              className="absolute bottom-1/3 left-1/3 h-4 w-4 rounded-full bg-brand-tech-blue/20"
+              className="absolute bottom-1/3 left-1/3 h-4 w-4 rounded-full bg-[#004bca]/20"
               animate={{
                 scale: [1, 1.4, 1],
                 opacity: [0.2, 0.5, 0.2],
@@ -73,12 +73,12 @@ export function CTABanner({
 
             {/* Decorative lines */}
             <motion.div
-              className="absolute left-0 top-1/2 h-px w-32 bg-gradient-to-r from-transparent via-brand-mauve-purple/50 to-transparent"
+              className="absolute left-0 top-1/2 h-px w-32 bg-gradient-to-r from-transparent via-[#0061ff]/50 to-transparent"
               animate={{ opacity: [0.3, 0.6, 0.3], x: [-20, 20, -20] }}
               transition={{ duration: 6, repeat: Infinity }}
             />
             <motion.div
-              className="absolute right-0 top-1/3 h-px w-24 bg-gradient-to-l from-transparent via-brand-tech-blue/50 to-transparent"
+              className="absolute right-0 top-1/3 h-px w-24 bg-gradient-to-l from-transparent via-[#004bca]/50 to-transparent"
               animate={{ opacity: [0.3, 0.6, 0.3], x: [20, -20, 20] }}
               transition={{ duration: 5, repeat: Infinity, delay: 1 }}
             />
@@ -89,7 +89,7 @@ export function CTABanner({
 
           {/* Animated ring decoration */}
           <motion.div
-            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-mauve-purple/20"
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#0061ff]/20"
             style={{ width: "120%", height: "200%" }}
             animate={{
               scale: [1, 1.02, 1],
@@ -103,10 +103,10 @@ export function CTABanner({
       {/* Secondary variant decorations */}
       {variant === "secondary" && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-soft-lavender/50 via-white/50 to-brand-soft-lavender/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f2f4f6]/50 via-white/50 to-[#f2f4f6]/50" />
           <div className="pointer-events-none absolute inset-0">
             <motion.div
-              className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-brand-royal-purple/20 to-transparent"
+              className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-[#004bca]/20 to-transparent"
               animate={{ opacity: [0.3, 0.6, 0.3] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
@@ -128,7 +128,7 @@ export function CTABanner({
         <motion.p
           className={cn(
             "mt-4 text-lg md:text-xl",
-            variant === "primary" ? "text-white/80" : "text-brand-deep-navy/80"
+            variant === "primary" ? "text-white/80" : "text-[#191c1e]/80"
           )}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -145,7 +145,7 @@ export function CTABanner({
         >
           <Link
             href={ctaLink}
-            className="group relative mt-8 inline-flex items-center justify-center overflow-hidden rounded-lg bg-primary px-8 py-4 text-base font-semibold text-white shadow-xl transition-all hover:shadow-2xl hover:shadow-brand-mauve-purple/30 hover:-translate-y-1"
+            className="group relative mt-8 inline-flex items-center justify-center overflow-hidden rounded-lg bg-primary px-8 py-4 text-base font-semibold text-white shadow-xl transition-all hover:shadow-2xl hover:shadow-[#0061ff]/30 hover:-translate-y-1"
           >
             {/* Button shimmer effect */}
             <motion.div

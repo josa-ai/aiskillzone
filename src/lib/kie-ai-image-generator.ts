@@ -61,7 +61,7 @@ export async function generateHeroImages(
   onProgress?: (page: string, taskId: string) => void
 ): Promise<{ page: string; taskId: string }[]> {
   const heroPrompts: Record<string, string> = {
-    "about": "Professional business meeting in a modern Central Florida office, warm purple ambient lighting, collaborative team atmosphere, photorealistic, cinematic lighting",
+    "about": "Professional business meeting in a modern office, warm blue ambient lighting, collaborative team atmosphere, photorealistic, cinematic lighting",
     "services": "Futuristic AI service hub with glowing purple holographic interfaces and neural network visualizations, tech-forward atmosphere, photorealistic, cinematic",
     "website-design": "Creative web design studio with large curved monitors showing colorful UI mockups, purple accent lighting, modern workspace, photorealistic",
     "voice-ai": "Futuristic voice AI visualization with glowing sound waves and audio frequency patterns in purple and blue, digital assistant hologram, photorealistic",

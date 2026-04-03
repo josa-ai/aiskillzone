@@ -26,10 +26,10 @@ export function SectionHeading({
         className={cn(
           "text-3xl font-bold md:text-4xl",
           gradient
-            ? "bg-gradient-to-r from-brand-royal-purple via-brand-mauve-purple to-brand-tech-blue bg-clip-text text-transparent text-gradient-animated"
+            ? "bg-gradient-to-r from-[#004bca] via-[#0061ff] to-[#004bca] bg-clip-text text-transparent text-gradient-animated"
             : light
               ? "text-white"
-              : "text-brand-deep-navy"
+              : "text-[#191c1e]"
         )}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export function SectionHeading({
       {underline && (
         <motion.div
           className={cn(
-            "mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-brand-royal-purple to-brand-tech-blue",
+            "mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#004bca] to-[#0061ff]",
             centered && "mx-auto"
           )}
           initial={{ scaleX: 0 }}
@@ -55,7 +55,7 @@ export function SectionHeading({
         <motion.p
           className={cn(
             "mt-4 text-lg",
-            light ? "text-white/80" : "text-brand-deep-navy/80"
+            light ? "text-white/80" : "text-[#191c1e]/80"
           )}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

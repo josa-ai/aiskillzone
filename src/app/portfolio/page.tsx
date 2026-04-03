@@ -1,87 +1,91 @@
 import Image from "next/image";
-import { GradientDots } from "@/components/ui/gradient-dots";
-import { Breadcrumb } from "@/components/Breadcrumb";
-import { CTABanner } from "@/components/CTABanner";
-import { SectionHeading } from "@/components/SectionHeading";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "See our work — websites, AI implementations, and automation projects for Central Florida businesses.",
+    "See our work — websites, AI implementations, and automation projects for businesses.",
 };
 
 const portfolioItems = [
   {
-    title: "U.S. Citizenship Test Prep App",
+    title: "U.S. Citizenship Test",
     description:
-      "Bilingual flashcard app covering all 128 USCIS civics questions with swipe mechanics, progress tracking, and EN/ES support.",
+      "A high-performance preparation platform leveraging AI to personalize study paths for immigrants.",
     category: "Web App",
+    categoryColor: "#004bca",
     image: "/images/portfolio/citizenship.jpg",
     url: "https://citizenshipexam.app",
   },
   {
-    title: "Synced Soccer — Website & Player Management",
+    title: "Synced Soccer",
     description:
-      "Youth soccer academy site with multilingual support, program registration, standings tracker, volunteer portal, and calendar.",
+      "Youth soccer academy platform with multilingual support, player management, and real-time standings.",
     category: "Website + App",
+    categoryColor: "#994700",
     image: "/images/portfolio/syncedsoccer.jpg",
     url: "https://syncedsoccer.com",
   },
   {
-    title: "Melanie Lowery Showings — Real Estate Website",
+    title: "Melanie Lowery Real Estate",
     description:
-      "Interactive real estate website with embedded MLS listings, lead magnets, market reports, and live Florida real estate statistics.",
+      "A sophisticated digital presence for a top-tier agent, featuring AI-driven property matching.",
     category: "Website",
+    categoryColor: "#00642d",
     image: "/images/portfolio/melanie.jpg",
     url: "https://www.melanieloweryshowings.com/",
   },
   {
-    title: "JOSA.AI Blueprint — AI Training Platform",
+    title: "Blueprint AI Training Platform",
     description:
-      "Our own platform for live AI workshops and hands-on courses helping small business owners build practical AI skills.",
+      "Platform for live AI workshops and hands-on courses helping business owners build practical AI skills.",
     category: "Web App",
+    categoryColor: "#004bca",
     image: "/images/portfolio/blueprint.jpg",
-    url: "https://blueprint.josa.ai",
+    url: null,
   },
   {
-    title: "Dos Bocas — Restaurant Website",
+    title: "Dos Bocas",
     description:
-      "Bilingual restaurant website with full menu, online ordering, photo gallery, and contact for an authentic Puerto Rican restaurant.",
+      "Bilingual restaurant website with full menu, online ordering, and immersive photo gallery.",
     category: "Website",
+    categoryColor: "#00642d",
     image: "/images/portfolio/dosbocas.jpg",
     url: "https://dosbocas.vercel.app",
   },
   {
-    title: "Final Exam Challenge — Interactive Game MVP",
+    title: "Final Exam Challenge",
     description:
-      "Gamified quiz app with animated avatar characters, leaderboards, and live scoring — an edtech MVP currently seeking investment.",
+      "Gamified quiz app with animated avatars, leaderboards, and live scoring — an edtech MVP.",
     category: "Web App",
+    categoryColor: "#0061ff",
     image: "/images/portfolio/quiz.jpg",
     url: "https://quiz-avatar-leaderboard.vercel.app",
   },
   {
-    title: "CRAFT Prompt Builder — AI Prompt Studio",
+    title: "CRAFT Prompt Builder",
     description:
-      "Interactive tool that guides students through the CRAFT framework to build structured, effective AI prompts — with live preview and scoring.",
+      "Interactive tool guiding users through the CRAFT framework to build structured, effective AI prompts.",
     category: "Web App",
+    categoryColor: "#004bca",
     image: "/images/portfolio/craft.jpg",
     url: "https://craft-app-six.vercel.app",
   },
   {
     title: "Deva Simmons for Congress",
     description:
-      "Full campaign website for a U.S. Congressional candidate with multilingual support, event management, volunteer sign-up system, issues platform, and donation integration.",
+      "Full campaign website with multilingual support, event management, volunteer portal, and donation integration.",
     category: "Website + App",
+    categoryColor: "#994700",
     image: "/images/portfolio/devasimmons.jpg",
     url: "https://devasimmons.com",
   },
   {
-    title: "Prime Pulse Logistics — Medical Courier Website",
+    title: "Prime Pulse Logistics",
     description:
-      "Professional medical courier company website with service listings, capability statement, driver career portal, and quote request system for Tampa Bay healthcare clients.",
+      "Professional medical courier website with service listings, career portal, and quote request system.",
     category: "Website",
+    categoryColor: "#00642d",
     image: "/images/portfolio/ppl813.jpg",
     url: "https://www.ppl813.com",
   },
@@ -90,114 +94,78 @@ const portfolioItems = [
 export default function PortfolioPage() {
   return (
     <>
-      {/* ── Hero Section ── */}
-      <section className="relative overflow-hidden bg-brand-midnight-plum">
-        <Image
-          src="/images/heroes/portfolio.jpg"
-          alt=""
-          fill
-          className="object-cover object-center opacity-40"
-          priority
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(168,130,238,0.6),transparent)]"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(168, 130, 238, 0.3) 0%, transparent 40%)`,
-          }}
-        />
-        <div className="relative mx-auto max-w-5xl px-6 py-8 md:py-10">
-          <div className="mb-6">
-            <Breadcrumb
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Portfolio" },
-              ]}
-            />
-          </div>
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
-            Our work speaks for itself.
-          </h1>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 max-w-7xl mx-auto px-8 relative">
+        <div className="absolute top-0 right-0 -z-10 opacity-20">
+          <div className="w-[500px] h-[500px] rounded-full bg-[#0061ff] blur-[100px]" />
         </div>
-      </section>
-
-      {/* ── Portfolio Grid ── */}
-      <section className="relative bg-white py-10 md:py-14">
-        <GradientDots duration={40} dotSize={3} spacing={16} />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <SectionHeading
-            title="Recent projects."
-            subtitle="A selection of work we've done for small businesses across Central Florida."
-            centered
-          />
-
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {portfolioItems.map((item) => (
-              <Card
-                key={item.title}
-                className="group flex min-h-[400px] flex-col overflow-hidden border-0 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
-              >
-                {/* Screenshot preview */}
-                <div className="relative h-48 overflow-hidden bg-brand-soft-lavender/20">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                </div>
-                <CardContent className="flex flex-1 flex-col gap-3 p-6">
-                  <Badge variant="secondary" className="w-fit">
-                    {item.category}
-                  </Badge>
-                  <h3 className="text-lg font-bold text-brand-deep-navy">
-                    {item.title}
-                  </h3>
-                  <p className="flex-1 text-base leading-relaxed text-brand-deep-navy/70">
-                    {item.description}
-                  </p>
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-brand-royal-purple transition-colors hover:text-brand-mauve-purple"
-                  >
-                    View Live
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                    </svg>
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
+        <div className="max-w-3xl">
+          <div className="flex items-center gap-2 mb-6">
+            <span className="w-12 h-[1px] bg-[#fb7800]" />
+            <span className="text-[#994700] font-semibold tracking-widest text-xs uppercase">
+              Portfolio
+            </span>
           </div>
-
-          <p className="mt-12 text-center text-base text-brand-deep-navy/60">
-            More case studies coming soon.
+          <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight leading-[1.1] mb-8 font-heading">
+            Proven Impact
+          </h1>
+          <p className="text-xl text-on-surface-variant leading-relaxed font-light">
+            Transforming industries through intelligent automation and curated
+            digital experiences. We don&apos;t just build software; we architect
+            competitive advantages.
           </p>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <CTABanner
-        title="Like what you see?"
-        description="Let's build something great for your business."
-        ctaText="Start a project"
-        ctaLink="/contact"
-        variant="primary"
-      />
+      {/* Project Masonry Gallery */}
+      <section className="max-w-7xl mx-auto px-8 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-0">
+          {portfolioItems.map((item) => (
+            <div key={item.title} className="masonry-item group flex flex-col">
+              <div className="relative overflow-hidden rounded-3xl bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={800}
+                  height={500}
+                  className="w-full h-auto object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <div className="absolute top-6 left-6">
+                  <span
+                    className="bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full font-semibold text-xs shadow-sm"
+                    style={{
+                      color: item.categoryColor,
+                      borderColor: `${item.categoryColor}20`,
+                      borderWidth: 1,
+                    }}
+                  >
+                    {item.category}
+                  </span>
+                </div>
+              </div>
+              <div className="pt-8 px-2">
+                <h3 className="text-2xl font-bold mb-3 font-heading">
+                  {item.title}
+                </h3>
+                <p className="text-on-surface-variant mb-6 leading-relaxed max-w-md">
+                  {item.description}
+                </p>
+                {item.url && (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#004bca] font-bold hover:gap-4 transition-all duration-300"
+                  >
+                    View Live &rarr;
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

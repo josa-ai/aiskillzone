@@ -14,11 +14,11 @@ type GradientDotsProps = React.ComponentProps<typeof motion.div> & {
     backgroundColor?: string;
 };
 
-// Brand palette colors — kept subtle so dots never compete with text
-const C1 = 'rgba(141, 75, 187, 0.22)';   // royal purple
-const C2 = 'rgba(168, 130, 238, 0.17)';  // mauve purple
-const C3 = 'rgba(59, 130, 246, 0.15)';   // tech blue
-const C4 = 'rgba(227, 212, 243, 0.25)';  // soft lavender
+// AISkillZone palette colors — kept subtle so dots never compete with text
+const C1 = 'rgba(0, 75, 202, 0.22)';     // primary blue
+const C2 = 'rgba(0, 97, 255, 0.17)';     // primary container blue
+const C3 = 'rgba(0, 75, 202, 0.15)';     // primary blue alt
+const C4 = 'rgba(242, 244, 246, 0.25)';  // surface-container-low
 
 export function GradientDots({
     dotSize = 3,

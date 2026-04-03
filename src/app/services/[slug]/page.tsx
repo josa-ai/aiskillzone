@@ -1,19 +1,13 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { services } from "@/lib/services-data";
-import { Breadcrumb } from "@/components/Breadcrumb";
-import { CTABanner } from "@/components/CTABanner";
 import { FAQAccordion } from "@/components/FAQAccordion";
-import { SectionHeading } from "@/components/SectionHeading";
-import { ServiceCard } from "@/components/ServiceCard";
-import { JsonLd } from "@/components/JsonLd";
-import { IncludeCard } from "@/components/ui/include-card";
+import { AlertTriangle, Check } from "lucide-react";
 
-/* ────────────────────────────────────────────────────────────────────────────
+/* ──────────────────────────────────────────────────────────────────────────
    Service detail data
-   ──────────────────────────────────────────────────────────────────────────── */
+   ────────────────────────────────────────────────────────────────────────── */
 
 interface ServiceDetail {
   tagline: string;
@@ -22,7 +16,8 @@ interface ServiceDetail {
   solution: string;
   includes: { title: string; icon: string }[];
   faqs: { question: string; answer: string }[];
-  cta: { title: string; description: string; ctaText: string };
+  heroMetric: { value: string; label: string };
+  costStat: { value: string; label: string };
   relatedSlugs: string[];
 }
 
@@ -32,9 +27,9 @@ const serviceDetails: Record<string, ServiceDetail> = {
     problem:
       "Most small business websites are built from templates that all look the same, haven't been updated in years, aren't designed to convert visitors into customers, and aren't showing up in search results. If your website isn't actively bringing in leads, it's costing you money.",
     agitation:
-      "Every day your website underperforms, potential customers are finding your competitors instead. They're making decisions based on what they see online — and if your site looks outdated, loads slowly, or doesn't answer their questions, they're gone in seconds. That's revenue walking out the door before you even get a chance to make a pitch.",
+      "Every day your website underperforms, potential customers are finding your competitors instead. They're making decisions based on what they see online — and if your site looks outdated, loads slowly, or doesn't answer their questions, they're gone in seconds. That's revenue walking out the door.",
     solution:
-      "We build custom websites from the ground up — no templates, no bloat. Every site comes with SEO, AEO (AI Engine Optimization), and ADA compliance built in as standard, never as an upcharge. Your site will be mobile-optimized, integrated with your CRM, and designed to convert visitors into customers. Starting at $400 with a 2–4 week timeline.",
+      "We build custom websites from the ground up — no templates, no bloat. Every site comes with SEO, AEO (AI Engine Optimization), and ADA compliance built in as standard. Your site will be mobile-optimized, integrated with your CRM, and designed to convert visitors into customers.",
     includes: [
       { title: "Custom design and development — no templates", icon: "Paintbrush" },
       { title: "SEO and AEO built into every page", icon: "Search" },
@@ -44,91 +39,49 @@ const serviceDetails: Record<string, ServiceDetail> = {
       { title: "Analytics and performance tracking setup", icon: "BarChart3" },
     ],
     faqs: [
-      {
-        question: "Do you use templates?",
-        answer:
-          "No. Every website we build is custom-designed for your business, your brand, and your customers. Templates are cheap for a reason — they look generic and limit what you can do. We build from scratch so your site actually stands out.",
-      },
-      {
-        question: "Can I make changes to the site after it launches?",
-        answer:
-          "Absolutely. We build sites that are easy to update, and we offer ongoing support if you want us to handle changes for you. You're never locked into a contract — we just make it easy to keep your site current.",
-      },
-      {
-        question: "Is SEO included or does it cost extra?",
-        answer:
-          "SEO is built into every site we create — it's never an add-on or upcharge. We handle technical SEO, on-page optimization, and make sure your site is structured so search engines (and AI engines) can find and recommend you.",
-      },
-      {
-        question: "Will my site work on mobile?",
-        answer:
-          "That's table stakes. Every site we build is mobile-first, meaning we design for phones and tablets before we even think about desktop. Over 60% of web traffic is mobile — your site needs to look and perform flawlessly on every screen size.",
-      },
+      { question: "Do you use templates?", answer: "No. Every website we build is custom-designed for your business, your brand, and your customers. Templates are cheap for a reason — they look generic and limit what you can do." },
+      { question: "Can I make changes to the site after it launches?", answer: "Absolutely. We build sites that are easy to update, and we offer ongoing support if you want us to handle changes for you." },
+      { question: "Is SEO included or does it cost extra?", answer: "SEO is built into every site we create — it's never an add-on or upcharge. We handle technical SEO, on-page optimization, and site structure." },
+      { question: "Will my site work on mobile?", answer: "Every site we build is mobile-first. Over 60% of web traffic is mobile — your site needs to look and perform flawlessly on every screen size." },
     ],
-    cta: {
-      title: "Ready for a website that actually works?",
-      description:
-        "Let's talk about what your business needs and build something that brings in customers.",
-      ctaText: "Book a free discovery call",
-    },
+    heroMetric: { value: "99/100", label: "Lighthouse Performance Score" },
+    costStat: { value: "-$4.2M", label: "Lost Annual Revenue" },
     relatedSlugs: ["voice-ai", "brand-strategy", "ai-automation"],
   },
-
   "voice-ai": {
     tagline: "Never miss a customer call again.",
     problem:
-      "When a customer calls and nobody answers, 85% of them won't leave a voicemail — they'll just call the next business on the list. If you're a small team, you can't be on the phone 24/7. But your customers don't care about your schedule. They want answers now.",
+      "When a customer calls and nobody answers, 85% of them won't leave a voicemail — they'll just call the next business. If you're a small team, you can't be on the phone 24/7. But your customers don't care about your schedule.",
     agitation:
-      "Think about how many calls you've missed this month. After hours. During lunch. While you were with another customer. Each one of those was a potential sale, a new client, a booking. And most of them went straight to a competitor who picked up. The math is simple: missed calls equal lost revenue.",
+      "Think about how many calls you've missed this month. After hours, during lunch, while you were with another customer. Each one was a potential sale. Most went straight to a competitor who picked up. Missed calls equal lost revenue.",
     solution:
-      "Our Voice AI answers your phone 24/7 with a natural-sounding voice that represents your brand. It handles frequently asked questions, qualifies leads, books appointments directly on your calendar, and can even take orders. When a call needs a human touch, it seamlessly transfers to you or your team. Your customers get instant answers. You get qualified leads.",
+      "Our Voice AI answers your phone 24/7 with a natural-sounding voice. It handles FAQs, qualifies leads, books appointments directly on your calendar, and can take orders. When a call needs a human touch, it transfers seamlessly to your team.",
     includes: [
       { title: "24/7 AI-powered call answering", icon: "Phone" },
       { title: "Custom voice and personality matching your brand", icon: "Mic" },
       { title: "FAQ handling and information delivery", icon: "MessageCircle" },
       { title: "Lead qualification and scoring", icon: "UserCheck" },
       { title: "Appointment booking with calendar integration", icon: "CalendarCheck" },
-      { title: "Seamless transfer to live team members when needed", icon: "ArrowRightLeft" },
+      { title: "Seamless transfer to live team members", icon: "ArrowRightLeft" },
     ],
     faqs: [
-      {
-        question: "Will it sound like a robot?",
-        answer:
-          "Not at all. Modern voice AI sounds remarkably natural. We customize the voice, tone, and personality to match your brand. Most callers won't realize they're talking to an AI — they'll just appreciate getting help immediately.",
-      },
-      {
-        question: "What happens if the AI can't handle a question?",
-        answer:
-          "It transfers the call directly to you or a team member. The AI knows its limits and is designed to escalate gracefully. You also get a full transcript so you know exactly what was discussed before the transfer.",
-      },
-      {
-        question: "Will customers be annoyed by talking to an AI?",
-        answer:
-          "Customers are annoyed by voicemail, hold music, and not getting answers. Our AI gives them instant, helpful responses. The alternative — missing the call entirely — is far worse than an AI that actually helps.",
-      },
-      {
-        question: "Does it integrate with my calendar and CRM?",
-        answer:
-          "Yes. We integrate with Google Calendar, Outlook, and most popular CRM systems. The AI can book appointments, update contact records, and push lead information directly into your existing workflow.",
-      },
+      { question: "Will it sound like a robot?", answer: "Not at all. Modern voice AI sounds remarkably natural. We customize the voice, tone, and personality to match your brand." },
+      { question: "What happens if the AI can't handle a question?", answer: "It transfers the call directly to you or a team member. The AI escalates gracefully, and you get a full transcript." },
+      { question: "Will customers be annoyed by talking to an AI?", answer: "Customers are annoyed by voicemail and hold music. Our AI gives them instant, helpful responses." },
+      { question: "Does it integrate with my calendar and CRM?", answer: "Yes. We integrate with Google Calendar, Outlook, and most popular CRM systems." },
     ],
-    cta: {
-      title: "Stop losing leads to voicemail.",
-      description:
-        "Let's set up a Voice AI that answers your calls, books appointments, and captures every opportunity.",
-      ctaText: "Book a free discovery call",
-    },
+    heroMetric: { value: "24/7", label: "Availability" },
+    costStat: { value: "85%", label: "Never Call Back" },
     relatedSlugs: ["ai-automation", "website-design", "business-tools"],
   },
-
   "ai-automation": {
     tagline: "Stop doing the same thing over and over.",
     problem:
-      "You're spending hours every week on email responses, follow-ups, data entry, scheduling, and a dozen other repetitive tasks that don't require your expertise — just your time. It's the kind of work that keeps you busy but doesn't move your business forward.",
+      "You're spending hours every week on email responses, follow-ups, data entry, scheduling, and repetitive tasks that don't require your expertise — just your time. It keeps you busy but doesn't move your business forward.",
     agitation:
-      "Every hour you spend on busywork is an hour you're not spending on growth, strategy, or your customers. And it adds up fast — 10 hours a week is 500 hours a year. That's over 12 full work weeks lost to tasks a smart system could handle in seconds. Meanwhile, your competitors are automating and moving faster.",
+      "Every hour on busywork is an hour not spent on growth. 10 hours a week is 500 hours a year — over 12 full work weeks lost to tasks a smart system could handle in seconds. Your competitors are automating and moving faster.",
     solution:
-      "We build custom automations tailored to your specific business processes. Not generic templates — actual workflows designed around how your business operates. Whether it's automating email responses, marketing sequences, order processing, or tasks unique to your industry, we'll identify what's eating your time and build systems that handle it.",
+      "We build custom automations tailored to your specific business processes. Not generic templates — actual workflows designed around how your business operates. We identify what's eating your time and build systems that handle it.",
     includes: [
       { title: "Custom workflow design and implementation", icon: "GitBranch" },
       { title: "Email automation and response sequences", icon: "Mail" },
@@ -138,44 +91,23 @@ const serviceDetails: Record<string, ServiceDetail> = {
       { title: "Industry-specific process automation", icon: "Settings2" },
     ],
     faqs: [
-      {
-        question: "What can be automated?",
-        answer:
-          "Almost anything repetitive. Email responses, lead follow-ups, appointment reminders, invoice generation, data entry, social media posting, report generation, order confirmations — if you do it the same way every time, we can probably automate it.",
-      },
-      {
-        question: "How long does it take to set up?",
-        answer:
-          "Most automation projects take 1–2 weeks from discovery to launch. Simple automations can be live in days. We start by mapping your current workflows, then build, test, and refine until everything runs smoothly.",
-      },
-      {
-        question: "Will it break things or send wrong messages?",
-        answer:
-          "No. We test extensively before anything goes live. Every automation includes safeguards, error handling, and monitoring. We run through every scenario and edge case, and you approve everything before it starts running.",
-      },
-      {
-        question: "Do I need special software?",
-        answer:
-          "We work with whatever tools you're already using — Gmail, Outlook, Shopify, QuickBooks, Google Sheets, CRMs, and hundreds more. If your tools can connect, we can automate the workflow between them.",
-      },
+      { question: "What can be automated?", answer: "Almost anything repetitive — email responses, lead follow-ups, appointment reminders, invoice generation, data entry, social media posting, and more." },
+      { question: "How long does it take to set up?", answer: "Most automation projects take 1–2 weeks. Simple automations can be live in days." },
+      { question: "Will it break things?", answer: "No. We test extensively before anything goes live with safeguards, error handling, and monitoring." },
+      { question: "Do I need special software?", answer: "We work with whatever tools you're already using — Gmail, Outlook, Shopify, QuickBooks, Google Sheets, CRMs." },
     ],
-    cta: {
-      title: "Reclaim your time.",
-      description:
-        "Let's identify what's eating your hours and build automations that handle it for you.",
-      ctaText: "Book a free discovery call",
-    },
+    heroMetric: { value: "10x", label: "Faster Workflows" },
+    costStat: { value: "40hrs/mo", label: "Wasted on Manual Tasks" },
     relatedSlugs: ["voice-ai", "business-tools", "website-design"],
   },
-
   "ai-training": {
     tagline: "Your team can use AI. We'll show them how.",
     problem:
-      "Your team knows AI is important. They've heard about ChatGPT, they've seen the headlines, and they might have even tried it once or twice. But without proper training, they're either not using it at all or using it poorly — missing the real opportunities to save time and improve their work.",
+      "Your team knows AI is important but without proper training, they're either not using it at all or using it poorly — missing real opportunities to save time and improve their work.",
     agitation:
-      "The gap between businesses that adopt AI effectively and those that don't is growing every day. Your competitors are already using AI to write faster, analyze data, handle customer service, and streamline operations. Every week your team spends struggling with or ignoring these tools is a week they're falling further behind.",
+      "The gap between businesses that adopt AI effectively and those that don't is growing every day. Every week your team spends struggling with these tools is a week they're falling further behind competitors who are automating and moving faster.",
     solution:
-      "We run hands-on workshops that teach your team how to actually use AI in their daily work. Not theory, not hype — practical skills they can use immediately. We cover tools like ChatGPT, prompt engineering, and AI-powered workflows specific to your industry. Taught by someone who builds AI solutions every day, not someone who read a book about it.",
+      "We run hands-on workshops that teach your team how to actually use AI in their daily work. Practical skills they can use immediately — tools like ChatGPT, prompt engineering, and AI-powered workflows specific to your industry.",
     includes: [
       { title: "Hands-on workshops tailored to your team's roles", icon: "Users" },
       { title: "ChatGPT and prompt engineering training", icon: "Bot" },
@@ -185,92 +117,49 @@ const serviceDetails: Record<string, ServiceDetail> = {
       { title: "Follow-up support and Q&A sessions", icon: "HelpCircle" },
     ],
     faqs: [
-      {
-        question: "Does my team need a technical background?",
-        answer:
-          "Not at all. Our workshops are designed for everyday business users — not engineers. If your team can use email and a web browser, they can learn to use AI tools effectively. We meet people where they are.",
-      },
-      {
-        question: "Can training be done remotely?",
-        answer:
-          "Yes. We offer both in-person workshops (Central Florida) and remote sessions via Zoom. Remote sessions work great for distributed teams and are just as interactive as in-person training.",
-      },
-      {
-        question: "How long are the workshops?",
-        answer:
-          "Workshops range from half-day (3–4 hours) to full-day (6–7 hours) depending on your needs. We also offer multi-session programs for teams that want deeper training over several weeks.",
-      },
-      {
-        question: "Can you customize the content for our industry?",
-        answer:
-          "Absolutely. Every workshop is tailored to your team's roles and industry. We research your specific workflows and create exercises using real scenarios your team faces daily. Generic AI training is a waste of time — ours is built for you.",
-      },
+      { question: "Does my team need a technical background?", answer: "Not at all. Our workshops are designed for everyday business users, not engineers." },
+      { question: "Can training be done remotely?", answer: "Yes. We offer both in-person and remote sessions via Zoom." },
+      { question: "How long are the workshops?", answer: "Half-day (3–4 hours) to full-day (6–7 hours), plus multi-session programs available." },
+      { question: "Can you customize for our industry?", answer: "Every workshop is tailored to your team's roles and industry with real scenarios." },
     ],
-    cta: {
-      title: "Get your team up to speed on AI.",
-      description:
-        "Book a workshop that teaches practical AI skills your team can use starting tomorrow.",
-      ctaText: "Book a free discovery call",
-    },
+    heroMetric: { value: "500+", label: "Professionals Trained" },
+    costStat: { value: "73%", label: "Can't Use AI Tools Effectively" },
     relatedSlugs: ["ai-automation", "voice-ai", "business-tools"],
   },
-
   "ecommerce-consulting": {
     tagline: "Ready to sell online? We've been doing this for 20+ years.",
     problem:
-      "Getting started with e-commerce is overwhelming. Which platform should you use? How do you list products? What about fulfillment, pricing strategy, and marketplace fees? And if you're already selling online, you know there's always more to optimize — but figuring out what to focus on is its own challenge.",
+      "Getting started with e-commerce is overwhelming. Which platform? How do you list products? What about fulfillment, pricing strategy, and marketplace fees?",
     agitation:
-      "The e-commerce landscape is more competitive than ever. Amazon, Shopify, TikTok Shop, Walmart.com — each platform has its own rules, algorithms, and best practices. Getting it wrong means wasted ad spend, poor visibility, and products that sit unsold. Getting it right means consistent revenue from customers who find you organically.",
+      "The e-commerce landscape is more competitive than ever. Amazon, Shopify, TikTok Shop — each has its own rules. Getting it wrong means wasted ad spend and products that sit unsold.",
     solution:
-      "With 20+ years of e-commerce experience, we help product brands get set up, optimized, and scaling on the right platforms. Whether you're launching your first Shopify store or expanding to TikTok Shop and Amazon, we handle the strategy, onboarding, listing optimization, and ongoing performance tuning.",
+      "With 20+ years of e-commerce experience, we help product brands get set up, optimized, and scaling on the right platforms — from Shopify to TikTok Shop and Amazon.",
     includes: [
       { title: "Platform selection and strategy consulting", icon: "ShoppingBag" },
       { title: "Marketplace onboarding (Shopify, Amazon, Walmart, TikTok Shop)", icon: "Store" },
       { title: "Product listing optimization and SEO", icon: "Tag" },
       { title: "Pricing and competitive analysis", icon: "TrendingUp" },
       { title: "Advertising strategy and campaign setup", icon: "Target" },
-      { title: "Ongoing performance monitoring and optimization", icon: "LineChart" },
+      { title: "Ongoing performance monitoring", icon: "LineChart" },
     ],
     faqs: [
-      {
-        question: "Which platform should I sell on?",
-        answer:
-          "It depends on your products, target audience, and business goals. We'll analyze your situation and recommend the right mix — it might be Shopify for your own store, Amazon for reach, or TikTok Shop for a younger demographic. Often the answer is a multi-channel strategy.",
-      },
-      {
-        question: "I'm already selling online. Can you help me improve?",
-        answer:
-          "Absolutely. We audit your existing setup — listings, pricing, advertising, fulfillment — and identify specific areas for improvement. Most businesses we work with see measurable gains within the first month of optimization.",
-      },
-      {
-        question: "How long does it take to get set up?",
-        answer:
-          "Typical marketplace onboarding takes 2–4 weeks depending on the platform and the number of products. We handle the heavy lifting — account setup, listing creation, photography guidance, and launch strategy — so you can focus on your products.",
-      },
-      {
-        question: "Do you handle advertising too?",
-        answer:
-          "Yes. We set up and manage advertising campaigns on Amazon, Shopify, and other platforms. We focus on ROI — not just impressions — so every dollar you spend on ads is working toward actual sales.",
-      },
+      { question: "Which platform should I sell on?", answer: "It depends on your products and audience. We'll analyze your situation and recommend the right mix." },
+      { question: "I'm already selling online. Can you help?", answer: "We audit your existing setup and identify specific areas for improvement." },
+      { question: "How long does setup take?", answer: "Typical marketplace onboarding takes 2–4 weeks depending on complexity." },
+      { question: "Do you handle advertising?", answer: "Yes. We set up and manage campaigns focused on ROI, not just impressions." },
     ],
-    cta: {
-      title: "Ready to sell smarter?",
-      description:
-        "Let's build an e-commerce strategy that puts your products in front of the right customers.",
-      ctaText: "Book a free discovery call",
-    },
+    heroMetric: { value: "20+", label: "Years Experience" },
+    costStat: { value: "-35%", label: "Conversion Rate" },
     relatedSlugs: ["website-design", "brand-strategy", "digital-products"],
   },
-
   "brand-strategy": {
-    tagline:
-      "People should know who you are and what makes you different.",
+    tagline: "People should know who you are and what makes you different.",
     problem:
-      "You know your business is good — but when it comes to explaining what makes you different, the message gets lost. Your website says one thing, your social media says another, and your elevator pitch changes every time. Without a clear brand voice and strategy, you're blending into the noise instead of standing out.",
+      "You know your business is good — but explaining what makes you different is where the message gets lost. Your website says one thing, social media another, and your elevator pitch changes every time.",
     agitation:
-      "In a market full of options, unclear branding means you're invisible. Customers choose businesses they understand and trust. If your messaging is inconsistent or generic, you're giving them no reason to pick you over the next option. Every touchpoint that doesn't reinforce who you are is a missed opportunity to build recognition and loyalty.",
+      "Unclear branding means you're invisible. Customers choose businesses they understand and trust. If your messaging is inconsistent, you're giving them no reason to pick you over the next option.",
     solution:
-      "We develop your brand voice, messaging framework, and campaign strategy so everything you put out into the world sounds like you — and connects with your audience. This is usually bundled into website or marketing projects, but it's also available as a focused standalone engagement for businesses that need to get their story straight.",
+      "We develop your brand voice, messaging framework, and campaign strategy so everything you put out sounds like you — and connects with your audience.",
     includes: [
       { title: "Brand voice and tone development", icon: "MessageSquare" },
       { title: "Messaging framework and key differentiators", icon: "Layers" },
@@ -280,91 +169,49 @@ const serviceDetails: Record<string, ServiceDetail> = {
       { title: "Brand guidelines document", icon: "FileText" },
     ],
     faqs: [
-      {
-        question: "Can I get brand strategy as a standalone service?",
-        answer:
-          "Yes. While we often bundle brand strategy into website or marketing projects, it works great as a focused engagement on its own. It's especially valuable if you're rebranding, launching a new product, or entering a new market.",
-      },
-      {
-        question: "Is this usually part of a website project?",
-        answer:
-          "Often, yes. A strong website needs a strong brand foundation. Many clients add brand strategy to their website project to make sure the design, copy, and messaging all work together. But it's not required — you can do either one independently.",
-      },
-      {
-        question: "How long does the process take?",
-        answer:
-          "A focused brand strategy engagement typically takes 2–3 weeks. It involves discovery sessions with your team, competitor research, audience analysis, and the development of your brand framework and guidelines.",
-      },
-      {
-        question: "What do I actually get at the end?",
-        answer:
-          "You get a complete brand strategy document including your brand voice, messaging framework, audience personas, competitive positioning, and campaign direction. It's a practical playbook your team can use for every piece of content and communication going forward.",
-      },
+      { question: "Can I get brand strategy standalone?", answer: "Yes. It works great as a focused engagement, especially for rebranding or new product launches." },
+      { question: "How long does it take?", answer: "A focused brand strategy engagement typically takes 2–3 weeks." },
+      { question: "What do I get at the end?", answer: "A complete brand strategy document — voice, messaging framework, personas, positioning, and campaign direction." },
+      { question: "Is this usually part of a website project?", answer: "Often yes, but it's not required — you can do either independently." },
     ],
-    cta: {
-      title: "Let's define your brand.",
-      description:
-        "Get clear on who you are, what makes you different, and how to communicate it.",
-      ctaText: "Book a free discovery call",
-    },
+    heroMetric: { value: "3x", label: "Brand Recall" },
+    costStat: { value: "67%", label: "of Brands Sound Generic" },
     relatedSlugs: ["website-design", "digital-products", "ecommerce-consulting"],
   },
-
   "digital-products": {
     tagline: "Turn your expertise into an asset that works 24/7.",
     problem:
-      "You have expertise that people want — but right now, the only way to share it is one-on-one. You don't have any digital assets capturing leads, building your email list, or establishing your authority while you sleep. Your knowledge is locked in your head instead of working for your business.",
+      "You have expertise people want — but the only way to share it is one-on-one. No digital assets are capturing leads or establishing your authority while you sleep.",
     agitation:
-      "Every day without a lead magnet or digital product is a day you're leaving potential customers on the table. Your competitors are offering free guides, templates, and resources that capture email addresses and start relationships automatically. Meanwhile, visitors hit your site, don't see anything worth exchanging their email for, and leave without a trace.",
+      "Every day without a lead magnet is a day leaving potential customers on the table. Competitors are offering free guides and templates that capture emails and start relationships automatically.",
     solution:
-      "We create polished digital products that capture leads and showcase your expertise. PDF guides, downloadable templates, email courses, checklists, and other resources designed to provide real value to your audience while building your email list and nurturing potential customers automatically.",
+      "We create polished digital products that capture leads and showcase your expertise — PDF guides, templates, email courses, and resources designed to provide value while building your email list.",
     includes: [
       { title: "Strategy and topic selection for maximum impact", icon: "Compass" },
-      { title: "Content development and copywriting assistance", icon: "PenLine" },
+      { title: "Content development and copywriting", icon: "PenLine" },
       { title: "Professional design and formatting", icon: "LayoutTemplate" },
       { title: "Landing page creation for lead capture", icon: "Monitor" },
       { title: "Email automation for delivery and follow-up", icon: "Send" },
       { title: "Analytics and conversion tracking", icon: "PieChart" },
     ],
     faqs: [
-      {
-        question: "What kind of digital products can you create?",
-        answer:
-          "Guides, templates, checklists, email courses, worksheets, resource libraries — whatever makes sense for your audience and expertise. We'll help you figure out what your potential customers actually want and would exchange their email address for.",
-      },
-      {
-        question: "Do I have to write all the content myself?",
-        answer:
-          "No. We help with content development, structuring, and copywriting. You bring the expertise and we handle turning it into something polished and professional. Most clients provide rough ideas and we shape them into finished products.",
-      },
-      {
-        question: "Can digital products generate revenue?",
-        answer:
-          "Absolutely. While many digital products are used as free lead magnets, we also create paid products — courses, premium templates, resource packs — that generate direct revenue. The best approach depends on your business model and goals.",
-      },
-      {
-        question: "How do people actually get the product?",
-        answer:
-          "We set up the complete delivery system — landing page, email opt-in, automated delivery, and follow-up sequences. Visitors enter their email, instantly receive the product, and enter a nurture sequence that turns them into customers over time.",
-      },
+      { question: "What kind of digital products can you create?", answer: "Guides, templates, checklists, email courses, worksheets, and resource libraries." },
+      { question: "Do I have to write all the content?", answer: "No. We help with content development, structuring, and copywriting." },
+      { question: "Can digital products generate revenue?", answer: "Yes. We create both free lead magnets and paid products like courses and premium templates." },
+      { question: "How do people get the product?", answer: "We set up the complete delivery system — landing page, email opt-in, automated delivery, and nurture sequences." },
     ],
-    cta: {
-      title: "Start capturing leads while you sleep.",
-      description:
-        "Let's create digital products that showcase your expertise and build your customer pipeline.",
-      ctaText: "Book a free discovery call",
-    },
+    heroMetric: { value: "24/7", label: "Lead Capture" },
+    costStat: { value: "90%", label: "of Leads Go Uncaptured" },
     relatedSlugs: ["brand-strategy", "website-design", "ai-automation"],
   },
-
   "custom-apps": {
     tagline: "When off-the-shelf tools don't cut it.",
     problem:
-      "You've tried the standard software options and none of them quite fit. Maybe you need a specific workflow that no existing tool supports, or you're duct-taping three different apps together to do what one custom tool could handle. Off-the-shelf software wasn't built for your specific business — and it shows.",
+      "You've tried standard software and none of it quite fits. You're duct-taping three apps together to do what one custom tool could handle.",
     agitation:
-      "Every workaround costs you time and introduces room for error. Your team is spending extra minutes on every task because the tools don't match the workflow. Data lives in multiple places, nothing talks to each other cleanly, and you've accepted friction as normal. But it doesn't have to be this way.",
+      "Every workaround costs time and introduces errors. Data lives in multiple places, nothing integrates cleanly, and you've accepted friction as normal.",
     solution:
-      "We build small, focused web applications designed around your specific workflow. Clean, modern, and built to do exactly what you need — nothing more, nothing less. Whether it's an internal tool, a customer-facing portal, or a specialized calculator, we build it right and make it easy to use.",
+      "We build small, focused web applications designed around your specific workflow — clean, modern, and built to do exactly what you need.",
     includes: [
       { title: "Discovery and requirements analysis", icon: "ScanSearch" },
       { title: "UI/UX design tailored to your workflow", icon: "Layers" },
@@ -374,46 +221,25 @@ const serviceDetails: Record<string, ServiceDetail> = {
       { title: "Testing, deployment, and documentation", icon: "CheckCircle2" },
     ],
     faqs: [
-      {
-        question: "How complex of an app can you build?",
-        answer:
-          "We specialize in simple to moderate complexity web applications — internal tools, dashboards, customer portals, booking systems, specialized calculators. If your project requires a large engineering team, we'll tell you upfront and can help you find the right partner.",
-      },
-      {
-        question: "What's the typical timeline?",
-        answer:
-          "Most custom app projects take 4–8 weeks from kickoff to launch. Simpler tools can be done faster, and more complex projects may take longer. We'll give you a clear timeline during the discovery phase.",
-      },
-      {
-        question: "Do you offer ongoing maintenance?",
-        answer:
-          "Yes. We offer optional ongoing support and maintenance plans. Whether you need bug fixes, feature additions, or regular updates, we're available to keep your application running smoothly after launch.",
-      },
-      {
-        question: "What technologies do you use?",
-        answer:
-          "We build with modern web technologies — React, Next.js, TypeScript, and cloud infrastructure. This means your app will be fast, secure, and scalable. We choose the right tools for each project rather than forcing everything into one framework.",
-      },
+      { question: "How complex of an app can you build?", answer: "We specialize in simple to moderate complexity — internal tools, dashboards, customer portals, booking systems." },
+      { question: "What's the typical timeline?", answer: "Most projects take 4–8 weeks from kickoff to launch." },
+      { question: "Do you offer ongoing maintenance?", answer: "Yes. We offer optional support and maintenance plans." },
+      { question: "What technologies do you use?", answer: "React, Next.js, TypeScript, and cloud infrastructure — fast, secure, and scalable." },
     ],
-    cta: {
-      title: "Need a tool that doesn't exist yet?",
-      description:
-        "Let's design and build a custom application that fits your workflow perfectly.",
-      ctaText: "Book a free discovery call",
-    },
+    heroMetric: { value: "Built", label: "to Spec" },
+    costStat: { value: "80%", label: "of SaaS Features Go Unused" },
     relatedSlugs: ["ai-automation", "business-tools", "website-design"],
   },
-
   "business-tools": {
     tagline: "One platform. One login. Less friction.",
     problem:
-      "You're juggling five different apps to run your business — one for email, one for CRM, one for scheduling, one for reviews, and another for your online community. Each one has its own login, its own billing, and its own learning curve. Nothing integrates cleanly and you're spending more time managing tools than actually using them.",
+      "You're juggling five different apps to run your business — nothing integrates cleanly and you're spending more time managing tools than using them.",
     agitation:
-      "Tool sprawl is a silent productivity killer. Every time you switch between platforms, you lose focus and time. Customer data lives in three different places. Your team can't find information quickly. And you're paying for five separate subscriptions when one integrated platform could do it all. The friction adds up to hours lost every week.",
+      "Tool sprawl is a silent productivity killer. Customer data in three places, five separate subscriptions, and hours lost weekly to switching between platforms.",
     solution:
-      "We set up and configure an integrated business platform that consolidates your CRM, community and course hosting, reputation management, and communication tools into one system. One login, one dashboard, one source of truth for your customer relationships. We handle the setup, migration, and training so your team can hit the ground running.",
+      "We set up an integrated business platform that consolidates your CRM, community hosting, reputation management, and communication tools into one system.",
     includes: [
-      { title: "CRM setup and configuration for your business", icon: "Users" },
+      { title: "CRM setup and configuration", icon: "Users" },
       { title: "Community and course hosting platform", icon: "GraduationCap" },
       { title: "Reputation management and review automation", icon: "Star" },
       { title: "Email and SMS marketing integration", icon: "MailCheck" },
@@ -421,40 +247,20 @@ const serviceDetails: Record<string, ServiceDetail> = {
       { title: "Data migration from existing tools", icon: "ArrowRightLeft" },
     ],
     faqs: [
-      {
-        question: "Which tools and platforms do you work with?",
-        answer:
-          "We primarily work within the GoHighLevel ecosystem, which consolidates CRM, email marketing, SMS, reputation management, course hosting, and community features into one platform. It's powerful, affordable, and built for small businesses.",
-      },
-      {
-        question: "Can you migrate my data from my current tools?",
-        answer:
-          "Yes, we handle the full migration — contacts, email lists, customer data, pipeline stages, and communication history. We make sure nothing gets lost in the transition and verify everything before we switch you over.",
-      },
-      {
-        question: "Is training included?",
-        answer:
-          "Absolutely. Every business tools setup includes hands-on training for you and your team. We don't just configure the platform and walk away — we make sure everyone knows how to use it effectively. Follow-up support is included too.",
-      },
-      {
-        question: "How long does the setup take?",
-        answer:
-          "Typical setup and migration takes 2–4 weeks depending on the complexity of your current tool stack and the amount of data being migrated. We work in phases so you can start using core features while we finish the full configuration.",
-      },
+      { question: "Which platforms do you work with?", answer: "Primarily the GoHighLevel ecosystem — CRM, email, SMS, reputation management, courses, and community in one platform." },
+      { question: "Can you migrate my data?", answer: "Yes. We handle full migration — contacts, email lists, customer data, pipeline stages, and history." },
+      { question: "Is training included?", answer: "Every setup includes hands-on training for you and your team." },
+      { question: "How long does setup take?", answer: "Typical setup and migration takes 2–4 weeks." },
     ],
-    cta: {
-      title: "Simplify your tech stack.",
-      description:
-        "Let's consolidate your tools into one integrated platform that actually works together.",
-      ctaText: "Book a free discovery call",
-    },
+    heroMetric: { value: "1", label: "Login. One System." },
+    costStat: { value: "5+", label: "Disconnected Tools Average" },
     relatedSlugs: ["ai-automation", "voice-ai", "website-design"],
   },
 };
 
-/* ────────────────────────────────────────────────────────────────────────────
+/* ──────────────────────────────────────────────────────────────────────────
    Helpers
-   ──────────────────────────────────────────────────────────────────────────── */
+   ────────────────────────────────────────────────────────────────────────── */
 
 function getServiceData(slug: string) {
   const service = services.find((s) => s.slug === slug);
@@ -462,10 +268,6 @@ function getServiceData(slug: string) {
   if (!service || !detail) return null;
   return { ...service, ...detail };
 }
-
-/* ────────────────────────────────────────────────────────────────────────────
-   Static params + metadata
-   ──────────────────────────────────────────────────────────────────────────── */
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -479,16 +281,15 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = getServiceData(slug);
   if (!data) return {};
-
   return {
-    title: `${data.title} | JOSA.AI`,
+    title: data.title,
     description: data.description,
   };
 }
 
-/* ────────────────────────────────────────────────────────────────────────────
-   Page component
-   ──────────────────────────────────────────────────────────────────────────── */
+/* ──────────────────────────────────────────────────────────────────────────
+   Page
+   ────────────────────────────────────────────────────────────────────────── */
 
 export default async function ServiceDetailPage({
   params,
@@ -499,218 +300,226 @@ export default async function ServiceDetailPage({
   const data = getServiceData(slug);
   if (!data) notFound();
 
-  const relatedServices = data.relatedSlugs
-    .map((rs) => services.find((s) => s.slug === rs))
-    .filter(Boolean);
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: data.title,
-    description: data.description,
-    provider: {
-      "@type": "Organization",
-      name: "JOSA.AI",
-      url: "https://josa.ai",
-    },
-    areaServed: {
-      "@type": "Place",
-      name: "Central Florida",
-    },
-  };
-
   return (
     <>
-      <JsonLd data={serviceSchema} />
-
-      {/* ── Breadcrumb ── */}
-      <div className="bg-brand-midnight-plum px-6 pt-6">
-        <div className="mx-auto max-w-5xl">
-          <div className="[&_a]:text-brand-cool-azure [&_span]:text-white/60 [&_span[aria-hidden]]:text-white/40">
-            <Breadcrumb
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Services", href: "/services" },
-                { label: data.shortTitle },
-              ]}
-            />
-          </div>
-        </div>
-      </div>
-
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-brand-midnight-plum">
-        <Image
-          src={`/images/heroes/${data.slug}.jpg`}
-          alt=""
-          fill
-          className="object-cover object-center opacity-40"
-          priority
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(168,130,238,0.6),transparent)]"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(168, 130, 238, 0.3) 0%, transparent 40%)`,
-          }}
-        />
-
-        <div className="relative mx-auto max-w-5xl px-6 py-8 md:py-10">
-          <p className="text-lg font-medium text-brand-cool-azure">
-            {data.icon} {data.shortTitle}
-          </p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
-            {data.tagline}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
-            {data.description}
-          </p>
-          <Link
-            href="https://link.josa.ai/widget/bookings/tech-audit-calendar"
-            className="mt-8 inline-flex items-center justify-center rounded-lg bg-brand-royal-purple px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-brand-mauve-purple"
-          >
-            Book a free discovery call
-          </Link>
-        </div>
-      </section>
-
-      {/* ── Problem (PAS — Problem) ── */}
-      <section className="bg-white py-12 md:py-16">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="relative">
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute -top-4 right-0 select-none text-[120px] font-black leading-none text-brand-soft-lavender/50"
-            >
-              01
-            </span>
-            <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
-              The Challenge
-            </span>
-            <div className="border-l-4 border-brand-royal-purple pl-6">
-              <SectionHeading title="The problem." centered={false} />
-              <p className="mt-6 text-xl font-medium leading-relaxed text-brand-deep-navy">
-                {data.problem.split(". ")[0]}.
-              </p>
-              <p className="mt-3 text-lg leading-relaxed text-brand-deep-navy/70">
-                {data.problem.split(". ").slice(1).join(". ")}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Agitation (PAS — Agitation) ── */}
-      <section className="bg-lavender-tint-light py-12 md:py-16">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl shadow-brand-royal-purple/10">
-            <div className="h-1.5 w-full bg-gradient-to-r from-brand-royal-purple via-brand-mauve-purple to-brand-tech-blue" />
-            <div className="p-8 md:p-12">
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute right-6 top-6 select-none text-[100px] font-black leading-none text-brand-soft-lavender/40"
-              >
-                02
+      <section className="relative min-h-[600px] flex items-center overflow-hidden bg-surface pt-20">
+        <div className="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
+          <div className="z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low mb-6">
+              <span className="w-2 h-2 rounded-full bg-[#004bca] animate-pulse" />
+              <span className="text-xs font-bold tracking-wider text-on-surface-variant uppercase">
+                {data.category === "primary" ? "Core Service" : "Additional Service"}
               </span>
-              <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
-                The Cost
-              </span>
-              <SectionHeading title="What's it costing you?" centered={false} />
-              <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
-                {data.agitation}
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Solution (PAS — Solution) ── */}
-      <section className="bg-white py-12 md:py-18">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
-              What&apos;s Included
-            </span>
-            <SectionHeading title="How we solve it." centered />
-            <p className="mt-6 text-lg leading-relaxed text-brand-deep-navy/80">
-              {data.solution}
+            <h1 className="font-heading text-5xl md:text-7xl font-extrabold text-on-surface tracking-tighter leading-tight mb-6">
+              {data.shortTitle.split(" ")[0]}{" "}
+              <span className="text-[#004bca]">
+                {data.shortTitle.split(" ").slice(1).join(" ") || data.shortTitle}
+              </span>
+            </h1>
+            <p className="text-xl text-on-surface-variant max-w-lg mb-6 leading-relaxed">
+              {data.tagline}
             </p>
+            <p className="text-base text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+              {data.description}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/services"
+                className="bg-[#004bca] text-white px-8 py-4 rounded-full font-bold text-base shadow-xl shadow-[#004bca]/20 hover:translate-y-[-2px] transition-all inline-block"
+              >
+                Explore All Services
+              </Link>
+              <Link
+                href="/portfolio"
+                className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-bold text-base hover:bg-surface-container-high transition-colors inline-block"
+              >
+                View Portfolio
+              </Link>
+            </div>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {data.includes.map((item, i) => (
-              <IncludeCard
-                key={item.title}
-                title={item.title}
-                icon={item.icon}
-                index={i}
-                serviceSlug={data.slug}
-              />
-            ))}
+          <div className="relative hidden lg:block">
+            <div className="aspect-square rounded-3xl overflow-hidden bg-surface-container relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#004bca]/10 to-[#0061ff]/5 flex items-center justify-center">
+                <span className="text-8xl">{data.icon}</span>
+              </div>
+            </div>
+            {/* Floating Insight Chip */}
+            <div className="absolute -bottom-6 -left-6 bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-[0_20px_40px_rgba(25,28,30,0.06)] border border-white/20 max-w-[240px]">
+              <div className="text-2xl font-heading font-bold text-on-surface">
+                {data.heroMetric.value}
+              </div>
+              <div className="text-sm text-on-surface-variant">
+                {data.heroMetric.label}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 01 The Problem ── */}
+      <section className="bg-surface-container-low py-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="order-2 lg:order-1">
+            <div className="relative">
+              <div className="text-[12rem] font-heading font-extrabold text-[#004bca]/5 absolute -top-32 -left-12 select-none leading-none">
+                01
+              </div>
+              <h2 className="font-heading text-4xl font-bold text-on-surface mb-8 relative z-10">
+                The Problem
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+              <p>{data.problem}</p>
+              <div className="flex gap-4 items-start p-6 bg-surface-container-lowest rounded-2xl">
+                <AlertTriangle className="w-6 h-6 text-[#ba1a1a] mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-bold text-on-surface mb-1">
+                    Don&apos;t Ignore This
+                  </h4>
+                  <p className="text-sm">
+                    {data.agitation.split(". ")[0]}.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <div className="aspect-video bg-white rounded-3xl shadow-sm p-8 flex flex-col justify-center items-center">
+              <div className="text-6xl mb-4">{data.icon}</div>
+              <p className="text-center text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                {data.shortTitle}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 02 The Cost ── */}
+      <section className="bg-surface py-32">
+        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="relative aspect-square max-w-md mx-auto">
+            <div className="absolute inset-0 bg-[#994700]/5 rounded-full scale-90 blur-3xl" />
+            <div className="relative z-10 h-full flex items-center justify-center">
+              <div className="p-12 bg-white rounded-full shadow-2xl text-center border-8 border-surface-container-low">
+                <div className="text-5xl md:text-6xl font-heading font-extrabold text-[#994700] mb-2">
+                  {data.costStat.value}
+                </div>
+                <p className="text-on-surface-variant font-bold uppercase tracking-widest text-sm">
+                  {data.costStat.label}
+                </p>
+              </div>
+            </div>
+            <div className="absolute top-10 right-10 w-32 h-32 bg-[#fb7800]/20 rounded-2xl rotate-12 -z-1" />
+          </div>
+          <div>
+            <div className="relative">
+              <div className="text-[12rem] font-heading font-extrabold text-[#994700]/5 absolute -top-32 -left-12 select-none leading-none">
+                02
+              </div>
+              <h2 className="font-heading text-4xl font-bold text-on-surface mb-8 relative z-10">
+                The Cost
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+              <p>{data.agitation}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 03 How We Solve It ── */}
+      <section className="bg-surface-container-low py-32">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="mb-20 text-center max-w-2xl mx-auto">
+            <div className="relative inline-block">
+              <div className="text-[10rem] font-heading font-extrabold text-[#00642d]/5 absolute -top-24 left-1/2 -translate-x-1/2 select-none leading-none">
+                03
+              </div>
+              <h2 className="font-heading text-4xl font-bold text-on-surface relative z-10">
+                How We Solve It
+              </h2>
+            </div>
+            <p className="text-on-surface-variant mt-4">{data.solution}</p>
+          </div>
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {data.includes.map((item, i) => {
+              const isLarge = i === 0 || i === data.includes.length - 1;
+              const isGreen = i === 1;
+              return (
+                <div
+                  key={item.title}
+                  className={`${isLarge ? "md:col-span-2" : ""} ${
+                    isGreen
+                      ? "bg-[#00642d] text-white"
+                      : "bg-surface-container-lowest border border-outline-variant/10"
+                  } p-8 rounded-3xl shadow-sm flex flex-col justify-between group hover:translate-y-[-4px] transition-all`}
+                >
+                  <div>
+                    <div
+                      className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 ${
+                        isGreen ? "bg-white/20" : "bg-[#00642d]/10"
+                      }`}
+                    >
+                      <Check
+                        className={`w-6 h-6 ${isGreen ? "text-white" : "text-[#00642d]"}`}
+                      />
+                    </div>
+                    <h3
+                      className={`text-xl font-heading font-bold mb-4 ${
+                        isGreen ? "text-white" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* ── FAQ ── */}
-      <section className="bg-lavender-tint-medium py-12 md:py-16">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg shadow-brand-royal-purple/10 md:p-12">
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute right-6 top-6 select-none text-[100px] font-black leading-none text-brand-soft-lavender/40"
-            >
-              04
-            </span>
-            <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-brand-royal-purple">
-              FAQs
-            </span>
-            <SectionHeading title="Frequently asked questions." centered={false} />
-            <p className="mt-3 text-base text-brand-deep-navy/60">
-              Everything you need to know before we talk.
-            </p>
-            <div className="mt-8">
-              <FAQAccordion faqs={data.faqs} variant="branded" />
-            </div>
-          </div>
+      <section className="py-32 bg-surface">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="font-heading text-4xl font-bold text-on-surface mb-12 text-center">
+            Frequently Asked Questions
+          </h2>
+          <FAQAccordion faqs={data.faqs} variant="default" />
         </div>
       </section>
 
-      {/* ── Gradient bridge ── */}
-      <div aria-hidden="true" className="bg-cta-bridge h-24 w-full" />
-
-      {/* ── CTA ── */}
-      <CTABanner
-        title={data.cta.title}
-        description={data.cta.description}
-        ctaText={data.cta.ctaText}
-        ctaLink="https://link.josa.ai/widget/bookings/tech-audit-calendar"
-        variant="primary"
-      />
-
       {/* ── Related Services ── */}
-      {relatedServices.length > 0 && (
-        <section className="bg-gray-50 py-12 md:py-16">
-          <div className="mx-auto max-w-6xl px-6">
-            <SectionHeading title="Related services." centered />
-            <p className="mx-auto mt-3 max-w-xl text-center text-base text-brand-deep-navy/60">
-              Other ways we help businesses like yours grow.
-            </p>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedServices.map((rs) =>
-                rs ? (
-                  <ServiceCard
-                    key={rs.slug}
-                    title={rs.shortTitle}
-                    description={rs.description}
-                    icon={rs.icon}
-                    link={`/services/${rs.slug}`}
-                    variant={rs.category === "primary" ? "primary" : "secondary"}
-                  />
-                ) : null
-              )}
+      {data.relatedSlugs.length > 0 && (
+        <section className="py-20 bg-surface-container-low">
+          <div className="max-w-7xl mx-auto px-8">
+            <h2 className="font-heading text-3xl font-bold text-on-surface mb-8 text-center">
+              Related Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {data.relatedSlugs
+                .map((rs) => services.find((s) => s.slug === rs))
+                .filter(Boolean)
+                .map((rs) =>
+                  rs ? (
+                    <Link
+                      key={rs.slug}
+                      href={`/services/${rs.slug}`}
+                      className="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10 hover:shadow-xl hover:-translate-y-1 transition-all block"
+                    >
+                      <span className="text-2xl mb-4 block">{rs.icon}</span>
+                      <h3 className="text-xl font-bold font-heading mb-3">
+                        {rs.shortTitle}
+                      </h3>
+                      <p className="text-on-surface-variant text-sm leading-relaxed">
+                        {rs.description}
+                      </p>
+                    </Link>
+                  ) : null
+                )}
             </div>
           </div>
         </section>

@@ -2,14 +2,12 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
-  --font-heading: var(--font-sans);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --font-heading: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -47,86 +45,65 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* JOSA.AI Brand Palette */
-  --color-brand-midnight-plum: #421C52;
-  --color-brand-royal-purple: #8D4BBB;
-  --color-brand-mauve-purple: #A882EE;
-  --color-brand-soft-lavender: #E3D4F3;
-  --color-brand-deep-navy: #1E3A8A;
-  --color-brand-tech-blue: #3B82F6;
-  --color-brand-cool-azure: #93C5FD;
-  --color-brand-frosted-blue: #DAF0FF;
+  /* AISkillZone Design System — Material Design 3 Palette */
+  --color-surface: #f7f9fb;
+  --color-surface-dim: #d8dadc;
+  --color-surface-bright: #f7f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #424656;
+  --color-outline: #737687;
+  --color-outline-variant: #c2c6d9;
+  --color-az-primary: #004bca;
+  --color-az-primary-container: #0061ff;
+  --color-on-az-primary: #ffffff;
+  --color-az-secondary: #994700;
+  --color-az-secondary-container: #fb7800;
+  --color-on-az-secondary: #ffffff;
+  --color-az-tertiary: #00642d;
+  --color-az-tertiary-container: #00803c;
+  --color-on-az-tertiary: #ffffff;
+  --color-az-error: #ba1a1a;
 }
 
 :root {
-  /* JOSA.AI Brand — Light mode */
-  --background: #ffffff;
-  --foreground: #1E3A8A;
+  /* AISkillZone — Light mode */
+  --background: #f7f9fb;
+  --foreground: #191c1e;
   --card: #ffffff;
-  --card-foreground: #1E3A8A;
+  --card-foreground: #191c1e;
   --popover: #ffffff;
-  --popover-foreground: #1E3A8A;
-  --primary: #8D4BBB;
+  --popover-foreground: #191c1e;
+  --primary: #004bca;
   --primary-foreground: #ffffff;
-  --secondary: #E3D4F3;
-  --secondary-foreground: #421C52;
-  --muted: #DAF0FF;
-  --muted-foreground: #1E3A8A;
-  --accent: #3B82F6;
+  --secondary: #f2f4f6;
+  --secondary-foreground: #191c1e;
+  --muted: #eceef0;
+  --muted-foreground: #424656;
+  --accent: #00642d;
   --accent-foreground: #ffffff;
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: #E3D4F3;
-  --input: #E3D4F3;
-  --ring: #8D4BBB;
-  --chart-1: #8D4BBB;
-  --chart-2: #3B82F6;
-  --chart-3: #A882EE;
-  --chart-4: #93C5FD;
-  --chart-5: #421C52;
+  --destructive: #ba1a1a;
+  --border: #c2c6d9;
+  --input: #e6e8ea;
+  --ring: #004bca;
+  --chart-1: #004bca;
+  --chart-2: #994700;
+  --chart-3: #00642d;
+  --chart-4: #0061ff;
+  --chart-5: #fb7800;
   --radius: 0.625rem;
-  --sidebar: #421C52;
-  --sidebar-foreground: #E3D4F3;
-  --sidebar-primary: #8D4BBB;
+  --sidebar: #191c1e;
+  --sidebar-foreground: #f7f9fb;
+  --sidebar-primary: #004bca;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #A882EE;
+  --sidebar-accent: #0061ff;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #A882EE;
-  --sidebar-ring: #8D4BBB;
-}
-
-.dark {
-  /* JOSA.AI Brand — Dark mode */
-  --background: #421C52;
-  --foreground: #E3D4F3;
-  --card: #2a1235;
-  --card-foreground: #E3D4F3;
-  --popover: #2a1235;
-  --popover-foreground: #E3D4F3;
-  --primary: #A882EE;
-  --primary-foreground: #421C52;
-  --secondary: #1E3A8A;
-  --secondary-foreground: #DAF0FF;
-  --muted: #351845;
-  --muted-foreground: #93C5FD;
-  --accent: #3B82F6;
-  --accent-foreground: #ffffff;
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: rgba(168, 130, 238, 0.2);
-  --input: rgba(168, 130, 238, 0.25);
-  --ring: #A882EE;
-  --chart-1: #A882EE;
-  --chart-2: #93C5FD;
-  --chart-3: #8D4BBB;
-  --chart-4: #3B82F6;
-  --chart-5: #E3D4F3;
-  --sidebar: #2a1235;
-  --sidebar-foreground: #E3D4F3;
-  --sidebar-primary: #A882EE;
-  --sidebar-primary-foreground: #421C52;
-  --sidebar-accent: #8D4BBB;
-  --sidebar-accent-foreground: #E3D4F3;
-  --sidebar-border: rgba(168, 130, 238, 0.2);
-  --sidebar-ring: #A882EE;
+  --sidebar-border: #c2c6d9;
+  --sidebar-ring: #004bca;
 }
 
 @layer base {
@@ -139,18 +116,6 @@
   html {
     @apply font-sans;
     scroll-behavior: smooth;
-  }
-}
-
-@layer utilities {
-  .text-sm {
-    font-size: 1rem !important;
-    line-height: 1.5rem !important;
-  }
-
-  .text-xs {
-    font-size: 0.875rem !important;
-    line-height: 1.25rem !important;
   }
 }
 
@@ -170,19 +135,36 @@
   50% { opacity: 1; }
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
 }
 
-@keyframes underline-grow {
-  from { width: 0; }
-  to { width: 4rem; }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes floatRotate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(5deg); }
+  75% { transform: translateY(-5px) rotate(-5deg); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* Grain texture overlay */
@@ -196,336 +178,81 @@
   z-index: 1;
 }
 
-/* Gradient mesh backgrounds */
-.gradient-mesh-purple {
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(141, 75, 187, 0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 40% 80%, rgba(168, 130, 238, 0.12) 0%, transparent 50%);
+/* Mesh gradient background — blue/orange/green triad */
+.bg-mesh-gradient {
+  background-image:
+    radial-gradient(at 0% 0%, rgba(0, 75, 202, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(251, 120, 0, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 100, 45, 0.04) 0px, transparent 50%);
 }
 
-.gradient-mesh-dark {
-  background:
-    radial-gradient(ellipse at 20% 30%, rgba(141, 75, 187, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(66, 28, 82, 1) 0%, transparent 80%);
-}
-
-/* Prose styling for blog */
-.prose-brand {
-  --tw-prose-headings: #1E3A8A;
-  --tw-prose-links: #8D4BBB;
-  --tw-prose-bold: #1E3A8A;
-  --tw-prose-code: #421C52;
-}
-
-/* Dot pattern overlay */
-.dot-pattern {
-  background-image: radial-gradient(circle, rgba(141, 75, 187, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-/* Diagonal lines pattern */
-.diagonal-lines {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 10px,
-    rgba(141, 75, 187, 0.03) 10px,
-    rgba(141, 75, 187, 0.03) 11px
-  );
-}
-/* ========================================
-   JOSA.AI Enhanced Animations
-   ======================================== */
-
-/* Gradient shift animation for borders */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Glow pulse animation */
-@keyframes glowPulse {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.05);
-  }
-}
-
-/* Shimmer effect for buttons */
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(200%);
-  }
-}
-
-/* Floating animation with rotation */
-@keyframes floatRotate {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-15px) rotate(5deg);
-  }
-  75% {
-    transform: translateY(-5px) rotate(-5deg);
-  }
-}
-
-/* Bounce animation */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Pulse scale animation */
-@keyframes pulseScale {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-/* Spin animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Wave animation for decorative elements */
-@keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-/* Particle float up animation */
-@keyframes particleFloat {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-200px) scale(0.5);
-    opacity: 0;
-  }
-}
-
-/* Enhanced shadow effects */
-.shadow-glow {
-  box-shadow: 
-    0 0 20px rgba(141, 75, 187, 0.3),
-    0 0 40px rgba(141, 75, 187, 0.2),
-    0 0 60px rgba(141, 75, 187, 0.1);
-}
-
-.shadow-glow-blue {
-  box-shadow: 
-    0 0 20px rgba(59, 130, 246, 0.3),
-    0 0 40px rgba(59, 130, 246, 0.2),
-    0 0 60px rgba(59, 130, 246, 0.1);
-}
-
-/* Glassmorphism effect */
+/* Glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.glass-dark {
-  background: rgba(66, 28, 82, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(141, 75, 187, 0.3);
+/* Ambient shadow — DESIGN.md spec */
+.shadow-ambient {
+  box-shadow: 0 20px 40px rgba(25, 28, 30, 0.06);
+}
+
+/* Card hover lift */
+.card-hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(25, 28, 30, 0.08);
+}
+
+/* Text gradient */
+.text-gradient-primary {
+  background: linear-gradient(90deg, #004bca, #0061ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(0, 75, 202, 0.2);
+  color: inherit;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 75, 202, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #004bca, #0061ff);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0061ff, #004bca);
 }
 
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
 
-/* Mobile-optimized animations (reduced motion) */
+/* Mobile-optimized animations */
 @media (max-width: 768px) {
-  .animate-float {
-    animation: none;
-  }
-  
-  .animate-glow {
-    animation: none;
-  }
+  .animate-float { animation: none; }
 }
 
-/* Custom scrollbar styling */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(141, 75, 187, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #8D4BBB, #3B82F6);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #A882EE, #93C5FD);
-}
-
-/* Selection styling */
-::selection {
-  background: rgba(141, 75, 187, 0.3);
-  color: inherit;
-}
-
-/* Text gradient animation */
-.text-gradient-animated {
-  background: linear-gradient(
-    90deg,
-    #8D4BBB,
-    #3B82F6,
-    #A882EE,
-    #8D4BBB
-  );
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 5s ease infinite;
-}
-
-/* Card hover effects */
-.card-hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 
-    0 10px 40px rgba(141, 75, 187, 0.2),
-    0 20px 60px rgba(141, 75, 187, 0.1);
-}
-
-/* Border gradient animation */
-.border-gradient {
-  position: relative;
-}
-
-.border-gradient::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 2px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, #8D4BBB, #3B82F6, #A882EE, #8D4BBB);
-  background-size: 300% 300%;
-  animation: gradientShift 3s ease infinite;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-/* ========================================
-   JOSA.AI Section Background Textures
-   ======================================== */
-
-/* Dot pattern for light sections */
-.bg-texture-dots {
-  background-image: radial-gradient(circle, rgba(141, 75, 187, 0.4) 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
-}
-
-/* Grid pattern for sections */
-.bg-texture-grid {
-  background-image: 
-    linear-gradient(rgba(141, 75, 187, 0.25) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(141, 75, 187, 0.25) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-/* Gradient mesh for content sections */
-.gradient-mesh-light {
-  background:
-    radial-gradient(ellipse at 30% 20%, rgba(168, 130, 238, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
-    linear-gradient(180deg, transparent 0%, rgba(232, 212, 243, 0.1) 100%);
-}
-
-/* Soft gradient for alternating sections */
-.gradient-section-alt {
-  background: linear-gradient(180deg, rgba(218, 240, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-/* Hero with background image support */
-.hero-with-image {
-  background-size: cover;
-  background-position: center;
-}
-
-/* Wave divider SVG pattern */
-.wave-divider {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0 60V30C240 60 480 0 720 30C960 60 1200 0 1440 30V60H0Z'/%3E%3C/svg%3E");
-  background-size: 100% 40px;
-  background-repeat: no-repeat;
-}
-
-.wave-divider-top {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0 0V30C240 60 480 0 720 30C960 60 1200 0 1440 30V0H0Z'/%3E%3C/svg%3E");
-  background-size: 100% 40px;
-  background-repeat: no-repeat;
-}
-
-/* Service detail page — section background tints */
-.bg-lavender-tint-light {
-  background: linear-gradient(135deg, #F3EBF9 0%, #EDE4F7 100%);
-}
-.bg-lavender-tint-medium {
-  background: linear-gradient(180deg, #EDE4F7 0%, #E3D4F3 100%);
-}
-.bg-cta-bridge {
-  background: linear-gradient(180deg, #E3D4F3 0%, #421C52 100%);
+/* Masonry layout for portfolio */
+@media (min-width: 768px) {
+  .masonry-item:nth-child(even) { margin-top: 4rem; }
 }

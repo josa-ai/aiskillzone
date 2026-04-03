@@ -107,12 +107,12 @@ const ICON_MAP: Record<string, LucideIcon> = {
 };
 
 const GRADIENTS = [
-  "from-brand-royal-purple to-brand-midnight-plum",
-  "from-brand-tech-blue to-brand-deep-navy",
-  "from-brand-mauve-purple to-brand-royal-purple",
-  "from-brand-deep-navy to-brand-tech-blue",
-  "from-brand-cool-azure to-brand-tech-blue",
-  "from-brand-midnight-plum to-brand-mauve-purple",
+  "from-[#004bca] to-[#191c1e]",
+  "from-[#0061ff] to-[#191c1e]",
+  "from-[#0061ff] to-[#004bca]",
+  "from-[#191c1e] to-[#004bca]",
+  "from-[#c2c6d9] to-[#004bca]",
+  "from-[#191c1e] to-[#0061ff]",
 ];
 
 interface IncludeCardProps {
@@ -126,7 +126,7 @@ export function IncludeCard({ title, index, serviceSlug }: IncludeCardProps) {
   const imagePath = `/images/services/includes/${serviceSlug}/${index}.jpg`;
 
   return (
-    <div className="group overflow-hidden rounded-xl border border-brand-soft-lavender/60 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-royal-purple/20">
+    <div className="group overflow-hidden rounded-xl border border-[#f2f4f6]/60 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#004bca]/20">
       <div className="relative h-48">
         <Image
           src={imagePath}
@@ -135,10 +135,10 @@ export function IncludeCard({ title, index, serviceSlug }: IncludeCardProps) {
           className="object-cover"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-brand-midnight-plum/40 via-transparent to-transparent" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#191c1e]/40 via-transparent to-transparent" />
       </div>
-      <div className="border-t-2 border-brand-soft-lavender p-4">
-        <p className="text-sm font-semibold leading-snug text-brand-deep-navy transition-colors group-hover:text-brand-royal-purple">
+      <div className="border-t-2 border-[#f2f4f6] p-4">
+        <p className="text-sm font-semibold leading-snug text-[#191c1e] transition-colors group-hover:text-[#004bca]">
           {title}
         </p>
       </div>

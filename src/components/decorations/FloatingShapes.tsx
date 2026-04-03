@@ -61,7 +61,7 @@ export function FloatingShapes({ count = 6, className = "" }: FloatingShapesProp
             <div
               className="h-full w-full rounded-full"
               style={{
-                background: "linear-gradient(135deg, #8D4BBB 0%, #A882EE 100%)",
+                background: "linear-gradient(135deg, #004bca 0%, #0061ff 100%)",
               }}
             />
           )}
@@ -69,7 +69,7 @@ export function FloatingShapes({ count = 6, className = "" }: FloatingShapesProp
             <div
               className="h-full w-full"
               style={{
-                background: "linear-gradient(135deg, #3B82F6 0%, #93C5FD 100%)",
+                background: "linear-gradient(135deg, #004bca 0%, #c2c6d9 100%)",
                 clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
               }}
             />
@@ -78,7 +78,7 @@ export function FloatingShapes({ count = 6, className = "" }: FloatingShapesProp
             <div
               className="h-full w-full"
               style={{
-                background: "linear-gradient(135deg, #A882EE 0%, #E3D4F3 100%)",
+                background: "linear-gradient(135deg, #0061ff 0%, #f2f4f6 100%)",
                 clipPath:
                   "polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)",
               }}
@@ -88,7 +88,7 @@ export function FloatingShapes({ count = 6, className = "" }: FloatingShapesProp
             <div
               className="h-full w-full rounded-lg"
               style={{
-                background: "linear-gradient(135deg, #421C52 0%, #8D4BBB 100%)",
+                background: "linear-gradient(135deg, #191c1e 0%, #004bca 100%)",
                 transform: "rotate(45deg)",
               }}
             />

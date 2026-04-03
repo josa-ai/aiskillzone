@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu } from "lucide-react";
@@ -22,10 +21,8 @@ import {
 } from "@/lib/services-data";
 
 const navLinks = [
-  { href: "/about", label: "About" },
+  { href: "/", label: "Home" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -33,18 +30,8 @@ export function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -74,38 +61,34 @@ export function Navbar() {
   }
 
   return (
-    <header
-      className={`sticky top-0 z-40 w-full border-b border-border/40 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 shadow-lg shadow-brand-royal-purple/5 backdrop-blur-xl"
-          : "bg-background/80 backdrop-blur-md"
-      }`}
-    >
+    <header className="bg-slate-50/70 backdrop-blur-md fixed top-0 w-full z-50 shadow-[0_20px_40px_rgba(25,28,30,0.06)]">
       <nav
-        className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-300 sm:px-6 lg:px-8 ${
-          scrolled ? "h-14" : "h-16"
-        }`}
+        className="mx-auto flex max-w-7xl items-center justify-between px-8 h-20"
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <Link href="/" className="group flex-shrink-0">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Image
-              src="/images/logo-horizontal.png"
-              alt="JOSA.AI"
-              width={2011}
-              height={754}
-              className="h-16 w-auto transition-all group-hover:drop-shadow-lg"
-              priority
-            />
-          </motion.div>
+        <Link href="/" className="flex-shrink-0">
+          <span className="text-2xl font-bold tracking-tighter text-slate-900 font-heading">
+            AISkillZone
+          </span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-8 md:flex font-heading font-medium text-sm tracking-tight">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`transition-colors duration-300 ${
+                isActive(link.href)
+                  ? "text-blue-600 font-bold border-b-2 border-blue-600"
+                  : "text-slate-600 hover:text-blue-500"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+
           {/* Services dropdown */}
           <div
             ref={dropdownRef}
@@ -113,22 +96,20 @@ export function Navbar() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <motion.button
+            <button
               type="button"
               onClick={() => setServicesOpen((prev) => !prev)}
               aria-expanded={servicesOpen}
               aria-haspopup="true"
-              className={`group relative inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-brand-soft-lavender/50 hover:text-primary ${
+              className={`inline-flex items-center gap-1 transition-colors duration-300 ${
                 isActive("/services")
-                  ? "text-primary"
-                  : "text-brand-deep-navy"
+                  ? "text-blue-600 font-bold border-b-2 border-blue-600"
+                  : "text-slate-600 hover:text-blue-500"
               }`}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
             >
               Services
               <motion.svg
-                className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+                className="h-4 w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -142,7 +123,7 @@ export function Navbar() {
                   d="M19 9l-7 7-7-7"
                 />
               </motion.svg>
-            </motion.button>
+            </button>
 
             <AnimatePresence>
               {servicesOpen && (
@@ -151,120 +132,61 @@ export function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -8, scale: 0.95 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute left-0 top-full z-50 mt-2 w-80 rounded-xl border border-border bg-popover p-4 shadow-xl shadow-brand-royal-purple/10 backdrop-blur-xl"
+                  className="absolute left-0 top-full z-50 mt-2 w-80 rounded-xl border border-slate-200 bg-white/95 backdrop-blur-xl p-4 shadow-xl"
                   role="menu"
                   aria-label="Services menu"
                 >
-                  {/* Glow effect */}
-                  <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-br from-brand-royal-purple/5 to-brand-tech-blue/5" />
-
-                  <div className="relative z-10">
-                    <div className="mb-3">
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                        Core Services
-                      </p>
-                      <div className="space-y-1">
-                        {primaryServices.map((service, index) => (
-                          <motion.div
-                            key={service.slug}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.05 }}
-                          >
-                            <Link
-                              href={`/services/${service.slug}`}
-                              role="menuitem"
-                              className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-brand-deep-navy transition-all hover:bg-brand-soft-lavender/50 hover:text-primary"
-                            >
-                              <span className="text-base">{service.icon}</span>
-                              <span>{service.shortTitle}</span>
-                              <motion.span
-                                className="ml-auto h-1 w-0 rounded-full bg-brand-mauve-purple opacity-0 transition-all group-hover:w-2 group-hover:opacity-100"
-                                animate={{ width: [0, 0, 0] }}
-                              />
-                            </Link>
-                          </motion.div>
-                        ))}
-                      </div>
+                  <div className="mb-3">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      Core Services
+                    </p>
+                    <div className="space-y-1">
+                      {primaryServices.map((service) => (
+                        <Link
+                          key={service.slug}
+                          href={`/services/${service.slug}`}
+                          role="menuitem"
+                          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 transition-all hover:bg-slate-50 hover:text-blue-600"
+                        >
+                          <span className="text-base">{service.icon}</span>
+                          <span>{service.shortTitle}</span>
+                        </Link>
+                      ))}
                     </div>
+                  </div>
 
-                    <div className="border-t border-border pt-3">
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                        Additional Services
-                      </p>
-                      <div className="space-y-1">
-                        {secondaryServices.map((service, index) => (
-                          <motion.div
-                            key={service.slug}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 + index * 0.05 }}
-                          >
-                            <Link
-                              href={`/services/${service.slug}`}
-                              role="menuitem"
-                              className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-brand-deep-navy transition-all hover:bg-brand-soft-lavender/50 hover:text-primary"
-                            >
-                              <span className="text-base">{service.icon}</span>
-                              <span>{service.shortTitle}</span>
-                            </Link>
-                          </motion.div>
-                        ))}
-                      </div>
+                  <div className="border-t border-slate-100 pt-3">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      Additional Services
+                    </p>
+                    <div className="space-y-1">
+                      {secondaryServices.map((service) => (
+                        <Link
+                          key={service.slug}
+                          href={`/services/${service.slug}`}
+                          role="menuitem"
+                          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 transition-all hover:bg-slate-50 hover:text-blue-600"
+                        >
+                          <span className="text-base">{service.icon}</span>
+                          <span>{service.shortTitle}</span>
+                        </Link>
+                      ))}
                     </div>
+                  </div>
 
-                    <div className="mt-4 border-t border-border pt-3">
-                      <Link
-                        href="/services"
-                        role="menuitem"
-                        className="block text-center text-sm font-medium text-primary transition-colors hover:text-brand-mauve-purple"
-                      >
-                        View all services
-                      </Link>
-                    </div>
+                  <div className="mt-4 border-t border-slate-100 pt-3">
+                    <Link
+                      href="/services"
+                      role="menuitem"
+                      className="block text-center text-sm font-medium text-blue-600 transition-colors hover:text-blue-500"
+                    >
+                      View all services
+                    </Link>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
-
-          {navLinks.map((link) => (
-            <motion.div
-              key={link.href}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Link
-                href={link.href}
-                className={`group relative rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-brand-soft-lavender/50 hover:text-primary ${
-                  isActive(link.href)
-                    ? "text-primary"
-                    : "text-brand-deep-navy"
-                }`}
-              >
-                {link.label}
-                <span
-                  className={`absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-brand-royal-purple origin-left transition-transform duration-200 ${
-                    isActive(link.href)
-                      ? "scale-x-100"
-                      : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
-              </Link>
-            </motion.div>
-          ))}
-
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Button
-              render={<Link href="https://link.josa.ai/widget/bookings/tech-audit-calendar" />}
-              className="ml-2 rounded-lg bg-primary text-white transition-all hover:bg-brand-mauve-purple hover:shadow-lg hover:shadow-brand-mauve-purple/20"
-            >
-              Book a Call
-            </Button>
-          </motion.div>
         </div>
 
         {/* Mobile menu */}
@@ -275,51 +197,58 @@ export function Navbar() {
                 <Button variant="ghost" size="icon" aria-label="Open menu" />
               }
             >
-              <motion.div
-                animate={{ rotate: mobileOpen ? 90 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Menu className="h-6 w-6" />
-              </motion.div>
+              <Menu className="h-6 w-6" />
             </SheetTrigger>
             <SheetContent side="right" className="w-80 overflow-y-auto">
               <SheetHeader>
                 <SheetTitle>
-                  <Image
-                    src="/images/logo-horizontal.png"
-                    alt="JOSA.AI"
-                    width={2011}
-                    height={754}
-                    className="h-8 w-auto"
-                  />
+                  <span className="text-xl font-bold tracking-tighter text-slate-900 font-heading">
+                    AISkillZone
+                  </span>
                 </SheetTitle>
               </SheetHeader>
 
               <div className="flex flex-col gap-1 px-4 pt-2">
+                {navLinks.map((link) => (
+                  <SheetClose
+                    key={link.href}
+                    render={
+                      <Link
+                        href={link.href}
+                        className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-slate-50 hover:text-blue-600 ${
+                          isActive(link.href)
+                            ? "text-blue-600"
+                            : "text-slate-700"
+                        }`}
+                      />
+                    }
+                  >
+                    {link.label}
+                  </SheetClose>
+                ))}
+
                 {/* Mobile services accordion */}
-                <motion.button
+                <button
                   type="button"
                   onClick={() => setMobileServicesOpen((prev) => !prev)}
                   aria-expanded={mobileServicesOpen}
-                  className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-brand-deep-navy transition-colors hover:bg-brand-soft-lavender/50"
-                  whileTap={{ scale: 0.98 }}
+                  className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
                 >
                   Services
-                  <motion.svg
+                  <svg
                     className={`h-4 w-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     strokeWidth={2}
-                    animate={{ rotate: mobileServicesOpen ? 180 : 0 }}
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       d="M19 9l-7 7-7-7"
                     />
-                  </motion.svg>
-                </motion.button>
+                  </svg>
+                </button>
 
                 <AnimatePresence>
                   {mobileServicesOpen && (
@@ -337,7 +266,7 @@ export function Navbar() {
                             render={
                               <Link
                                 href={`/services/${service.slug}`}
-                                className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-brand-deep-navy transition-colors hover:bg-brand-soft-lavender/50 hover:text-primary"
+                                className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-blue-600"
                               />
                             }
                           >
@@ -349,7 +278,7 @@ export function Navbar() {
                           render={
                             <Link
                               href="/services"
-                              className="block px-2 py-1.5 text-sm font-medium text-primary transition-colors hover:text-brand-mauve-purple"
+                              className="block px-2 py-1.5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-500"
                             />
                           }
                         >
@@ -359,37 +288,6 @@ export function Navbar() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-
-                {navLinks.map((link) => (
-                  <SheetClose
-                    key={link.href}
-                    render={
-                      <Link
-                        href={link.href}
-                        className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-brand-soft-lavender/50 hover:text-primary ${
-                          isActive(link.href)
-                            ? "text-primary"
-                            : "text-brand-deep-navy"
-                        }`}
-                      />
-                    }
-                  >
-                    {link.label}
-                  </SheetClose>
-                ))}
-
-                <div className="mt-4 px-3">
-                  <SheetClose
-                    render={
-                      <Link
-                        href="https://link.josa.ai/widget/bookings/tech-audit-calendar"
-                        className="block w-full rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-brand-mauve-purple"
-                      />
-                    }
-                  >
-                    Book a Call
-                  </SheetClose>
-                </div>
               </div>
             </SheetContent>
           </Sheet>

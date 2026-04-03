@@ -55,10 +55,10 @@ export function FAQAccordion({ faqs, showSchema = true, variant = "default" }: F
             <div
               key={index}
               className={cn(
-                "overflow-hidden rounded-lg border",
+                "overflow-hidden rounded-2xl border",
                 variant === "branded"
-                  ? "border-brand-royal-purple/30 bg-white/70"
-                  : "border-brand-cool-azure"
+                  ? "border-[#004bca]/30 bg-white/70"
+                  : "border-[#c2c6d9]"
               )}
             >
               <button
@@ -68,10 +68,10 @@ export function FAQAccordion({ faqs, showSchema = true, variant = "default" }: F
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 className={cn(
-                  "flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-medium text-brand-deep-navy transition-colors",
+                  "flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-medium text-[#191c1e] transition-colors",
                   variant === "branded"
-                    ? cn("hover:bg-brand-royal-purple/10", isOpen && "bg-brand-royal-purple/10")
-                    : cn("hover:bg-brand-soft-lavender", isOpen && "bg-brand-soft-lavender")
+                    ? cn("hover:bg-[#004bca]/10", isOpen && "bg-[#004bca]/10")
+                    : cn("hover:bg-[#f2f4f6]", isOpen && "bg-[#f2f4f6]")
                 )}
               >
                 <span>{faq.question}</span>
@@ -80,7 +80,7 @@ export function FAQAccordion({ faqs, showSchema = true, variant = "default" }: F
                   transition={{ duration: 0.2 }}
                   className="shrink-0"
                 >
-                  <ChevronDown className="size-5 text-brand-deep-navy" />
+                  <ChevronDown className="size-5 text-[#004bca]" />
                 </motion.span>
               </button>
 
@@ -96,7 +96,7 @@ export function FAQAccordion({ faqs, showSchema = true, variant = "default" }: F
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 pb-4 pt-1 text-brand-deep-navy/80 leading-relaxed">
+                    <div className="px-5 pb-4 pt-1 text-[#191c1e]/80 leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>

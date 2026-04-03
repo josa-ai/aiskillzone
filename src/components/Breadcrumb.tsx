@@ -34,13 +34,13 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
           return (
             <li key={index} className="flex items-center gap-1.5">
               {index > 0 && (
-                <span className="text-brand-deep-navy/40" aria-hidden="true">
+                <span className="text-[#191c1e]/40" aria-hidden="true">
                   /
                 </span>
               )}
               {isLast || !item.href ? (
                 <span
-                  className="text-brand-deep-navy/60"
+                  className="text-[#191c1e]/60"
                   aria-current={isLast ? "page" : undefined}
                 >
                   {item.label}
@@ -48,7 +48,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
               ) : (
                 <Link
                   href={item.href}
-                  className="text-brand-tech-blue transition-colors hover:text-brand-deep-navy"
+                  className="text-[#004bca] transition-colors hover:text-[#191c1e]"
                 >
                   {item.label}
                 </Link>

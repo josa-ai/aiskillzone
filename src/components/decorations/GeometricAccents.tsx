@@ -44,13 +44,13 @@ export function GeometricAccents({
               <div
                 className="h-32 w-32 rounded-full"
                 style={{
-                  background: "linear-gradient(135deg, rgba(141, 75, 187, 0.3) 0%, transparent 70%)",
+                  background: "linear-gradient(135deg, rgba(0, 75, 202, 0.3) 0%, transparent 70%)",
                 }}
               />
               <motion.div
                 className="absolute inset-4 rounded-full"
                 style={{
-                  background: "linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, transparent 70%)",
+                  background: "linear-gradient(135deg, rgba(0, 97, 255, 0.2) 0%, transparent 70%)",
                 }}
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -65,7 +65,7 @@ export function GeometricAccents({
                   key={i}
                   className="h-24 w-1"
                   style={{
-                    background: "linear-gradient(to bottom, transparent, #8D4BBB, transparent)",
+                    background: "linear-gradient(to bottom, transparent, #004bca, transparent)",
                   }}
                   animate={{ scaleY: [0.5, 1, 0.5], opacity: [0.3, 0.6, 0.3] }}
                   transition={{
@@ -84,7 +84,7 @@ export function GeometricAccents({
                 <motion.div
                   key={i}
                   className="h-2 w-2 rounded-full"
-                  style={{ backgroundColor: "#A882EE" }}
+                  style={{ backgroundColor: "#0061ff" }}
                   animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
                   transition={{
                     duration: 1.5,
@@ -106,14 +106,14 @@ export function GeometricAccents({
             >
               <defs>
                 <linearGradient id={`hex-grad-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#8D4BBB" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.2" />
+                  <stop offset="0%" stopColor="#004bca" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#0061ff" stopOpacity="0.2" />
                 </linearGradient>
               </defs>
               <polygon
                 points="40,5 70,22.5 70,57.5 40,75 10,57.5 10,22.5"
                 fill={`url(#hex-grad-${index})`}
-                stroke="#A882EE"
+                stroke="#0061ff"
                 strokeWidth="1"
                 strokeOpacity="0.5"
               />

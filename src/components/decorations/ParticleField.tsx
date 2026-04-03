@@ -31,7 +31,7 @@ function generateParticles(count: number): Particle[] {
 export function ParticleField({
   count = 12,
   className = "",
-  color = "#A882EE",
+  color = "#0061ff",
 }: ParticleFieldProps) {
   const particles = generateParticles(count);
 

@@ -10,7 +10,7 @@ interface GlowingOrbProps {
 
 export function GlowingOrb({
   className = "",
-  color = "#8D4BBB",
+  color = "#004bca",
   size = 200,
 }: GlowingOrbProps) {
   return (
