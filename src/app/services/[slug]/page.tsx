@@ -304,8 +304,8 @@ export default async function ServiceDetailPage({
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative min-h-[600px] flex items-center overflow-hidden bg-surface pt-20">
-        <div className="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
+      <section className="relative flex items-center overflow-hidden bg-surface pt-20">
+        <div className="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16">
           <div className="z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low mb-6">
               <span className="w-2 h-2 rounded-full bg-[#004bca] animate-pulse" />
@@ -365,14 +365,14 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── 01 The Problem ── */}
-      <section className="bg-surface-container-low py-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <section className="bg-surface-container-low py-16 md:py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <div className="relative">
-              <div className="text-[12rem] font-heading font-extrabold text-[#004bca]/5 absolute -top-32 -left-12 select-none leading-none">
+              <div className="text-[8rem] font-heading font-extrabold text-[#004bca]/5 absolute -top-20 -left-8 select-none leading-none">
                 01
               </div>
-              <h2 className="font-heading text-4xl font-bold text-on-surface mb-8 relative z-10">
+              <h2 className="font-heading text-4xl font-bold text-on-surface mb-6 relative z-10">
                 The Problem
               </h2>
             </div>
@@ -406,32 +406,32 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── 02 The Cost ── */}
-      <section className="bg-surface py-32">
-        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="relative aspect-square max-w-md mx-auto">
-            <div className="absolute inset-0 bg-[#994700]/5 rounded-full scale-90 blur-3xl" />
-            <div className="relative z-10 h-full flex items-center justify-center">
-              <div className="p-12 bg-white rounded-full shadow-2xl text-center border-8 border-surface-container-low">
-                <div className="text-5xl md:text-6xl font-heading font-extrabold text-[#994700] mb-2">
+      <section className="bg-surface py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="relative max-w-xs mx-auto lg:mx-0">
+            <div className="absolute inset-0 bg-[#994700]/5 rounded-full blur-2xl" />
+            <div className="relative z-10 flex items-center justify-center">
+              <div className="p-10 bg-white rounded-full shadow-2xl text-center border-4 border-surface-container-low">
+                <div className="text-4xl md:text-5xl font-heading font-extrabold text-[#994700] mb-1">
                   {data.costStat.value}
                 </div>
-                <p className="text-on-surface-variant font-bold uppercase tracking-widest text-sm">
+                <p className="text-on-surface-variant font-bold uppercase tracking-widest text-xs">
                   {data.costStat.label}
                 </p>
               </div>
             </div>
-            <div className="absolute top-10 right-10 w-32 h-32 bg-[#fb7800]/20 rounded-2xl rotate-12 -z-1" />
+            <div className="absolute top-4 right-0 w-20 h-20 bg-[#fb7800]/20 rounded-2xl rotate-12 -z-1" />
           </div>
           <div>
             <div className="relative">
-              <div className="text-[12rem] font-heading font-extrabold text-[#994700]/5 absolute -top-32 -left-12 select-none leading-none">
+              <div className="text-[8rem] font-heading font-extrabold text-[#994700]/5 absolute -top-20 -left-8 select-none leading-none">
                 02
               </div>
-              <h2 className="font-heading text-4xl font-bold text-on-surface mb-8 relative z-10">
+              <h2 className="font-heading text-4xl font-bold text-on-surface mb-6 relative z-10">
                 The Cost
               </h2>
             </div>
-            <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+            <div className="text-lg text-on-surface-variant leading-relaxed">
               <p>{data.agitation}</p>
             </div>
           </div>
@@ -439,11 +439,11 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── 03 How We Solve It ── */}
-      <section className="bg-surface-container-low py-32">
+      <section className="bg-surface-container-low py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="mb-20 text-center max-w-2xl mx-auto">
+          <div className="mb-12 text-center max-w-2xl mx-auto">
             <div className="relative inline-block">
-              <div className="text-[10rem] font-heading font-extrabold text-[#00642d]/5 absolute -top-24 left-1/2 -translate-x-1/2 select-none leading-none">
+              <div className="text-[8rem] font-heading font-extrabold text-[#00642d]/5 absolute -top-16 left-1/2 -translate-x-1/2 select-none leading-none">
                 03
               </div>
               <h2 className="font-heading text-4xl font-bold text-on-surface relative z-10">
@@ -492,7 +492,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-32 bg-surface">
+      <section className="py-16 md:py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-8">
           <h2 className="font-heading text-4xl font-bold text-on-surface mb-12 text-center">
             Frequently Asked Questions
