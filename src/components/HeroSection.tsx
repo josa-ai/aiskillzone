@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
 
 const HeroBrainPlayer = dynamic(
   () => import("@/components/HeroBrainPlayer").then((m) => m.HeroBrainPlayer),
@@ -50,24 +49,8 @@ export function HeroSection() {
 
         {/* Right column — Remotion Animated Brain */}
         <div className="relative">
-          <div className="aspect-square rounded-[2rem] overflow-hidden relative bg-[#080c24]">
+          <div className="aspect-square rounded-[2rem] overflow-hidden relative bg-[#0a0820]">
             <HeroBrainPlayer />
-
-            {/* Glassmorphic overlay */}
-            <div className="absolute bottom-8 left-8 p-6 bg-white/70 backdrop-blur-xl rounded-2xl shadow-2xl max-w-xs border border-white/20 z-10">
-              <div className="flex items-center gap-3 mb-2">
-                <Sparkles className="w-5 h-5 text-[#004bca]" />
-                <span className="text-sm font-bold font-heading">
-                  AI Efficiency Index
-                </span>
-              </div>
-              <div className="h-2 w-full bg-[#eceef0] rounded-full overflow-hidden">
-                <div className="h-full w-[85%] bg-[#004bca] rounded-full" />
-              </div>
-              <span className="text-[10px] uppercase font-bold mt-2 block text-on-surface-variant">
-                +85% Productivity Optimization
-              </span>
-            </div>
           </div>
         </div>
       </div>

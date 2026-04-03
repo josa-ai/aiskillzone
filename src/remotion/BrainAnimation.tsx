@@ -93,9 +93,44 @@ export const BrainAnimation: React.FC = () => {
     flashes.push({ fx, fy, fop, fsize: 4 + (i % 3) * 3 });
   }
 
+  // Strong pulsing glow — cycles smoothly
+  const brainGlowOpacity = 0.12 + Math.sin(frame * 0.04) * 0.08;
+  const brainGlowScale = 1.0 + Math.sin(frame * 0.04) * 0.06;
+  // Secondary slower pulse for layered effect
+  const outerGlowOpacity = 0.06 + Math.sin(frame * 0.025 + 1) * 0.04;
+
   return (
     <AbsoluteFill style={{ backgroundColor: "#0a0820" }}>
-      {/* Static brain image as base */}
+      {/* Pulsing glow layer BEHIND the brain image */}
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "55%",
+          width: "70%",
+          height: "70%",
+          transform: `translate(-50%, -50%) scale(${brainGlowScale})`,
+          background: `radial-gradient(ellipse, rgba(0, 180, 255, ${brainGlowOpacity}) 0%, rgba(120, 50, 220, ${brainGlowOpacity * 0.7}) 40%, transparent 70%)`,
+          borderRadius: "50%",
+          pointerEvents: "none",
+        }}
+      />
+      {/* Outer slower pulse — wider, softer */}
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "55%",
+          width: "90%",
+          height: "90%",
+          transform: `translate(-50%, -50%) scale(${1.0 + Math.sin(frame * 0.025 + 1) * 0.04})`,
+          background: `radial-gradient(ellipse, rgba(80, 40, 200, ${outerGlowOpacity}) 0%, rgba(0, 120, 255, ${outerGlowOpacity * 0.5}) 35%, transparent 65%)`,
+          borderRadius: "50%",
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* Static brain image */}
       <Img
         src={staticFile("images/brain-hero.jpg")}
         style={{
@@ -118,22 +153,12 @@ export const BrainAnimation: React.FC = () => {
               <feGaussianBlur stdDeviation="2" result="b" />
               <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
             </filter>
-            {/* Subtle animated vignette overlay for depth */}
             <radialGradient id="vignette" cx="55%" cy="40%" r="55%">
               <stop offset="0%" stopColor="rgba(0,0,0,0)" />
               <stop offset="70%" stopColor="rgba(0,0,0,0)" />
               <stop offset="100%" stopColor={`rgba(10, 8, 32, ${0.3 + glowPulse * 0.1})`} />
             </radialGradient>
-            {/* Pulsing glow behind brain center */}
-            <radialGradient id="centerGlow" cx="55%" cy="40%" r="30%">
-              <stop offset="0%" stopColor={`rgba(0, 180, 255, ${0.06 * glowPulse})`} />
-              <stop offset="50%" stopColor={`rgba(120, 50, 200, ${0.04 * glowPulse})`} />
-              <stop offset="100%" stopColor="rgba(0,0,0,0)" />
-            </radialGradient>
           </defs>
-
-          {/* Subtle pulsing glow over brain area */}
-          <rect x={0} y={0} width={width} height={height} fill="url(#centerGlow)" />
 
           {/* Neural network lines */}
           {netLines.map((l, i) => (
