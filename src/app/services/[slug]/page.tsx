@@ -304,7 +304,7 @@ export default async function ServiceDetailPage({
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative flex items-center overflow-hidden bg-surface pt-20">
+      <section className="relative flex items-center overflow-hidden bg-surface bg-mesh-gradient grain-overlay pt-20">
         <div className="max-w-7xl mx-auto px-4 md:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-16">
           <div className="z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low mb-6">
@@ -378,7 +378,7 @@ export default async function ServiceDetailPage({
             </div>
             <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
               <p>{data.problem}</p>
-              <div className="flex gap-4 items-start p-6 bg-surface-container-lowest rounded-2xl">
+              <div className="flex gap-4 items-start p-6 bg-surface-container-lowest rounded-2xl card-elevated">
                 <AlertTriangle className="w-6 h-6 text-[#ba1a1a] mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold text-on-surface mb-1">
@@ -411,7 +411,7 @@ export default async function ServiceDetailPage({
           <div className="relative max-w-xs mx-auto lg:mx-0">
             <div className="absolute inset-0 bg-[#994700]/5 rounded-full blur-2xl" />
             <div className="relative z-10 flex items-center justify-center">
-              <div className="p-10 bg-white rounded-full shadow-2xl text-center border-4 border-surface-container-low">
+              <div className="p-10 bg-white rounded-full shadow-2xl text-center border-4 border-surface-container-low animate-glow-pulse">
                 <div className="text-4xl md:text-5xl font-heading font-extrabold text-[#994700] mb-1">
                   {data.costStat.value}
                 </div>
@@ -420,7 +420,7 @@ export default async function ServiceDetailPage({
                 </p>
               </div>
             </div>
-            <div className="absolute top-4 right-0 w-20 h-20 bg-[#fb7800]/20 rounded-2xl rotate-12 -z-1" />
+            <div className="absolute top-4 right-0 w-20 h-20 bg-[#fb7800]/20 rounded-2xl rotate-12 -z-1 animate-float-rotate" />
           </div>
           <div>
             <div className="relative">
@@ -464,7 +464,7 @@ export default async function ServiceDetailPage({
                     isGreen
                       ? "bg-[#00642d] text-white"
                       : "bg-surface-container-lowest border border-outline-variant/10"
-                  } p-8 rounded-3xl shadow-sm flex flex-col justify-between group hover:translate-y-[-4px] transition-all`}
+                  } p-8 rounded-3xl card-elevated card-elevated-hover flex flex-col justify-between group`}
                 >
                   <div>
                     <div
@@ -492,7 +492,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-16 md:py-20 bg-surface">
+      <section className="relative py-16 md:py-20 bg-surface grain-overlay">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <h2 className="font-heading text-4xl font-bold text-on-surface mb-12 text-center">
             Frequently Asked Questions
@@ -517,7 +517,7 @@ export default async function ServiceDetailPage({
                     <Link
                       key={rs.slug}
                       href={`/services/${rs.slug}`}
-                      className="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10 hover:shadow-xl hover:-translate-y-1 transition-all block"
+                      className="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10 card-elevated card-elevated-hover transition-all block"
                     >
                       <span className="text-2xl mb-4 block">{rs.icon}</span>
                       <h3 className="text-xl font-bold font-heading mb-3">

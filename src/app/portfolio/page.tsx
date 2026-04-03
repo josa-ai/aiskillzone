@@ -1,11 +1,9 @@
-import Image from "next/image";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Portfolio",
-  description:
-    "See our work — websites, AI implementations, and automation projects for businesses.",
-};
+import Image from "next/image";
+import { GlowingOrb } from "@/components/decorations/GlowingOrb";
+import { ParticleField } from "@/components/decorations/ParticleField";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 const portfolioItems = [
   {
@@ -95,10 +93,15 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-28 md:pt-32 pb-12 md:pb-20 max-w-7xl mx-auto px-4 md:px-8 relative">
+      <section className="pt-28 md:pt-32 pb-12 md:pb-20 max-w-7xl mx-auto px-4 md:px-8 relative grain-overlay">
         <div className="absolute top-0 right-0 -z-10 opacity-20">
           <div className="w-[500px] h-[500px] rounded-full bg-[#0061ff] blur-[100px]" />
         </div>
+        <GlowingOrb
+          color="#8844cc"
+          size={400}
+          className="absolute bottom-0 left-0 opacity-15 -z-10"
+        />
         <div className="max-w-3xl">
           <div className="flex items-center gap-2 mb-6">
             <span className="w-12 h-[1px] bg-[#fb7800]" />
@@ -118,51 +121,66 @@ export default function PortfolioPage() {
       </section>
 
       {/* Project Masonry Gallery */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 pb-12 md:pb-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pb-12 md:pb-20 relative grain-overlay">
+        <ParticleField
+          count={10}
+          color="#004bca"
+          className="opacity-20 pointer-events-none"
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-0">
-          {portfolioItems.map((item) => (
-            <div key={item.title} className="masonry-item group flex flex-col">
-              <div className="relative overflow-hidden rounded-3xl bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={800}
-                  height={500}
-                  className="w-full h-auto object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <div className="absolute top-6 left-6">
-                  <span
-                    className="bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full font-semibold text-xs shadow-sm"
-                    style={{
-                      color: item.categoryColor,
-                      borderColor: `${item.categoryColor}20`,
-                      borderWidth: 1,
-                    }}
-                  >
-                    {item.category}
-                  </span>
+          {portfolioItems.map((item, index) => (
+            <AnimatedSection
+              key={item.title}
+              direction="up"
+              delay={index * 0.1}
+            >
+              <div className="masonry-item group flex flex-col">
+                <div className="relative overflow-hidden rounded-3xl bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2 card-elevated">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={800}
+                    height={500}
+                    className="w-full h-auto object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute top-6 left-6">
+                    <span
+                      className="bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full font-semibold text-xs shadow-sm"
+                      style={{
+                        color: item.categoryColor,
+                        borderColor: `${item.categoryColor}20`,
+                        borderWidth: 1,
+                      }}
+                    >
+                      {item.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="pt-8 px-2">
+                  <h3 className="text-2xl font-bold mb-3 font-heading">
+                    {item.title}
+                  </h3>
+                  <p className="text-on-surface-variant mb-6 leading-relaxed max-w-md">
+                    {item.description}
+                  </p>
+                  {item.url && (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[#004bca] font-bold hover:gap-4 transition-all duration-300 group"
+                    >
+                      View Live{" "}
+                      <span className="inline-block transition-transform group-hover:translate-x-1">
+                        &rarr;
+                      </span>
+                    </a>
+                  )}
                 </div>
               </div>
-              <div className="pt-8 px-2">
-                <h3 className="text-2xl font-bold mb-3 font-heading">
-                  {item.title}
-                </h3>
-                <p className="text-on-surface-variant mb-6 leading-relaxed max-w-md">
-                  {item.description}
-                </p>
-                {item.url && (
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[#004bca] font-bold hover:gap-4 transition-all duration-300"
-                  >
-                    View Live &rarr;
-                  </a>
-                )}
-              </div>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </section>

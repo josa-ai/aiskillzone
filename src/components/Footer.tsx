@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { primaryServices } from "@/lib/services-data";
+import { GeometricAccents } from "@/components/decorations/GeometricAccents";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-100 w-full pt-12 md:pt-16 pb-8">
+    <footer className="bg-[#f2f4f6] w-full pt-12 md:pt-16 pb-8 relative overflow-hidden grain-overlay">
+      <GeometricAccents variant="dots" position="bottom-right" className="opacity-10" />
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
         <div className="col-span-2 md:col-span-1">
           <Link href="/" className="inline-block mb-6">
@@ -30,7 +34,7 @@ export function Footer() {
               <li key={service.slug}>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="text-slate-500 hover:text-orange-500 transition-colors duration-200"
+                  className="text-slate-500 hover:text-orange-500 transition-all duration-200 hover:translate-x-1 inline-block"
                 >
                   {service.shortTitle}
                 </Link>
@@ -46,7 +50,7 @@ export function Footer() {
             <li>
               <Link
                 href="/portfolio"
-                className="text-slate-500 hover:text-orange-500 transition-colors duration-200"
+                className="text-slate-500 hover:text-orange-500 transition-all duration-200 hover:translate-x-1 inline-block"
               >
                 Portfolio
               </Link>
@@ -61,7 +65,7 @@ export function Footer() {
             <li>
               <a
                 href="#"
-                className="text-slate-500 hover:text-orange-500 transition-colors duration-200"
+                className="text-slate-500 hover:text-orange-500 transition-all duration-200 hover:translate-x-1 inline-block"
               >
                 LinkedIn
               </a>
@@ -69,7 +73,7 @@ export function Footer() {
             <li>
               <a
                 href="#"
-                className="text-slate-500 hover:text-orange-500 transition-colors duration-200"
+                className="text-slate-500 hover:text-orange-500 transition-all duration-200 hover:translate-x-1 inline-block"
               >
                 Twitter
               </a>
@@ -77,7 +81,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 md:mt-16 pt-8 border-t border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 md:mt-16 pt-8 border-t border-[#c2c6d9]/30">
         <p className="text-sm leading-relaxed text-slate-500 text-center">
           &copy; 2026 AISkillZone. All rights reserved.
         </p>

@@ -2,6 +2,8 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { FloatingShapes } from "@/components/decorations/FloatingShapes";
+import { GeometricAccents } from "@/components/decorations/GeometricAccents";
 
 const HeroBrainPlayer = dynamic(
   () => import("@/components/HeroBrainPlayer").then((m) => m.HeroBrainPlayer),
@@ -10,7 +12,10 @@ const HeroBrainPlayer = dynamic(
 
 export function HeroSection() {
   return (
-    <header className="relative pt-28 md:pt-32 pb-12 md:pb-20 px-4 md:px-8 overflow-hidden bg-mesh-gradient">
+    <header className="relative pt-28 md:pt-32 pb-12 md:pb-20 px-4 md:px-8 overflow-hidden bg-mesh-gradient grain-overlay">
+      <FloatingShapes count={4} className="opacity-20 pointer-events-none" />
+      <GeometricAccents variant="lines" position="top-left" className="opacity-30" />
+
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Left column */}
         <div className="z-10">
@@ -34,13 +39,13 @@ export function HeroSection() {
           <div className="flex flex-wrap gap-3 md:gap-4">
             <Link
               href="/services"
-              className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#004bca] to-[#0061ff] text-white rounded-full font-bold text-sm md:text-base shadow-xl shadow-[#004bca]/20 hover:translate-y-[-2px] transition-transform inline-block"
+              className="shimmer-sweep px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#004bca] to-[#0061ff] text-white rounded-full font-bold text-sm md:text-base shadow-xl shadow-[#004bca]/20 hover:translate-y-[-2px] transition-transform inline-block"
             >
               Explore Our Services
             </Link>
             <Link
               href="/portfolio"
-              className="px-6 md:px-8 py-3 md:py-4 bg-[#e0e3e5] text-[#191c1e] rounded-full font-bold text-sm md:text-base hover:bg-[#e6e8ea] transition-colors inline-block"
+              className="gradient-border rounded-full px-6 md:px-8 py-3 md:py-4 bg-[#e0e3e5] text-[#191c1e] font-bold text-sm md:text-base hover:bg-[#e6e8ea] transition-colors inline-block"
             >
               View Portfolio
             </Link>
