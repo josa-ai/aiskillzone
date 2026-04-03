@@ -1,0 +1,319 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Synced Soccer Academy Synced Soccer" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Synced Soccer Academy" [ref=e8]
+          - generic [ref=e9]: Synced Soccer
+        - generic [ref=e10]:
+          - link "Home" [ref=e11] [cursor=pointer]:
+            - /url: /
+          - link "About Us" [ref=e12] [cursor=pointer]:
+            - /url: /about
+          - button "Programs" [ref=e14] [cursor=pointer]:
+            - text: Programs
+            - img [ref=e15]
+          - link "Volunteer" [ref=e17] [cursor=pointer]:
+            - /url: /volunteer
+          - link "Calendar" [ref=e18] [cursor=pointer]:
+            - /url: /schedule
+          - link "Standings" [ref=e19] [cursor=pointer]:
+            - /url: /standings
+          - button "Resources" [ref=e21] [cursor=pointer]:
+            - text: Resources
+            - img [ref=e22]
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - button "Switch to English" [pressed] [ref=e26] [cursor=pointer]: EN
+            - button "Switch to Espanol" [ref=e27] [cursor=pointer]: ES
+            - button "Switch to Kreyol" [ref=e28] [cursor=pointer]: HT
+          - link "Register" [ref=e29] [cursor=pointer]:
+            - /url: /register
+  - main [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]: MLS GO Partner
+          - heading "SYNCED SOCCER" [level=1] [ref=e37]:
+            - generic [ref=e38]: SYNCED
+            - generic [ref=e39]: SOCCER
+          - paragraph [ref=e42]: Youth development program dedicated to building strong individuals and families using soccer as a platform for transformative growth.
+          - generic [ref=e43]:
+            - link "Register Now" [ref=e45] [cursor=pointer]:
+              - /url: /register
+              - text: Register Now
+              - img [ref=e46]
+            - link "Learn More" [ref=e48] [cursor=pointer]:
+              - /url: /about
+        - img "Synced Soccer Academy players" [ref=e51]
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - heading "S.H.E.E.P. Core Values" [level=2] [ref=e61]
+          - paragraph [ref=e62]: Our core values guide everything we do at Synced Soccer Academy.
+        - generic [ref=e63]:
+          - generic [ref=e65]:
+            - generic [ref=e66]: S
+            - text: Service
+          - generic [ref=e68]:
+            - generic [ref=e69]: H
+            - text: Honor
+          - generic [ref=e71]:
+            - generic [ref=e72]: E
+            - text: Empathy
+          - generic [ref=e74]:
+            - generic [ref=e75]: E
+            - text: Excellence
+          - generic [ref=e77]:
+            - generic [ref=e78]: P
+            - text: Perseverance
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - heading "Our Programs" [level=2] [ref=e82]
+          - paragraph [ref=e83]: We offer various programs to develop players at every level.
+        - generic [ref=e84]:
+          - link "Futsal League Indoor soccer for all skill levels. Fast-paced, fun, and focused on development. Learn More" [ref=e86] [cursor=pointer]:
+            - /url: /programs/leagues
+            - generic [ref=e87]:
+              - img [ref=e89]
+              - heading "Futsal League" [level=3] [ref=e95]
+              - paragraph [ref=e96]: Indoor soccer for all skill levels. Fast-paced, fun, and focused on development.
+              - generic [ref=e97]:
+                - text: Learn More
+                - img [ref=e98]
+          - link "Soccer Camps Day camps and 3-day intensive camps for skill development. Learn More" [ref=e101] [cursor=pointer]:
+            - /url: /programs/camps
+            - generic [ref=e102]:
+              - img [ref=e104]
+              - heading "Soccer Camps" [level=3] [ref=e106]
+              - paragraph [ref=e107]: Day camps and 3-day intensive camps for skill development.
+              - generic [ref=e108]:
+                - text: Learn More
+                - img [ref=e109]
+          - 'link "Future Sports Coming soon: Flag Football and more athletic programs. Learn More" [ref=e112] [cursor=pointer]':
+            - /url: /programs/future
+            - generic [ref=e113]:
+              - img [ref=e115]
+              - heading "Future Sports" [level=3] [ref=e120]
+              - paragraph [ref=e121]: "Coming soon: Flag Football and more athletic programs."
+              - generic [ref=e122]:
+                - text: Learn More
+                - img [ref=e123]
+      - generic [ref=e126]:
+        - generic [ref=e128]:
+          - heading "Upcoming Events" [level=2] [ref=e129]
+          - link "View All" [ref=e130] [cursor=pointer]:
+            - /url: /resources/events
+            - text: View All
+            - img [ref=e131]
+        - generic [ref=e133]:
+          - img [ref=e134]
+          - paragraph [ref=e136]: No upcoming events at the moment.
+          - paragraph [ref=e137]: Check back soon for new events!
+      - generic [ref=e139]:
+        - generic [ref=e141]:
+          - heading "Latest News" [level=2] [ref=e142]
+          - link "View All" [ref=e143] [cursor=pointer]:
+            - /url: /resources/news
+            - text: View All
+            - img [ref=e144]
+        - generic [ref=e146]:
+          - link "Jan 10, 2026 Fall 2025 Season Registration Now Open Registration for our Fall 2025 Futsal season is officially open! Early bird pricing available through September 1st. Read More" [ref=e148] [cursor=pointer]:
+            - /url: /resources/news/fall-2025-registration-open
+            - generic [ref=e149]:
+              - generic [ref=e150]:
+                - img [ref=e151]
+                - generic [ref=e153]: Jan 10, 2026
+              - heading "Fall 2025 Season Registration Now Open" [level=3] [ref=e154]
+              - paragraph [ref=e155]: Registration for our Fall 2025 Futsal season is officially open! Early bird pricing available through September 1st.
+              - generic [ref=e156]:
+                - text: Read More
+                - img [ref=e157]
+          - link "Welcome Our New Coaching Staff Jan 5, 2026 Welcome Our New Coaching Staff We are thrilled to introduce our expanded coaching team for the upcoming season. Read More" [ref=e160] [cursor=pointer]:
+            - /url: /resources/news/new-coaching-staff-2025
+            - generic [ref=e161]:
+              - img "Welcome Our New Coaching Staff" [ref=e163]
+              - generic [ref=e164]:
+                - img [ref=e165]
+                - generic [ref=e167]: Jan 5, 2026
+              - heading "Welcome Our New Coaching Staff" [level=3] [ref=e168]
+              - paragraph [ref=e169]: We are thrilled to introduce our expanded coaching team for the upcoming season.
+              - generic [ref=e170]:
+                - text: Read More
+                - img [ref=e171]
+      - generic [ref=e174]:
+        - generic [ref=e176]:
+          - heading "Upcoming Schedule" [level=2] [ref=e177]
+          - link "View Full Calendar" [ref=e178] [cursor=pointer]:
+            - /url: /schedule
+            - text: View Full Calendar
+            - img [ref=e179]
+        - link "25 Apr Clinic April skills clinic 09:00:00 Crystal Lake Middle School Goalkeeping and defense." [ref=e183] [cursor=pointer]:
+          - /url: /clinics/18b3af01-3dbf-4b84-90a9-18345e46fd89
+          - generic [ref=e185]:
+            - generic [ref=e186]:
+              - generic [ref=e187]: "25"
+              - generic [ref=e188]: Apr
+            - generic [ref=e189]:
+              - generic [ref=e190]:
+                - img [ref=e191]
+                - generic [ref=e195]: Clinic
+              - generic [ref=e196]: April skills clinic
+              - generic [ref=e197]:
+                - generic [ref=e198]:
+                  - img [ref=e199]
+                  - text: 09:00:00
+                - generic [ref=e202]:
+                  - img [ref=e203]
+                  - text: Crystal Lake Middle School
+              - generic [ref=e206]: Goalkeeping and defense.
+      - generic [ref=e210]:
+        - heading "Ready to Join Synced Soccer?" [level=2] [ref=e211]
+        - paragraph [ref=e212]: Register your child today and become part of our soccer family. We're building champions on and off the field.
+        - generic [ref=e213]:
+          - link "Register Now" [ref=e215] [cursor=pointer]:
+            - /url: /register
+            - text: Register Now
+            - img [ref=e216]
+          - link "Learn More" [ref=e218] [cursor=pointer]:
+            - /url: /about
+      - generic [ref=e222]:
+        - generic [ref=e223]:
+          - heading "Contact Us" [level=2] [ref=e224]
+          - generic [ref=e225]:
+            - generic [ref=e226]:
+              - img [ref=e228]
+              - generic [ref=e231]:
+                - generic [ref=e232]: Email
+                - link "admin@syncedsoccer.com" [ref=e233] [cursor=pointer]:
+                  - /url: mailto:admin@syncedsoccer.com
+            - generic [ref=e234]:
+              - img [ref=e236]
+              - generic [ref=e239]:
+                - generic [ref=e240]: Address
+                - text: 5328 US Highway 98 North, Lakeland, FL
+        - iframe [ref=e242]:
+          - generic [ref=f3e14]:
+            - heading "SEND US A MESSAGE" [level=1] [ref=f3e20]
+            - generic [ref=f3e25]:
+              - generic [ref=f3e26]: Full Name *
+              - textbox "Full Name *" [ref=f3e28]:
+                - /placeholder: John Doe
+            - generic [ref=f3e31]:
+              - generic [ref=f3e32]: Your Email *
+              - textbox "Your Email *" [ref=f3e35]:
+                - /placeholder: john@example.com
+            - generic [ref=f3e38]:
+              - generic [ref=f3e39]: Your Message *
+              - textbox "Your Message *" [ref=f3e41]:
+                - /placeholder: ""
+            - button "SEND MESSAGE" [ref=f3e46] [cursor=pointer]:
+              - paragraph [ref=f3e50]:
+                - strong [ref=f3e51]: SEND MESSAGE
+  - contentinfo [ref=e243]:
+    - generic [ref=e245]:
+      - generic [ref=e246]:
+        - generic [ref=e247]:
+          - img "Synced Soccer Academy" [ref=e249]
+          - generic [ref=e250]:
+            - text: Synced
+            - text: Soccer
+        - paragraph [ref=e251]: Building champions on and off the field through the beautiful game.
+        - generic [ref=e252]:
+          - link "FB" [ref=e253] [cursor=pointer]:
+            - /url: https://facebook.com/synced_soccer
+          - link "IG" [ref=e254] [cursor=pointer]:
+            - /url: https://instagram.com/synced_soccer
+          - link "YT" [ref=e255] [cursor=pointer]:
+            - /url: https://www.youtube.com/@syncedsoccer9309
+      - generic [ref=e256]:
+        - heading "Quick Links" [level=3] [ref=e257]
+        - list [ref=e258]:
+          - listitem [ref=e259]:
+            - link "→ About Us" [ref=e260] [cursor=pointer]:
+              - /url: /about
+              - generic [ref=e261]: →
+              - text: About Us
+          - listitem [ref=e262]:
+            - link "→ Programs" [ref=e263] [cursor=pointer]:
+              - /url: /programs
+              - generic [ref=e264]: →
+              - text: Programs
+          - listitem [ref=e265]:
+            - link "→ Calendar" [ref=e266] [cursor=pointer]:
+              - /url: /schedule
+              - generic [ref=e267]: →
+              - text: Calendar
+          - listitem [ref=e268]:
+            - link "→ Volunteer" [ref=e269] [cursor=pointer]:
+              - /url: /volunteer
+              - generic [ref=e270]: →
+              - text: Volunteer
+          - listitem [ref=e271]:
+            - link "→ Register" [ref=e272] [cursor=pointer]:
+              - /url: /register
+              - generic [ref=e273]: →
+              - text: Register
+      - generic [ref=e274]:
+        - heading "Resources" [level=3] [ref=e275]
+        - list [ref=e276]:
+          - listitem [ref=e277]:
+            - link "→ Events" [ref=e278] [cursor=pointer]:
+              - /url: /resources/events
+              - generic [ref=e279]: →
+              - text: Events
+          - listitem [ref=e280]:
+            - link "→ News" [ref=e281] [cursor=pointer]:
+              - /url: /resources/news
+              - generic [ref=e282]: →
+              - text: News
+          - listitem [ref=e283]:
+            - link "→ Team Store" [ref=e284] [cursor=pointer]:
+              - /url: /resources/store
+              - generic [ref=e285]: →
+              - text: Team Store
+          - listitem [ref=e286]:
+            - link "→ FAQs" [ref=e287] [cursor=pointer]:
+              - /url: /resources/faqs
+              - generic [ref=e288]: →
+              - text: FAQs
+          - listitem [ref=e289]:
+            - link "→ Locations" [ref=e290] [cursor=pointer]:
+              - /url: /resources/locations
+              - generic [ref=e291]: →
+              - text: Locations
+          - listitem [ref=e292]:
+            - link "→ Interest Form" [ref=e293] [cursor=pointer]:
+              - /url: /resources/interest-form
+              - generic [ref=e294]: →
+              - text: Interest Form
+          - listitem [ref=e295]:
+            - link "→ Video Library" [ref=e296] [cursor=pointer]:
+              - /url: /resources/videos
+              - generic [ref=e297]: →
+              - text: Video Library
+      - generic [ref=e298]:
+        - heading "Contact Us" [level=3] [ref=e299]
+        - list [ref=e300]:
+          - listitem [ref=e301]:
+            - img [ref=e303]
+            - generic [ref=e306]:
+              - text: 5328 US Highway 98 North
+              - text: Lakeland, FL
+          - listitem [ref=e307]:
+            - img [ref=e309]
+            - link "admin@syncedsoccer.com" [ref=e312] [cursor=pointer]:
+              - /url: mailto:admin@syncedsoccer.com
+    - generic [ref=e315]:
+      - paragraph [ref=e316]: © 2026 Synced Soccer Academy. 501(c)(3) Nonprofit. All Rights Reserved
+      - generic [ref=e317]:
+        - link "Privacy Policy" [ref=e318] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms of Service" [ref=e319] [cursor=pointer]:
+          - /url: /terms
+        - link "Refund Policy" [ref=e320] [cursor=pointer]:
+          - /url: /refund-policies
+    - generic [ref=e321]: Proud MLS GO Partner
+  - alert [ref=e322]

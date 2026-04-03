@@ -1,0 +1,137 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "AISkillZone" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Portfolio" [ref=e8] [cursor=pointer]:
+          - /url: /portfolio
+        - button "Services" [ref=e10]:
+          - text: Services
+          - img [ref=e11]
+  - main [ref=e13]:
+    - generic [ref=e17]:
+      - generic [ref=e20]: Portfolio
+      - heading "Proven Impact" [level=1] [ref=e21]
+      - paragraph [ref=e22]: Transforming industries through intelligent automation and curated digital experiences. We don't just build software; we architect competitive advantages.
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - img "U.S. Citizenship Test" [ref=e27]
+          - generic [ref=e28]: Web App
+        - generic [ref=e29]:
+          - heading "U.S. Citizenship Test" [level=3] [ref=e30]
+          - paragraph [ref=e31]: A high-performance preparation platform leveraging AI to personalize study paths for immigrants.
+          - link "View Live →" [ref=e32] [cursor=pointer]:
+            - /url: https://citizenshipexam.app
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - img "Synced Soccer" [ref=e35]
+          - generic [ref=e36]: Website + App
+        - generic [ref=e37]:
+          - heading "Synced Soccer" [level=3] [ref=e38]
+          - paragraph [ref=e39]: Youth soccer academy platform with multilingual support, player management, and real-time standings.
+          - link "View Live →" [ref=e40] [cursor=pointer]:
+            - /url: https://syncedsoccer.com
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - img "Melanie Lowery Real Estate" [ref=e43]
+          - generic [ref=e44]: Website
+        - generic [ref=e45]:
+          - heading "Melanie Lowery Real Estate" [level=3] [ref=e46]
+          - paragraph [ref=e47]: A sophisticated digital presence for a top-tier agent, featuring AI-driven property matching.
+          - link "View Live →" [ref=e48] [cursor=pointer]:
+            - /url: https://www.melanieloweryshowings.com/
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - img "Blueprint AI Training Platform" [ref=e51]
+          - generic [ref=e52]: Web App
+        - generic [ref=e53]:
+          - heading "Blueprint AI Training Platform" [level=3] [ref=e54]
+          - paragraph [ref=e55]: Platform for live AI workshops and hands-on courses helping business owners build practical AI skills.
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - img "Dos Bocas" [ref=e58]
+          - generic [ref=e59]: Website
+        - generic [ref=e60]:
+          - heading "Dos Bocas" [level=3] [ref=e61]
+          - paragraph [ref=e62]: Bilingual restaurant website with full menu, online ordering, and immersive photo gallery.
+          - link "View Live →" [ref=e63] [cursor=pointer]:
+            - /url: https://dosbocas.vercel.app
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - img "Final Exam Challenge" [ref=e66]
+          - generic [ref=e67]: Web App
+        - generic [ref=e68]:
+          - heading "Final Exam Challenge" [level=3] [ref=e69]
+          - paragraph [ref=e70]: Gamified quiz app with animated avatars, leaderboards, and live scoring — an edtech MVP.
+          - link "View Live →" [ref=e71] [cursor=pointer]:
+            - /url: https://quiz-avatar-leaderboard.vercel.app
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - img "CRAFT Prompt Builder" [ref=e74]
+          - generic [ref=e75]: Web App
+        - generic [ref=e76]:
+          - heading "CRAFT Prompt Builder" [level=3] [ref=e77]
+          - paragraph [ref=e78]: Interactive tool guiding users through the CRAFT framework to build structured, effective AI prompts.
+          - link "View Live →" [ref=e79] [cursor=pointer]:
+            - /url: https://craft-app-six.vercel.app
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - img "Deva Simmons for Congress" [ref=e82]
+          - generic [ref=e83]: Website + App
+        - generic [ref=e84]:
+          - heading "Deva Simmons for Congress" [level=3] [ref=e85]
+          - paragraph [ref=e86]: Full campaign website with multilingual support, event management, volunteer portal, and donation integration.
+          - link "View Live →" [ref=e87] [cursor=pointer]:
+            - /url: https://devasimmons.com
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - img "Prime Pulse Logistics" [ref=e90]
+          - generic [ref=e91]: Website
+        - generic [ref=e92]:
+          - heading "Prime Pulse Logistics" [level=3] [ref=e93]
+          - paragraph [ref=e94]: Professional medical courier website with service listings, career portal, and quote request system.
+          - link "View Live →" [ref=e95] [cursor=pointer]:
+            - /url: https://www.ppl813.com
+  - contentinfo [ref=e96]:
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - generic [ref=e99]: AISkillZone
+        - paragraph [ref=e100]: Curating the future of enterprise intelligence through elite consulting and bespoke automation.
+      - generic [ref=e101]:
+        - heading "Services" [level=4] [ref=e102]
+        - list [ref=e103]:
+          - listitem [ref=e104]:
+            - link "Website Design" [ref=e105] [cursor=pointer]:
+              - /url: /services/website-design
+          - listitem [ref=e106]:
+            - link "Voice AI" [ref=e107] [cursor=pointer]:
+              - /url: /services/voice-ai
+          - listitem [ref=e108]:
+            - link "AI Automation" [ref=e109] [cursor=pointer]:
+              - /url: /services/ai-automation
+          - listitem [ref=e110]:
+            - link "AI Training" [ref=e111] [cursor=pointer]:
+              - /url: /services/ai-training
+      - generic [ref=e112]:
+        - heading "Company" [level=4] [ref=e113]
+        - list [ref=e114]:
+          - listitem [ref=e115]:
+            - link "Portfolio" [ref=e116] [cursor=pointer]:
+              - /url: /portfolio
+      - generic [ref=e117]:
+        - heading "Follow" [level=4] [ref=e118]
+        - list [ref=e119]:
+          - listitem [ref=e120]:
+            - link "LinkedIn" [ref=e121] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e122]:
+            - link "Twitter" [ref=e123] [cursor=pointer]:
+              - /url: "#"
+    - paragraph [ref=e125]: © 2026 AISkillZone. All rights reserved.
+  - alert [ref=e126]

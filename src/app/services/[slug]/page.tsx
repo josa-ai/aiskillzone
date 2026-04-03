@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { services } from "@/lib/services-data";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { AlertTriangle, Check } from "lucide-react";
+import { getServiceTheme } from "@/lib/service-themes";
 
 /* ──────────────────────────────────────────────────────────────────────────
    Service detail data
@@ -300,190 +301,255 @@ export default async function ServiceDetailPage({
   const { slug } = await params;
   const data = getServiceData(slug);
   if (!data) notFound();
+  const theme = getServiceTheme(data.slug);
+  const relatedServices = data.relatedSlugs
+    .map((rs) => services.find((s) => s.slug === rs))
+    .filter(Boolean);
 
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="relative flex items-center overflow-hidden bg-surface bg-mesh-gradient grain-overlay pt-20">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-16">
-          <div className="z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#004bca] animate-pulse" />
-              <span className="text-xs font-bold tracking-wider text-on-surface-variant uppercase">
+      <section className="px-4 pb-12 pt-24 md:px-8 md:pb-16 md:pt-28">
+        <div
+          className="site-grid relative overflow-hidden rounded-[2rem] border border-white/10 px-6 py-10 shadow-[0_30px_100px_rgba(8,13,30,0.2)] md:rounded-[2.8rem] md:px-10 md:py-12"
+          style={{ background: theme.heroBackground }}
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-90"
+            style={{ background: theme.spotlight }}
+          />
+
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+            <div className="relative z-10 text-white">
+              <div className="hero-chip inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-white/72">
+                <span
+                  className="h-2 w-2 rounded-full shadow-[0_0_18px_rgba(255,255,255,0.4)]"
+                  style={{ backgroundColor: theme.accent }}
+                />
                 {data.category === "primary" ? "Core Service" : "Additional Service"}
-              </span>
-            </div>
-            <h1 className="font-heading text-3xl sm:text-5xl md:text-7xl font-extrabold text-on-surface tracking-tighter leading-tight mb-6">
-              {data.shortTitle.split(" ")[0]}{" "}
-              <span className="text-[#004bca]">
-                {data.shortTitle.split(" ").slice(1).join(" ") || data.shortTitle}
-              </span>
-            </h1>
-            <p className="text-xl text-on-surface-variant max-w-lg mb-6 leading-relaxed">
-              {data.tagline}
-            </p>
-            <p className="text-base text-on-surface-variant max-w-lg mb-10 leading-relaxed">
-              {data.description}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/services"
-                className="bg-[#004bca] text-white px-8 py-4 rounded-full font-bold text-base shadow-xl shadow-[#004bca]/20 hover:translate-y-[-2px] transition-all inline-block"
-              >
-                Explore All Services
-              </Link>
-              <Link
-                href="/portfolio"
-                className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-bold text-base hover:bg-surface-container-high transition-colors inline-block"
-              >
-                View Portfolio
-              </Link>
-            </div>
-          </div>
-          <div className="relative hidden lg:block">
-            <div className="aspect-[3/2] rounded-3xl overflow-hidden bg-surface-container relative group">
-              <Image
-                src={`/images/services/${data.slug}.jpg`}
-                alt={data.shortTitle}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface/30 to-transparent" />
-            </div>
-            {/* Floating Insight Chip */}
-            <div className="absolute -bottom-6 -left-6 bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-[0_20px_40px_rgba(25,28,30,0.06)] border border-white/20 max-w-[240px]">
-              <div className="text-2xl font-heading font-bold text-on-surface">
-                {data.heroMetric.value}
               </div>
-              <div className="text-sm text-on-surface-variant">
-                {data.heroMetric.label}
+
+              <h1 className="mt-6 font-heading text-4xl font-extrabold tracking-[-0.05em] sm:text-6xl md:text-7xl">
+                {data.shortTitle.split(" ")[0]}{" "}
+                <span className="bg-gradient-to-r from-white via-sky-100 to-amber-100 bg-clip-text text-transparent">
+                  {data.shortTitle.split(" ").slice(1).join(" ") || data.shortTitle}
+                </span>
+              </h1>
+
+              <p className="mt-6 max-w-xl text-xl leading-relaxed text-white/78">
+                {data.tagline}
+              </p>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-white/68">
+                {data.description}
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-3 md:gap-4">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center rounded-full bg-white px-6 py-3.5 text-sm font-bold text-slate-950 shadow-[0_16px_36px_rgba(255,255,255,0.16)] transition-transform hover:-translate-y-0.5 md:px-8 md:py-4 md:text-base"
+                >
+                  Explore All Services
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="hero-chip inline-flex items-center rounded-full px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white/18 md:px-8 md:py-4 md:text-base"
+                >
+                  View Portfolio
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative z-10">
+              <div
+                className="glass-panel relative overflow-hidden rounded-[2rem] p-4 md:p-5"
+                style={{
+                  background: theme.panelBackground,
+                  borderColor: theme.outline,
+                }}
+              >
+                <div className="absolute left-5 top-5 z-20 hero-chip inline-flex items-center gap-3 rounded-full px-4 py-2 text-sm text-white/82">
+                  <span className="text-xl">{data.icon}</span>
+                  <span>{data.shortTitle}</span>
+                </div>
+
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[1.7rem]">
+                  <Image
+                    src={`/images/services/${data.slug}.jpg`}
+                    alt={data.shortTitle}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/38 via-slate-950/8 to-transparent" />
+                </div>
+
+                <div className="absolute bottom-5 left-5 z-20 max-w-[15rem] rounded-[1.5rem] bg-white/90 px-5 py-4 text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.18)]">
+                  <p className="text-2xl font-heading font-bold">{data.heroMetric.value}</p>
+                  <p className="mt-1 text-sm text-slate-600">{data.heroMetric.label}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── 01 The Problem ── */}
-      <section className="bg-surface-container-low py-16 md:py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <div className="relative">
-              <div className="text-[8rem] font-heading font-extrabold text-[#004bca]/5 absolute -top-20 -left-8 select-none leading-none">
-                01
-              </div>
-              <h2 className="font-heading text-4xl font-bold text-on-surface mb-6 relative z-10">
+      <section className="px-4 py-16 md:px-8 md:py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div className="relative">
+            <span className="section-number absolute -top-12 left-0">01</span>
+            <div className="relative z-10 pt-12">
+              <h2 className="font-heading text-4xl font-bold tracking-[-0.03em] text-on-surface md:text-5xl">
                 The Problem
               </h2>
-            </div>
-            <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
-              <p>{data.problem}</p>
-              <div className="flex gap-4 items-start p-6 bg-surface-container-lowest rounded-2xl card-elevated">
-                <AlertTriangle className="w-6 h-6 text-[#ba1a1a] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold text-on-surface mb-1">
-                    Don&apos;t Ignore This
-                  </h4>
-                  <p className="text-sm">
-                    {data.agitation.split(". ")[0]}.
-                  </p>
+              <div className="mt-6 space-y-6 text-base leading-relaxed text-on-surface-variant md:text-lg">
+                <p>{data.problem}</p>
+                <div
+                  className="showcase-card rounded-[1.8rem] p-6"
+                  style={{ background: theme.surfaceAltBackground }}
+                >
+                  <div className="flex items-start gap-4">
+                    <AlertTriangle className="mt-1 h-6 w-6 flex-shrink-0 text-[#ba1a1a]" />
+                    <div>
+                      <h3 className="font-bold text-on-surface">Don&apos;t Ignore This</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">
+                        {data.agitation.split(". ")[0]}.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="order-1 lg:order-2">
-            <div className="aspect-video rounded-3xl shadow-sm overflow-hidden relative">
+
+          <div
+            className="showcase-card rounded-[2.2rem] p-4"
+            style={{ background: theme.surfaceBackground }}
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.7rem]">
               <Image
                 src={`/images/problems/${data.slug}.jpg`}
                 alt={`${data.shortTitle} problem visualization`}
                 fill
                 className="object-cover"
-                sizes="50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── 02 The Cost ── */}
-      <section className="bg-surface py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative max-w-xs mx-auto lg:mx-0">
-            <div className="absolute inset-0 bg-[#994700]/5 rounded-full blur-2xl" />
-            <div className="relative z-10 flex items-center justify-center">
-              <div className="p-10 bg-white rounded-full shadow-2xl text-center border-4 border-surface-container-low animate-glow-pulse">
-                <div className="text-4xl md:text-5xl font-heading font-extrabold text-[#994700] mb-1">
+      <section className="px-4 py-4 md:px-8 md:py-6">
+        <div className="section-ink relative overflow-hidden rounded-[2.2rem] px-6 py-10 md:px-10 md:py-12">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-center">
+            <div className="relative">
+              <div
+                className="ambient-orb absolute inset-6 rounded-full"
+                style={{ backgroundColor: theme.accentSoft }}
+              />
+              <div className="relative mx-auto max-w-xs rounded-[2rem] border border-white/10 bg-white/8 p-8 text-center backdrop-blur-xl">
+                <div
+                  className="mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-white text-3xl font-heading font-black"
+                  style={{ color: theme.accent }}
+                >
                   {data.costStat.value}
                 </div>
-                <p className="text-on-surface-variant font-bold uppercase tracking-widest text-xs">
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.24em] text-white/55">
                   {data.costStat.label}
                 </p>
               </div>
             </div>
-            <div className="absolute top-4 right-0 w-20 h-20 bg-[#fb7800]/20 rounded-2xl rotate-12 -z-1 animate-float-rotate" />
-          </div>
-          <div>
-            <div className="relative">
-              <div className="text-[8rem] font-heading font-extrabold text-[#994700]/5 absolute -top-20 -left-8 select-none leading-none">
+
+            <div className="relative text-white">
+              <span className="section-number section-number-dark absolute -top-12 left-0">
                 02
+              </span>
+              <div className="relative z-10 pt-12">
+                <h2 className="font-heading text-4xl font-bold tracking-[-0.03em] md:text-5xl">
+                  The Cost
+                </h2>
+                <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/72 md:text-lg">
+                  {data.agitation}
+                </p>
               </div>
-              <h2 className="font-heading text-4xl font-bold text-on-surface mb-6 relative z-10">
-                The Cost
-              </h2>
-            </div>
-            <div className="text-lg text-on-surface-variant leading-relaxed">
-              <p>{data.agitation}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── 03 How We Solve It ── */}
-      <section className="bg-surface-container-low py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="mb-12 text-center max-w-2xl mx-auto">
-            <div className="relative inline-block">
-              <div className="text-[8rem] font-heading font-extrabold text-[#00642d]/5 absolute -top-16 left-1/2 -translate-x-1/2 select-none leading-none">
-                03
-              </div>
-              <h2 className="font-heading text-4xl font-bold text-on-surface relative z-10">
+      <section className="section-cool relative overflow-hidden px-4 py-16 md:px-8 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative mb-12 max-w-2xl">
+            <span className="section-number absolute -top-16 left-0">03</span>
+            <div className="relative z-10 pt-10">
+              <h2 className="font-heading text-4xl font-bold tracking-[-0.03em] text-on-surface md:text-5xl">
                 How We Solve It
               </h2>
+              <p className="mt-4 text-base leading-relaxed text-on-surface-variant md:text-lg">
+                {data.solution}
+              </p>
             </div>
-            <p className="text-on-surface-variant mt-4">{data.solution}</p>
           </div>
-          {/* Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-12">
             {data.includes.map((item, i) => {
-              const isLarge = i === 0 || i === data.includes.length - 1;
-              const isGreen = i === 1;
+              const spanClasses = [
+                "xl:col-span-7",
+                "xl:col-span-5",
+                "xl:col-span-4",
+                "xl:col-span-4",
+                "xl:col-span-4",
+                "xl:col-span-8",
+              ];
+              const darkCard = i === 1;
+              const cardClass = darkCard ? "showcase-card-dark text-white" : "showcase-card";
+
               return (
                 <div
                   key={item.title}
-                  className={`${isLarge ? "md:col-span-2" : ""} ${
-                    isGreen
-                      ? "bg-[#00642d] text-white"
-                      : "bg-surface-container-lowest border border-outline-variant/10"
-                  } p-8 rounded-3xl card-elevated card-elevated-hover flex flex-col justify-between group`}
+                  className={`${cardClass} ${spanClasses[i] ?? "xl:col-span-4"} rounded-[2rem] p-7 md:p-8`}
+                  style={
+                    darkCard
+                      ? {
+                          background: theme.panelBackground,
+                          borderColor: theme.outline,
+                        }
+                      : {
+                          background:
+                            i === data.includes.length - 1
+                              ? theme.surfaceAltBackground
+                              : theme.surfaceBackground,
+                        }
+                  }
                 >
-                  <div>
+                  <div className="flex items-start justify-between gap-4">
                     <div
-                      className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 ${
-                        isGreen ? "bg-white/20" : "bg-[#00642d]/10"
+                      className={`flex h-12 w-12 items-center justify-center rounded-[1.2rem] ${
+                        darkCard ? "bg-white/16" : ""
                       }`}
+                      style={
+                        darkCard ? undefined : { backgroundColor: theme.accentSoft }
+                      }
                     >
                       <Check
-                        className={`w-6 h-6 ${isGreen ? "text-white" : "text-[#00642d]"}`}
+                        className="h-5 w-5"
+                        style={{ color: darkCard ? "#ffffff" : theme.accent }}
                       />
                     </div>
-                    <h3
-                      className={`text-xl font-heading font-bold mb-4 ${
-                        isGreen ? "text-white" : ""
+                    <span
+                      className={`text-xs font-semibold uppercase tracking-[0.24em] ${
+                        darkCard ? "text-white/50" : "text-on-surface-variant/65"
                       }`}
                     >
-                      {item.title}
-                    </h3>
+                      0{i + 1}
+                    </span>
                   </div>
+
+                  <h3
+                    className={`mt-8 text-xl font-bold tracking-[-0.03em] md:text-2xl ${
+                      darkCard ? "text-white" : "text-on-surface"
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
                 </div>
               );
             })}
@@ -491,44 +557,48 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section className="relative py-16 md:py-20 bg-surface grain-overlay">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <h2 className="font-heading text-4xl font-bold text-on-surface mb-12 text-center">
+      <section className="relative px-4 py-16 md:px-8 md:py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-[-0.03em] text-on-surface md:text-5xl">
             Frequently Asked Questions
           </h2>
-          <FAQAccordion faqs={data.faqs} variant="default" />
+          <FAQAccordion faqs={data.faqs} variant="branded" />
         </div>
       </section>
 
-      {/* ── Related Services ── */}
-      {data.relatedSlugs.length > 0 && (
-        <section className="py-20 bg-surface-container-low">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
-            <h2 className="font-heading text-3xl font-bold text-on-surface mb-8 text-center">
+      {relatedServices.length > 0 && (
+        <section className="px-4 pb-20 pt-4 md:px-8">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="mb-10 text-center font-heading text-3xl font-bold tracking-[-0.03em] text-on-surface md:text-4xl">
               Related Services
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {data.relatedSlugs
-                .map((rs) => services.find((s) => s.slug === rs))
-                .filter(Boolean)
-                .map((rs) =>
-                  rs ? (
-                    <Link
-                      key={rs.slug}
-                      href={`/services/${rs.slug}`}
-                      className="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10 card-elevated card-elevated-hover transition-all block"
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {relatedServices.map((rs) => {
+                if (!rs) return null;
+                const relatedTheme = getServiceTheme(rs.slug);
+
+                return (
+                  <Link
+                    key={rs.slug}
+                    href={`/services/${rs.slug}`}
+                    className="showcase-card block rounded-[2rem] p-7"
+                    style={{ background: relatedTheme.surfaceBackground }}
+                  >
+                    <div
+                      className="flex h-12 w-12 items-center justify-center rounded-[1.2rem] text-xl"
+                      style={{ backgroundColor: relatedTheme.accentSoft }}
                     >
-                      <span className="text-2xl mb-4 block">{rs.icon}</span>
-                      <h3 className="text-xl font-bold font-heading mb-3">
-                        {rs.shortTitle}
-                      </h3>
-                      <p className="text-on-surface-variant text-sm leading-relaxed">
-                        {rs.description}
-                      </p>
-                    </Link>
-                  ) : null
-                )}
+                      {rs.icon}
+                    </div>
+                    <h3 className="mt-7 text-2xl font-bold tracking-[-0.03em] text-on-surface">
+                      {rs.shortTitle}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">
+                      {rs.description}
+                    </p>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

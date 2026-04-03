@@ -13,11 +13,11 @@ import {
   GraduationCap,
   Check,
   Sparkles,
+  ArrowRight,
 } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { FloatingShapes } from "@/components/decorations/FloatingShapes";
 import { ParticleField } from "@/components/decorations/ParticleField";
-import { GradientDots } from "@/components/ui/gradient-dots";
 
 const problems = [
   {
@@ -25,36 +25,40 @@ const problems = [
     description:
       "Missed inquiries are missed revenue. Modern Voice AI ensures 24/7 engagement.",
     icon: PhoneOff,
-    color: "bg-[#994700]/10",
-    iconColor: "text-[#994700]",
-    glowColor: "bg-[#994700]",
+    accent: "#c86d1d",
+    surface:
+      "linear-gradient(180deg, rgba(200, 109, 29, 0.12) 0%, rgba(255, 255, 255, 0.92) 100%)",
+    shadow: "0 24px 48px rgba(200, 109, 29, 0.12)",
   },
   {
     title: "Website Looks Like 2015",
     description:
       "First impressions happen in milliseconds. Elevate your aesthetic to match your value.",
     icon: Monitor,
-    color: "bg-[#004bca]/10",
-    iconColor: "text-[#004bca]",
-    glowColor: "bg-[#004bca]",
+    accent: "#2563eb",
+    surface:
+      "linear-gradient(180deg, rgba(37, 99, 235, 0.12) 0%, rgba(255, 255, 255, 0.92) 100%)",
+    shadow: "0 24px 48px rgba(37, 99, 235, 0.12)",
   },
   {
     title: "Stuck Doing Same Tasks",
     description:
       "Manual labor for repetitive digital tasks is a relic of the past. Automate the routine.",
     icon: RefreshCw,
-    color: "bg-[#00642d]/10",
-    iconColor: "text-[#00642d]",
-    glowColor: "bg-[#00642d]",
+    accent: "#0f8a5f",
+    surface:
+      "linear-gradient(180deg, rgba(15, 138, 95, 0.12) 0%, rgba(255, 255, 255, 0.92) 100%)",
+    shadow: "0 24px 48px rgba(15, 138, 95, 0.12)",
   },
   {
     title: "Not Sure Where AI Fits",
     description:
       "Complexity causes paralysis. We provide the roadmap to meaningful AI integration.",
     icon: Brain,
-    color: "bg-[#0061ff]/10",
-    iconColor: "text-[#0061ff]",
-    glowColor: "bg-[#0061ff]",
+    accent: "#4f8cff",
+    surface:
+      "linear-gradient(180deg, rgba(79, 140, 255, 0.12) 0%, rgba(255, 255, 255, 0.92) 100%)",
+    shadow: "0 24px 48px rgba(79, 140, 255, 0.12)",
   },
 ];
 
@@ -63,41 +67,83 @@ export function HomepageContent() {
     <>
       <HeroSection />
 
-      {/* Money on the Table */}
-      <section className="relative py-14 md:py-24 bg-surface-container-low grain-overlay">
-        <GradientDots duration={40} dotSize={2} spacing={20} />
-        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold font-heading mb-4">
-              Money on the Table
-            </h2>
-            <p className="text-on-surface-variant max-w-2xl mx-auto">
-              Don&apos;t let legacy processes drain your revenue. Identify the
-              leaks in your digital strategy.
-            </p>
+      <section className="section-warm relative overflow-hidden px-4 py-16 md:px-8 md:py-24">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c86d1d]/30 to-transparent" />
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <div className="inline-flex rounded-full bg-white/75 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#8a531f] shadow-[0_12px_28px_rgba(200,109,29,0.08)]">
+                Friction points
+              </div>
+              <h2 className="mt-5 text-4xl font-extrabold tracking-[-0.04em] text-on-surface md:text-6xl">
+                Money on the Table
+              </h2>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-on-surface-variant md:text-lg">
+                Don&apos;t let legacy processes drain your revenue. Identify the
+                leaks in your digital strategy.
+              </p>
+            </div>
+
+            <div className="showcase-card rounded-[1.5rem] px-5 py-4 md:max-w-sm">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-on-surface-variant/70">
+                Where plain sites underperform
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">
+                The opportunity isn&apos;t only better copy. It&apos;s stronger
+                presentation, faster systems, and clearer user pathways.
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {problems.map((problem, i) => {
+
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-12">
+            {problems.map((problem, index) => {
               const Icon = problem.icon;
+              const spans = [
+                "xl:col-span-5",
+                "xl:col-span-3",
+                "xl:col-span-3",
+                "xl:col-span-5",
+              ];
+
               return (
-                <AnimatedSection key={problem.title} direction="up" delay={i * 0.1}>
-                  <div className="bg-surface-container-lowest p-6 md:p-8 rounded-3xl group card-elevated card-elevated-hover transition-all duration-500 hover:-translate-y-2">
-                    <div className="relative mb-6">
+                <AnimatedSection
+                  key={problem.title}
+                  direction="up"
+                  delay={index * 0.08}
+                  className={spans[index]}
+                >
+                  <div
+                    className="showcase-card h-full rounded-[2rem] p-7 md:p-8"
+                    style={{
+                      background: problem.surface,
+                      boxShadow: problem.shadow,
+                    }}
+                  >
+                    <div className="flex items-start justify-between gap-4">
                       <div
-                        className={`absolute inset-0 rounded-2xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity ${problem.glowColor}`}
-                      />
-                      <div
-                        className={`relative w-12 h-12 rounded-2xl ${problem.color} flex items-center justify-center`}
+                        className="flex h-14 w-14 items-center justify-center rounded-[1.35rem]"
+                        style={{ backgroundColor: `${problem.accent}18` }}
                       >
-                        <Icon className={`w-6 h-6 ${problem.iconColor}`} />
+                        <Icon
+                          className="h-6 w-6"
+                          style={{ color: problem.accent }}
+                        />
                       </div>
+                      <span className="font-heading text-6xl font-black tracking-[-0.06em] text-black/6">
+                        0{index + 1}
+                      </span>
                     </div>
-                    <h3 className="text-xl font-bold font-heading mb-3 leading-tight">
-                      {problem.title}
-                    </h3>
-                    <p className="text-sm text-on-surface-variant leading-relaxed">
-                      {problem.description}
-                    </p>
+
+                    <div className="mt-12">
+                      <h3 className="max-w-xs text-2xl font-bold tracking-[-0.03em] text-on-surface">
+                        {problem.title}
+                      </h3>
+                      <p className="mt-3 max-w-md text-sm leading-relaxed text-on-surface-variant md:text-base">
+                        {problem.description}
+                      </p>
+                    </div>
+
+                    <div className="mt-10 h-px w-full bg-black/6" />
                   </div>
                 </AnimatedSection>
               );
@@ -106,137 +152,220 @@ export function HomepageContent() {
         </div>
       </section>
 
-      {/* Strategic Solutions Bento */}
-      <section className="relative py-14 md:py-24 px-4 md:px-8 overflow-hidden">
-        <FloatingShapes count={5} className="opacity-15 pointer-events-none" />
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-extrabold font-heading mb-4">
+      <section className="section-cool relative overflow-hidden px-4 py-16 md:px-8 md:py-24">
+        <FloatingShapes count={6} className="opacity-20 pointer-events-none" />
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <div className="inline-flex rounded-full bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#2563eb] shadow-[0_12px_28px_rgba(37,99,235,0.08)]">
+                Capability showcase
+              </div>
+              <h2 className="mt-5 text-4xl font-extrabold tracking-[-0.04em] text-on-surface md:text-6xl">
                 Strategic Solutions
               </h2>
-              <p className="text-on-surface-variant max-w-xl">
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-on-surface-variant md:text-lg">
                 We don&apos;t just implement tools; we design entire cognitive
                 workflows for the digital-first era.
               </p>
             </div>
-            <div className="bg-surface-container px-6 py-3 rounded-full flex items-center gap-4 border border-outline-variant/10">
-              <span className="text-sm font-bold">Latest in AI</span>
-              <Sparkles className="w-5 h-5 text-[#00642d] animate-pulse" />
+
+            <div className="showcase-card flex items-center gap-3 rounded-full px-5 py-3">
+              <Sparkles className="h-4 w-4 text-[#0f8a5f]" />
+              <span className="text-sm font-semibold text-on-surface">
+                Presentation built for possibility, not pressure
+              </span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Website Design — large */}
-            <AnimatedSection direction="up" delay={0} className="md:col-span-2">
+          <div className="mt-12 grid grid-cols-1 gap-6 xl:grid-cols-12">
+            <AnimatedSection
+              direction="up"
+              className="xl:col-span-7"
+            >
               <Link
                 href="/services/website-design"
-                className="relative bg-surface-container-low rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 overflow-hidden group block card-elevated card-elevated-hover glow-blue-hover gradient-border"
+                className="showcase-card group block overflow-hidden rounded-[2.3rem] p-8 md:p-10"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(37, 99, 235, 0.12) 0%, rgba(255, 255, 255, 0.94) 100%)",
+                }}
               >
-                <div className="relative z-10">
-                  <div className="w-14 h-14 bg-[#004bca] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#004bca]/20">
-                    <Globe className="w-7 h-7 text-white" />
+                <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-end">
+                  <div>
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[1.4rem] bg-[#2563eb] shadow-[0_18px_38px_rgba(37,99,235,0.24)]">
+                      <Globe className="h-7 w-7 text-white" />
+                    </div>
+                    <h3 className="mt-7 text-3xl font-bold tracking-[-0.03em] text-on-surface md:text-4xl">
+                      Website Design
+                    </h3>
+                    <p className="mt-4 max-w-lg text-base leading-relaxed text-on-surface-variant">
+                      Beyond aesthetics. We build intelligent, conversion-focused
+                      interfaces that adapt to user behavior in real-time.
+                    </p>
+                    <ul className="mt-8 space-y-3">
+                      <li className="flex items-center gap-3 text-sm font-medium text-on-surface">
+                        <Check className="h-4 w-4 text-[#0f8a5f]" />
+                        High-Performance UX
+                      </li>
+                      <li className="flex items-center gap-3 text-sm font-medium text-on-surface">
+                        <Check className="h-4 w-4 text-[#0f8a5f]" />
+                        AI-Driven Content Personalization
+                      </li>
+                    </ul>
                   </div>
-                  <h3 className="text-3xl font-bold font-heading mb-4">
-                    Website Design
-                  </h3>
-                  <p className="text-on-surface-variant max-w-md mb-8">
-                    Beyond aesthetics. We build intelligent, conversion-focused
-                    interfaces that adapt to user behavior in real-time.
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    <li className="flex items-center gap-3 text-sm font-medium">
-                      <Check className="w-5 h-5 text-[#00642d]" />
-                      High-Performance UX
-                    </li>
-                    <li className="flex items-center gap-3 text-sm font-medium">
-                      <Check className="w-5 h-5 text-[#00642d]" />
-                      AI-Driven Content Personalization
-                    </li>
-                  </ul>
+
+                  <div className="rounded-[1.9rem] border border-white/70 bg-white/80 p-4 shadow-[0_20px_40px_rgba(37,99,235,0.08)]">
+                    <div className="flex items-center gap-2">
+                      <span className="h-2.5 w-2.5 rounded-full bg-[#ff6b6b]" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-[#ffbe3d]" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-[#2ecc71]" />
+                    </div>
+                    <div className="mt-4 rounded-[1.5rem] bg-slate-950 px-4 py-5 text-white">
+                      <div className="flex items-center justify-between">
+                        <p className="text-xs uppercase tracking-[0.24em] text-white/50">
+                          Interface preview
+                        </p>
+                        <ArrowRight className="h-4 w-4 text-white/55" />
+                      </div>
+                      <div className="mt-6 space-y-3">
+                        <div className="h-3 w-24 rounded-full bg-white/20" />
+                        <div className="h-20 rounded-[1.2rem] bg-gradient-to-br from-sky-400/30 to-white/8" />
+                        <div className="grid grid-cols-2 gap-3">
+                          <div className="h-10 rounded-2xl bg-white/10" />
+                          <div className="h-10 rounded-2xl bg-white/10" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </AnimatedSection>
 
-            {/* Voice AI */}
-            <AnimatedSection direction="up" delay={0.15}>
+            <AnimatedSection direction="up" delay={0.08} className="xl:col-span-5">
               <Link
                 href="/services/voice-ai"
-                className="bg-surface-container-lowest p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-outline-variant/10 transition-all block card-elevated card-elevated-hover glow-orange-hover"
+                className="showcase-card block h-full rounded-[2.3rem] p-8 md:p-10"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(200, 109, 29, 0.14) 0%, rgba(255, 247, 238, 0.94) 100%)",
+                }}
               >
-                <div className="w-14 h-14 bg-[#994700] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#994700]/20">
-                  <Mic className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold font-heading mb-4">
-                  Voice AI
-                </h3>
-                <p className="text-on-surface-variant text-sm mb-6">
-                  Human-like conversational agents for high-volume customer
-                  service and scheduling.
-                </p>
-                <div className="pt-6 border-t border-outline-variant/10">
-                  <span className="text-xs font-bold tracking-widest text-[#994700] uppercase">
-                    24/7 Availability
-                  </span>
+                <div className="flex h-full flex-col justify-between">
+                  <div>
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[1.4rem] bg-[#c86d1d] shadow-[0_18px_38px_rgba(200,109,29,0.22)]">
+                      <Mic className="h-7 w-7 text-white" />
+                    </div>
+                    <h3 className="mt-7 text-3xl font-bold tracking-[-0.03em] text-on-surface">
+                      Voice AI
+                    </h3>
+                    <p className="mt-4 max-w-md text-sm leading-relaxed text-on-surface-variant md:text-base">
+                      Human-like conversational agents for high-volume customer
+                      service and scheduling.
+                    </p>
+                  </div>
+
+                  <div className="mt-10 rounded-[1.6rem] bg-white/70 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#8a531f]">
+                      24/7 Availability
+                    </p>
+                    <div className="mt-4 flex items-center gap-2">
+                      <div className="h-2 flex-1 rounded-full bg-[#c86d1d]/20">
+                        <div className="h-2 w-4/5 rounded-full bg-[#c86d1d]" />
+                      </div>
+                      <span className="text-xs font-semibold text-[#8a531f]">
+                        Always on
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </AnimatedSection>
 
-            {/* AI Automation */}
-            <AnimatedSection direction="up" delay={0.3}>
+            <AnimatedSection direction="up" delay={0.16} className="xl:col-span-5">
               <Link
                 href="/services/ai-automation"
-                className="bg-surface-container-lowest p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-outline-variant/10 transition-all block card-elevated card-elevated-hover glow-green-hover"
+                className="showcase-card-dark block h-full rounded-[2.3rem] p-8 md:p-10 text-white"
               >
-                <div className="w-14 h-14 bg-[#00642d] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#00642d]/20">
-                  <Bot className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold font-heading mb-4">
-                  AI Automation
-                </h3>
-                <p className="text-on-surface-variant text-sm mb-6">
-                  Bridging disparate workflows into a seamless, autonomous
-                  operational engine.
-                </p>
-                <div className="pt-6 border-t border-outline-variant/10">
-                  <span className="text-xs font-bold tracking-widest text-[#00642d] uppercase">
-                    Zero Latency Ops
-                  </span>
+                <div className="flex h-full flex-col justify-between">
+                  <div>
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[1.4rem] bg-emerald-400/20">
+                      <Bot className="h-7 w-7 text-emerald-200" />
+                    </div>
+                    <h3 className="mt-7 text-3xl font-bold tracking-[-0.03em]">
+                      AI Automation
+                    </h3>
+                    <p className="mt-4 max-w-md text-sm leading-relaxed text-white/72 md:text-base">
+                      Bridging disparate workflows into a seamless, autonomous
+                      operational engine.
+                    </p>
+                  </div>
+
+                  <div className="mt-10 grid grid-cols-3 gap-3">
+                    <div className="rounded-[1.2rem] bg-white/8 px-3 py-4 text-center">
+                      <p className="text-xl font-black">01</p>
+                      <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/45">
+                        Trigger
+                      </p>
+                    </div>
+                    <div className="rounded-[1.2rem] bg-white/8 px-3 py-4 text-center">
+                      <p className="text-xl font-black">02</p>
+                      <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/45">
+                        Route
+                      </p>
+                    </div>
+                    <div className="rounded-[1.2rem] bg-white/8 px-3 py-4 text-center">
+                      <p className="text-xl font-black">03</p>
+                      <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/45">
+                        Resolve
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </AnimatedSection>
 
-            {/* AI Training — large gradient */}
-            <AnimatedSection direction="up" delay={0.45} className="md:col-span-2">
+            <AnimatedSection direction="up" delay={0.24} className="xl:col-span-7">
               <Link
                 href="/services/ai-training"
-                className="relative overflow-hidden md:col-span-2 bg-gradient-to-br from-[#004bca] to-[#0061ff] p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] text-white flex flex-col md:flex-row items-center gap-6 md:gap-10 block"
+                className="relative block overflow-hidden rounded-[2.3rem] p-8 md:p-10 text-white"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #10204a 0%, #1f56d8 58%, #72b4ff 100%)",
+                  boxShadow: "0 24px 60px rgba(22, 56, 160, 0.22)",
+                }}
               >
-                <ParticleField count={8} color="#ffffff" className="opacity-30 pointer-events-none" />
-                <div className="flex-1 relative z-10">
-                  <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8">
-                    <GraduationCap className="w-7 h-7 text-white" />
+                <ParticleField
+                  count={10}
+                  color="#ffffff"
+                  className="pointer-events-none opacity-30"
+                />
+                <div className="relative z-10 grid gap-8 md:grid-cols-[1fr_0.72fr] md:items-end">
+                  <div>
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[1.4rem] bg-white/18">
+                      <GraduationCap className="h-7 w-7 text-white" />
+                    </div>
+                    <h3 className="mt-7 text-3xl font-bold tracking-[-0.03em] md:text-4xl">
+                      AI Training
+                    </h3>
+                    <p className="mt-4 max-w-lg text-sm leading-relaxed text-white/78 md:text-base">
+                      Empower your team with the skills to prompt, manage, and
+                      iterate alongside advanced AI systems.
+                    </p>
                   </div>
-                  <h3 className="text-3xl font-bold font-heading mb-4 text-white">
-                    AI Training
-                  </h3>
-                  <p className="text-white/80 max-w-md mb-8">
-                    Empower your team with the skills to prompt, manage, and
-                    iterate alongside advanced AI systems.
-                  </p>
-                </div>
-                <div className="flex-1 grid grid-cols-2 gap-4 relative z-10">
-                  <div className="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm p-4 flex flex-col justify-center items-center text-center">
-                    <span className="text-2xl font-black block">15+</span>
-                    <span className="text-[10px] uppercase font-bold opacity-70">
-                      Modules
-                    </span>
-                  </div>
-                  <div className="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm p-4 flex flex-col justify-center items-center text-center">
-                    <span className="text-2xl font-black block">500+</span>
-                    <span className="text-[10px] uppercase font-bold opacity-70">
-                      Trained
-                    </span>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-[1.5rem] bg-white/14 p-5 backdrop-blur-sm">
+                      <span className="block text-3xl font-black">15+</span>
+                      <span className="mt-1 block text-[11px] uppercase tracking-[0.22em] text-white/60">
+                        Modules
+                      </span>
+                    </div>
+                    <div className="rounded-[1.5rem] bg-white/14 p-5 backdrop-blur-sm">
+                      <span className="block text-3xl font-black">500+</span>
+                      <span className="mt-1 block text-[11px] uppercase tracking-[0.22em] text-white/60">
+                        Trained
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>

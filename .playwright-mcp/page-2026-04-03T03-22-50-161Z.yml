@@ -1,0 +1,208 @@
+- generic [ref=e2]:
+  - link "Skip to main content" [ref=e3] [cursor=pointer]:
+    - /url: "#main-content"
+  - main [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e7]:
+        - link "CitizenshipExam.app - U.S. Citizenship Test Prep" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "CitizenshipExam.app - U.S. Citizenship Test Prep" [ref=e9]
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - generic [ref=e12]:
+              - img "EN" [ref=e13]
+              - generic [ref=e14]: EN
+            - generic [ref=e15]:
+              - checkbox "Toggle language between English and Spanish"
+            - generic [ref=e17]:
+              - img "ES" [ref=e18]
+              - generic [ref=e19]: ES
+          - link "Login" [ref=e20] [cursor=pointer]:
+            - /url: /login
+            - button "Login" [ref=e21]
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - img [ref=e28]
+        - generic [ref=e31]: NEW 2025 Test • All 128 Questions
+      - heading "Pass Your U.S. Citizenship Test" [level=1] [ref=e32]:
+        - text: Pass Your U.S.
+        - generic [ref=e33]: Citizenship Test
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - img [ref=e36]
+          - generic [ref=e39]: Try a question!
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - img [ref=e47]
+            - text: I Knew It!
+          - generic [ref=e49]:
+            - img [ref=e50]
+            - text: Still Learning
+          - generic [ref=e53]: Q1
+          - heading "What is the supreme law of the land?" [level=3] [ref=e55]
+          - generic [ref=e56]:
+            - img [ref=e57]
+            - generic [ref=e59]: Tap to reveal answer
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - generic [ref=e62]: ← Swipe left
+              - generic [ref=e63]:
+                - img [ref=e64]
+                - generic [ref=e67]: Still learning
+            - generic [ref=e68]:
+              - generic [ref=e69]: Swipe right →
+              - generic [ref=e70]:
+                - generic [ref=e71]: I knew it!
+                - img [ref=e72]
+      - paragraph [ref=e80]: Master all 128 official USCIS questions from the new 2025 test with audio, Spanish translations, and practice exams.
+      - generic [ref=e81]:
+        - link "Start Free Today" [ref=e82] [cursor=pointer]:
+          - /url: /register
+          - button "Start Free Today" [ref=e84]:
+            - generic [ref=e85]: Start Free Today
+            - img [ref=e86]
+        - link "See Pricing" [ref=e88] [cursor=pointer]:
+          - /url: "#pricing"
+          - button "See Pricing" [ref=e90]:
+            - generic [ref=e91]: See Pricing
+            - img [ref=e92]
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - generic [ref=e99]: "0"
+        - generic [ref=e100]: 2025 Official Questions
+      - generic [ref=e101]:
+        - generic [ref=e102]: "0"
+        - generic [ref=e103]: Test Sections
+      - generic [ref=e104]:
+        - generic [ref=e105]: "0"
+        - generic [ref=e106]: Languages
+    - generic [ref=e108]:
+      - heading "Why Students Choose Us" [level=2] [ref=e110]
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - img [ref=e115]
+          - generic [ref=e119]:
+            - generic [ref=e120]: EN
+            - generic [ref=e123]: ES
+          - heading "Bilingual Mode" [level=3] [ref=e124]
+          - paragraph [ref=e125]: Toggle between English and Spanish instantly. Full translations for all questions and explanations.
+        - generic [ref=e126]:
+          - img [ref=e129]
+          - heading "Audio Player" [level=3] [ref=e133]
+          - paragraph [ref=e134]: Listen to native pronunciation for all questions. Train your ear for the real interview.
+        - generic [ref=e135]:
+          - img [ref=e138]
+          - generic [ref=e141]:
+            - img [ref=e143]
+            - img [ref=e147]
+            - img [ref=e151]
+          - heading "AI Explanations" [level=3] [ref=e154]
+          - paragraph [ref=e155]: Get instant AI-powered explanations for any question. Understand the "why" behind each answer.
+      - link "Start Learning Free" [ref=e157] [cursor=pointer]:
+        - /url: /register
+        - button "Start Learning Free" [ref=e158]:
+          - generic [ref=e159]: Start Learning Free
+          - img [ref=e160]
+    - generic [ref=e163]:
+      - heading "Your Path to Citizenship" [level=2] [ref=e165]
+      - generic [ref=e168]:
+        - generic [ref=e169]:
+          - img [ref=e172]
+          - generic [ref=e174]:
+            - heading "Start Studying" [level=3] [ref=e175]
+            - paragraph [ref=e176]: Learn all 128 questions at your own pace
+        - generic [ref=e177]:
+          - img [ref=e180]
+          - generic [ref=e184]:
+            - heading "Practice Tests" [level=3] [ref=e185]
+            - paragraph [ref=e186]: Take unlimited practice exams until you're ready
+        - generic [ref=e187]:
+          - img [ref=e190]
+          - generic [ref=e192]:
+            - heading "Pass Your Interview" [level=3] [ref=e193]
+            - paragraph [ref=e194]: Walk in confident and become a U.S. citizen
+    - generic [ref=e196]:
+      - generic [ref=e197]:
+        - heading "Choose Your Plan" [level=2] [ref=e198]
+        - paragraph [ref=e199]: The new 2025 test has 128 questions across 3 sections
+      - generic [ref=e201]:
+        - button "Free" [ref=e203] [cursor=pointer]
+        - button "Premium ($7/mo)" [ref=e204] [cursor=pointer]:
+          - generic [ref=e205]: Premium
+          - generic [ref=e206]: ($7/mo)
+      - generic:
+        - generic:
+          - button "Monthly" [ref=e207] [cursor=pointer]
+          - button "Quarterly" [ref=e208] [cursor=pointer]
+      - generic [ref=e211]:
+        - generic [ref=e213]:
+          - img [ref=e214]
+          - text: Full 2025 Test
+        - generic [ref=e217]:
+          - heading "Premium" [level=3] [ref=e218]
+          - paragraph [ref=e219]: Everything you need to pass
+        - generic [ref=e222]: $7/month
+        - list [ref=e223]:
+          - listitem [ref=e224]:
+            - img [ref=e225]
+            - generic [ref=e227]: All 128 questions (all 3 sections)
+          - listitem [ref=e228]:
+            - img [ref=e229]
+            - generic [ref=e231]: Unlimited practice exams
+          - listitem [ref=e232]:
+            - img [ref=e233]
+            - generic [ref=e235]: Full progress tracking
+          - listitem [ref=e236]:
+            - img [ref=e237]
+            - generic [ref=e239]: Bilingual audio (EN/ES)
+          - listitem [ref=e240]:
+            - img [ref=e241]
+            - generic [ref=e243]: Spanish translations
+          - listitem [ref=e244]:
+            - img [ref=e245]
+            - generic [ref=e247]: AI-powered explanations
+          - listitem [ref=e248]:
+            - img [ref=e249]
+            - generic [ref=e251]: Priority support
+        - button "Get Complete Course" [ref=e252] [cursor=pointer]
+      - paragraph [ref=e253]: 30-day money-back guarantee
+    - generic [ref=e255]:
+      - generic [ref=e256]:
+        - heading "Common Questions" [level=2] [ref=e257]
+        - paragraph [ref=e258]: Answers to the most common questions about the U.S. citizenship test.
+      - generic [ref=e259]:
+        - button "How many questions are on the new 2025 U.S. citizenship test?" [ref=e261] [cursor=pointer]:
+          - img [ref=e263]
+          - generic [ref=e264]: How many questions are on the new 2025 U.S. citizenship test?
+        - button "What score do I need to pass the citizenship test?" [ref=e266] [cursor=pointer]:
+          - img [ref=e268]
+          - generic [ref=e269]: What score do I need to pass the citizenship test?
+        - button "Can I study for the citizenship test in Spanish?" [ref=e271] [cursor=pointer]:
+          - img [ref=e273]
+          - generic [ref=e274]: Can I study for the citizenship test in Spanish?
+        - button "How long should I study for the citizenship test?" [ref=e276] [cursor=pointer]:
+          - img [ref=e278]
+          - generic [ref=e279]: How long should I study for the citizenship test?
+        - button "What are the 128 civics questions on the new 2025 test?" [ref=e281] [cursor=pointer]:
+          - img [ref=e283]
+          - generic [ref=e284]: What are the 128 civics questions on the new 2025 test?
+    - generic [ref=e287]:
+      - heading "Ready to Pass Your Test?" [level=2] [ref=e288]
+      - paragraph [ref=e289]: All 128 official questions from the new 2025 USCIS test. Free to start.
+      - link "Start Learning Free" [ref=e290] [cursor=pointer]:
+        - /url: /register
+        - button "Start Learning Free" [ref=e291]:
+          - generic [ref=e292]: Start Learning Free
+          - img [ref=e293]
+    - generic [ref=e297]:
+      - paragraph [ref=e298]: Helping future Americans achieve their dream.
+      - generic [ref=e299]:
+        - link "Affiliate Program" [ref=e300] [cursor=pointer]:
+          - /url: /affiliate/apply
+        - generic [ref=e301]: •
+        - link "Terms" [ref=e302] [cursor=pointer]:
+          - /url: /terms
+        - generic [ref=e303]: •
+        - link "Privacy" [ref=e304] [cursor=pointer]:
+          - /url: /privacy
+      - paragraph [ref=e305]: © 2025 CitizenshipExam.app. All rights reserved.

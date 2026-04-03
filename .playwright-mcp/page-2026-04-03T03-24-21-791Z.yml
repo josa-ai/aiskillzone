@@ -1,0 +1,13 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e26]:
+    - generic [ref=e27]:
+      - heading "FINAL" [level=1] [ref=e28]
+      - heading "EXAM" [level=1] [ref=e29]
+    - generic [ref=e30]:
+      - img "Principal Powers" [ref=e32]
+      - generic [ref=e33]: Principal Powers
+    - paragraph [ref=e34]: Are You Ready to Prove Yourself?
+    - paragraph [ref=e37]: Loading... 0%

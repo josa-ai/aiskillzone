@@ -1,0 +1,237 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e5]:
+      - link "Prime Pulse Logistics - Home" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Prime Pulse Logistics" [ref=e7]
+      - generic [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e10] [cursor=pointer]:
+          - /url: /services
+        - link "About" [ref=e11] [cursor=pointer]:
+          - /url: /about
+        - link "Drive With Us" [ref=e12] [cursor=pointer]:
+          - /url: /drivers
+        - link "Capability Statement" [ref=e13] [cursor=pointer]:
+          - /url: /capability-statement
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /contact
+        - link "813-528-1065" [ref=e15] [cursor=pointer]:
+          - /url: tel:+18135281065
+          - img [ref=e16]
+          - text: 813-528-1065
+        - link "Get My Quote" [ref=e18] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - img "Professional medical courier delivering specimens in Tampa Bay" [ref=e22]
+      - generic [ref=e26]:
+        - paragraph [ref=e27]: Tampa Bay's Trusted Medical Courier
+        - heading "Fast. Secure. Compliant. Logistics You Can Trust." [level=1] [ref=e28]:
+          - generic [ref=e29]: Fast.
+          - generic [ref=e30]: Secure.
+          - generic [ref=e31]: Compliant.
+          - generic [ref=e32]: Logistics You Can Trust.
+        - paragraph [ref=e33]: Prime Pulse Logistics provides professional medical and time-sensitive courier services across Tampa Bay and throughout Florida.
+        - generic [ref=e34]:
+          - link "Get My Quote" [ref=e35] [cursor=pointer]:
+            - /url: /contact
+          - link "View Our Services" [ref=e36] [cursor=pointer]:
+            - /url: /services
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - img [ref=e41]
+        - generic [ref=e44]: HIPAA Compliant
+      - generic [ref=e45]:
+        - img [ref=e46]
+        - generic [ref=e50]: Fully Insured
+      - generic [ref=e51]:
+        - img [ref=e52]
+        - generic [ref=e55]: Same-Day Delivery
+      - generic [ref=e56]:
+        - img [ref=e57]
+        - generic [ref=e60]: Tampa Bay Local
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - heading "What We Deliver" [level=2] [ref=e64]
+        - paragraph [ref=e65]: Professional medical and time-sensitive courier services designed for healthcare providers and diagnostic facilities.
+      - generic [ref=e66]:
+        - generic [ref=e68]:
+          - img [ref=e70]
+          - heading "Medical Specimens" [level=3] [ref=e73]
+          - paragraph [ref=e74]: Secure transport of lab samples with chain-of-custody protocols.
+        - generic [ref=e76]:
+          - img [ref=e78]
+          - heading "Lab Samples" [level=3] [ref=e80]
+          - paragraph [ref=e81]: Temperature-controlled delivery to diagnostic facilities.
+        - generic [ref=e83]:
+          - img [ref=e85]
+          - heading "Pharmaceuticals" [level=3] [ref=e88]
+          - paragraph [ref=e89]: Compliant medication delivery to pharmacies and clinics.
+        - generic [ref=e91]:
+          - img [ref=e93]
+          - heading "Medical Equipment" [level=3] [ref=e97]
+          - paragraph [ref=e98]: Safe handling and transport of devices and machinery.
+        - generic [ref=e100]:
+          - img [ref=e102]
+          - heading "Legal Documents" [level=3] [ref=e105]
+          - paragraph [ref=e106]: HIPAA-aware handling of sensitive medical records.
+        - generic [ref=e108]:
+          - img [ref=e110]
+          - heading "Time-Sensitive Packages" [level=3] [ref=e114]
+          - paragraph [ref=e115]: Same-day and STAT delivery for urgent commercial needs.
+    - img [ref=e117]
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - heading "Why Choose Prime Pulse" [level=2] [ref=e122]
+        - paragraph [ref=e123]: "Built from the ground up to deliver what healthcare facilities need most: reliability, compliance, and professionalism."
+      - generic [ref=e124]:
+        - generic [ref=e126]:
+          - img [ref=e128]
+          - heading "HIPAA-Aware Handling" [level=3] [ref=e131]
+          - paragraph [ref=e132]: Every delivery follows strict HIPAA-aware handling procedures to protect sensitive medical information.
+        - generic [ref=e134]:
+          - img [ref=e136]
+          - heading "Real-Time Dispatch Tracking" [level=3] [ref=e139]
+          - paragraph [ref=e140]: Track your deliveries in real time with our optimized dispatch system for full visibility.
+        - generic [ref=e142]:
+          - img [ref=e144]
+          - heading "Scheduled & STAT Options" [level=3] [ref=e147]
+          - paragraph [ref=e148]: From routine scheduled routes to 2-hour STAT deliveries, we match your urgency level.
+        - generic [ref=e150]:
+          - img [ref=e152]
+          - heading "Secure Chain of Custody" [level=3] [ref=e155]
+          - paragraph [ref=e156]: Complete chain-of-custody documentation from pickup to delivery with signature confirmation.
+        - generic [ref=e158]:
+          - img [ref=e160]
+          - heading "Professional Uniformed Drivers" [level=3] [ref=e164]
+          - paragraph [ref=e165]: Background-checked, drug-screened drivers in professional uniforms represent your facility with pride.
+        - generic [ref=e167]:
+          - img [ref=e169]
+          - heading "Integrated Invoicing & Reporting" [level=3] [ref=e171]
+          - paragraph [ref=e172]: Streamlined billing and delivery reporting keep your operations running smoothly.
+    - generic [ref=e174]:
+      - generic [ref=e175]:
+        - heading "How It Works" [level=2] [ref=e176]
+        - paragraph [ref=e177]: From request to delivery confirmation, our streamlined process ensures your shipments arrive safely and on time.
+      - generic [ref=e178]:
+        - generic [ref=e181]:
+          - generic [ref=e183]:
+            - generic [ref=e185]: "1"
+            - generic [ref=e186]:
+              - heading "Request Service" [level=3] [ref=e187]
+              - paragraph [ref=e188]: Submit your request via our online form, email, or dispatch phone line. Tell us what you need delivered and when.
+          - generic [ref=e190]:
+            - generic [ref=e192]: "2"
+            - generic [ref=e193]:
+              - heading "Dispatch & Routing" [level=3] [ref=e194]
+              - paragraph [ref=e195]: Our team assigns an optimized driver and route for your delivery, ensuring the fastest and most efficient transport.
+          - generic [ref=e197]:
+            - generic [ref=e199]: "3"
+            - generic [ref=e200]:
+              - heading "Secure Transport" [level=3] [ref=e201]
+              - paragraph [ref=e202]: Your package is handled following strict chain-of-custody procedures with temperature control as needed.
+          - generic [ref=e204]:
+            - generic [ref=e206]: "4"
+            - generic [ref=e207]:
+              - heading "Delivery Confirmation" [level=3] [ref=e208]
+              - paragraph [ref=e209]: Receive confirmation with signature capture and timestamp. Full documentation for your compliance records.
+        - img [ref=e211]
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - heading "Trusted by Healthcare Providers" [level=2] [ref=e216]
+        - paragraph [ref=e217]: See why medical facilities across Tampa Bay choose Prime Pulse for their courier needs.
+      - generic [ref=e218]:
+        - generic [ref=e220]:
+          - img [ref=e221]
+          - blockquote [ref=e224]:
+            - paragraph [ref=e225]: “Prime Pulse has transformed our specimen transport. Their STAT service is truly reliable, and the chain-of-custody documentation gives us complete peace of mind.”
+          - generic [ref=e226]:
+            - paragraph [ref=e227]: Dr. Sarah M.
+            - paragraph [ref=e228]: Lab Director
+        - generic [ref=e230]:
+          - img [ref=e231]
+          - blockquote [ref=e234]:
+            - paragraph [ref=e235]: “We switched to Prime Pulse for our pharmacy deliveries and haven't looked back. Professional drivers, on-time delivery, every single time.”
+          - generic [ref=e236]:
+            - paragraph [ref=e237]: Michael R.
+            - paragraph [ref=e238]: Operations Manager
+        - generic [ref=e240]:
+          - img [ref=e241]
+          - blockquote [ref=e244]:
+            - paragraph [ref=e245]: “The real-time tracking and professional handling give our patients confidence that their specimens are in safe hands.”
+          - generic [ref=e246]:
+            - paragraph [ref=e247]: Jennifer K.
+            - paragraph [ref=e248]: Clinic Administrator
+      - paragraph [ref=e249]: "* Testimonials represent typical client experiences. Names and details have been changed for privacy."
+    - generic [ref=e250]:
+      - img [ref=e252]
+      - generic [ref=e254]:
+        - heading "Ready to Streamline Your Deliveries?" [level=2] [ref=e255]
+        - paragraph [ref=e256]: Get a customized quote for your facility. Same-day and STAT delivery available.
+        - link "Get My Quote" [ref=e258] [cursor=pointer]:
+          - /url: /contact
+          - text: Get My Quote
+          - img [ref=e259]
+  - contentinfo [ref=e261]:
+    - generic [ref=e262]:
+      - generic [ref=e264]:
+        - generic [ref=e265]:
+          - img "Prime Pulse Logistics" [ref=e266]
+          - paragraph [ref=e267]: Prime Pulse Logistics provides professional medical and time-sensitive courier services across Tampa Bay and throughout Florida.
+          - img [ref=e268]
+        - generic [ref=e270]:
+          - heading "Quick Links" [level=3] [ref=e271]
+          - list [ref=e272]:
+            - listitem [ref=e273]:
+              - link "Home" [ref=e274] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e275]:
+              - link "Services" [ref=e276] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e277]:
+              - link "About" [ref=e278] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e279]:
+              - link "Drive With Us" [ref=e280] [cursor=pointer]:
+                - /url: /drivers
+            - listitem [ref=e281]:
+              - link "Capability Statement" [ref=e282] [cursor=pointer]:
+                - /url: /capability-statement
+            - listitem [ref=e283]:
+              - link "Contact" [ref=e284] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e285]:
+          - heading "Contact Us" [level=3] [ref=e286]
+          - list [ref=e287]:
+            - listitem [ref=e288]:
+              - link "813-528-1065" [ref=e289] [cursor=pointer]:
+                - /url: tel:+18135281065
+                - img [ref=e290]
+                - text: 813-528-1065
+            - listitem [ref=e292]:
+              - link "info@ppl813.com" [ref=e293] [cursor=pointer]:
+                - /url: mailto:info@ppl813.com
+                - img [ref=e294]
+                - text: info@ppl813.com
+            - listitem [ref=e297]:
+              - generic [ref=e298]:
+                - img [ref=e299]
+                - generic [ref=e302]: 5313 E 21st Ave, Tampa, FL 33619
+        - generic [ref=e303]:
+          - heading "Business Hours" [level=3] [ref=e304]
+          - paragraph [ref=e305]: Monday - Friday
+          - paragraph [ref=e306]: 8:00 AM – 6:00 PM
+          - paragraph [ref=e307]: "Service Area: Tampa Bay & Central Florida"
+      - generic [ref=e309]:
+        - paragraph [ref=e310]: © 2026 Prime Pulse Logistics. All rights reserved.
+        - generic [ref=e311]:
+          - link "Privacy Policy" [ref=e312] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Cookie Policy" [ref=e313] [cursor=pointer]:
+            - /url: /cookie-policy
+          - link "Do Not Sell My Personal Information" [ref=e314] [cursor=pointer]:
+            - /url: /privacy-policy#do-not-sell

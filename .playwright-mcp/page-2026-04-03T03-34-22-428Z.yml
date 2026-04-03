@@ -1,0 +1,635 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]:
+          - img [ref=e9]
+          - generic [ref=e12]:
+            - heading "CRAFT Builder" [level=1] [ref=e13]
+            - paragraph [ref=e14]: Prompt Engineering Studio
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - generic [ref=e17]: ✦
+            - generic [ref=e18]: ✦
+            - generic [ref=e19]: ✦
+            - generic [ref=e20]:
+              - img [ref=e21]
+              - generic [ref=e24]:
+                - generic [ref=e25]: "6"
+                - generic [ref=e26]: / 100
+            - generic [ref=e27]: Needs Work
+          - generic [ref=e28]: Saving...
+        - generic [ref=e29]:
+          - button "Reset" [ref=e30]:
+            - img
+            - text: Reset
+          - button "Save" [ref=e31]:
+            - img
+            - generic [ref=e32]: Save
+    - main [ref=e33]:
+      - generic [ref=e35]:
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - generic [ref=e40]:
+                - img [ref=e41]
+                - heading "My Prompts" [level=3] [ref=e43]
+                - generic [ref=e44]: 0/50
+              - generic [ref=e45]:
+                - button "Export" [ref=e46]:
+                  - img
+                - button "Import" [ref=e47]:
+                  - img
+                - button "New Prompt" [ref=e48]:
+                  - img
+            - generic [ref=e49]:
+              - img [ref=e50]
+              - textbox "Search prompts..." [ref=e53]
+            - generic [ref=e55]:
+              - img [ref=e56]
+              - paragraph [ref=e58]: No saved prompts yet
+              - paragraph [ref=e59]: Save your first prompt to build your library
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - img [ref=e62]
+              - heading "Templates" [level=3] [ref=e64]
+              - generic [ref=e65]: "38"
+            - generic [ref=e66]:
+              - tablist [ref=e69]:
+                - tab "All" [selected] [ref=e70]
+                - tab "Sales" [ref=e71]
+                - tab "Technical" [ref=e72]
+                - tab "Content" [ref=e73]
+                - tab "Support" [ref=e74]
+                - tab "Creative" [ref=e75]
+                - tab "Analysis" [ref=e76]
+                - tab "Productivity" [ref=e77]
+                - tab "Education" [ref=e78]
+                - tab "Operations" [ref=e79]
+                - tab "Crisis" [ref=e80]
+                - tab "Parenting" [ref=e81]
+                - tab "Relationships" [ref=e82]
+                - tab "Coaching" [ref=e83]
+              - tabpanel "All" [ref=e84]:
+                - generic [ref=e85]:
+                  - generic [ref=e88] [cursor=pointer]:
+                    - generic [ref=e89]:
+                      - generic [ref=e90]:
+                        - heading "Enterprise SaaS Discovery Call Prep" [level=4] [ref=e91]
+                        - generic [ref=e92]: Sales
+                      - paragraph [ref=e93]: Prepare discovery questions for enterprise sales calls
+                    - img [ref=e94]
+                  - generic [ref=e98] [cursor=pointer]:
+                    - generic [ref=e99]:
+                      - generic [ref=e100]:
+                        - heading "Cold LinkedIn Outreach" [level=4] [ref=e101]
+                        - generic [ref=e102]: Sales
+                      - paragraph [ref=e103]: Personalized connection request for LinkedIn
+                    - img [ref=e104]
+                  - generic [ref=e108] [cursor=pointer]:
+                    - generic [ref=e109]:
+                      - generic [ref=e110]:
+                        - heading "Code Review Request" [level=4] [ref=e111]
+                        - generic [ref=e112]: Technical
+                      - paragraph [ref=e113]: Structured code review with security focus
+                    - img [ref=e114]
+                  - generic [ref=e118] [cursor=pointer]:
+                    - generic [ref=e119]:
+                      - generic [ref=e120]:
+                        - heading "Database Schema Optimization" [level=4] [ref=e121]
+                        - generic [ref=e122]: Technical
+                      - paragraph [ref=e123]: PostgreSQL query performance analysis
+                    - img [ref=e124]
+                  - generic [ref=e128] [cursor=pointer]:
+                    - generic [ref=e129]:
+                      - generic [ref=e130]:
+                        - heading "SEO Blog Post Outline" [level=4] [ref=e131]
+                        - generic [ref=e132]: Content
+                      - paragraph [ref=e133]: Search-optimized content structure
+                    - img [ref=e134]
+                  - generic [ref=e138] [cursor=pointer]:
+                    - generic [ref=e139]:
+                      - generic [ref=e140]:
+                        - heading "Email Newsletter Subject Lines" [level=4] [ref=e141]
+                        - generic [ref=e142]: Content
+                      - paragraph [ref=e143]: A/B test subject line variations
+                    - img [ref=e144]
+                  - generic [ref=e148] [cursor=pointer]:
+                    - generic [ref=e149]:
+                      - generic [ref=e150]:
+                        - heading "Difficult Customer Response" [level=4] [ref=e151]
+                        - generic [ref=e152]: Support
+                      - paragraph [ref=e153]: Crisis response for upset customer
+                    - img [ref=e154]
+                  - generic [ref=e158] [cursor=pointer]:
+                    - generic [ref=e159]:
+                      - generic [ref=e160]:
+                        - heading "Feature Request Acknowledgment" [level=4] [ref=e161]
+                        - generic [ref=e162]: Support
+                      - paragraph [ref=e163]: Manage expectations for feature requests
+                    - img [ref=e164]
+                  - generic [ref=e168] [cursor=pointer]:
+                    - generic [ref=e169]:
+                      - generic [ref=e170]:
+                        - heading "Short Story Opening" [level=4] [ref=e171]
+                        - generic [ref=e172]: Creative
+                      - paragraph [ref=e173]: Atmospheric fiction opening
+                    - img [ref=e174]
+                  - generic [ref=e178] [cursor=pointer]:
+                    - generic [ref=e179]:
+                      - generic [ref=e180]:
+                        - heading "Character Development Questionnaire" [level=4] [ref=e181]
+                        - generic [ref=e182]: Creative
+                      - paragraph [ref=e183]: NPC backstory development for RPGs
+                    - img [ref=e184]
+                  - generic [ref=e188] [cursor=pointer]:
+                    - generic [ref=e189]:
+                      - generic [ref=e190]:
+                        - heading "Market Research Synthesis" [level=4] [ref=e191]
+                        - generic [ref=e192]: Analysis
+                      - paragraph [ref=e193]: Synthesize research into actionable insights
+                    - img [ref=e194]
+                  - generic [ref=e198] [cursor=pointer]:
+                    - generic [ref=e199]:
+                      - generic [ref=e200]:
+                        - heading "Data Visualization Brief" [level=4] [ref=e201]
+                        - generic [ref=e202]: Analysis
+                      - paragraph [ref=e203]: Structure data story for board presentation
+                    - img [ref=e204]
+                  - generic [ref=e208] [cursor=pointer]:
+                    - generic [ref=e209]:
+                      - generic [ref=e210]:
+                        - heading "Weekly Review Automation" [level=4] [ref=e211]
+                        - generic [ref=e212]: Productivity
+                      - paragraph [ref=e213]: Reflection questions for remote workers
+                    - img [ref=e214]
+                  - generic [ref=e218] [cursor=pointer]:
+                    - generic [ref=e219]:
+                      - generic [ref=e220]:
+                        - heading "Difficult Conversation Prep" [level=4] [ref=e221]
+                        - generic [ref=e222]: Productivity
+                      - paragraph [ref=e223]: Script for sensitive conversations
+                    - img [ref=e224]
+                  - generic [ref=e228] [cursor=pointer]:
+                    - generic [ref=e229]:
+                      - generic [ref=e230]:
+                        - heading "Complex Concept Explainer" [level=4] [ref=e231]
+                        - generic [ref=e232]: Education
+                      - paragraph [ref=e233]: Explain technical concepts to non-experts
+                    - img [ref=e234]
+                  - generic [ref=e238] [cursor=pointer]:
+                    - generic [ref=e239]:
+                      - generic [ref=e240]:
+                        - heading "Quiz Question Generator" [level=4] [ref=e241]
+                        - generic [ref=e242]: Education
+                      - paragraph [ref=e243]: Formative assessment questions with Bloom's taxonomy
+                    - img [ref=e244]
+                  - generic [ref=e248] [cursor=pointer]:
+                    - generic [ref=e249]:
+                      - generic [ref=e250]:
+                        - heading "Meeting Agenda Optimization" [level=4] [ref=e251]
+                        - generic [ref=e252]: Operations
+                      - paragraph [ref=e253]: Redesign inefficient meeting structures
+                    - img [ref=e254]
+                  - generic [ref=e258] [cursor=pointer]:
+                    - generic [ref=e259]:
+                      - generic [ref=e260]:
+                        - heading "Delegation Script" [level=4] [ref=e261]
+                        - generic [ref=e262]: Operations
+                      - paragraph [ref=e263]: Effective delegation brief for managers
+                    - img [ref=e264]
+                  - generic [ref=e268] [cursor=pointer]:
+                    - generic [ref=e269]:
+                      - generic [ref=e270]:
+                        - heading "Incident Communication" [level=4] [ref=e271]
+                        - generic [ref=e272]: Crisis
+                      - paragraph [ref=e273]: Status page update during outage
+                    - img [ref=e274]
+                  - generic [ref=e278] [cursor=pointer]:
+                    - generic [ref=e279]:
+                      - generic [ref=e280]:
+                        - heading "Apology Letter" [level=4] [ref=e281]
+                        - generic [ref=e282]: Crisis
+                      - paragraph [ref=e283]: Authentic apology with repair action
+                    - img [ref=e284]
+                  - generic [ref=e288] [cursor=pointer]:
+                    - generic [ref=e289]:
+                      - generic [ref=e290]:
+                        - heading "Handling Toddler Tantrums" [level=4] [ref=e291]
+                        - generic [ref=e292]: Parenting
+                      - paragraph [ref=e293]: Scripts for de-escalating meltdowns with empathy
+                    - img [ref=e294]
+                  - generic [ref=e298] [cursor=pointer]:
+                    - generic [ref=e299]:
+                      - generic [ref=e300]:
+                        - heading "Screen Time Negotiation" [level=4] [ref=e301]
+                        - generic [ref=e302]: Parenting
+                      - paragraph [ref=e303]: Age-appropriate tech boundaries discussion
+                    - img [ref=e304]
+                  - generic [ref=e308] [cursor=pointer]:
+                    - generic [ref=e309]:
+                      - generic [ref=e310]:
+                        - heading "Setting Boundaries with Teens" [level=4] [ref=e311]
+                        - generic [ref=e312]: Parenting
+                      - paragraph [ref=e313]: Assertive communication for adolescent challenges
+                    - img [ref=e314]
+                  - generic [ref=e318] [cursor=pointer]:
+                    - generic [ref=e319]:
+                      - generic [ref=e320]:
+                        - heading "Sibling Rivalry Mediation" [level=4] [ref=e321]
+                        - generic [ref=e322]: Parenting
+                      - paragraph [ref=e323]: Fair conflict resolution between children
+                    - img [ref=e324]
+                  - generic [ref=e328] [cursor=pointer]:
+                    - generic [ref=e329]:
+                      - generic [ref=e330]:
+                        - heading "Navigating In-Law Dynamics" [level=4] [ref=e331]
+                        - generic [ref=e332]: Relationships
+                      - paragraph [ref=e333]: Boundary setting with extended family
+                    - img [ref=e334]
+                  - generic [ref=e338] [cursor=pointer]:
+                    - generic [ref=e339]:
+                      - generic [ref=e340]:
+                        - heading "Recurring Argument Resolution" [level=4] [ref=e341]
+                        - generic [ref=e342]: Relationships
+                      - paragraph [ref=e343]: Breaking cycles in couple conflicts
+                    - img [ref=e344]
+                  - generic [ref=e348] [cursor=pointer]:
+                    - generic [ref=e349]:
+                      - generic [ref=e350]:
+                        - heading "Discussing Care with Aging Parents" [level=4] [ref=e351]
+                        - generic [ref=e352]: Relationships
+                      - paragraph [ref=e353]: Sensitive conversation about future planning
+                    - img [ref=e354]
+                  - generic [ref=e358] [cursor=pointer]:
+                    - generic [ref=e359]:
+                      - generic [ref=e360]:
+                        - heading "Setting Boundaries with Friends" [level=4] [ref=e361]
+                        - generic [ref=e362]: Relationships
+                      - paragraph [ref=e363]: Assertive communication without damaging friendship
+                    - img [ref=e364]
+                  - generic [ref=e368] [cursor=pointer]:
+                    - generic [ref=e369]:
+                      - generic [ref=e370]:
+                        - heading "Overcoming Imposter Syndrome" [level=4] [ref=e371]
+                        - generic [ref=e372]: Coaching
+                      - paragraph [ref=e373]: Reframing self-doubt in professional settings
+                    - img [ref=e374]
+                  - generic [ref=e378] [cursor=pointer]:
+                    - generic [ref=e379]:
+                      - generic [ref=e380]:
+                        - heading "Burnout Recovery Plan" [level=4] [ref=e381]
+                        - generic [ref=e382]: Coaching
+                      - paragraph [ref=e383]: Sustainable work-life rebalancing
+                    - img [ref=e384]
+                  - generic [ref=e388] [cursor=pointer]:
+                    - generic [ref=e389]:
+                      - generic [ref=e390]:
+                        - heading "New Habit Implementation" [level=4] [ref=e391]
+                        - generic [ref=e392]: Coaching
+                      - paragraph [ref=e393]: Atomic habits approach to behavior change
+                    - img [ref=e394]
+                  - generic [ref=e398] [cursor=pointer]:
+                    - generic [ref=e399]:
+                      - generic [ref=e400]:
+                        - heading "Preparing for Difficult Conversations" [level=4] [ref=e401]
+                        - generic [ref=e402]: Coaching
+                      - paragraph [ref=e403]: Framework for high-stakes discussions
+                    - img [ref=e404]
+                  - generic [ref=e408] [cursor=pointer]:
+                    - generic [ref=e409]:
+                      - generic [ref=e410]:
+                        - heading "Daily Mindfulness Routine" [level=4] [ref=e411]
+                        - generic [ref=e412]: Coaching
+                      - paragraph [ref=e413]: Practical meditation for busy professionals
+                    - img [ref=e414]
+                  - generic [ref=e418] [cursor=pointer]:
+                    - generic [ref=e419]:
+                      - generic [ref=e420]:
+                        - heading "Differentiated Lesson Plan" [level=4] [ref=e421]
+                        - generic [ref=e422]: Education
+                      - paragraph [ref=e423]: Multi-level instruction for diverse learners
+                    - img [ref=e424]
+                  - generic [ref=e428] [cursor=pointer]:
+                    - generic [ref=e429]:
+                      - generic [ref=e430]:
+                        - heading "IEP Goal Development" [level=4] [ref=e431]
+                        - generic [ref=e432]: Education
+                      - paragraph [ref=e433]: SMART goals for special education students
+                    - img [ref=e434]
+                  - generic [ref=e438] [cursor=pointer]:
+                    - generic [ref=e439]:
+                      - generic [ref=e440]:
+                        - heading "Re-engaging Disengaged Student" [level=4] [ref=e441]
+                        - generic [ref=e442]: Education
+                      - paragraph [ref=e443]: Strategies for unmotivated learners
+                    - img [ref=e444]
+                  - generic [ref=e448] [cursor=pointer]:
+                    - generic [ref=e449]:
+                      - generic [ref=e450]:
+                        - heading "Effective Complaint Letter" [level=4] [ref=e451]
+                        - generic [ref=e452]: Support
+                      - paragraph [ref=e453]: Professional escalation for unresolved issues
+                    - img [ref=e454]
+                  - generic [ref=e458] [cursor=pointer]:
+                    - generic [ref=e459]:
+                      - generic [ref=e460]:
+                        - heading "Salary Negotiation Script" [level=4] [ref=e461]
+                        - generic [ref=e462]: Sales
+                      - paragraph [ref=e463]: Evidence-based compensation discussion
+                    - img [ref=e464]
+        - button [ref=e466]:
+          - img [ref=e467]
+        - generic [ref=e471]:
+          - generic [ref=e472]:
+            - generic [ref=e474]:
+              - generic [ref=e475]:
+                - generic [ref=e476]: C
+                - generic [ref=e477]:
+                  - heading "Context" [level=3] [ref=e478]
+                  - paragraph [ref=e479]: Background information
+              - button "Help for Context" [ref=e480]:
+                - img [ref=e481]
+            - generic [ref=e485]:
+              - generic [ref=e486]:
+                - textbox "Context input" [ref=e487]:
+                  - /placeholder: "What background information does the AI need?  Example: I'm a small business owner running a consulting firm. I have 50 clients and handle all client communications manually. I need to improve efficiency while maintaining a personal touch."
+                - generic [ref=e489]: 0/2000
+              - generic [ref=e490]:
+                - generic [ref=e491]:
+                  - generic [ref=e492]: Suggestion Depth
+                  - generic [ref=e493]: Level 3
+                - generic "Suggestion depth" [ref=e494]:
+                  - slider [ref=e498]
+                - generic [ref=e499]:
+                  - generic [ref=e500]: Basic
+                  - generic [ref=e501]: Comprehensive
+              - generic [ref=e502]:
+                - generic [ref=e503]:
+                  - generic [ref=e504]: "Quick add:"
+                  - button "✦ Enhance ✦" [disabled]:
+                    - text: ✦
+                    - img
+                    - text: Enhance ✦
+                - generic [ref=e505]:
+                  - generic [ref=e506] [cursor=pointer]:
+                    - img
+                    - text: small business
+                  - generic [ref=e507] [cursor=pointer]:
+                    - img
+                    - text: startup
+                  - generic [ref=e508] [cursor=pointer]:
+                    - img
+                    - text: enterprise
+                  - generic [ref=e509] [cursor=pointer]:
+                    - img
+                    - text: technology
+                  - generic [ref=e510] [cursor=pointer]:
+                    - img
+                    - text: healthcare
+                  - generic [ref=e511] [cursor=pointer]:
+                    - img
+                    - text: finance
+          - generic [ref=e512]:
+            - generic [ref=e514]:
+              - generic [ref=e515]:
+                - generic [ref=e516]: R
+                - generic [ref=e517]:
+                  - heading "Role" [level=3] [ref=e518]
+                  - paragraph [ref=e519]: Who should the AI be?
+              - button "Help for Role" [ref=e520]:
+                - img [ref=e521]
+            - generic [ref=e525]:
+              - combobox [ref=e526]:
+                - generic [ref=e527]:
+                  - img
+                  - generic [ref=e528]: Select or type a role...
+                - img
+              - textbox "Custom role input" [ref=e530]:
+                - /placeholder: "Or type a custom role: Senior Data Scientist with 10 years experience in healthcare"
+              - generic [ref=e531]:
+                - text: "Popular choices:"
+                - generic [ref=e532]:
+                  - generic [ref=e533] [cursor=pointer]: Senior Software Developer
+                  - generic [ref=e534] [cursor=pointer]: Marketing Consultant
+                  - generic [ref=e535] [cursor=pointer]: Data Analyst
+                  - generic [ref=e536] [cursor=pointer]: UX Writer
+          - generic [ref=e537]:
+            - generic [ref=e539]:
+              - generic [ref=e540]:
+                - generic [ref=e541]: A
+                - generic [ref=e542]:
+                  - heading "Action" [level=3] [ref=e543]
+                  - paragraph [ref=e544]: What do you want?
+              - button "Help for Action" [ref=e545]:
+                - img [ref=e546]
+            - generic [ref=e550]:
+              - generic [ref=e551]:
+                - generic [ref=e552]:
+                  - generic [ref=e553]: Complexity
+                  - generic [ref=e554]: Task with specifications
+                - group [ref=e555]:
+                  - radio "simple complexity" [ref=e556]:
+                    - img
+                    - generic [ref=e557]: simple
+                  - radio "detailed complexity" [checked] [ref=e558]:
+                    - img
+                    - generic [ref=e559]: detailed
+                  - radio "multi-step complexity" [ref=e560]:
+                    - img
+                    - generic [ref=e561]: multi step
+              - textbox "Action input" [ref=e564]:
+                - /placeholder: Analyze the data and provide 5 actionable insights with supporting evidence
+              - generic [ref=e565]:
+                - text: "Start with:"
+                - generic [ref=e566]:
+                  - generic [ref=e567] [cursor=pointer]: Creation
+                  - generic [ref=e568] [cursor=pointer]: Analysis
+                  - generic [ref=e569] [cursor=pointer]: Transform
+          - generic [ref=e570]:
+            - generic [ref=e572]:
+              - generic [ref=e573]:
+                - generic [ref=e574]: F
+                - generic [ref=e575]:
+                  - heading "Format" [level=3] [ref=e576]
+                  - paragraph [ref=e577]: How should it be delivered?
+              - button "Help for Format" [ref=e578]:
+                - img [ref=e579]
+            - generic [ref=e583]:
+              - generic [ref=e584]:
+                - button "Bullet Points" [pressed] [ref=e585]:
+                  - img [ref=e586]
+                  - generic [ref=e587]: Bullet
+                  - img [ref=e589]
+                - button "Numbered Steps" [ref=e591]:
+                  - img [ref=e592]
+                  - generic [ref=e595]: Numbered
+                - button "Markdown Table" [ref=e596]:
+                  - img [ref=e597]
+                  - generic [ref=e599]: Markdown
+                - button "JSON" [ref=e600]:
+                  - img [ref=e601]
+                  - generic [ref=e604]: JSON
+                - button "Executive Summary" [ref=e605]:
+                  - img [ref=e606]
+                  - generic [ref=e609]: Executive
+                - button "Code Block" [ref=e610]:
+                  - img [ref=e611]
+                  - generic [ref=e614]: Code
+                - button "HTML" [ref=e615]:
+                  - img [ref=e616]
+                  - generic [ref=e619]: HTML
+                - button "LaTeX" [ref=e620]:
+                  - img [ref=e621]
+                  - generic [ref=e624]: LaTeX
+                - button "Mind Map" [ref=e625]:
+                  - img [ref=e626]
+                  - generic [ref=e631]: Mind
+                - button "Comparison Matrix" [ref=e632]:
+                  - img [ref=e633]
+                  - generic [ref=e638]: Comparison
+                - button "Timeline" [ref=e639]:
+                  - img [ref=e640]
+                  - generic [ref=e643]: Timeline
+                - button "Q&A Format" [ref=e644]:
+                  - img [ref=e645]
+                  - generic [ref=e648]: Q&A
+              - generic [ref=e649]:
+                - generic [ref=e650]:
+                  - generic [ref=e651]: "Preview:"
+                  - generic [ref=e652]: Bullet Points
+                - generic [ref=e654]: • Point one • Point two • Point three
+              - paragraph [ref=e655]: Clear, scannable list format
+          - generic [ref=e656]:
+            - generic [ref=e658]:
+              - generic [ref=e659]:
+                - generic [ref=e660]: T
+                - generic [ref=e661]:
+                  - heading "Tone" [level=3] [ref=e662]
+                  - paragraph [ref=e663]: What voice should be used?
+              - button "Help for Tone" [ref=e664]:
+                - img [ref=e665]
+            - generic [ref=e669]:
+              - generic [ref=e670]:
+                - button "Professional" [pressed] [ref=e671]:
+                  - generic [ref=e673]: Professional
+                  - img [ref=e674]
+                - button "Casual" [ref=e677]:
+                  - generic [ref=e679]: Casual
+                - button "Enthusiastic" [ref=e680]:
+                  - generic [ref=e682]: Enthusiastic
+                - button "Empathetic" [ref=e683]:
+                  - generic [ref=e685]: Empathetic
+                - button "Authoritative" [ref=e686]:
+                  - generic [ref=e688]: Authoritative
+                - button "Witty" [ref=e689]:
+                  - generic [ref=e691]: Witty
+                - button "Technical" [ref=e692]:
+                  - generic [ref=e694]: Technical
+                - button "Storytelling" [ref=e695]:
+                  - generic [ref=e697]: Storytelling
+              - generic [ref=e698]:
+                - generic [ref=e699]:
+                  - generic [ref=e700]: Intensity
+                  - generic [ref=e701]: Moderate
+                - generic "Tone intensity" [ref=e702]:
+                  - slider [ref=e706]
+                - generic [ref=e707]:
+                  - generic [ref=e708]: Subtle
+                  - generic [ref=e709]: Moderate
+                  - generic [ref=e710]: Strong
+                - paragraph [ref=e711]: Balanced application
+              - generic [ref=e712]:
+                - generic [ref=e713]:
+                  - generic [ref=e714]: "Sample:"
+                  - generic [ref=e715]:
+                    - generic [ref=e716]: accordingly
+                    - generic [ref=e717]: pursuant
+                    - generic [ref=e718]: regarding
+                - generic [ref=e719]: "\"Please find attached the comprehensive analysis as discussed.\""
+              - paragraph [ref=e720]: Formal, business-appropriate language
+        - generic [ref=e723]:
+          - generic [ref=e724]:
+            - generic [ref=e726]:
+              - generic [ref=e727]:
+                - generic [ref=e728]:
+                  - img [ref=e729]
+                  - img [ref=e732]
+                - text: Live Preview
+              - generic [ref=e737]:
+                - generic [ref=e738]:
+                  - img [ref=e739]
+                  - generic [ref=e742]: "4"
+                  - generic [ref=e743]: words
+                - generic [ref=e744]:
+                  - img [ref=e745]
+                  - generic [ref=e750]: ~3
+                  - generic [ref=e751]: tokens
+            - generic [ref=e753]:
+              - img [ref=e755]
+              - heading "Start Building Your Prompt" [level=3] [ref=e759]
+              - paragraph [ref=e760]: Fill in the CRAFT sections on the left to see your prompt come to life here.
+          - generic [ref=e761]:
+            - generic [ref=e764]:
+              - img [ref=e765]
+              - text: Suggestions (3)
+            - generic [ref=e767]:
+              - generic [ref=e768]:
+                - img [ref=e769]
+                - generic [ref=e771]:
+                  - generic [ref=e772]: "Context:"
+                  - text: Add background information for better results
+              - generic [ref=e773]:
+                - img [ref=e774]
+                - generic [ref=e776]:
+                  - generic [ref=e777]: "Role:"
+                  - text: Define a role for the AI to adopt
+              - generic [ref=e778]:
+                - img [ref=e779]
+                - generic [ref=e781]:
+                  - generic [ref=e782]: "Action:"
+                  - text: Specify what you want the AI to do
+              - paragraph [ref=e784]:
+                - img [ref=e785]
+                - text: Score must be 50+ to export your prompt
+          - generic [ref=e787]:
+            - generic [ref=e788]:
+              - text: Export
+              - generic [ref=e789]:
+                - button "Copy to Clipboard" [disabled]:
+                  - img
+                  - text: Copy to Clipboard
+                - button "Copy as..." [disabled]:
+                  - img
+                  - text: Copy as...
+                  - img
+                - button "Download..." [disabled]:
+                  - img
+                  - text: Download...
+                  - img
+              - generic [ref=e790]:
+                - img [ref=e791]
+                - generic [ref=e793]: Score must be 50+ to export
+            - generic [ref=e794]:
+              - generic [ref=e795]:
+                - generic [ref=e796]: Open in AI
+                - button "Open All" [disabled]:
+                  - img
+                  - text: Open All
+              - generic [ref=e797]:
+                - button "ChatGPT" [disabled]:
+                  - generic: ChatGPT
+                  - img
+                - button "Claude" [disabled]:
+                  - generic: Claude
+                  - img
+                - button "Gemini" [disabled]:
+                  - generic: Gemini
+                  - img
+                - button "Perplexity" [disabled]:
+                  - generic: Perplexity
+                  - img
+              - paragraph [ref=e798]: Improve your prompt score to 50+ to use AI integrations
+      - text: ✦ ✦
+    - region "Notifications alt+T"
+  - alert [ref=e799]

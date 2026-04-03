@@ -1,0 +1,514 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - link "(863) 249-0039" [ref=e4] [cursor=pointer]:
+      - /url: tel:+1-863-249-0039
+    - generic [ref=e5]: "|"
+    - link "melanieLoweryshowings@gmail.com" [ref=e6] [cursor=pointer]:
+      - /url: mailto:melanieLoweryshowings@gmail.com
+  - banner [ref=e7]:
+    - navigation [ref=e8]:
+      - link "Melanie Lowery Showings" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e10]: Melanie Lowery
+        - generic [ref=e11]: Showings
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - link "Buy" [ref=e14] [cursor=pointer]:
+          - /url: /buy
+        - link "Sell" [ref=e15] [cursor=pointer]:
+          - /url: /sell
+        - link "Invest" [ref=e16] [cursor=pointer]:
+          - /url: /invest
+        - link "Market Reports" [ref=e17] [cursor=pointer]:
+          - /url: /market-reports
+        - link "Events" [ref=e18] [cursor=pointer]:
+          - /url: /events
+        - link "Resources" [ref=e19] [cursor=pointer]:
+          - /url: /resources
+        - link "Contact" [ref=e20] [cursor=pointer]:
+          - /url: /contact
+      - link "Get My Free Consultation" [ref=e22] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Menu
+      - button "Close menu" [ref=e27]:
+        - img [ref=e28]
+    - navigation [ref=e30]:
+      - generic [ref=e31]:
+        - link "Home" [ref=e32] [cursor=pointer]:
+          - /url: /
+        - link "Buy" [ref=e33] [cursor=pointer]:
+          - /url: /buy
+        - link "Sell" [ref=e34] [cursor=pointer]:
+          - /url: /sell
+        - link "Invest" [ref=e35] [cursor=pointer]:
+          - /url: /invest
+        - link "Market Reports" [ref=e36] [cursor=pointer]:
+          - /url: /market-reports
+        - link "Events" [ref=e37] [cursor=pointer]:
+          - /url: /events
+        - link "Resources" [ref=e38] [cursor=pointer]:
+          - /url: /resources
+        - link "Contact" [ref=e39] [cursor=pointer]:
+          - /url: /contact
+      - link "Get My Free Consultation" [ref=e41] [cursor=pointer]:
+        - /url: /contact
+    - generic [ref=e42]:
+      - link "(863) 249-0039" [ref=e43] [cursor=pointer]:
+        - /url: tel:+1-863-249-0039
+        - img [ref=e44]
+        - generic [ref=e46]: (863) 249-0039
+      - generic [ref=e47]:
+        - link "Facebook" [ref=e48] [cursor=pointer]:
+          - /url: https://www.facebook.com/share/1CVHv7QJoi/
+          - img [ref=e49]
+        - link "Instagram" [ref=e51] [cursor=pointer]:
+          - /url: https://www.instagram.com/lowerymelanie
+          - img [ref=e52]
+        - link "LinkedIn" [ref=e54] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/melanie-lowery-a9073526
+          - img [ref=e55]
+  - main [ref=e57]:
+    - generic [ref=e58]:
+      - img "Luxury Florida waterfront homes at golden hour" [ref=e59]
+      - generic [ref=e62]:
+        - heading "Your Florida Home Story Starts Here" [level=1] [ref=e64]
+        - paragraph [ref=e66]: Expert guidance for buying, selling, and investing in Central & South Florida real estate
+        - generic [ref=e68]:
+          - link "Search Properties" [ref=e69] [cursor=pointer]:
+            - /url: /buy
+            - button "Search Properties" [ref=e70]
+          - link "Get My Home's Value" [ref=e71] [cursor=pointer]:
+            - /url: /tools/home-valuation
+            - button "Get My Home's Value" [ref=e72]
+      - img [ref=e74]
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - generic [ref=e81]: 100+
+        - paragraph [ref=e82]: Active Listings
+      - generic [ref=e83]:
+        - generic [ref=e84]: 1,600+
+        - paragraph [ref=e85]: Properties Sold
+      - generic [ref=e86]:
+        - generic [ref=e87]: Central & South FL
+        - paragraph [ref=e88]: Service Area
+      - generic [ref=e89]:
+        - generic [ref=e90]: MBA & PMP
+        - paragraph [ref=e91]: Credentials
+    - generic [ref=e93]:
+      - generic [ref=e95]:
+        - heading "Featured Properties" [level=2] [ref=e96]
+        - paragraph [ref=e97]: Handpicked homes across Central and South Florida
+      - generic [ref=e98]:
+        - link "1234 Palm Drive, Kissimmee, FL 34744 Active $485,000 1234 Palm Drive, Kissimmee, FL 34744 4 Beds 3 Baths 2,450 sqft" [ref=e100] [cursor=pointer]:
+          - /url: /buy/1234-palm-drive-kissimmee
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - img "1234 Palm Drive, Kissimmee, FL 34744" [ref=e103]
+              - generic [ref=e105]: Active
+              - generic [ref=e106]: $485,000
+            - generic [ref=e107]:
+              - paragraph [ref=e108]: 1234 Palm Drive, Kissimmee, FL 34744
+              - generic [ref=e109]:
+                - generic [ref=e110]: 4 Beds
+                - generic [ref=e111]: 3 Baths
+                - generic [ref=e112]: 2,450 sqft
+        - link "567 Ocean Blvd, Fort Lauderdale, FL 33301 Active $1,250,000 567 Ocean Blvd, Fort Lauderdale, FL 33301 5 Beds 4 Baths 3,800 sqft" [ref=e114] [cursor=pointer]:
+          - /url: /buy/567-ocean-blvd-fort-lauderdale
+          - generic [ref=e115]:
+            - generic [ref=e116]:
+              - img "567 Ocean Blvd, Fort Lauderdale, FL 33301" [ref=e117]
+              - generic [ref=e119]: Active
+              - generic [ref=e120]: $1,250,000
+            - generic [ref=e121]:
+              - paragraph [ref=e122]: 567 Ocean Blvd, Fort Lauderdale, FL 33301
+              - generic [ref=e123]:
+                - generic [ref=e124]: 5 Beds
+                - generic [ref=e125]: 4 Baths
+                - generic [ref=e126]: 3,800 sqft
+        - link "890 Garden Way, Palm Beach Gardens, FL 33410 Pending $675,000 890 Garden Way, Palm Beach Gardens, FL 33410 3 Beds 2 Baths 2,100 sqft" [ref=e128] [cursor=pointer]:
+          - /url: /buy/890-garden-way-palm-beach
+          - generic [ref=e129]:
+            - generic [ref=e130]:
+              - img "890 Garden Way, Palm Beach Gardens, FL 33410" [ref=e131]
+              - generic [ref=e133]: Pending
+              - generic [ref=e134]: $675,000
+            - generic [ref=e135]:
+              - paragraph [ref=e136]: 890 Garden Way, Palm Beach Gardens, FL 33410
+              - generic [ref=e137]:
+                - generic [ref=e138]: 3 Beds
+                - generic [ref=e139]: 2 Baths
+                - generic [ref=e140]: 2,100 sqft
+        - link "321 Lakeside Ct, Lakeland, FL 33801 Active $365,000 321 Lakeside Ct, Lakeland, FL 33801 3 Beds 2 Baths 1,800 sqft" [ref=e142] [cursor=pointer]:
+          - /url: /buy/321-lakeside-ct-lakeland
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - img "321 Lakeside Ct, Lakeland, FL 33801" [ref=e145]
+              - generic [ref=e147]: Active
+              - generic [ref=e148]: $365,000
+            - generic [ref=e149]:
+              - paragraph [ref=e150]: 321 Lakeside Ct, Lakeland, FL 33801
+              - generic [ref=e151]:
+                - generic [ref=e152]: 3 Beds
+                - generic [ref=e153]: 2 Baths
+                - generic [ref=e154]: 1,800 sqft
+      - link "View All Properties" [ref=e157] [cursor=pointer]:
+        - /url: /buy
+        - text: View All Properties
+        - img [ref=e158]
+    - generic [ref=e161]:
+      - generic [ref=e163]:
+        - heading "Communities We Serve" [level=2] [ref=e164]
+        - paragraph [ref=e165]: Discover what makes each Florida community unique
+      - generic [ref=e166]:
+        - link "Kissimmee, Florida Kissimmee A vibrant gateway to world-class attractions with diverse housing options and a growing community. Explore" [ref=e168] [cursor=pointer]:
+          - /url: /communities/kissimmee
+          - generic [ref=e169]:
+            - img "Kissimmee, Florida" [ref=e171]
+            - generic [ref=e172]:
+              - heading "Kissimmee" [level=3] [ref=e173]
+              - paragraph [ref=e174]: A vibrant gateway to world-class attractions with diverse housing options and a growing community.
+              - generic [ref=e175]:
+                - text: Explore
+                - img [ref=e176]
+        - link "Palm Beach Gardens, Florida Palm Beach Gardens Upscale living with pristine golf courses, top-rated schools, and luxury waterfront estates. Explore" [ref=e179] [cursor=pointer]:
+          - /url: /communities/palm-beach-gardens
+          - generic [ref=e180]:
+            - img "Palm Beach Gardens, Florida" [ref=e182]
+            - generic [ref=e183]:
+              - heading "Palm Beach Gardens" [level=3] [ref=e184]
+              - paragraph [ref=e185]: Upscale living with pristine golf courses, top-rated schools, and luxury waterfront estates.
+              - generic [ref=e186]:
+                - text: Explore
+                - img [ref=e187]
+        - link "Lakeland, Florida Lakeland A charming city between Tampa and Orlando offering affordable homes and a thriving arts scene. Explore" [ref=e190] [cursor=pointer]:
+          - /url: /communities/lakeland
+          - generic [ref=e191]:
+            - img "Lakeland, Florida" [ref=e193]
+            - generic [ref=e194]:
+              - heading "Lakeland" [level=3] [ref=e195]
+              - paragraph [ref=e196]: A charming city between Tampa and Orlando offering affordable homes and a thriving arts scene.
+              - generic [ref=e197]:
+                - text: Explore
+                - img [ref=e198]
+        - link "Fort Lauderdale / Broward, Florida Fort Lauderdale / Broward Coastal sophistication with stunning beaches, boating lifestyle, and a dynamic urban culture. Explore" [ref=e201] [cursor=pointer]:
+          - /url: /communities/fort-lauderdale
+          - generic [ref=e202]:
+            - img "Fort Lauderdale / Broward, Florida" [ref=e204]
+            - generic [ref=e205]:
+              - heading "Fort Lauderdale / Broward" [level=3] [ref=e206]
+              - paragraph [ref=e207]: Coastal sophistication with stunning beaches, boating lifestyle, and a dynamic urban culture.
+              - generic [ref=e208]:
+                - text: Explore
+                - img [ref=e209]
+    - generic [ref=e212]:
+      - generic [ref=e214]:
+        - heading "Explore Our Service Areas" [level=2] [ref=e215]
+        - paragraph [ref=e216]: Browse homes across Central and South Florida
+      - generic [ref=e218]:
+        - generic [ref=e219]:
+          - generic [ref=e220]:
+            - region "Map" [ref=e221]
+            - generic:
+              - generic [ref=e222]:
+                - button "Zoom in" [ref=e223] [cursor=pointer]
+                - button "Zoom out" [ref=e225] [cursor=pointer]
+              - button "Toggle attribution" [ref=e228] [cursor=pointer]
+              - link "Mapbox homepage" [ref=e231] [cursor=pointer]:
+                - /url: https://www.mapbox.com/
+          - paragraph [ref=e235]: Loading map...
+        - generic [ref=e236]:
+          - link "Kissimmee" [ref=e237] [cursor=pointer]:
+            - /url: /communities/kissimmee
+            - img [ref=e238]
+            - text: Kissimmee
+          - link "Palm Beach Gardens" [ref=e241] [cursor=pointer]:
+            - /url: /communities/palm-beach-gardens
+            - img [ref=e242]
+            - text: Palm Beach Gardens
+          - link "Lakeland" [ref=e245] [cursor=pointer]:
+            - /url: /communities/lakeland
+            - img [ref=e246]
+            - text: Lakeland
+          - link "Fort Lauderdale / Broward" [ref=e249] [cursor=pointer]:
+            - /url: /communities/fort-lauderdale
+            - img [ref=e250]
+            - text: Fort Lauderdale / Broward
+    - generic [ref=e254]:
+      - generic [ref=e256]:
+        - heading "Free Tools & Resources" [level=2] [ref=e257]
+        - paragraph [ref=e258]: Everything you need to make confident real estate decisions
+      - generic [ref=e259]:
+        - link "Mortgage Calculator Mortgage Calculator Estimate your monthly payments, compare loan scenarios, and plan your budget with confidence. Try It Free" [ref=e261] [cursor=pointer]:
+          - /url: /tools/mortgage-calculator
+          - generic [ref=e262]:
+            - img "Mortgage Calculator" [ref=e264]
+            - generic [ref=e265]:
+              - heading "Mortgage Calculator" [level=3] [ref=e266]
+              - paragraph [ref=e267]: Estimate your monthly payments, compare loan scenarios, and plan your budget with confidence.
+              - generic [ref=e268]:
+                - text: Try It Free
+                - img [ref=e269]
+        - link "Home Valuation Home Valuation Get a free estimate of your home's current market value based on recent comparable sales. Try It Free" [ref=e272] [cursor=pointer]:
+          - /url: /tools/home-valuation
+          - generic [ref=e273]:
+            - img "Home Valuation" [ref=e275]
+            - generic [ref=e276]:
+              - heading "Home Valuation" [level=3] [ref=e277]
+              - paragraph [ref=e278]: Get a free estimate of your home's current market value based on recent comparable sales.
+              - generic [ref=e279]:
+                - text: Try It Free
+                - img [ref=e280]
+        - link "Take a Quiz Take a Quiz Answer a few quick questions and discover what kind of Florida home fits your lifestyle. Try It Free" [ref=e283] [cursor=pointer]:
+          - /url: /quiz
+          - generic [ref=e284]:
+            - img "Take a Quiz" [ref=e286]
+            - generic [ref=e287]:
+              - heading "Take a Quiz" [level=3] [ref=e288]
+              - paragraph [ref=e289]: Answer a few quick questions and discover what kind of Florida home fits your lifestyle.
+              - generic [ref=e290]:
+                - text: Try It Free
+                - img [ref=e291]
+    - generic [ref=e296]:
+      - generic [ref=e298]:
+        - heading "Get Your Free Market Report" [level=2] [ref=e299]
+        - paragraph [ref=e300]: Stay ahead of the market with a personalized report showing recent sales, price trends, and active listings in your neighborhood.
+        - list [ref=e301]:
+          - listitem [ref=e302]:
+            - img [ref=e303]
+            - text: Recent comparable sales in your area
+          - listitem [ref=e305]:
+            - img [ref=e306]
+            - text: Current market trends and pricing data
+          - listitem [ref=e308]:
+            - img [ref=e309]
+            - text: Personalized home value estimate
+      - generic [ref=e312]:
+        - textbox [ref=e314]
+        - generic [ref=e315]:
+          - generic [ref=e316]: Street Address
+          - textbox "Street Address" [ref=e317]:
+            - /placeholder: 123 Main St
+        - generic [ref=e318]:
+          - generic [ref=e319]:
+            - generic [ref=e320]: City
+            - textbox "City" [ref=e321]:
+              - /placeholder: Kissimmee
+          - generic [ref=e322]:
+            - generic [ref=e323]: ZIP Code
+            - textbox "ZIP Code" [ref=e324]:
+              - /placeholder: "34744"
+        - generic [ref=e325]:
+          - generic [ref=e326]: Name
+          - textbox "Name" [ref=e327]:
+            - /placeholder: Your full name
+        - generic [ref=e328]:
+          - generic [ref=e329]: Email
+          - textbox "Email" [ref=e330]:
+            - /placeholder: you@example.com
+        - generic [ref=e331]:
+          - generic [ref=e332]: Phone
+          - textbox "Phone" [ref=e333]:
+            - /placeholder: (555) 123-4567
+        - button "Get My Free Market Report" [ref=e334]
+        - paragraph [ref=e335]: No spam, ever. Your info stays private.
+    - generic [ref=e338]:
+      - img "Melanie Lowery - Florida Real Estate Agent" [ref=e341]
+      - generic [ref=e344]:
+        - paragraph [ref=e345]: Meet Your Agent
+        - heading "Melanie Lowery" [level=2] [ref=e346]
+        - paragraph [ref=e347]: As a Florida native, Melanie serves clients with a spirit of excellence. With her MBA and PMP certification, she brings a strategic, project-management approach to every real estate transaction.
+        - generic [ref=e348]:
+          - generic [ref=e349]: MBA
+          - generic [ref=e350]: PMP Certified
+          - generic [ref=e351]: eXp Realty
+          - generic [ref=e352]: "License #261567073"
+        - link "Learn More About Melanie" [ref=e353] [cursor=pointer]:
+          - /url: /about
+          - text: Learn More About Melanie
+          - img [ref=e354]
+    - generic [ref=e357]:
+      - generic [ref=e359]:
+        - heading "What Clients Say" [level=2] [ref=e360]
+        - paragraph [ref=e361]: Real stories from real homeowners across Florida
+      - generic [ref=e362]:
+        - generic [ref=e364]:
+          - generic [ref=e365]:
+            - img [ref=e366]
+            - img [ref=e368]
+            - img [ref=e370]
+            - img [ref=e372]
+            - img [ref=e374]
+          - blockquote [ref=e376]: “Melanie made our first home purchase so smooth and stress-free. Her MBA background really showed in how she managed every detail of the transaction.”
+          - paragraph [ref=e377]: Sarah & James T.
+        - generic [ref=e379]:
+          - generic [ref=e380]:
+            - img [ref=e381]
+            - img [ref=e383]
+            - img [ref=e385]
+            - img [ref=e387]
+            - img [ref=e389]
+          - blockquote [ref=e391]: “We were relocating from out of state and Melanie went above and beyond. She found us the perfect home in Palm Beach Gardens within our budget.”
+          - paragraph [ref=e392]: Michael R.
+        - generic [ref=e394]:
+          - generic [ref=e395]:
+            - img [ref=e396]
+            - img [ref=e398]
+            - img [ref=e400]
+            - img [ref=e402]
+            - img [ref=e404]
+          - blockquote [ref=e406]: “Selling our home felt daunting, but Melanie had a clear plan from day one. We sold above asking price in just two weeks. Highly recommend!”
+          - paragraph [ref=e407]: Diana & Robert K.
+    - generic [ref=e409]:
+      - generic [ref=e411]:
+        - heading "Latest Resources" [level=2] [ref=e412]
+        - paragraph [ref=e413]: Expert advice to help you navigate the Florida real estate market
+      - generic [ref=e414]:
+        - link "5 Mistakes First-Time Buyers Make in Florida Buying 6 min read 5 Mistakes First-Time Buyers Make in Florida Avoid these common pitfalls that cost first-time buyers thousands of dollars. From skipping pre-approval to ignoring flood zones." [ref=e416] [cursor=pointer]:
+          - /url: /resources/5-mistakes-first-time-buyers
+          - generic [ref=e417]:
+            - img "5 Mistakes First-Time Buyers Make in Florida" [ref=e419]
+            - generic [ref=e420]:
+              - generic [ref=e421]:
+                - generic [ref=e422]: Buying
+                - generic [ref=e423]: 6 min read
+              - heading "5 Mistakes First-Time Buyers Make in Florida" [level=3] [ref=e424]
+              - paragraph [ref=e425]: Avoid these common pitfalls that cost first-time buyers thousands of dollars. From skipping pre-approval to ignoring flood zones.
+        - link "Is Now a Good Time to Invest in Kissimmee? Investing 8 min read Is Now a Good Time to Invest in Kissimmee? With tourism rebounding and new developments breaking ground, Kissimmee presents unique opportunities for investors." [ref=e427] [cursor=pointer]:
+          - /url: /resources/investing-in-kissimmee
+          - generic [ref=e428]:
+            - img "Is Now a Good Time to Invest in Kissimmee?" [ref=e430]
+            - generic [ref=e431]:
+              - generic [ref=e432]:
+                - generic [ref=e433]: Investing
+                - generic [ref=e434]: 8 min read
+              - heading "Is Now a Good Time to Invest in Kissimmee?" [level=3] [ref=e435]
+              - paragraph [ref=e436]: With tourism rebounding and new developments breaking ground, Kissimmee presents unique opportunities for investors.
+        - link "How to Stage Your Home to Sell Fast Selling 5 min read How to Stage Your Home to Sell Fast Professional staging can increase your sale price by 5-10%. These are the exact techniques we recommend for maximum impact." [ref=e438] [cursor=pointer]:
+          - /url: /resources/staging-tips-sell-fast
+          - generic [ref=e439]:
+            - img "How to Stage Your Home to Sell Fast" [ref=e441]
+            - generic [ref=e442]:
+              - generic [ref=e443]:
+                - generic [ref=e444]: Selling
+                - generic [ref=e445]: 5 min read
+              - heading "How to Stage Your Home to Sell Fast" [level=3] [ref=e446]
+              - paragraph [ref=e447]: Professional staging can increase your sale price by 5-10%. These are the exact techniques we recommend for maximum impact.
+      - link "View All Resources" [ref=e450] [cursor=pointer]:
+        - /url: /resources
+        - text: View All Resources
+        - img [ref=e451]
+  - contentinfo [ref=e453]:
+    - generic [ref=e455]:
+      - generic [ref=e456]:
+        - link "Melanie Lowery Showings" [ref=e457] [cursor=pointer]:
+          - /url: /
+          - text: Melanie Lowery
+          - generic [ref=e458]: Showings
+        - paragraph [ref=e459]: Your Way Home Starts Here. Helping families find their perfect home in Central & South Florida.
+        - generic [ref=e460]:
+          - link "Facebook" [ref=e461] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1CVHv7QJoi/
+            - img [ref=e462]
+          - link "Instagram" [ref=e464] [cursor=pointer]:
+            - /url: https://www.instagram.com/lowerymelanie
+            - img [ref=e465]
+          - link "LinkedIn" [ref=e467] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/melanie-lowery-a9073526
+            - img [ref=e468]
+      - generic [ref=e470]:
+        - heading "Quick Links" [level=3] [ref=e471]
+        - list [ref=e472]:
+          - listitem [ref=e473]:
+            - link "Home" [ref=e474] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e475]:
+            - link "Buy" [ref=e476] [cursor=pointer]:
+              - /url: /buy
+          - listitem [ref=e477]:
+            - link "Sell" [ref=e478] [cursor=pointer]:
+              - /url: /sell
+          - listitem [ref=e479]:
+            - link "Invest" [ref=e480] [cursor=pointer]:
+              - /url: /invest
+          - listitem [ref=e481]:
+            - link "Market Reports" [ref=e482] [cursor=pointer]:
+              - /url: /market-reports
+          - listitem [ref=e483]:
+            - link "Events" [ref=e484] [cursor=pointer]:
+              - /url: /events
+          - listitem [ref=e485]:
+            - link "Resources" [ref=e486] [cursor=pointer]:
+              - /url: /resources
+          - listitem [ref=e487]:
+            - link "Contact" [ref=e488] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e489]:
+            - link "Refer a Friend" [ref=e490] [cursor=pointer]:
+              - /url: /referral
+      - generic [ref=e491]:
+        - heading "Communities" [level=3] [ref=e492]
+        - list [ref=e493]:
+          - listitem [ref=e494]:
+            - link "Kissimmee" [ref=e495] [cursor=pointer]:
+              - /url: /communities/kissimmee
+          - listitem [ref=e496]:
+            - link "Palm Beach Gardens" [ref=e497] [cursor=pointer]:
+              - /url: /communities/palm-beach-gardens
+          - listitem [ref=e498]:
+            - link "Lakeland" [ref=e499] [cursor=pointer]:
+              - /url: /communities/lakeland
+          - listitem [ref=e500]:
+            - link "Fort Lauderdale / Broward" [ref=e501] [cursor=pointer]:
+              - /url: /communities/fort-lauderdale
+        - heading "Resources" [level=3] [ref=e502]
+        - list [ref=e503]:
+          - listitem [ref=e504]:
+            - link "Mortgage Calculator" [ref=e505] [cursor=pointer]:
+              - /url: /tools/mortgage-calculator
+          - listitem [ref=e506]:
+            - link "Home Valuation" [ref=e507] [cursor=pointer]:
+              - /url: /tools/home-valuation
+          - listitem [ref=e508]:
+            - link "Free Guides" [ref=e509] [cursor=pointer]:
+              - /url: /resources
+          - listitem [ref=e510]:
+            - link "Agent Referral Network" [ref=e511] [cursor=pointer]:
+              - /url: /agent-referral
+      - generic [ref=e512]:
+        - heading "Contact" [level=3] [ref=e513]
+        - list [ref=e514]:
+          - listitem [ref=e515]:
+            - link "(863) 249-0039" [ref=e516] [cursor=pointer]:
+              - /url: tel:+1-863-249-0039
+              - img [ref=e517]
+              - text: (863) 249-0039
+          - listitem [ref=e519]:
+            - link "melanieLoweryshowings@gmail.com" [ref=e520] [cursor=pointer]:
+              - /url: mailto:melanieLoweryshowings@gmail.com
+              - img [ref=e521]
+              - text: melanieLoweryshowings@gmail.com
+          - listitem [ref=e523]:
+            - img [ref=e524]
+            - text: Lakeland, FL
+        - generic [ref=e527]:
+          - heading "Newsletter" [level=3] [ref=e528]
+          - paragraph [ref=e529]: Get market updates and tips delivered to your inbox.
+          - generic [ref=e531]:
+            - textbox "Your email address" [ref=e532]
+            - button "Subscribe" [ref=e533]
+    - generic [ref=e535]:
+      - paragraph [ref=e536]: © 2026 Melanie Lowery Showings. All rights reserved.
+      - generic [ref=e537]:
+        - generic [ref=e538]: "eXp Realty | License #261567073"
+        - link "Privacy" [ref=e539] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e540] [cursor=pointer]:
+          - /url: /terms
+        - link "Do Not Sell My Info" [ref=e541] [cursor=pointer]:
+          - /url: /privacy#do-not-sell
+  - alert [ref=e542]

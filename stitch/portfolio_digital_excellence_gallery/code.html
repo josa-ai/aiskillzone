@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio | AISkillZone</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#00642d",
+                      "surface": "#f7f9fb",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#0061ff",
+                      "tertiary-fixed-dim": "#30e375",
+                      "inverse-primary": "#b4c5ff",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#004bca",
+                      "secondary-container": "#fb7800",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#d8dadc",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-surface-variant": "#424656",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "surface-bright": "#f7f9fb",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-variant": "#e0e3e5",
+                      "on-tertiary-container": "#cfffd2",
+                      "on-tertiary-fixed-variant": "#005224",
+                      "outline": "#737687",
+                      "on-primary-fixed": "#00174b",
+                      "on-secondary-fixed-variant": "#753400",
+                      "surface-tint": "#0052dc",
+                      "surface-container-low": "#f2f4f6",
+                      "on-surface": "#191c1e",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#c2c6d9",
+                      "surface-container": "#eceef0",
+                      "on-primary-container": "#f1f2ff",
+                      "tertiary-container": "#00803c",
+                      "secondary-fixed-dim": "#ffb68b",
+                      "background": "#f7f9fb",
+                      "secondary": "#994700",
+                      "inverse-surface": "#2d3133",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-background": "#191c1e",
+                      "on-tertiary-fixed": "#00210b",
+                      "on-secondary-container": "#592600",
+                      "surface-container-high": "#e6e8ea",
+                      "on-secondary-fixed": "#321200",
+                      "secondary-fixed": "#ffdbc8",
+                      "tertiary-fixed": "#64ff92"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .masonry-item:nth-child(even) { margin-top: 4rem; }
+        @media (max-width: 768px) {
+            .masonry-item:nth-child(even) { margin-top: 0; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-slate-50/70 backdrop-blur-md fixed top-0 w-full z-50 shadow-[0_20px_40px_rgba(25,28,30,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="text-2xl font-bold tracking-tighter text-slate-900">AISkillZone</div>
+<nav class="hidden md:flex gap-10">
+<a class="text-slate-600 font-['Manrope'] font-medium text-sm tracking-tight hover:text-blue-500 transition-colors duration-300" href="#">Home</a>
+<a class="text-slate-600 font-['Manrope'] font-medium text-sm tracking-tight hover:text-blue-500 transition-colors duration-300" href="#">Services</a>
+<a class="text-blue-600 font-['Manrope'] font-bold text-sm tracking-tight border-b-2 border-blue-600" href="#">Portfolio</a>
+<a class="text-slate-600 font-['Manrope'] font-medium text-sm tracking-tight hover:text-blue-500 transition-colors duration-300" href="#">Blog</a>
+<a class="text-slate-600 font-['Manrope'] font-medium text-sm tracking-tight hover:text-blue-500 transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium text-sm scale-95 active:scale-100 transition-transform shadow-lg shadow-primary/10">
+                Book a Call
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-20 overflow-hidden">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-24 relative">
+<div class="absolute top-0 right-0 -z-10 opacity-20">
+<div class="w-[500px] h-[500px] rounded-full bg-primary-container blur-[100px]"></div>
+</div>
+<div class="max-w-3xl">
+<div class="flex items-center gap-2 mb-6">
+<span class="w-12 h-[1px] bg-secondary-container"></span>
+<span class="text-secondary font-semibold tracking-widest text-xs uppercase">Portfolio</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight leading-[1.1] mb-8">
+                    Proven Impact
+                </h1>
+<p class="text-xl text-on-surface-variant leading-relaxed font-light">
+                    Transforming industries through intelligent automation and curated digital experiences. We don't just build software; we architect competitive advantages.
+                </p>
+</div>
+</section>
+<!-- Project Masonry Gallery -->
+<section class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-0">
+<!-- Project 1 -->
+<div class="masonry-item group flex flex-col">
+<div class="relative overflow-hidden rounded-3xl bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="U.S. Citizenship Test Mobile App Interface" class="w-full h-[500px] object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="Modern mobile app interface showing a citizenship study guide with clean typography, progress charts, and soft blue accents on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGjQM6IJYZ62lTlRiYgllUx6qDgtdjpvEEsQ7udbeLPiXrvw09hUzL3z30rj4_MX3bzqfNtASJ1BslNzQ8T5OHTdlkem5RnJUQCA86LlFNl-db_Sca-FuANxb7WIwMvVVZVXhEaP3-xVB_DCcwDTB1lJgHzN55FvA_5h0bTS4Wpp31DqUK_oN7xuR9XPXezblDISyTyiLScX8i9d4CXvz4qKu_3IGdOJ3epxmYjxrWWM9MVSAqfj4RSS_WIsIXlnXOXSNJCx-enw"/>
+<div class="absolute top-6 left-6">
+<span class="bg-surface/90 backdrop-blur-md px-4 py-1.5 rounded-full text-primary font-semibold text-xs border border-primary/10 shadow-sm">
+                                Web App
+                            </span>
+</div>
+</div>
+<div class="pt-8 px-2">
+<h3 class="text-2xl font-bold mb-3">U.S. Citizenship Test</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed max-w-md">
+                            A high-performance preparation platform leveraging AI to personalize study paths for immigrants.
+                        </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300" href="#">
+                            View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="masonry-item group flex flex-col">
+<div class="relative overflow-hidden rounded-3xl bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Synced Soccer Platform Dashboard" class="w-full h-[600px] object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="Athletic sports data dashboard with vibrant orange highlights, showing player heatmaps and real-time performance statistics on a dark sleek background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd2owj5CuG9LDVL2w9exQmsvjNy_rO_Kco40C0f2DQNG9yL9yzaGS-2iB1JyqQ5iBKrm83Q723PCSkrLJbsVij56tKW3kkR9nEcYb9yDDppAzrLnmSf_ffODTdeOiDDJRy6_-SZKzzA8SgAN8By5uEjQj314LSjRiQUJ5RZe9OywRzMFUXHKwdC2-tmcgTIQImIcwHmbxENlBJuobR-vhdQEHg59vfLTn7UCKp_hSovx26AeyqMsbTyzPBVRqyDZgrGtAQhBQ9WQ"/>
+<div class="absolute top-6 left-6">
+<span class="bg-surface/90 backdrop-blur-md px-4 py-1.5 rounded-full text-secondary font-semibold text-xs border border-secondary/10 shadow-sm">
+                                AI Voice &amp; Analytics
+                            </span>
+</div>
+</div>
+<div class="pt-8 px-2">
+<h3 class="text-2xl font-bold mb-3">Synced Soccer</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed max-w-md">
+                            Integrating voice commands and real-time biomechanical analysis for elite youth training.
+                        </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300" href="#">
+                            View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="masonry-item group flex flex-col md:-mt-24">
+<div class="relative overflow-hidden rounded-3xl bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Melanie Lowery Real Estate Website" class="w-full h-[550px] object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="Luxury real estate website landing page featuring a minimalist design with high-end architecture photography and elegant serif headers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOmY9u2OIxknuOTTp-tx2mTltBZswUVmV_0EPfTwZ_3DJYUlearWZ3rmMOLaoZWqVjzkvgE-EU0pvaf2sOQx7kvizxfvMOlshpqAehfnFmVHNppt2LVFOFTNDPqCybbTDBQlSlvO6fPT8Lga46QAvmBSfYaCJi_24wWWkknfMFtQ0kgjGXyUOTq0q5ThVKKe479D7zOLzbN4Esycpdkp8b5xkO7DzcNmiy214ilzJqDa0ygUru7BH11WZs57Er7O1lORReDVnlgg"/>
+<div class="absolute top-6 left-6">
+<span class="bg-surface/90 backdrop-blur-md px-4 py-1.5 rounded-full text-tertiary font-semibold text-xs border border-tertiary/10 shadow-sm">
+                                Website
+                            </span>
+</div>
+</div>
+<div class="pt-8 px-2">
+<h3 class="text-2xl font-bold mb-3">Melanie Lowery Real Estate</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed max-w-md">
+                            A sophisticated digital presence for a top-tier agent, featuring AI-driven property matching.
+                        </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300" href="#">
+                            View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="masonry-item group flex flex-col md:mt-24">
+<div class="relative overflow-hidden rounded-3xl bg-surface-container-low transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="AI Strategy Consulting Dashboard" class="w-full h-[450px] object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="Close-up of a tablet displaying complex neural network visualizations and business intelligence charts with soft green and blue gradients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0NwQ7nHGa0Q8LGl5y1YlDvf37lu5ZIVp7D4X4-vnn967Ct4b-aRDCTkTp60jNKPeuT57q-BqlpzXdYu3dzjb0oE09bCAqfHqF6wtwzef25PrrVWFx5OlsfuzYss-0R6ddIAL6c5ERVJejFCyjtMlIudTOWqwX5bnIxsDUCr0C14y0d8DJ4F1UBzK0XDMqmx08GsUNwV-5cycWFe-5JYoN0tM_DcufTkJJ-gRMnYj8RxB4y-n-MefJg3oNIPoG3zB2sfPdE03_Jg"/>
+<div class="absolute top-6 left-6">
+<span class="bg-surface/90 backdrop-blur-md px-4 py-1.5 rounded-full text-primary font-semibold text-xs border border-primary/10 shadow-sm">
+                                Consulting
+                            </span>
+</div>
+</div>
+<div class="pt-8 px-2">
+<h3 class="text-2xl font-bold mb-3">Nexus Logistics AI</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed max-w-md">
+                            Complete supply chain overhaul using predictive AI to reduce shipping latency by 22%.
+                        </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300" href="#">
+                            View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-8 mt-40">
+<div class="bg-surface-container-low rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Ready to build the future?</h2>
+<p class="text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                        We partner with visionary companies to deploy artificial intelligence that doesn't just work, but wins.
+                    </p>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/20 hover:bg-primary-container transition-all">
+                        Let's Talk Strategy
+                    </button>
+</div>
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-800 w-full pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-slate-900 dark:text-slate-50 mb-6">AISkillZone</div>
+<p class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm leading-relaxed mb-6">
+                    Curating the next generation of AI-driven digital experiences for ambitious brands.
+                </p>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-slate-900">Services</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:text-orange-500 transition-colors" href="#">AI Consulting</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:text-orange-500 transition-colors" href="#">Web Development</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:text-orange-500 transition-colors" href="#">Custom LLMs</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-slate-900">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-blue-600 font-semibold font-['Inter'] text-sm hover:text-orange-500 transition-colors" href="#">Portfolio</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:text-orange-500 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:text-orange-500 transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-slate-900">Social</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:text-orange-500 transition-colors" href="#">LinkedIn</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:text-orange-500 transition-colors" href="#">Twitter</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-200/50">
+<p class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm">© 2024 AISkillZone. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

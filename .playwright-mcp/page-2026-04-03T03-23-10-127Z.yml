@@ -1,0 +1,76 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "JOSA.AI":
+        - /url: /
+        - img "JOSA.AI"
+      - paragraph [ref=e5]: AI Training for Small Business Owners
+  - main [ref=e6]:
+    - generic [ref=e12]:
+      - generic [ref=e14]: JOSA.AI
+      - heading "AI Training You'll Actually Use Tomorrow" [level=1] [ref=e15]
+      - paragraph [ref=e16]: Live workshops and hands-on courses that teach small business owners how to save time, cut costs, and stop guessing with AI — no tech jargon, no fluff, just results.
+    - generic [ref=e18]:
+      - generic [ref=e20]: Featured
+      - 'heading "Off Your Plate: Let AI Handle the Work You Never Signed Up For" [level=2] [ref=e21]'
+      - paragraph [ref=e22]: A free live workshop showing you how 4 simple tools can save you 25+ hours every week... for under $350/month.
+      - generic [ref=e23]:
+        - generic [ref=e24]: Apr 15th, 2026
+        - generic [ref=e26]: 6:00 PM - 7:00 PM
+        - generic [ref=e28]: FREE
+      - link "Learn More →" [ref=e31] [cursor=pointer]:
+        - /url: /off-your-plate
+    - generic [ref=e33]:
+      - generic [ref=e35]: Upcoming Events & Courses
+      - generic [ref=e36]:
+        - link "3-Day Challenge AI Confidence Blueprint 3-Day Challenge Finally... A Workshop That Gets You USING AI Instead of Just Learning About It Feb 9th, 2026 6:30 PM ET 2 hours $597 $297 Learn More →" [ref=e37] [cursor=pointer]:
+          - /url: /challenge
+          - generic [ref=e38]:
+            - generic [ref=e39]: 3-Day Challenge
+            - heading "AI Confidence Blueprint 3-Day Challenge" [level=3] [ref=e40]
+            - paragraph [ref=e41]: Finally... A Workshop That Gets You USING AI Instead of Just Learning About It
+            - generic [ref=e42]:
+              - generic [ref=e43]:
+                - generic [ref=e44]: Feb 9th, 2026
+                - generic [ref=e46]: 6:30 PM ET
+                - generic [ref=e48]: 2 hours
+              - generic [ref=e50]:
+                - generic [ref=e51]:
+                  - generic [ref=e52]: $597
+                  - generic [ref=e53]: $297
+                - generic [ref=e54]: Learn More →
+        - link "Live Workshop AI Confidence Blueprint Workshop The 2-hour workshop that turns \"AI makes me feel like an idiot\" into \"WOW! Now I actually know what I'm doing\"—with zero tech talk and templates yo... Coming Soon 6:30 PM ET 2 hours $47 Learn More →" [ref=e55] [cursor=pointer]:
+          - /url: /workshop
+          - generic [ref=e56]:
+            - generic [ref=e57]: Live Workshop
+            - heading "AI Confidence Blueprint Workshop" [level=3] [ref=e58]
+            - paragraph [ref=e59]: The 2-hour workshop that turns "AI makes me feel like an idiot" into "WOW! Now I actually know what I'm doing"—with zero tech talk and templates yo...
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - generic [ref=e62]: Coming Soon
+                - generic [ref=e64]: 6:30 PM ET
+                - generic [ref=e66]: 2 hours
+              - generic [ref=e68]:
+                - generic [ref=e70]: $47
+                - generic [ref=e71]: Learn More →
+  - contentinfo [ref=e72]:
+    - generic [ref=e74]:
+      - generic:
+        - img "JOSA.AI - AI. Delivered"
+      - paragraph [ref=e75]: AI Training for Small Business Owners
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - img [ref=e78]
+          - text: Tampa Bay Area
+        - generic [ref=e80]: •
+        - generic [ref=e81]: Polk County, FL
+      - generic [ref=e83]:
+        - link "Privacy Policy" [ref=e84] [cursor=pointer]:
+          - /url: /privacy-policy
+        - generic [ref=e85]: "|"
+        - link "Terms of Service" [ref=e86] [cursor=pointer]:
+          - /url: /terms-of-service
+      - paragraph [ref=e87]: © 2026 Josa.ai. All rights reserved.
+  - alert [ref=e88]

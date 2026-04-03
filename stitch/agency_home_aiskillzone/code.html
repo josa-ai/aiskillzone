@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#00642d",
+                    "surface": "#f7f9fb",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#0061ff",
+                    "tertiary-fixed-dim": "#30e375",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#004bca",
+                    "secondary-container": "#fb7800",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d8dadc",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#424656",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-bright": "#f7f9fb",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-container": "#cfffd2",
+                    "on-tertiary-fixed-variant": "#005224",
+                    "outline": "#737687",
+                    "on-primary-fixed": "#00174b",
+                    "on-secondary-fixed-variant": "#753400",
+                    "surface-tint": "#0052dc",
+                    "surface-container-low": "#f2f4f6",
+                    "on-surface": "#191c1e",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c2c6d9",
+                    "surface-container": "#eceef0",
+                    "on-primary-container": "#f1f2ff",
+                    "tertiary-container": "#00803c",
+                    "secondary-fixed-dim": "#ffb68b",
+                    "background": "#f7f9fb",
+                    "secondary": "#994700",
+                    "inverse-surface": "#2d3133",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-background": "#191c1e",
+                    "on-tertiary-fixed": "#00210b",
+                    "on-secondary-container": "#592600",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-fixed": "#321200",
+                    "secondary-fixed": "#ffdbc8",
+                    "tertiary-fixed": "#64ff92"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-mesh-gradient {
+            background-image: radial-gradient(at 0% 0%, rgba(0, 75, 202, 0.05) 0px, transparent 50%),
+                              radial-gradient(at 100% 0%, rgba(251, 120, 0, 0.03) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(0, 100, 45, 0.04) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<nav class="bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-md fixed top-0 w-full z-50 shadow-[0_20px_40px_rgba(25,28,30,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">AISkillZone</div>
+<div class="hidden md:flex gap-8 font-['Manrope'] font-medium text-sm tracking-tight">
+<a class="text-blue-600 dark:text-blue-400 font-bold border-b-2 border-blue-600 hover:text-blue-500 transition-colors duration-300" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors duration-300" href="#">Services</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors duration-300" href="#">Portfolio</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors duration-300" href="#">Blog</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium text-sm scale-95 active:scale-100 transition-all shadow-lg shadow-primary/10">
+                Book a Call
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-8 overflow-hidden bg-mesh-gradient">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low rounded-full mb-6">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(0,100,45,0.4)]"></span>
+<span class="text-xs font-semibold tracking-wider uppercase text-on-surface-variant font-label">The Future is Curated</span>
+</div>
+<h1 class="text-6xl md:text-7xl font-extrabold font-headline leading-[1.1] tracking-tight text-on-surface mb-8">
+                    Architecting <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Intelligence</span>
+</h1>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-lg mb-10">
+                    Boutique AI consulting that bridges the gap between complex neural networks and high-impact business operations. We build your digital future, curated with precision.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-bold text-base shadow-xl shadow-primary/20 hover:translate-y-[-2px] transition-transform">
+                        Explore Our Services
+                    </button>
+<button class="px-8 py-4 bg-surface-container-highest text-on-surface rounded-full font-bold text-base hover:bg-surface-container-high transition-colors">
+                        View Portfolio
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-[2rem] overflow-hidden bg-surface-container-low relative">
+<img alt="abstract visualization" class="w-full h-full object-cover" data-alt="minimalist 3D abstract visualization of a glowing translucent neural network with light blue connecting lines and soft volumetric lighting on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDArfHCdv1ZfnNDFiLBlnOovRoHzVJHD6wk6VMrdyS_gMgC408GOOJmt5WFx9xTbQ1CNsVIHQdqxxSkTUa8nT7VwyP6NRe8KhY5xllEp4Nye__qlquBlaNikqww3d6ECLvtue211Gm4B3GZH3nvXYY0feBKi_iiELTcpVvZXe-jjKFvBrHYaaHrQbVxZ6YfniTt15HgpGigxI2SqR0rshj-gOdfdXY4AjqjO8pmdwT1UgH-_iucnsZmchHTwVNE07AFD4UzfCLgrg"/>
+<!-- Glassmorphism Overlays -->
+<div class="absolute bottom-8 left-8 p-6 bg-surface/70 backdrop-blur-xl rounded-2xl shadow-2xl max-w-xs border-white/20 border">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-sm font-bold font-headline">AI Efficiency Index</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full w-[85%] bg-primary"></div>
+</div>
+<span class="text-[10px] uppercase font-bold mt-2 block text-on-surface-variant">+85% Productivity Optimization</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Money on the Table Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-extrabold font-headline mb-4">Money on the Table</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Don't let legacy processes drain your revenue. Identify the leaks in your digital strategy.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl group hover:shadow-[0_20px_40px_rgba(25,28,30,0.06)] transition-all duration-500 hover:-translate-y-2">
+<div class="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="phone_disabled">phone_disabled</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 leading-tight">Customers Can't Reach You</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Missed inquiries are missed revenue. Modern Voice AI ensures 24/7 engagement.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl group hover:shadow-[0_20px_40px_rgba(25,28,30,0.06)] transition-all duration-500 hover:-translate-y-2">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="desktop_windows">desktop_windows</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 leading-tight">Website Looks Like 2015</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">First impressions happen in milliseconds. Elevate your aesthetic to match your value.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl group hover:shadow-[0_20px_40px_rgba(25,28,30,0.06)] transition-all duration-500 hover:-translate-y-2">
+<div class="w-12 h-12 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="sync_problem">sync_problem</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 leading-tight">Stuck Doing Same Tasks</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Manual labor for repetitive digital tasks is a relic of the past. Automate the routine.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl group hover:shadow-[0_20px_40px_rgba(25,28,30,0.06)] transition-all duration-500 hover:-translate-y-2">
+<div class="w-12 h-12 rounded-2xl bg-primary-container/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary-container" data-icon="psychology_alt">psychology_alt</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 leading-tight">Not Sure Where AI Fits</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Complexity causes paralysis. We provide the roadmap to meaningful AI integration.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section (Bento Style) -->
+<section class="py-24 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<h2 class="text-4xl md:text-5xl font-extrabold font-headline mb-4">Strategic Solutions</h2>
+<p class="text-on-surface-variant max-w-xl">We don't just implement tools; we design entire cognitive workflows for the digital-first era.</p>
+</div>
+<div class="bg-surface-container px-6 py-3 rounded-full flex items-center gap-4 border border-outline-variant/10">
+<span class="text-sm font-bold">Latest in AI</span>
+<span class="material-symbols-outlined text-tertiary animate-pulse" data-icon="new_releases" data-weight="fill" style="font-variation-settings: 'FILL' 1;">new_releases</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Large Feature -->
+<div class="md:col-span-2 relative bg-surface-container-low rounded-[2.5rem] p-10 overflow-hidden group">
+<div class="relative z-10">
+<div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white" data-icon="web_asset">web_asset</span>
+</div>
+<h3 class="text-3xl font-bold font-headline mb-4">Website Design</h3>
+<p class="text-on-surface-variant max-w-md mb-8">Beyond aesthetics. We build intelligent, conversion-focused interfaces that adapt to user behavior in real-time.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-tertiary text-lg" data-icon="check_circle">check_circle</span> High-Performance UX</li>
+<li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-tertiary text-lg" data-icon="check_circle">check_circle</span> AI-Driven Content Personalization</li>
+</ul>
+</div>
+<div class="absolute right-[-10%] bottom-[-10%] w-2/3 opacity-40 group-hover:scale-105 transition-transform duration-700">
+<img alt="modern UI design" class="rounded-3xl shadow-2xl" data-alt="sleek modern minimalist dashboard design with vibrant blue accents on a dark grey tablet floating in empty white space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBidDsUWZpN3u5cmbie1tqvhni_cqXamRn-wfuUJB9YkwoSqujwbUYLfLeahdQzADmhexA16p7yOs_dYZxYvVQArmfKSCsmIqXOX8MyDKSqcQuYIbXhOJe1fxTvy5FpmXRjmtIPuGC61XWqzEi4ByZvYrnjB3lhPenaTi1gkIDVxHw1aL_ksdQ0X3i8X9XvIQTDR_Gy_7HBsPojDWUE4NHBm-dF3udIWhBDiJeUcuxt6Un9uBXfYpkQoZodyERGnQL6KLjKPgVIjg"/>
+</div>
+</div>
+<!-- Secondary Feature -->
+<div class="bg-surface-container-lowest p-10 rounded-[2.5rem] border border-outline-variant/10 hover:shadow-xl transition-all">
+<div class="w-14 h-14 bg-secondary rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-secondary/20">
+<span class="material-symbols-outlined text-white" data-icon="record_voice_over">record_voice_over</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4">Voice AI</h3>
+<p class="text-on-surface-variant text-sm mb-6">Human-like conversational agents for high-volume customer service and scheduling.</p>
+<div class="pt-6 border-t border-outline-variant/10">
+<span class="text-xs font-bold tracking-widest text-secondary uppercase">24/7 Availability</span>
+</div>
+</div>
+<!-- Secondary Feature -->
+<div class="bg-surface-container-lowest p-10 rounded-[2.5rem] border border-outline-variant/10 hover:shadow-xl transition-all">
+<div class="w-14 h-14 bg-tertiary rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-tertiary/20">
+<span class="material-symbols-outlined text-white" data-icon="robot_2">robot_2</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4">AI Automation</h3>
+<p class="text-on-surface-variant text-sm mb-6">Bridging disparate workflows into a seamless, autonomous operational engine.</p>
+<div class="pt-6 border-t border-outline-variant/10">
+<span class="text-xs font-bold tracking-widest text-tertiary uppercase">Zero Latency Ops</span>
+</div>
+</div>
+<!-- Large Feature -->
+<div class="md:col-span-2 bg-gradient-to-br from-primary to-primary-container p-10 rounded-[2.5rem] text-on-primary flex flex-col md:flex-row items-center gap-10">
+<div class="flex-1">
+<div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white" data-icon="school">school</span>
+</div>
+<h3 class="text-3xl font-bold font-headline mb-4 text-white">AI Training</h3>
+<p class="text-on-primary/80 max-w-md mb-8">Empower your team with the skills to prompt, manage, and iterate alongside advanced AI systems.</p>
+<button class="px-6 py-3 bg-white text-primary font-bold rounded-full text-sm">Join a Workshop</button>
+</div>
+<div class="flex-1 grid grid-cols-2 gap-4">
+<div class="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm p-4 flex flex-col justify-center items-center text-center">
+<span class="text-2xl font-black block">15+</span>
+<span class="text-[10px] uppercase font-bold opacity-70">Modules</span>
+</div>
+<div class="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm p-4 flex flex-col justify-center items-center text-center">
+<span class="text-2xl font-black block">500+</span>
+<span class="text-[10px] uppercase font-bold opacity-70">Trained</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-20 px-8">
+<div class="max-w-5xl mx-auto bg-surface-container-low rounded-[3rem] p-12 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+<div class="absolute top-[-50px] right-[-50px] w-64 h-64 bg-primary/5 blur-3xl rounded-full"></div>
+<div class="absolute bottom-[-50px] left-[-50px] w-64 h-64 bg-secondary/5 blur-3xl rounded-full"></div>
+</div>
+<h2 class="text-4xl md:text-5xl font-extrabold font-headline mb-8">Ready to exit the 2015 era?</h2>
+<p class="text-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Schedule a strategic discovery session with our lead architects and start reclaiming your time and revenue.</p>
+<button class="px-10 py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-bold text-lg shadow-2xl shadow-primary/30 hover:scale-105 transition-transform">
+                Claim Your Discovery Call
+            </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-800 w-full pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-slate-900 dark:text-slate-50 font-headline mb-6">AISkillZone</div>
+<p class="font-['Inter'] text-sm leading-relaxed text-slate-500 dark:text-slate-400">Curating the future of enterprise intelligence through elite consulting and bespoke automation.</p>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Services</h4>
+<ul class="space-y-4 font-['Inter'] text-sm leading-relaxed">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-orange-500 transition-colors duration-200" href="#">Website Design</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-orange-500 transition-colors duration-200" href="#">Voice AI</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-orange-500 transition-colors duration-200" href="#">AI Automation</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-orange-500 transition-colors duration-200" href="#">AI Training</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Company</h4>
+<ul class="space-y-4 font-['Inter'] text-sm leading-relaxed">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-orange-500 transition-colors duration-200" href="#">Portfolio</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-orange-500 transition-colors duration-200" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-orange-500 transition-colors duration-200" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Follow</h4>
+<ul class="space-y-4 font-['Inter'] text-sm leading-relaxed">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-orange-500 transition-colors duration-200" href="#">LinkedIn</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-orange-500 transition-colors duration-200" href="#">Twitter</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+<p class="font-['Inter'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 text-center">© 2024 AISkillZone. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

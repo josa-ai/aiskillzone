@@ -55,9 +55,9 @@ export function FAQAccordion({ faqs, showSchema = true, variant = "default" }: F
             <div
               key={index}
               className={cn(
-                "overflow-hidden rounded-2xl border",
+                "overflow-hidden rounded-[1.6rem] border backdrop-blur-xl",
                 variant === "branded"
-                  ? "border-[#004bca]/30 bg-white/70"
+                  ? "border-white/60 bg-white/78 shadow-[0_18px_40px_rgba(15,23,42,0.08)]"
                   : "border-[#c2c6d9]"
               )}
             >
@@ -70,7 +70,7 @@ export function FAQAccordion({ faqs, showSchema = true, variant = "default" }: F
                 className={cn(
                   "flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-medium text-[#191c1e] transition-colors",
                   variant === "branded"
-                    ? cn("hover:bg-[#004bca]/10", isOpen && "bg-[#004bca]/10")
+                    ? cn("hover:bg-slate-950/[0.04]", isOpen && "bg-slate-950/[0.04]")
                     : cn("hover:bg-[#f2f4f6]", isOpen && "bg-[#f2f4f6]")
                 )}
               >
@@ -80,7 +80,7 @@ export function FAQAccordion({ faqs, showSchema = true, variant = "default" }: F
                   transition={{ duration: 0.2 }}
                   className="shrink-0"
                 >
-                  <ChevronDown className="size-5 text-[#004bca]" />
+                  <ChevronDown className="size-5 text-[#2563eb]" />
                 </motion.span>
               </button>
 

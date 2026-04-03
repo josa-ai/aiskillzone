@@ -1,0 +1,151 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "AISkillZone" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Portfolio" [ref=e8] [cursor=pointer]:
+          - /url: /portfolio
+        - button "Services" [ref=e10]:
+          - text: Services
+          - img [ref=e11]
+  - main [ref=e13]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e19]: Core Service
+        - heading "Website Design" [level=1] [ref=e20]
+        - paragraph [ref=e21]: Your website should work as hard as you do.
+        - paragraph [ref=e22]: Custom-built websites that convert. No templates, no bloat. Includes SEO, AEO, and ADA compliance built in—never an upcharge.
+        - generic [ref=e23]:
+          - link "Explore All Services" [ref=e24] [cursor=pointer]:
+            - /url: /services
+          - link "View Portfolio" [ref=e25] [cursor=pointer]:
+            - /url: /portfolio
+      - generic [ref=e26]:
+        - generic [ref=e29]: 🌐
+        - generic [ref=e30]:
+          - generic [ref=e31]: 99/100
+          - generic [ref=e32]: Lighthouse Performance Score
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: "01"
+          - heading "The Problem" [level=2] [ref=e38]
+        - generic [ref=e39]:
+          - paragraph [ref=e40]: Most small business websites are built from templates that all look the same, haven't been updated in years, aren't designed to convert visitors into customers, and aren't showing up in search results. If your website isn't actively bringing in leads, it's costing you money.
+          - generic [ref=e41]:
+            - img [ref=e42]
+            - generic [ref=e44]:
+              - heading "Don't Ignore This" [level=4] [ref=e45]
+              - paragraph [ref=e46]: Every day your website underperforms, potential customers are finding your competitors instead.
+      - generic [ref=e48]:
+        - generic [ref=e49]: 🌐
+        - paragraph [ref=e50]: Website Design
+    - generic [ref=e52]:
+      - generic [ref=e56]:
+        - generic [ref=e57]: "-$4.2M"
+        - paragraph [ref=e58]: Lost Annual Revenue
+      - generic [ref=e60]:
+        - generic [ref=e61]:
+          - generic [ref=e62]: "02"
+          - heading "The Cost" [level=2] [ref=e63]
+        - paragraph [ref=e65]: Every day your website underperforms, potential customers are finding your competitors instead. They're making decisions based on what they see online — and if your site looks outdated, loads slowly, or doesn't answer their questions, they're gone in seconds. That's revenue walking out the door.
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]: "03"
+          - heading "How We Solve It" [level=2] [ref=e71]
+        - paragraph [ref=e72]: We build custom websites from the ground up — no templates, no bloat. Every site comes with SEO, AEO (AI Engine Optimization), and ADA compliance built in as standard. Your site will be mobile-optimized, integrated with your CRM, and designed to convert visitors into customers.
+      - generic [ref=e73]:
+        - generic [ref=e75]:
+          - img [ref=e77]
+          - heading "Custom design and development — no templates" [level=3] [ref=e79]
+        - generic [ref=e81]:
+          - img [ref=e83]
+          - heading "SEO and AEO built into every page" [level=3] [ref=e85]
+        - generic [ref=e87]:
+          - img [ref=e89]
+          - heading "ADA compliance included at no extra cost" [level=3] [ref=e91]
+        - generic [ref=e93]:
+          - img [ref=e95]
+          - heading "Mobile-first responsive design" [level=3] [ref=e97]
+        - generic [ref=e99]:
+          - img [ref=e101]
+          - heading "CRM integration and lead capture forms" [level=3] [ref=e103]
+        - generic [ref=e105]:
+          - img [ref=e107]
+          - heading "Analytics and performance tracking setup" [level=3] [ref=e109]
+    - generic [ref=e111]:
+      - heading "Frequently Asked Questions" [level=2] [ref=e112]
+      - generic [ref=e114]:
+        - button "Do you use templates?" [ref=e116]:
+          - generic [ref=e117]: Do you use templates?
+          - img [ref=e119]
+        - button "Can I make changes to the site after it launches?" [ref=e122]:
+          - generic [ref=e123]: Can I make changes to the site after it launches?
+          - img [ref=e125]
+        - button "Is SEO included or does it cost extra?" [ref=e128]:
+          - generic [ref=e129]: Is SEO included or does it cost extra?
+          - img [ref=e131]
+        - button "Will my site work on mobile?" [ref=e134]:
+          - generic [ref=e135]: Will my site work on mobile?
+          - img [ref=e137]
+    - generic [ref=e140]:
+      - heading "Related Services" [level=2] [ref=e141]
+      - generic [ref=e142]:
+        - link "🤖 Voice AI Stop missing calls. Our AI answers 24/7, handles FAQs, qualifies leads, and books appointments. Like having a front desk person who never takes a break." [ref=e143] [cursor=pointer]:
+          - /url: /services/voice-ai
+          - generic [ref=e144]: 🤖
+          - heading "Voice AI" [level=3] [ref=e145]
+          - paragraph [ref=e146]: Stop missing calls. Our AI answers 24/7, handles FAQs, qualifies leads, and books appointments. Like having a front desk person who never takes a break.
+        - link "🎯 Brand Strategy We develop your brand voice, campaign strategy, and messaging. Usually bundled into other projects, but available as a focused engagement too." [ref=e147] [cursor=pointer]:
+          - /url: /services/brand-strategy
+          - generic [ref=e148]: 🎯
+          - heading "Brand Strategy" [level=3] [ref=e149]
+          - paragraph [ref=e150]: We develop your brand voice, campaign strategy, and messaging. Usually bundled into other projects, but available as a focused engagement too.
+        - link "⚡ AI Automation Tell us what's eating up your day. We build custom automations that handle email, marketing workflows, orders, and processes unique to your business." [ref=e151] [cursor=pointer]:
+          - /url: /services/ai-automation
+          - generic [ref=e152]: ⚡
+          - heading "AI Automation" [level=3] [ref=e153]
+          - paragraph [ref=e154]: Tell us what's eating up your day. We build custom automations that handle email, marketing workflows, orders, and processes unique to your business.
+  - contentinfo [ref=e155]:
+    - generic [ref=e156]:
+      - generic [ref=e157]:
+        - generic [ref=e158]: AISkillZone
+        - paragraph [ref=e159]: Curating the future of enterprise intelligence through elite consulting and bespoke automation.
+      - generic [ref=e160]:
+        - heading "Services" [level=4] [ref=e161]
+        - list [ref=e162]:
+          - listitem [ref=e163]:
+            - link "Website Design" [ref=e164] [cursor=pointer]:
+              - /url: /services/website-design
+          - listitem [ref=e165]:
+            - link "Voice AI" [ref=e166] [cursor=pointer]:
+              - /url: /services/voice-ai
+          - listitem [ref=e167]:
+            - link "AI Automation" [ref=e168] [cursor=pointer]:
+              - /url: /services/ai-automation
+          - listitem [ref=e169]:
+            - link "AI Training" [ref=e170] [cursor=pointer]:
+              - /url: /services/ai-training
+      - generic [ref=e171]:
+        - heading "Company" [level=4] [ref=e172]
+        - list [ref=e173]:
+          - listitem [ref=e174]:
+            - link "Portfolio" [ref=e175] [cursor=pointer]:
+              - /url: /portfolio
+      - generic [ref=e176]:
+        - heading "Follow" [level=4] [ref=e177]
+        - list [ref=e178]:
+          - listitem [ref=e179]:
+            - link "LinkedIn" [ref=e180] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e181]:
+            - link "Twitter" [ref=e182] [cursor=pointer]:
+              - /url: "#"
+    - paragraph [ref=e184]: © 2026 AISkillZone. All rights reserved.
+  - alert [ref=e185]

@@ -1,0 +1,394 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation [ref=e3]:
+    - generic [ref=e5]:
+      - link "Deva Simmons Deva Simmons For Congress" [ref=e6] [cursor=pointer]:
+        - /url: /en
+        - img "Deva Simmons" [ref=e8]
+        - generic [ref=e9]:
+          - generic [ref=e10]: Deva Simmons
+          - generic [ref=e11]: For Congress
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /en
+        - link "Meet Deva" [ref=e14] [cursor=pointer]:
+          - /url: /en/meet-deva
+        - link "Issues" [ref=e15] [cursor=pointer]:
+          - /url: /en/issues
+        - link "Events" [ref=e16] [cursor=pointer]:
+          - /url: /en/events
+        - link "Get Involved" [ref=e17] [cursor=pointer]:
+          - /url: /en/get-involved
+        - link "Gallery" [ref=e18] [cursor=pointer]:
+          - /url: /en/gallery
+        - link "Contact" [ref=e19] [cursor=pointer]:
+          - /url: /en/contact
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - button "Switch to English" [ref=e22] [cursor=pointer]: EN
+          - button "Switch to Español" [ref=e23] [cursor=pointer]: ES
+          - button "Switch to Kreyòl Ayisyen" [ref=e24] [cursor=pointer]: HT
+        - link "Donate" [ref=e25] [cursor=pointer]:
+          - /url: https://givebutter.com/cBaU50
+          - img [ref=e26]
+          - text: Donate
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e50]: NPA Candidate for Congress
+          - heading "DEVA SIMMONS" [level=1] [ref=e51]:
+            - generic [ref=e52]: DEVA
+            - generic [ref=e53]: SIMMONS
+          - paragraph [ref=e56]: Florida Congressional District 18
+          - paragraph [ref=e58]: Ready To Serve And Defend Democracy
+          - paragraph [ref=e59]: Rebuilding Trust.|Restoring Hope.|Reinforcing Democracy.
+          - generic [ref=e60]:
+            - link "Donate Now" [ref=e61] [cursor=pointer]:
+              - /url: https://givebutter.com/cBaU50
+              - img [ref=e62]
+              - text: Donate Now
+            - link "Volunteer" [ref=e64] [cursor=pointer]:
+              - /url: https://forms.gle/q83PJFjN6c2Mxc5x9
+              - img [ref=e65]
+              - text: Volunteer
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - paragraph [ref=e72]: 20+
+              - paragraph [ref=e73]: Years Serving
+            - generic [ref=e75]:
+              - paragraph [ref=e76]: D18
+              - paragraph [ref=e77]: Florida District
+            - generic [ref=e79]:
+              - paragraph [ref=e80]: NPA
+              - paragraph [ref=e81]: Independent
+        - generic [ref=e86]:
+          - img "Deva Simmons - Candidate for U.S. Congress" [ref=e88]
+          - generic [ref=e91]:
+            - img [ref=e92]
+            - paragraph [ref=e94]: A Heart for People
+      - generic [ref=e98]:
+        - generic [ref=e99]: Scroll
+        - img [ref=e100]
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - generic [ref=e112]:
+          - img "Deva Simmons" [ref=e114]
+          - blockquote [ref=e117]: “A Heart for People and a Voice for Change”
+        - generic [ref=e118]:
+          - paragraph [ref=e119]: 20+
+          - paragraph [ref=e120]: Years Serving
+        - generic [ref=e121]:
+          - paragraph [ref=e122]: D18
+          - paragraph [ref=e123]: Florida District
+      - generic [ref=e124]:
+        - generic [ref=e125]: Meet Your Candidate
+        - heading "Meet Deva Simmons" [level=2] [ref=e126]
+        - generic [ref=e128]:
+          - paragraph [ref=e129]: A native of Brooklyn, NY, Deva relocated to Florida in 1995 and has proudly called Polk County home since 2002. With over 20 years in education, she has dedicated her life to empowering students and families through learning, mentorship, and community engagement.
+          - paragraph [ref=e130]: Her commitment to service extends far beyond the classroom. Deva has served on the Board of the Boys & Girls Club of Lakeland, is a proud sponsor of the AGB Museum of Art, and volunteers with kidsPACK, Alpha Kappa Alpha Sorority, Incorporated®, and Polk County Schools.
+          - paragraph [ref=e131]: Now, Deva is stepping up to serve on a greater level — as a candidate for U.S. Congress, District 18.
+        - generic [ref=e132]:
+          - generic [ref=e133]:
+            - img [ref=e134]
+            - paragraph [ref=e137]: 20+ Years
+            - paragraph [ref=e138]: In Education
+          - generic [ref=e139]:
+            - img [ref=e140]
+            - paragraph [ref=e145]: Community
+            - paragraph [ref=e146]: Leader
+          - generic [ref=e147]:
+            - img [ref=e148]
+            - paragraph [ref=e150]: Servant
+            - paragraph [ref=e151]: Heart
+          - generic [ref=e152]:
+            - img [ref=e153]
+            - paragraph [ref=e156]: Dedicated
+            - paragraph [ref=e157]: Advocate
+        - link "Read Full Story" [ref=e158] [cursor=pointer]:
+          - /url: /en/meet-deva
+          - generic [ref=e159]: Read Full Story
+          - img [ref=e160]
+    - generic [ref=e166]:
+      - generic [ref=e167]:
+        - generic [ref=e168]:
+          - img [ref=e169]
+          - generic [ref=e175]: Track Record
+        - heading "A LIFETIME OF SERVICE" [level=2] [ref=e176]
+        - paragraph [ref=e177]: Deva's dedication to our community spans decades of education, mentorship, and servant leadership.
+      - generic [ref=e178]:
+        - generic [ref=e180]:
+          - img [ref=e182]
+          - paragraph [ref=e185]:
+            - generic [ref=e186]: 0+
+          - paragraph [ref=e187]: Years in Education
+          - paragraph [ref=e188]: Empowering students and families
+        - generic [ref=e190]:
+          - img [ref=e192]
+          - paragraph [ref=e195]: "0"
+          - paragraph [ref=e196]: Counties Served
+          - paragraph [ref=e197]: Across District 18
+        - generic [ref=e199]:
+          - img [ref=e201]
+          - paragraph [ref=e206]:
+            - generic [ref=e207]: 0+
+          - paragraph [ref=e208]: Community Hours
+          - paragraph [ref=e209]: Volunteering and service
+        - generic [ref=e211]:
+          - img [ref=e213]
+          - paragraph [ref=e216]:
+            - generic [ref=e217]: 0+
+          - paragraph [ref=e218]: Organizations
+          - paragraph [ref=e219]: Active involvement
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - heading "Community Partnerships" [level=3] [ref=e222]
+          - paragraph [ref=e223]: Organizations where Deva has made an impact
+        - generic [ref=e224]:
+          - generic [ref=e225]:
+            - img [ref=e226]
+            - text: Boys & Girls Club of Lakeland
+          - generic [ref=e228]:
+            - img [ref=e229]
+            - text: AGB Museum of Art
+          - generic [ref=e231]:
+            - img [ref=e232]
+            - text: kidsPACK
+          - generic [ref=e234]:
+            - img [ref=e235]
+            - text: Alpha Kappa Alpha Sorority, Inc.®
+          - generic [ref=e237]:
+            - img [ref=e238]
+            - text: Polk County Schools
+      - generic [ref=e241]:
+        - img [ref=e242]
+        - blockquote [ref=e244]: "\"Strong communities are built on compassion, accountability, and collaboration. My commitment to service extends far beyond the classroom.\""
+        - text: — Deva Simmons
+    - generic [ref=e249]:
+      - generic [ref=e250]:
+        - generic [ref=e251]:
+          - img [ref=e252]
+          - generic [ref=e256]: My leadership will prioritize active listening, dedicated service, transparent communication, and unwavering support for constituents.
+        - heading "FIGHTING FOR WHAT MATTERS" [level=2] [ref=e257]
+      - generic [ref=e259]:
+        - generic [ref=e262] [cursor=pointer]:
+          - img "Affordable Healthcare" [ref=e265]
+          - generic [ref=e267]:
+            - heading "Affordable Healthcare" [level=3] [ref=e268]
+            - paragraph [ref=e269]: Fighting for accessible, quality healthcare for all families in District 18. Everyone deserves the right to see a doctor without financial fear.
+            - generic [ref=e270]:
+              - generic [ref=e271]: Learn More
+              - img [ref=e272]
+            - list [ref=e274]:
+              - listitem [ref=e275]: Lowering prescription drug costs for seniors
+              - listitem [ref=e277]: Protecting and expanding the Affordable Care Act
+              - listitem [ref=e279]: Increasing access to mental health services
+              - listitem [ref=e281]: Supporting community health centers
+        - generic [ref=e285] [cursor=pointer]:
+          - img "Quality Education" [ref=e288]
+          - generic [ref=e290]:
+            - heading "Quality Education" [level=3] [ref=e291]
+            - paragraph [ref=e292]: Ensuring every Florida student has access to high-quality education. Investing in our children means investing in our future.
+            - generic [ref=e293]:
+              - generic [ref=e294]: Learn More
+              - img [ref=e295]
+            - list [ref=e297]:
+              - listitem [ref=e298]: Increasing teacher pay and support
+              - listitem [ref=e300]: Expanding early childhood education
+              - listitem [ref=e302]: Making college more affordable
+              - listitem [ref=e304]: Protecting public schools from defunding
+        - generic [ref=e308] [cursor=pointer]:
+          - img "Economic Stability" [ref=e311]
+          - generic [ref=e313]:
+            - heading "Economic Stability" [level=3] [ref=e314]
+            - paragraph [ref=e315]: Building an economy that works for working families. Creating jobs, supporting small businesses, and ensuring fair wages.
+            - generic [ref=e316]:
+              - generic [ref=e317]: Learn More
+              - img [ref=e318]
+            - list [ref=e320]:
+              - listitem [ref=e321]: Raising the minimum wage to a living wage
+              - listitem [ref=e323]: Supporting small businesses and entrepreneurs
+              - listitem [ref=e325]: Creating good-paying jobs in clean energy
+              - listitem [ref=e327]: Lowering the cost of living for families
+        - generic [ref=e331] [cursor=pointer]:
+          - img "Defending Democracy" [ref=e334]
+          - generic [ref=e336]:
+            - heading "Defending Democracy" [level=3] [ref=e337]
+            - paragraph [ref=e338]: Protecting voting rights and ensuring every voice is heard. Democracy thrives when all citizens can participate.
+            - generic [ref=e339]:
+              - generic [ref=e340]: Learn More
+              - img [ref=e341]
+            - list [ref=e343]:
+              - listitem [ref=e344]: Protecting voting rights for all citizens
+              - listitem [ref=e346]: Fighting against gerrymandering
+              - listitem [ref=e348]: Increasing government transparency
+              - listitem [ref=e350]: Protecting election security
+      - link "Learn More About My Platform" [ref=e353] [cursor=pointer]:
+        - /url: /en/issues
+        - generic [ref=e354]: Learn More About My Platform
+        - img [ref=e355]
+    - generic [ref=e360]:
+      - img [ref=e361]
+      - generic [ref=e363]: Loading events...
+    - generic [ref=e368]:
+      - generic [ref=e369]:
+        - generic [ref=e370]: Our community in action. Together, we are making a difference in District 18.
+        - heading "Moments of Kindness" [level=2] [ref=e371]
+        - paragraph [ref=e373]: Our community in action. Together, we are making a difference in District 18.
+      - generic [ref=e374]:
+        - button "Previous" [disabled] [ref=e375]:
+          - img [ref=e376]
+        - button "Next" [ref=e378] [cursor=pointer]:
+          - img [ref=e379]
+        - generic [ref=e382]:
+          - button "Campaign Kickoff Party Campaign Kickoff Party" [ref=e384] [cursor=pointer]:
+            - img "Campaign Kickoff Party" [ref=e385]
+            - paragraph [ref=e388]: Campaign Kickoff Party
+          - button "On the campaign trail On the campaign trail" [ref=e393] [cursor=pointer]:
+            - img "On the campaign trail" [ref=e394]
+            - paragraph [ref=e397]: On the campaign trail
+          - button "On the campaign trail On the campaign trail" [ref=e402] [cursor=pointer]:
+            - img "On the campaign trail" [ref=e403]
+            - paragraph [ref=e406]: On the campaign trail
+      - img "Deva Simmons Heart Logo" [ref=e414]
+    - generic [ref=e418]:
+      - generic [ref=e419]:
+        - generic [ref=e420]:
+          - img [ref=e421]
+          - generic [ref=e423]: Latest Videos
+        - heading "CAMPAIGN UPDATES" [level=2] [ref=e424]
+        - paragraph [ref=e425]: Stay informed with the latest videos from the campaign trail. Hear directly from Deva about her vision for District 18.
+      - generic [ref=e427]:
+        - button "Play Full interview with Fiercely Independent" [ref=e430] [cursor=pointer]:
+          - img "Full interview with Fiercely Independent" [ref=e431]
+          - img [ref=e437]
+          - heading "Full interview with Fiercely Independent" [level=3] [ref=e440]
+        - button "Play End Partisan Gerrymandering" [ref=e445] [cursor=pointer]:
+          - img "End Partisan Gerrymandering" [ref=e446]
+          - img [ref=e452]
+          - generic [ref=e454]:
+            - generic [ref=e455]: Short
+            - heading "End Partisan Gerrymandering" [level=3] [ref=e456]
+    - generic [ref=e468]:
+      - generic [ref=e469]:
+        - generic [ref=e470]:
+          - img [ref=e471]
+          - generic [ref=e473]: 100% People-Powered
+        - heading "SUPPORT OUR CAMPAIGN" [level=2] [ref=e474]
+        - paragraph [ref=e475]: Every contribution helps us reach more voters in District 18. Join our movement for change.
+      - generic [ref=e476]:
+        - button "$5" [ref=e477] [cursor=pointer]:
+          - paragraph [ref=e478]: $5
+        - button "District 18 $18 Most Popular" [ref=e479] [cursor=pointer]:
+          - generic [ref=e480]: District 18
+          - paragraph [ref=e481]: $18
+          - paragraph [ref=e482]: Most Popular
+        - button "$50" [ref=e483] [cursor=pointer]:
+          - paragraph [ref=e484]: $50
+        - button "$100" [ref=e485] [cursor=pointer]:
+          - paragraph [ref=e486]: $100
+      - generic [ref=e488]:
+        - generic [ref=e489]: "Or enter custom amount:"
+        - generic [ref=e490]:
+          - generic [ref=e491]: $
+          - spinbutton [ref=e492]
+      - generic [ref=e493]:
+        - button "Donate $18 Now" [ref=e494] [cursor=pointer]:
+          - img [ref=e496]
+          - generic [ref=e498]: Donate $18 Now
+          - img [ref=e499]
+        - generic [ref=e501]:
+          - generic [ref=e502]:
+            - img [ref=e503]
+            - generic [ref=e505]: Secure Payment
+          - generic [ref=e506]:
+            - img [ref=e507]
+            - generic [ref=e512]: 500+ Donors
+          - generic [ref=e513]:
+            - img [ref=e514]
+            - generic [ref=e516]: FEC Compliant
+        - paragraph [ref=e517]: Contributions are not tax deductible. Federal law requires us to use our best efforts to collect and report the name, address, occupation, and employer of individuals whose contributions exceed $200.
+    - generic [ref=e518]:
+      - img [ref=e522]
+      - generic [ref=e526]:
+        - generic [ref=e527]:
+          - generic [ref=e528]:
+            - img [ref=e529]
+            - text: Florida District 18
+          - heading "Serving Central & South Florida" [level=2] [ref=e532]
+          - paragraph [ref=e534]: Florida's 18th Congressional District spans the heartland of our state, encompassing hardworking communities from Polk County to the shores of Lake Okeechobee. These are the people I've served for over 20 years, and they deserve a voice in Washington who truly understands their needs.
+          - generic [ref=e535]:
+            - heading "District Counties" [level=3] [ref=e536]
+            - generic [ref=e537]:
+              - generic [ref=e540]: Polk County (majority)
+              - generic [ref=e543]: Collier (Immokalee)
+              - generic [ref=e546]: DeSoto
+              - generic [ref=e549]: Glades
+              - generic [ref=e552]: Hardee
+              - generic [ref=e555]: Hendry
+              - generic [ref=e558]: Highlands
+              - generic [ref=e561]: Okeechobee
+        - generic [ref=e568]:
+          - paragraph [ref=e569]: "18"
+          - paragraph [ref=e570]: Congressional District
+    - generic [ref=e586]:
+      - img [ref=e588]
+      - heading "Stay in Touch" [level=2] [ref=e591]
+      - paragraph [ref=e592]: Sign up for updates on events, fundraisers, and campaign news. Be the first to know how you can make a difference.
+      - generic [ref=e593]:
+        - generic [ref=e594]:
+          - textbox "Enter your email" [ref=e595]
+          - button "Subscribe" [ref=e596] [cursor=pointer]:
+            - text: Subscribe
+            - img [ref=e597]
+        - paragraph [ref=e599]: We respect your privacy. Unsubscribe at any time.
+  - contentinfo [ref=e600]:
+    - generic [ref=e602]:
+      - generic [ref=e603]:
+        - generic [ref=e604]:
+          - heading "Deva Simmons" [level=3] [ref=e605]
+          - paragraph [ref=e606]: For U.S. Congress
+          - paragraph [ref=e607]: Rebuilding Trust. Restoring Hope. Reinforcing Democracy. A Heart for People and a Voice for Change.
+          - generic [ref=e608]:
+            - link "Facebook" [ref=e609] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php?id=61577167209866
+              - img [ref=e610]
+            - link "Instagram" [ref=e612] [cursor=pointer]:
+              - /url: https://www.instagram.com/devasimmonsnpa
+              - img [ref=e613]
+        - generic [ref=e616]:
+          - heading "Quick Links" [level=4] [ref=e617]
+          - list [ref=e618]:
+            - listitem [ref=e619]:
+              - link "Home" [ref=e620] [cursor=pointer]:
+                - /url: /en
+            - listitem [ref=e621]:
+              - link "Meet Deva" [ref=e622] [cursor=pointer]:
+                - /url: /en/meet-deva
+            - listitem [ref=e623]:
+              - link "Issues" [ref=e624] [cursor=pointer]:
+                - /url: /en/issues
+            - listitem [ref=e625]:
+              - link "Get Involved" [ref=e626] [cursor=pointer]:
+                - /url: /en/get-involved
+            - listitem [ref=e627]:
+              - link "Contact" [ref=e628] [cursor=pointer]:
+                - /url: /en/contact
+        - generic [ref=e629]:
+          - heading "Contact" [level=4] [ref=e630]
+          - list [ref=e631]:
+            - listitem [ref=e632]:
+              - img [ref=e633]
+              - generic [ref=e636]:
+                - text: PO Box 91084
+                - text: Lakeland, FL 33804
+            - listitem [ref=e637]:
+              - link "deva4congress@gmail.com" [ref=e638] [cursor=pointer]:
+                - /url: mailto:deva4congress@gmail.com
+                - img [ref=e639]
+                - text: deva4congress@gmail.com
+      - generic [ref=e643]:
+        - paragraph [ref=e644]: © 2026 Deva Simmons for Congress. All rights reserved.
+        - paragraph [ref=e645]: Paid for by Deva Simmons for Congress
+  - alert [ref=e646]

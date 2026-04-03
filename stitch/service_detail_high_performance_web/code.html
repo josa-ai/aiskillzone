@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>High-Performance Web | AISkillZone</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#00642d",
+                    "surface": "#f7f9fb",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#0061ff",
+                    "tertiary-fixed-dim": "#30e375",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#004bca",
+                    "secondary-container": "#fb7800",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d8dadc",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#424656",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-bright": "#f7f9fb",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-container": "#cfffd2",
+                    "on-tertiary-fixed-variant": "#005224",
+                    "outline": "#737687",
+                    "on-primary-fixed": "#00174b",
+                    "on-secondary-fixed-variant": "#753400",
+                    "surface-tint": "#0052dc",
+                    "surface-container-low": "#f2f4f6",
+                    "on-surface": "#191c1e",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c2c6d9",
+                    "surface-container": "#eceef0",
+                    "on-primary-container": "#f1f2ff",
+                    "tertiary-container": "#00803c",
+                    "secondary-fixed-dim": "#ffb68b",
+                    "background": "#f7f9fb",
+                    "secondary": "#994700",
+                    "inverse-surface": "#2d3133",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-background": "#191c1e",
+                    "on-tertiary-fixed": "#00210b",
+                    "on-secondary-container": "#592600",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-fixed": "#321200",
+                    "secondary-fixed": "#ffdbc8",
+                    "tertiary-fixed": "#64ff92"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20">
+<!-- TopAppBar -->
+<header class="bg-slate-50/70 backdrop-blur-md fixed top-0 w-full z-50 shadow-[0_20px_40px_rgba(25,28,30,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="text-2xl font-bold tracking-tighter text-slate-900">AISkillZone</div>
+<nav class="hidden md:flex items-center gap-8 font-['Manrope'] font-medium text-sm tracking-tight">
+<a class="text-slate-600 hover:text-blue-500 transition-colors duration-300" href="#">Home</a>
+<a class="text-blue-600 font-bold border-b-2 border-blue-600 transition-colors duration-300" href="#">Services</a>
+<a class="text-slate-600 hover:text-blue-500 transition-colors duration-300" href="#">Portfolio</a>
+<a class="text-slate-600 hover:text-blue-500 transition-colors duration-300" href="#">Blog</a>
+<a class="text-slate-600 hover:text-blue-500 transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white px-6 py-2.5 rounded-full font-label font-semibold text-sm scale-95 active:scale-100 transition-transform shadow-lg shadow-primary/10">
+                Book a Call
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex items-center overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-label font-bold tracking-wider text-on-surface-variant uppercase">Core Service</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface tracking-tighter leading-tight mb-6">
+                        High-Performance <br/><span class="text-primary">Web</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+                        We don't just build websites. We engineer high-speed digital engines designed to convert, scale, and outperform the competition with precision AI integration.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-white px-8 py-4 rounded-full font-label font-bold text-base shadow-xl shadow-primary/20 hover:translate-y-[-2px] transition-all">Start a Project</button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-label font-bold text-base hover:bg-surface-container-high transition-colors">View Benchmarks</button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-3xl overflow-hidden bg-surface-container shadow-2xl relative group">
+<img alt="High Performance Analytics" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern clean workspace with high-end computer screens displaying abstract data visualizations and web architecture diagrams in soft blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEK-mQCzsYJiJHTmvPvwldAP8VvE4965MSAGJ4MkDUSwJ3RvzSuYnsF6nT1xrHIlZdRRSXS9NXsHX-DVglF5IwApHK__KFUSYnlj7ZDyzASYON2Qlfx1ky4ygcXnloAW73rKRV9BqELf2KFxSB_5A2XB4V9yqpaFM7E_t71oAoBSajfGQb76wJ7I-tm1Fh3BOxuS6VHRIK3nosRDzjndOi9sjWvZQBEsKFfNFsCW-hxVf0B3zSn9m_B1mOWxpDoUU0264bvjB55Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/40 to-transparent"></div>
+</div>
+<!-- Floating Insight Chip -->
+<div class="absolute -bottom-6 -left-6 bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-[0_20px_40px_rgba(25,28,30,0.06)] border border-white/20 max-w-[240px]">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="speed">speed</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Real-time Metrics</span>
+</div>
+<div class="text-2xl font-headline font-bold text-on-surface">99/100</div>
+<div class="text-sm text-on-surface-variant">Lighthouse Performance Score</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Alternating Section: 01 The Problem -->
+<section class="bg-surface-container-low py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1">
+<div class="relative">
+<div class="text-[12rem] font-headline font-extrabold text-primary/5 absolute -top-32 -left-12 select-none">01</div>
+<h2 class="font-headline text-4xl font-bold text-on-surface mb-8 relative z-10">The Problem</h2>
+</div>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+<p>Modern web users have zero patience. A one-second delay in page load time results in a 7% reduction in conversions. Most corporate sites are bloated with legacy code and inefficient assets.</p>
+<div class="flex gap-4 items-start p-6 bg-surface-container-lowest rounded-2xl">
+<span class="material-symbols-outlined text-error mt-1" data-icon="warning">warning</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Bloated Architecture</h4>
+<p class="text-sm">Excessive JavaScript execution and unoptimized images killing mobile retention.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<div class="aspect-video bg-white rounded-3xl shadow-sm p-8 flex flex-col justify-center">
+<div class="flex justify-between items-end mb-4">
+<div class="h-40 w-12 bg-error/10 rounded-t-lg relative">
+<div class="absolute bottom-0 w-full h-[80%] bg-error/40 rounded-t-lg"></div>
+</div>
+<div class="h-40 w-12 bg-primary/10 rounded-t-lg relative">
+<div class="absolute bottom-0 w-full h-[30%] bg-primary rounded-t-lg"></div>
+</div>
+<div class="h-40 w-12 bg-error/10 rounded-t-lg relative">
+<div class="absolute bottom-0 w-full h-[95%] bg-error/40 rounded-t-lg"></div>
+</div>
+<div class="h-40 w-12 bg-primary/10 rounded-t-lg relative">
+<div class="absolute bottom-0 w-full h-[25%] bg-primary rounded-t-lg"></div>
+</div>
+</div>
+<p class="text-center font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest">Industry Average vs. Our Standard</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Alternating Section: 02 The Cost -->
+<section class="bg-surface py-32">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative aspect-square">
+<div class="absolute inset-0 bg-secondary/5 rounded-full scale-90 blur-3xl"></div>
+<div class="relative z-10 h-full flex items-center justify-center">
+<div class="p-12 bg-white rounded-full shadow-2xl text-center border-8 border-surface-container-low">
+<div class="text-6xl font-headline font-extrabold text-secondary mb-2">-$4.2M</div>
+<p class="text-on-surface-variant font-bold uppercase tracking-widest text-sm">Lost Annual Revenue</p>
+</div>
+</div>
+<!-- Overlapping Decorative Elements -->
+<div class="absolute top-10 right-10 w-32 h-32 bg-secondary-container/20 rounded-2xl rotate-12 -z-1"></div>
+</div>
+<div>
+<div class="relative">
+<div class="text-[12rem] font-headline font-extrabold text-secondary/5 absolute -top-32 -left-12 select-none">02</div>
+<h2 class="font-headline text-4xl font-bold text-on-surface mb-8 relative z-10">The Cost</h2>
+</div>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+<p>Invisibility is the highest cost. If your site doesn't load instantly, search engines bury you, and users never see your value proposition. You aren't just losing clicks; you're losing market authority.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Diminished Brand Trust</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Exploding Customer Acquisition Costs</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>SEO Penalties from Core Web Vitals</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Alternating Section: 03 How We Solve It -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-20 text-center max-w-2xl mx-auto">
+<div class="relative inline-block">
+<div class="text-[10rem] font-headline font-extrabold text-tertiary/5 absolute -top-24 left-1/2 -translate-x-1/2 select-none">03</div>
+<h2 class="font-headline text-4xl font-bold text-on-surface relative z-10">How We Solve It</h2>
+</div>
+<p class="text-on-surface-variant mt-4">A multi-layered approach to speed, security, and scalability.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-3xl shadow-sm flex flex-col justify-between group hover:translate-y-[-4px] transition-all">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="architecture">architecture</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Edge-First Architecture</h3>
+<p class="text-on-surface-variant leading-relaxed">We deploy your application at the edge, ensuring users in London, Tokyo, and New York all experience sub-100ms response times.</p>
+</div>
+<div class="mt-8 pt-8 border-t border-surface-container-low flex items-center justify-between">
+<span class="text-sm font-bold text-tertiary">99.9% Global Uptime</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="bg-tertiary text-white p-8 rounded-3xl flex flex-col justify-between">
+<div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Static Regeneration</h3>
+<p class="text-tertiary-fixed text-sm opacity-90">Dynamic content with static speed. Our hybrid approach ensures every page is pre-rendered for maximum performance.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-3">AI-Driven Assets</h3>
+<p class="text-on-surface-variant text-sm">Automated image optimization and code-splitting that adapts to the user's connection speed.</p>
+</div>
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-3xl shadow-sm flex items-center gap-8 border border-outline-variant/10">
+<div class="flex-1">
+<h3 class="text-xl font-headline font-bold mb-3">Future-Proof Tech Stack</h3>
+<p class="text-on-surface-variant text-sm">Built on Next.js, Vercel, and headless CMS providers to ensure your investment lasts for years, not months.</p>
+</div>
+<div class="hidden sm:block">
+<img alt="Code interface" class="w-32 h-32 rounded-2xl object-cover" data-alt="Close-up of sleek computer code on a monitor with vibrant synthwave syntax highlighting in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9sd2pDBKmSqsklmk0nAGS9cGGGmpC9l5maN8e25TdzLL2olULN7-Aqbp31Nq3xuewVb8cVoCDkUV34AtQZosq1E-4gJukHluu4T32T5RYXDMUa57zYZMwWd-qDpyTJbkIKnZ979KYrePkL3oTnqa8GGZzeN0WXds2PDDWqCGLuX-fIsrsySgYNHl1OcsIf6obtskXYOGDEb0YsLCh3o6unxpr4TMT9_G27RZD32HThK2WjNTM4vIIxmt7ivUpV7QLQMpWD-X2zw"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 bg-surface">
+<div class="max-w-4xl mx-auto px-8">
+<h2 class="font-headline text-4xl font-bold text-on-surface mb-12 text-center">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<!-- Accordion Item 1 -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden group">
+<button class="w-full p-6 text-left flex justify-between items-center">
+<span class="font-headline font-bold text-on-surface">How long does a performance overhaul take?</span>
+<span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant leading-relaxed border-t border-white/40 pt-4">
+                            Typical projects range from 4 to 8 weeks depending on the complexity of your current stack and the breadth of the performance goals.
+                        </div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden group">
+<button class="w-full p-6 text-left flex justify-between items-center">
+<span class="font-headline font-bold text-on-surface">Do you work with existing WordPress sites?</span>
+<span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant leading-relaxed hidden">
+                            Yes, we can optimize WordPress, but we often recommend a headless migration for the most dramatic performance gains.
+                        </div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden group">
+<button class="w-full p-6 text-left flex justify-between items-center">
+<span class="font-headline font-bold text-on-surface">What kind of performance gains can I expect?</span>
+<span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant leading-relaxed hidden">
+                            Our clients typically see a 50-70% reduction in Load Time and a 15-20% boost in organic search visibility within the first 90 days.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="pb-32 px-8">
+<div class="max-w-5xl mx-auto bg-gradient-to-br from-primary to-primary-container rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-primary/30">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-white mb-6 relative z-10">Ready to accelerate?</h2>
+<p class="text-white/80 text-xl mb-10 max-w-2xl mx-auto relative z-10 font-body">Stop losing revenue to slow load times. Let's build a web experience that reflects the caliber of your brand.</p>
+<button class="bg-white text-primary px-10 py-5 rounded-full font-label font-bold text-lg hover:scale-105 active:scale-100 transition-all shadow-xl relative z-10">Start a Project</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 font-['Inter'] text-sm leading-relaxed w-full pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-slate-900 mb-6">AISkillZone</div>
+<p class="text-slate-500 mb-6">Architecting the future of digital performance through elite engineering and AI curation.</p>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 mb-4">Expertise</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-500 hover:text-orange-500 transition-colors duration-200" href="#">High-Performance Web</a></li>
+<li><a class="text-slate-500 hover:text-orange-500 transition-colors duration-200" href="#">AI Integration</a></li>
+<li><a class="text-slate-500 hover:text-orange-500 transition-colors duration-200" href="#">UI/UX Strategy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 mb-4">Company</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-500 hover:text-orange-500 transition-colors duration-200" href="#">Portfolio</a></li>
+<li><a class="text-slate-500 hover:text-orange-500 transition-colors duration-200" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-orange-500 transition-colors duration-200" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 mb-4">Connect</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="link">link</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-200 text-center md:text-left">
+<p class="text-slate-500">© 2024 AISkillZone. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

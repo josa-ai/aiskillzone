@@ -1,0 +1,186 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - link "(863) 249-0039" [ref=e4] [cursor=pointer]:
+      - /url: tel:+1-863-249-0039
+    - generic [ref=e5]: "|"
+    - link "melanieLoweryshowings@gmail.com" [ref=e6] [cursor=pointer]:
+      - /url: mailto:melanieLoweryshowings@gmail.com
+  - banner [ref=e7]:
+    - navigation [ref=e8]:
+      - link "Melanie Lowery Showings" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e10]: Melanie Lowery
+        - generic [ref=e11]: Showings
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - link "Buy" [ref=e14] [cursor=pointer]:
+          - /url: /buy
+        - link "Sell" [ref=e15] [cursor=pointer]:
+          - /url: /sell
+        - link "Invest" [ref=e16] [cursor=pointer]:
+          - /url: /invest
+        - link "Market Reports" [ref=e17] [cursor=pointer]:
+          - /url: /market-reports
+        - link "Events" [ref=e18] [cursor=pointer]:
+          - /url: /events
+        - link "Resources" [ref=e19] [cursor=pointer]:
+          - /url: /resources
+        - link "Contact" [ref=e20] [cursor=pointer]:
+          - /url: /contact
+      - link "Get My Free Consultation" [ref=e22] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Menu
+      - button "Close menu" [ref=e27]:
+        - img [ref=e28]
+    - navigation [ref=e30]:
+      - generic [ref=e31]:
+        - link "Home" [ref=e32] [cursor=pointer]:
+          - /url: /
+        - link "Buy" [ref=e33] [cursor=pointer]:
+          - /url: /buy
+        - link "Sell" [ref=e34] [cursor=pointer]:
+          - /url: /sell
+        - link "Invest" [ref=e35] [cursor=pointer]:
+          - /url: /invest
+        - link "Market Reports" [ref=e36] [cursor=pointer]:
+          - /url: /market-reports
+        - link "Events" [ref=e37] [cursor=pointer]:
+          - /url: /events
+        - link "Resources" [ref=e38] [cursor=pointer]:
+          - /url: /resources
+        - link "Contact" [ref=e39] [cursor=pointer]:
+          - /url: /contact
+      - link "Get My Free Consultation" [ref=e41] [cursor=pointer]:
+        - /url: /contact
+    - generic [ref=e42]:
+      - link "(863) 249-0039" [ref=e43] [cursor=pointer]:
+        - /url: tel:+1-863-249-0039
+        - img [ref=e44]
+        - generic [ref=e46]: (863) 249-0039
+      - generic [ref=e47]:
+        - link "Facebook" [ref=e48] [cursor=pointer]:
+          - /url: https://www.facebook.com/share/1CVHv7QJoi/
+          - img [ref=e49]
+        - link "Instagram" [ref=e51] [cursor=pointer]:
+          - /url: https://www.instagram.com/lowerymelanie
+          - img [ref=e52]
+        - link "LinkedIn" [ref=e54] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/melanie-lowery-a9073526
+          - img [ref=e55]
+  - main [ref=e57]:
+    - paragraph [ref=e61]: Loading...
+  - contentinfo [ref=e62]:
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - link "Melanie Lowery Showings" [ref=e66] [cursor=pointer]:
+          - /url: /
+          - text: Melanie Lowery
+          - generic [ref=e67]: Showings
+        - paragraph [ref=e68]: Your Way Home Starts Here. Helping families find their perfect home in Central & South Florida.
+        - generic [ref=e69]:
+          - link "Facebook" [ref=e70] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1CVHv7QJoi/
+            - img [ref=e71]
+          - link "Instagram" [ref=e73] [cursor=pointer]:
+            - /url: https://www.instagram.com/lowerymelanie
+            - img [ref=e74]
+          - link "LinkedIn" [ref=e76] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/melanie-lowery-a9073526
+            - img [ref=e77]
+      - generic [ref=e79]:
+        - heading "Quick Links" [level=3] [ref=e80]
+        - list [ref=e81]:
+          - listitem [ref=e82]:
+            - link "Home" [ref=e83] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e84]:
+            - link "Buy" [ref=e85] [cursor=pointer]:
+              - /url: /buy
+          - listitem [ref=e86]:
+            - link "Sell" [ref=e87] [cursor=pointer]:
+              - /url: /sell
+          - listitem [ref=e88]:
+            - link "Invest" [ref=e89] [cursor=pointer]:
+              - /url: /invest
+          - listitem [ref=e90]:
+            - link "Market Reports" [ref=e91] [cursor=pointer]:
+              - /url: /market-reports
+          - listitem [ref=e92]:
+            - link "Events" [ref=e93] [cursor=pointer]:
+              - /url: /events
+          - listitem [ref=e94]:
+            - link "Resources" [ref=e95] [cursor=pointer]:
+              - /url: /resources
+          - listitem [ref=e96]:
+            - link "Contact" [ref=e97] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e98]:
+            - link "Refer a Friend" [ref=e99] [cursor=pointer]:
+              - /url: /referral
+      - generic [ref=e100]:
+        - heading "Communities" [level=3] [ref=e101]
+        - list [ref=e102]:
+          - listitem [ref=e103]:
+            - link "Kissimmee" [ref=e104] [cursor=pointer]:
+              - /url: /communities/kissimmee
+          - listitem [ref=e105]:
+            - link "Palm Beach Gardens" [ref=e106] [cursor=pointer]:
+              - /url: /communities/palm-beach-gardens
+          - listitem [ref=e107]:
+            - link "Lakeland" [ref=e108] [cursor=pointer]:
+              - /url: /communities/lakeland
+          - listitem [ref=e109]:
+            - link "Fort Lauderdale / Broward" [ref=e110] [cursor=pointer]:
+              - /url: /communities/fort-lauderdale
+        - heading "Resources" [level=3] [ref=e111]
+        - list [ref=e112]:
+          - listitem [ref=e113]:
+            - link "Mortgage Calculator" [ref=e114] [cursor=pointer]:
+              - /url: /tools/mortgage-calculator
+          - listitem [ref=e115]:
+            - link "Home Valuation" [ref=e116] [cursor=pointer]:
+              - /url: /tools/home-valuation
+          - listitem [ref=e117]:
+            - link "Free Guides" [ref=e118] [cursor=pointer]:
+              - /url: /resources
+          - listitem [ref=e119]:
+            - link "Agent Referral Network" [ref=e120] [cursor=pointer]:
+              - /url: /agent-referral
+      - generic [ref=e121]:
+        - heading "Contact" [level=3] [ref=e122]
+        - list [ref=e123]:
+          - listitem [ref=e124]:
+            - link "(863) 249-0039" [ref=e125] [cursor=pointer]:
+              - /url: tel:+1-863-249-0039
+              - img [ref=e126]
+              - text: (863) 249-0039
+          - listitem [ref=e128]:
+            - link "melanieLoweryshowings@gmail.com" [ref=e129] [cursor=pointer]:
+              - /url: mailto:melanieLoweryshowings@gmail.com
+              - img [ref=e130]
+              - text: melanieLoweryshowings@gmail.com
+          - listitem [ref=e132]:
+            - img [ref=e133]
+            - text: Lakeland, FL
+        - generic [ref=e136]:
+          - heading "Newsletter" [level=3] [ref=e137]
+          - paragraph [ref=e138]: Get market updates and tips delivered to your inbox.
+          - generic [ref=e140]:
+            - textbox "Your email address" [ref=e141]
+            - button "Subscribe" [ref=e142]
+    - generic [ref=e144]:
+      - paragraph [ref=e145]: © 2026 Melanie Lowery Showings. All rights reserved.
+      - generic [ref=e146]:
+        - generic [ref=e147]: "eXp Realty | License #261567073"
+        - link "Privacy" [ref=e148] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e149] [cursor=pointer]:
+          - /url: /terms
+        - link "Do Not Sell My Info" [ref=e150] [cursor=pointer]:
+          - /url: /privacy#do-not-sell
+  - alert [ref=e151]

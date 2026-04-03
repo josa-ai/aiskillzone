@@ -1,0 +1,110 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "AISkillZone" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Portfolio" [ref=e8] [cursor=pointer]:
+          - /url: /portfolio
+        - button "Services" [ref=e10]:
+          - text: Services
+          - img [ref=e11]
+  - main [ref=e13]:
+    - generic [ref=e15]:
+      - generic [ref=e18]: Our Expertise
+      - heading "Strategic Solutions" [level=1] [ref=e19]
+      - paragraph [ref=e20]: We don't just implement tools — we design entire cognitive workflows for the digital-first era. Explore our full range of AI services.
+    - generic [ref=e22]:
+      - heading "Core Services" [level=2] [ref=e23]
+      - paragraph [ref=e24]: Our primary offerings — the services that drive the most impact for our clients.
+      - generic [ref=e25]:
+        - link "🌐 Website Design & Redesign Custom-built websites that convert. No templates, no bloat. Includes SEO, AEO, and ADA compliance built in—never an upcharge." [ref=e26] [cursor=pointer]:
+          - /url: /services/website-design
+          - generic [ref=e27]: 🌐
+          - heading "Website Design & Redesign" [level=3] [ref=e28]
+          - paragraph [ref=e29]: Custom-built websites that convert. No templates, no bloat. Includes SEO, AEO, and ADA compliance built in—never an upcharge.
+        - link "🤖 Voice AI & Chatbot Setup Stop missing calls. Our AI answers 24/7, handles FAQs, qualifies leads, and books appointments. Like having a front desk person who never takes a break." [ref=e30] [cursor=pointer]:
+          - /url: /services/voice-ai
+          - generic [ref=e31]: 🤖
+          - heading "Voice AI & Chatbot Setup" [level=3] [ref=e32]
+          - paragraph [ref=e33]: Stop missing calls. Our AI answers 24/7, handles FAQs, qualifies leads, and books appointments. Like having a front desk person who never takes a break.
+        - link "⚡ AI Automation & Workflows Tell us what's eating up your day. We build custom automations that handle email, marketing workflows, orders, and processes unique to your business." [ref=e34] [cursor=pointer]:
+          - /url: /services/ai-automation
+          - generic [ref=e35]: ⚡
+          - heading "AI Automation & Workflows" [level=3] [ref=e36]
+          - paragraph [ref=e37]: Tell us what's eating up your day. We build custom automations that handle email, marketing workflows, orders, and processes unique to your business.
+        - link "🎓 AI Training & Workshops Hands-on training for your team. Learn how to actually use AI tools like ChatGPT to do your job better. Taught by someone who builds AI solutions daily." [ref=e38] [cursor=pointer]:
+          - /url: /services/ai-training
+          - generic [ref=e39]: 🎓
+          - heading "AI Training & Workshops" [level=3] [ref=e40]
+          - paragraph [ref=e41]: Hands-on training for your team. Learn how to actually use AI tools like ChatGPT to do your job better. Taught by someone who builds AI solutions daily.
+    - generic [ref=e43]:
+      - heading "Additional Services" [level=2] [ref=e44]
+      - paragraph [ref=e45]: Specialized capabilities to complement your core AI strategy.
+      - generic [ref=e46]:
+        - link "🛒 E-Commerce Consulting & Retail Readiness 20+ years of e-commerce experience. We handle marketplace onboarding (Shopify, TikTok Shop, Amazon, Walmart.com), strategy, and optimization for product brands." [ref=e47] [cursor=pointer]:
+          - /url: /services/ecommerce-consulting
+          - generic [ref=e48]: 🛒
+          - heading "E-Commerce Consulting & Retail Readiness" [level=3] [ref=e49]
+          - paragraph [ref=e50]: 20+ years of e-commerce experience. We handle marketplace onboarding (Shopify, TikTok Shop, Amazon, Walmart.com), strategy, and optimization for product brands.
+        - link "🎯 Brand Strategy & Marketing We develop your brand voice, campaign strategy, and messaging. Usually bundled into other projects, but available as a focused engagement too." [ref=e51] [cursor=pointer]:
+          - /url: /services/brand-strategy
+          - generic [ref=e52]: 🎯
+          - heading "Brand Strategy & Marketing" [level=3] [ref=e53]
+          - paragraph [ref=e54]: We develop your brand voice, campaign strategy, and messaging. Usually bundled into other projects, but available as a focused engagement too.
+        - link "📦 Digital Product Creation & Lead Magnets Polished digital products that work. PDF guides, templates, downloadable resources, email courses. Capture leads 24/7 while you sleep." [ref=e55] [cursor=pointer]:
+          - /url: /services/digital-products
+          - generic [ref=e56]: 📦
+          - heading "Digital Product Creation & Lead Magnets" [level=3] [ref=e57]
+          - paragraph [ref=e58]: Polished digital products that work. PDF guides, templates, downloadable resources, email courses. Capture leads 24/7 while you sleep.
+        - link "💻 Custom App Development Small, focused web applications built clean and modern. When standard software isn't enough, we build the right solution." [ref=e59] [cursor=pointer]:
+          - /url: /services/custom-apps
+          - generic [ref=e60]: 💻
+          - heading "Custom App Development" [level=3] [ref=e61]
+          - paragraph [ref=e62]: Small, focused web applications built clean and modern. When standard software isn't enough, we build the right solution.
+        - link "🔧 Business Tools (CRM, Communities, Reputation) Everything integrated on one platform. CRM for managing relationships, community/course hosting, reputation management. One login. One system. Less friction." [ref=e63] [cursor=pointer]:
+          - /url: /services/business-tools
+          - generic [ref=e64]: 🔧
+          - heading "Business Tools (CRM, Communities, Reputation)" [level=3] [ref=e65]
+          - paragraph [ref=e66]: Everything integrated on one platform. CRM for managing relationships, community/course hosting, reputation management. One login. One system. Less friction.
+  - contentinfo [ref=e67]:
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]: AISkillZone
+        - paragraph [ref=e71]: Curating the future of enterprise intelligence through elite consulting and bespoke automation.
+      - generic [ref=e72]:
+        - heading "Services" [level=4] [ref=e73]
+        - list [ref=e74]:
+          - listitem [ref=e75]:
+            - link "Website Design" [ref=e76] [cursor=pointer]:
+              - /url: /services/website-design
+          - listitem [ref=e77]:
+            - link "Voice AI" [ref=e78] [cursor=pointer]:
+              - /url: /services/voice-ai
+          - listitem [ref=e79]:
+            - link "AI Automation" [ref=e80] [cursor=pointer]:
+              - /url: /services/ai-automation
+          - listitem [ref=e81]:
+            - link "AI Training" [ref=e82] [cursor=pointer]:
+              - /url: /services/ai-training
+      - generic [ref=e83]:
+        - heading "Company" [level=4] [ref=e84]
+        - list [ref=e85]:
+          - listitem [ref=e86]:
+            - link "Portfolio" [ref=e87] [cursor=pointer]:
+              - /url: /portfolio
+      - generic [ref=e88]:
+        - heading "Follow" [level=4] [ref=e89]
+        - list [ref=e90]:
+          - listitem [ref=e91]:
+            - link "LinkedIn" [ref=e92] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e93]:
+            - link "Twitter" [ref=e94] [cursor=pointer]:
+              - /url: "#"
+    - paragraph [ref=e96]: © 2026 AISkillZone. All rights reserved.
+  - alert [ref=e97]
