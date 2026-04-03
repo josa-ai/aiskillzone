@@ -14,46 +14,60 @@ export const metadata = {
 
 const portfolioItems = [
   {
-    title: "Local Plumbing Co Website Redesign",
+    title: "U.S. Citizenship Test Prep App",
     description:
-      "Complete website overhaul with modern design, mobile optimization, and SEO-focused content that increased organic traffic by 85%.",
+      "Bilingual flashcard app covering all 128 USCIS civics questions with swipe mechanics, progress tracking, and EN/ES support.",
+    category: "Web App",
+    image: "/images/portfolio/citizenship.jpg",
+    url: "https://citizenshipexam.app",
+  },
+  {
+    title: "Synced Soccer — Website & Player Management",
+    description:
+      "Youth soccer academy site with multilingual support, program registration, standings tracker, volunteer portal, and calendar.",
+    category: "Website + App",
+    image: "/images/portfolio/syncedsoccer.jpg",
+    url: "https://syncedsoccer.com",
+  },
+  {
+    title: "Melanie Lowery Showings — Real Estate Website",
+    description:
+      "Interactive real estate website with embedded MLS listings, lead magnets, market reports, and live Florida real estate statistics.",
     category: "Website",
-    gradient: "from-brand-royal-purple to-brand-midnight-plum",
+    image: "/images/portfolio/melanie.jpg",
+    url: "https://www.melanieloweryshowings.com/",
   },
   {
-    title: "Real Estate Voice AI Agent",
+    title: "JOSA.AI Blueprint — AI Training Platform",
     description:
-      "24/7 voice AI agent that handles property inquiries, schedules showings, and qualifies leads — capturing after-hours calls that were previously lost.",
-    category: "Voice AI",
-    gradient: "from-brand-tech-blue to-brand-deep-navy",
+      "Our own platform for live AI workshops and hands-on courses helping small business owners build practical AI skills.",
+    category: "Web App",
+    image: "/images/portfolio/blueprint.jpg",
+    url: "https://blueprint.josa.ai",
   },
   {
-    title: "E-Commerce Automation Suite",
+    title: "Dos Bocas — Restaurant Website",
     description:
-      "End-to-end automation for order processing, inventory alerts, and customer follow-ups — saving the team 15+ hours per week.",
-    category: "Automation",
-    gradient: "from-brand-mauve-purple to-brand-royal-purple",
+      "Bilingual restaurant website with full menu, online ordering, photo gallery, and contact for an authentic Puerto Rican restaurant.",
+    category: "Website",
+    image: "/images/portfolio/dosbocas.jpg",
+    url: "https://dosbocas.vercel.app",
   },
   {
-    title: "HVAC Company Lead Capture System",
+    title: "Final Exam Challenge — Interactive Game MVP",
     description:
-      "AI-powered chatbot and form automation that tripled qualified leads and reduced response time from hours to seconds.",
-    category: "Voice AI",
-    gradient: "from-brand-deep-navy to-brand-tech-blue",
+      "Gamified quiz app with animated avatar characters, leaderboards, and live scoring — an edtech MVP currently seeking investment.",
+    category: "Web App",
+    image: "/images/portfolio/quiz.jpg",
+    url: "https://quiz-avatar-leaderboard.vercel.app",
   },
   {
-    title: "Boutique Shopify Store Buildout",
+    title: "CRAFT Prompt Builder — AI Prompt Studio",
     description:
-      "Custom Shopify store with product photography guidance, SEO optimization, and automated email marketing workflows.",
-    category: "E-Commerce",
-    gradient: "from-brand-cool-azure to-brand-tech-blue",
-  },
-  {
-    title: "Insurance Agency Workflow Automation",
-    description:
-      "Automated client onboarding, policy renewal reminders, and document processing — cutting admin time in half.",
-    category: "Automation",
-    gradient: "from-brand-midnight-plum to-brand-mauve-purple",
+      "Interactive tool that guides students through the CRAFT framework to build structured, effective AI prompts — with live preview and scoring.",
+    category: "Web App",
+    image: "/images/portfolio/craft.jpg",
+    url: "https://craft-app-six.vercel.app",
   },
 ];
 
@@ -109,21 +123,20 @@ export default function PortfolioPage() {
             {portfolioItems.map((item) => (
               <Card
                 key={item.title}
-                className="flex min-h-[400px] flex-col overflow-hidden border-0 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
+                className="group flex min-h-[400px] flex-col overflow-hidden border-0 ring-1 ring-brand-soft-lavender/60 transition-shadow hover:shadow-lg hover:shadow-brand-soft-lavender/30"
               >
-                {/* Placeholder gradient image area */}
-                <div
-                  className={`h-48 bg-gradient-to-br ${item.gradient} flex items-center justify-center`}
-                >
-                  <span className="text-base font-medium text-white/50">
-                    Project Preview
-                  </span>
+                {/* Screenshot preview */}
+                <div className="relative h-48 overflow-hidden bg-brand-soft-lavender/20">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  />
                 </div>
                 <CardContent className="flex flex-1 flex-col gap-3 p-6">
-                  <Badge
-                    variant="secondary"
-                    className="w-fit"
-                  >
+                  <Badge variant="secondary" className="w-fit">
                     {item.category}
                   </Badge>
                   <h3 className="text-lg font-bold text-brand-deep-navy">
@@ -132,6 +145,24 @@ export default function PortfolioPage() {
                   <p className="flex-1 text-base leading-relaxed text-brand-deep-navy/70">
                     {item.description}
                   </p>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-brand-royal-purple transition-colors hover:text-brand-mauve-purple"
+                  >
+                    View Live
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3.5 w-3.5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                    </svg>
+                  </a>
                 </CardContent>
               </Card>
             ))}
