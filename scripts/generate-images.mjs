@@ -1,14 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import http from 'http';
 import https from 'https';
+import http from 'http';
 
-const API_KEY = '47bb1da66bb6d583b0eb576738f92565';
-const BASE_URL = 'https://api.kie.ai';
-const PORT = 9877;
+const API_KEY = process.env.KI_EAI_API_KEY;
+const BASE = 'https://api.kie.ai';
 
 const allPrompts = {
-  // Service hero images
   'services/website-design': 'Sleek modern minimalist dashboard design with vibrant blue accents displayed on a large curved monitor, clean workspace with soft volumetric lighting, futuristic web design studio, photorealistic, 8k quality',
   'services/voice-ai': 'Futuristic AI voice assistant visualization with glowing blue sound waves emanating from a sleek microphone, holographic waveform patterns in blue and cyan, dark tech environment, photorealistic, cinematic lighting',
   'services/ai-automation': 'Advanced robotic automation workflow visualization with glowing blue data streams connecting mechanical gears and digital interfaces, futuristic factory-meets-tech atmosphere, photorealistic, 8k',
@@ -18,7 +16,6 @@ const allPrompts = {
   'services/digital-products': 'Elegant floating digital products - PDF guides, course interfaces, and email templates displayed as holographic cards in a premium blue-lit space, futuristic product showcase, photorealistic',
   'services/custom-apps': 'Clean modern code editor on an ultrawide monitor showing beautiful React code with blue syntax highlighting, sleek developer workspace with ambient blue lighting, photorealistic, 8k',
   'services/business-tools': 'Unified business dashboard displaying CRM analytics, communication tools, and reputation metrics on a single sleek interface, blue data visualization, premium tech environment, photorealistic',
-  // Problem images
   'problems/website-design': 'Cracked old computer monitor displaying a broken outdated website with error messages, dusty desk, dim orange warning lighting, photorealistic, dramatic',
   'problems/voice-ai': 'Empty office reception desk with an unanswered ringing telephone, missed call notifications on screen, lonely atmosphere with warm orange light, photorealistic, cinematic',
   'problems/ai-automation': 'Overwhelmed office worker buried under stacks of papers and repetitive forms, multiple screens showing manual data entry, stressed atmosphere, photorealistic',
@@ -30,148 +27,96 @@ const allPrompts = {
   'problems/business-tools': 'Overwhelming array of different software login screens on multiple devices, subscription bills piling up, cluttered tech desk, photorealistic',
 };
 
-const pending = new Map(); // taskId -> slug
-const completed = new Set();
-let totalExpected = Object.keys(allPrompts).length;
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-function downloadFile(url, filepath) {
+function download(url, filepath) {
   return new Promise((resolve, reject) => {
     const proto = url.startsWith('https') ? https : http;
     proto.get(url, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return downloadFile(res.headers.location, filepath).then(resolve).catch(reject);
+        return download(res.headers.location, filepath).then(resolve).catch(reject);
       }
-      if (res.statusCode !== 200) {
-        reject(new Error(`HTTP ${res.statusCode}`));
-        return;
-      }
+      if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
       const ws = fs.createWriteStream(filepath);
       res.pipe(ws);
       ws.on('finish', () => { ws.close(); resolve(); });
-      ws.on('error', reject);
     }).on('error', reject);
   });
 }
 
-async function getDownloadUrl(imageUrl) {
-  try {
-    const res = await fetch(`${BASE_URL}/api/v1/common/download-url`, {
-      method: 'POST',
-      headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: imageUrl }),
-    });
-    const json = await res.json();
-    return (json.code === 200 && json.data) ? json.data : imageUrl;
-  } catch { return imageUrl; }
+async function createTask(prompt) {
+  const res = await fetch(`${BASE}/api/v1/jobs/createTask`, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'nano-banana-2',
+      callBackUrl: '',
+      input: { prompt, image_input: [], aspect_ratio: '3:2', resolution: '1K', output_format: 'jpg' }
+    })
+  });
+  const json = await res.json();
+  return json.data?.taskId;
 }
 
-// Start local callback server
-const server = http.createServer(async (req, res) => {
-  if (req.method === 'POST') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', async () => {
-      try {
-        const url = new URL(req.url, `http://localhost:${PORT}`);
-        const slug = url.searchParams.get('slug') || 'unknown';
-        const payload = JSON.parse(body);
-
-        console.log(`  Callback received: ${slug} code=${payload.code}`);
-
-        if (payload.code === 200 && payload.data) {
-          let imageUrl = null;
-
-          // Try resultJson format (nano-banana-2)
-          if (payload.data.resultJson) {
-            try {
-              const parsed = JSON.parse(payload.data.resultJson);
-              imageUrl = parsed.resultUrls?.[0];
-            } catch {}
-          }
-
-          // Fallback: info format
-          if (!imageUrl) {
-            imageUrl = payload.data.info?.resultImageUrl || payload.data.info?.result_urls?.[0];
-          }
-
-          if (imageUrl) {
-            const downloadUrl = await getDownloadUrl(imageUrl);
-            const dir = path.join('public/images', path.dirname(slug));
-            fs.mkdirSync(dir, { recursive: true });
-            const filepath = path.join('public/images', `${slug}.jpg`);
-            await downloadFile(downloadUrl, filepath);
-            console.log(`  SAVED: ${slug} -> ${filepath}`);
-            completed.add(slug);
-          } else {
-            console.log(`  No image URL in callback for ${slug}`);
-          }
-        }
-      } catch (e) {
-        console.error('  Callback error:', e.message);
-      }
-
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ received: true }));
-
-      if (completed.size >= totalExpected) {
-        console.log(`\n=== All ${completed.size} images saved! ===`);
-        setTimeout(() => process.exit(0), 1000);
-      }
+async function pollTask(taskId) {
+  for (let i = 0; i < 40; i++) {
+    await sleep(5000);
+    const res = await fetch(`${BASE}/api/v1/jobs/recordInfo?taskId=${taskId}`, {
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     });
-  } else {
-    res.writeHead(200);
-    res.end('OK');
-  }
-});
-
-server.listen(PORT, async () => {
-  console.log(`Callback server listening on port ${PORT}`);
-  console.log(`Submitting ${totalExpected} image generation tasks...\n`);
-
-  for (const [slug, prompt] of Object.entries(allPrompts)) {
-    const callbackUrl = `http://localhost:${PORT}/callback?slug=${encodeURIComponent(slug)}`;
-
-    try {
-      const response = await fetch(`${BASE_URL}/api/v1/jobs/createTask`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          model: 'nano-banana-2',
-          callBackUrl: callbackUrl,
-          input: {
-            prompt,
-            image_input: [],
-            aspect_ratio: '3:2',
-            resolution: '1K',
-            output_format: 'jpg'
-          }
-        })
-      });
-      const result = await response.json();
-      const taskId = result.data?.taskId;
-      if (taskId) {
-        pending.set(taskId, slug);
-        console.log(`  Submitted: ${slug} (${taskId})`);
-      } else {
-        console.error(`  Failed: ${slug}`, JSON.stringify(result));
-      }
-    } catch (e) {
-      console.error(`  Error: ${slug}`, e.message);
+    const json = await res.json();
+    const state = json.data?.state;
+    if (state === 'success' && json.data?.resultJson) {
+      const parsed = JSON.parse(json.data.resultJson);
+      return parsed.resultUrls?.[0] || null;
     }
+    if (state === 'failed') return null;
+  }
+  return null;
+}
 
-    // Small delay between requests
-    await new Promise(r => setTimeout(r, 200));
+async function processOne(slug, prompt) {
+  const taskId = await createTask(prompt);
+  if (!taskId) { console.error(`  FAIL create: ${slug}`); return false; }
+  console.log(`  Created: ${slug} (${taskId})`);
+
+  const imageUrl = await pollTask(taskId);
+  if (!imageUrl) { console.error(`  FAIL poll: ${slug}`); return false; }
+
+  // Get download URL
+  let dlUrl = imageUrl;
+  try {
+    const r = await fetch(`${BASE}/api/v1/common/download-url`, {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: imageUrl })
+    });
+    const j = await r.json();
+    if (j.code === 200 && j.data) dlUrl = j.data;
+  } catch {}
+
+  const dir = path.join('public/images', path.dirname(slug));
+  fs.mkdirSync(dir, { recursive: true });
+  const filepath = path.join('public/images', `${slug}.jpg`);
+  await download(dlUrl, filepath);
+  console.log(`  SAVED: ${slug}`);
+  return true;
+}
+
+async function main() {
+  const entries = Object.entries(allPrompts);
+  console.log(`Generating ${entries.length} images (3 at a time)...\n`);
+
+  let ok = 0, fail = 0;
+  // Process 3 at a time to avoid rate limits
+  for (let i = 0; i < entries.length; i += 3) {
+    const batch = entries.slice(i, i + 3);
+    const results = await Promise.all(batch.map(([slug, prompt]) => processOne(slug, prompt)));
+    results.forEach(r => r ? ok++ : fail++);
+    console.log(`  Progress: ${ok + fail}/${entries.length} (${ok} ok, ${fail} fail)\n`);
   }
 
-  console.log(`\nAll tasks submitted. Waiting for callbacks (timeout: 5 min)...\n`);
+  console.log(`\n=== Done: ${ok} saved, ${fail} failed ===`);
+}
 
-  // Timeout after 5 minutes
-  setTimeout(() => {
-    console.log(`\nTimeout. ${completed.size}/${totalExpected} images saved.`);
-    console.log('Missing:', [...Object.keys(allPrompts)].filter(s => !completed.has(s)));
-    process.exit(completed.size > 0 ? 0 : 1);
-  }, 300000);
-});
+main().catch(console.error);

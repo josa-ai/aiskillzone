@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.join(__dirname, "..", "public", "images", "services", "includes");
-const API_KEY = "47bb1da66bb6d583b0eb576738f92565";
+const API_KEY = process.env.KI_EAI_API_KEY;
 const BASE = "https://api.kie.ai/api/v1";
 
 // ── Prompts for every service × include ──────────────────────────────────────
