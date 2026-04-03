@@ -69,6 +69,22 @@ const portfolioItems = [
     image: "/images/portfolio/craft.jpg",
     url: "https://craft-app-six.vercel.app",
   },
+  {
+    title: "Deva Simmons for Congress",
+    description:
+      "Full campaign website for a U.S. Congressional candidate with multilingual support, event management, volunteer sign-up system, issues platform, and donation integration.",
+    category: "Website + App",
+    image: "/images/portfolio/devasimmons.jpg",
+    url: "https://devasimmons.com",
+  },
+  {
+    title: "Prime Pulse Logistics — Medical Courier Website",
+    description:
+      "Professional medical courier company website with service listings, capability statement, driver career portal, and quote request system for Tampa Bay healthcare clients.",
+    category: "Website",
+    image: "/images/portfolio/ppl813.jpg",
+    url: "https://www.ppl813.com",
+  },
 ];
 
 export default function PortfolioPage() {
