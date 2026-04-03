@@ -74,7 +74,7 @@ export function Navbar() {
             alt="AISkillZone"
             width={400}
             height={80}
-            className="h-10 w-auto"
+            className="h-[50px] w-auto"
             priority
           />
         </Link>
@@ -213,7 +213,7 @@ export function Navbar() {
                     alt="AISkillZone"
                     width={400}
                     height={80}
-                    className="h-8 w-auto"
+                    className="h-10 w-auto"
                   />
                 </SheetTitle>
               </SheetHeader>
