@@ -1,372 +1,205 @@
-import { useCurrentFrame, useVideoConfig, AbsoluteFill } from "remotion";
+import { useCurrentFrame, useVideoConfig, AbsoluteFill, Img, staticFile } from "remotion";
 
 /**
- * Realistic side-profile AI brain with cortex detail, teal-to-purple gradient,
- * neural network lines, wavy energy waves, and traveling light pulses.
+ * Animated brain hero — uses a static brain image as the base,
+ * overlays animated traveling light pulses, neural network lines,
+ * and glowing particles via SVG.
  */
-
-// Detailed lateral brain outline — anatomical side profile with bumpy gyri
-function getLateralBrainPath(cx: number, cy: number, s: number): string {
-  const x = (v: number) => cx + v * s;
-  const y = (v: number) => cy + v * s;
-
-  // Side-view brain: frontal lobe left, occipital right, temporal/cerebellum bottom-right
-  // Bumpy gyri texture on top surface
-  return [
-    // Start at brainstem bottom
-    `M${x(0.08)},${y(0.38)}`,
-    // Brainstem up to cerebellum
-    `C${x(0.10)},${y(0.34)} ${x(0.14)},${y(0.32)} ${x(0.18)},${y(0.30)}`,
-    // Cerebellum (small bulge at back-bottom)
-    `C${x(0.24)},${y(0.30)} ${x(0.30)},${y(0.28)} ${x(0.34)},${y(0.24)}`,
-    `C${x(0.37)},${y(0.21)} ${x(0.38)},${y(0.17)} ${x(0.38)},${y(0.14)}`,
-    // Occipital lobe back — slight indent then bump
-    `C${x(0.39)},${y(0.10)} ${x(0.41)},${y(0.04)} ${x(0.42)},${y(-0.02)}`,
-    `C${x(0.42)},${y(-0.06)} ${x(0.41)},${y(-0.10)} ${x(0.40)},${y(-0.14)}`,
-    // Parietal — bumpy gyri along top-back
-    `C${x(0.38)},${y(-0.18)} ${x(0.36)},${y(-0.22)} ${x(0.33)},${y(-0.25)}`,
-    `Q${x(0.30)},${y(-0.29)} ${x(0.27)},${y(-0.27)}`, // dip
-    `Q${x(0.24)},${y(-0.31)} ${x(0.20)},${y(-0.30)}`, // bump
-    `Q${x(0.17)},${y(-0.34)} ${x(0.13)},${y(-0.33)}`, // dip
-    `Q${x(0.10)},${y(-0.37)} ${x(0.06)},${y(-0.36)}`, // bump
-    // Top crown — more gyri bumps
-    `Q${x(0.02)},${y(-0.39)} ${x(-0.02)},${y(-0.38)}`, // dip
-    `Q${x(-0.06)},${y(-0.41)} ${x(-0.10)},${y(-0.39)}`, // bump
-    `Q${x(-0.13)},${y(-0.42)} ${x(-0.17)},${y(-0.40)}`, // dip
-    `Q${x(-0.20)},${y(-0.42)} ${x(-0.24)},${y(-0.39)}`, // bump
-    // Frontal lobe — large rounded dome
-    `C${x(-0.28)},${y(-0.37)} ${x(-0.33)},${y(-0.33)} ${x(-0.37)},${y(-0.27)}`,
-    `C${x(-0.40)},${y(-0.22)} ${x(-0.42)},${y(-0.15)} ${x(-0.43)},${y(-0.08)}`,
-    `C${x(-0.43)},${y(-0.02)} ${x(-0.43)},${y(0.04)} ${x(-0.42)},${y(0.10)}`,
-    // Frontal descent — steep front face
-    `C${x(-0.40)},${y(0.16)} ${x(-0.37)},${y(0.20)} ${x(-0.33)},${y(0.22)}`,
-    // Temporal lobe bottom — indent for Sylvian fissure then temporal bulge
-    `C${x(-0.28)},${y(0.24)} ${x(-0.22)},${y(0.26)} ${x(-0.16)},${y(0.28)}`,
-    `C${x(-0.10)},${y(0.30)} ${x(-0.04)},${y(0.32)} ${x(0.02)},${y(0.34)}`,
-    // Back to brainstem
-    `C${x(0.04)},${y(0.36)} ${x(0.06)},${y(0.37)} ${x(0.08)},${y(0.38)}`,
-    `Z`,
-  ].join(" ");
-}
-
-// Cortex fold lines (sulci) — dense side view detail
-function getCortexFolds(cx: number, cy: number, s: number): string[] {
-  const x = (v: number) => cx + v * s;
-  const y = (v: number) => cy + v * s;
-
-  return [
-    // Central sulcus (major divider)
-    `M${x(-0.06)},${y(-0.39)} C${x(-0.04)},${y(-0.28)} ${x(-0.02)},${y(-0.16)} ${x(0.0)},${y(-0.04)} C${x(0.02)},${y(0.06)} ${x(0.01)},${y(0.16)} ${x(-0.02)},${y(0.24)}`,
-    // Lateral/Sylvian fissure (deep horizontal)
-    `M${x(-0.32)},${y(0.14)} C${x(-0.22)},${y(0.10)} ${x(-0.10)},${y(0.08)} ${x(0.02)},${y(0.12)} C${x(0.12)},${y(0.15)} ${x(0.22)},${y(0.12)} ${x(0.30)},${y(0.08)}`,
-    // Precentral sulcus
-    `M${x(-0.18)},${y(-0.38)} C${x(-0.16)},${y(-0.26)} ${x(-0.15)},${y(-0.14)} ${x(-0.17)},${y(-0.02)}`,
-    // Postcentral sulcus
-    `M${x(0.08)},${y(-0.35)} C${x(0.10)},${y(-0.24)} ${x(0.11)},${y(-0.14)} ${x(0.09)},${y(-0.04)}`,
-    // Superior frontal
-    `M${x(-0.38)},${y(-0.12)} C${x(-0.32)},${y(-0.18)} ${x(-0.26)},${y(-0.24)} ${x(-0.18)},${y(-0.30)}`,
-    // Inferior frontal
-    `M${x(-0.40)},${y(0.04)} C${x(-0.34)},${y(-0.02)} ${x(-0.26)},${y(-0.08)} ${x(-0.18)},${y(-0.14)}`,
-    // Middle frontal
-    `M${x(-0.40)},${y(-0.04)} C${x(-0.34)},${y(-0.10)} ${x(-0.28)},${y(-0.16)} ${x(-0.20)},${y(-0.22)}`,
-    // Superior temporal
-    `M${x(-0.20)},${y(0.20)} C${x(-0.10)},${y(0.18)} ${x(0.02)},${y(0.20)} ${x(0.14)},${y(0.22)}`,
-    // Middle temporal
-    `M${x(-0.16)},${y(0.26)} C${x(-0.06)},${y(0.25)} ${x(0.06)},${y(0.27)} ${x(0.16)},${y(0.26)}`,
-    // Intraparietal
-    `M${x(0.14)},${y(-0.30)} C${x(0.20)},${y(-0.22)} ${x(0.26)},${y(-0.14)} ${x(0.32)},${y(-0.06)}`,
-    // Parieto-occipital
-    `M${x(0.24)},${y(-0.28)} C${x(0.28)},${y(-0.18)} ${x(0.34)},${y(-0.08)} ${x(0.38)},${y(0.02)}`,
-    // Calcarine
-    `M${x(0.32)},${y(0.04)} C${x(0.35)},${y(0.10)} ${x(0.36)},${y(0.16)} ${x(0.34)},${y(0.22)}`,
-    // Extra folds for density
-    `M${x(-0.34)},${y(-0.24)} C${x(-0.28)},${y(-0.28)} ${x(-0.22)},${y(-0.32)} ${x(-0.14)},${y(-0.36)}`,
-    `M${x(0.18)},${y(-0.16)} C${x(0.22)},${y(-0.10)} ${x(0.28)},${y(-0.04)} ${x(0.34)},${y(0.0)}`,
-    `M${x(-0.10)},${y(-0.30)} C${x(-0.06)},${y(-0.22)} ${x(-0.04)},${y(-0.14)} ${x(-0.06)},${y(-0.06)}`,
-    `M${x(0.04)},${y(-0.28)} C${x(0.06)},${y(-0.20)} ${x(0.08)},${y(-0.12)} ${x(0.06)},${y(-0.04)}`,
-    // Cerebellum folds (horizontal lines in back-bottom)
-    `M${x(0.20)},${y(0.24)} C${x(0.26)},${y(0.22)} ${x(0.32)},${y(0.20)} ${x(0.36)},${y(0.18)}`,
-    `M${x(0.22)},${y(0.27)} C${x(0.28)},${y(0.26)} ${x(0.34)},${y(0.24)} ${x(0.37)},${y(0.22)}`,
-  ];
-}
-
-// Neural network connection nodes extending from brain
-function getNetworkNodes(cx: number, cy: number, s: number, frame: number) {
-  const nodes: { x: number; y: number; size: number }[] = [];
-  const connections: { x1: number; y1: number; x2: number; y2: number }[] = [];
-
-  // Nodes scattered around the brain at distance
-  const nodePositions = [
-    [-0.55, -0.30], [-0.60, 0.05], [-0.50, 0.35],
-    [0.55, -0.28], [0.58, 0.08], [0.50, 0.32],
-    [-0.35, -0.52], [-0.10, -0.55], [0.15, -0.54], [0.38, -0.48],
-    [-0.30, 0.45], [0.05, 0.48], [0.30, 0.42],
-    [-0.65, -0.15], [0.65, -0.10],
-    [-0.48, -0.45], [0.48, -0.42],
-    [-0.55, 0.25], [0.55, 0.22],
-  ];
-
-  nodePositions.forEach(([nx, ny]) => {
-    const wobble = Math.sin(frame * 0.02 + nx * 10 + ny * 7) * s * 0.01;
-    nodes.push({
-      x: cx + nx * s + wobble,
-      y: cy + ny * s + wobble * 0.7,
-      size: 2 + Math.abs(Math.sin(nx * 5 + ny * 3)) * 2,
-    });
-  });
-
-  // Connect nearby nodes
-  for (let i = 0; i < nodes.length; i++) {
-    for (let j = i + 1; j < nodes.length; j++) {
-      const dx = nodes[i].x - nodes[j].x;
-      const dy = nodes[i].y - nodes[j].y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < s * 0.35) {
-        connections.push({
-          x1: nodes[i].x, y1: nodes[i].y,
-          x2: nodes[j].x, y2: nodes[j].y,
-        });
-      }
-    }
-  }
-
-  return { nodes, connections };
-}
 
 export const BrainAnimation: React.FC = () => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
 
-  const cx = width * 0.5;
-  const cy = height * 0.48;
-  const brainScale = Math.min(width, height) * 0.9;
+  // Subtle pulsing glow intensity
+  const glowPulse = 0.6 + Math.sin(frame * 0.025) * 0.2;
 
-  const brainPath = getLateralBrainPath(cx, cy, brainScale);
-  const foldPaths = getCortexFolds(cx, cy, brainScale);
-  const { nodes: netNodes, connections: netConns } = getNetworkNodes(cx, cy, brainScale, frame);
-
-  // Animated glow
-  const glowPulse = 0.5 + Math.sin(frame * 0.025) * 0.15;
-
-  // Wave lines behind/through brain
-  const numWaves = 10;
-  const waves: { y: number; amp: number; freq: number; phase: number; color: string }[] = [];
-  for (let i = 0; i < numWaves; i++) {
-    const t = i / (numWaves - 1);
-    waves.push({
-      y: height * 0.15 + t * height * 0.7,
-      amp: 12 + Math.sin(i * 1.7) * 8,
-      freq: 0.006 + i * 0.0008,
-      phase: i * 0.9,
-      color: i % 3 === 0
-        ? `rgba(0, 200, 255, ${0.15 + t * 0.1})`
-        : i % 3 === 1
-          ? `rgba(120, 60, 200, ${0.12 + t * 0.08})`
-          : `rgba(0, 120, 255, ${0.1 + t * 0.08})`,
+  // Neural network nodes scattered around the brain edges and beyond
+  const netNodes: { x: number; y: number; size: number }[] = [];
+  const nodeSeeds = [
+    [0.08, 0.72], [0.04, 0.55], [0.10, 0.40], [0.15, 0.25],
+    [0.06, 0.85], [0.18, 0.90], [0.30, 0.88], [0.25, 0.78],
+    [0.35, 0.92], [0.12, 0.60], [0.22, 0.70],
+    [0.85, 0.30], [0.90, 0.45], [0.92, 0.60], [0.88, 0.75],
+    [0.80, 0.85], [0.75, 0.90], [0.95, 0.55],
+    [0.40, 0.95], [0.55, 0.93], [0.65, 0.92], [0.50, 0.88],
+    [0.05, 0.30], [0.12, 0.15], [0.25, 0.08], [0.40, 0.05],
+    [0.55, 0.06], [0.70, 0.10], [0.82, 0.18],
+  ];
+  nodeSeeds.forEach(([nx, ny]) => {
+    const wobbleX = Math.sin(frame * 0.015 + nx * 20 + ny * 13) * 3;
+    const wobbleY = Math.cos(frame * 0.018 + ny * 15 + nx * 9) * 3;
+    netNodes.push({
+      x: nx * width + wobbleX,
+      y: ny * height + wobbleY,
+      size: 1.5 + Math.abs(Math.sin(nx * 7 + ny * 5)) * 2,
     });
-  }
+  });
 
-  function wavePath(baseY: number, amp: number, freq: number, phase: number): string {
-    const pts: string[] = [];
-    for (let px = 0; px <= width; px += 3) {
-      const py = baseY
-        + Math.sin(px * freq + phase + frame * 0.025) * amp
-        + Math.sin(px * freq * 0.6 + phase * 1.4 + frame * 0.018) * amp * 0.4;
-      pts.push(`${px},${py}`);
+  // Connect nearby nodes with lines
+  const netLines: { x1: number; y1: number; x2: number; y2: number }[] = [];
+  for (let i = 0; i < netNodes.length; i++) {
+    for (let j = i + 1; j < netNodes.length; j++) {
+      const dx = netNodes[i].x - netNodes[j].x;
+      const dy = netNodes[i].y - netNodes[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < width * 0.22) {
+        netLines.push({
+          x1: netNodes[i].x, y1: netNodes[i].y,
+          x2: netNodes[j].x, y2: netNodes[j].y,
+        });
+      }
     }
-    return `M${pts.join(" L")}`;
   }
 
-  // Traveling light pulses on waves
-  const numPulses = 30;
-  const pulseDots: { wx: number; wy: number; size: number; color: string; opacity: number }[] = [];
+  // Traveling light pulses along network lines
+  const numPulses = 20;
+  const pulses: { lx: number; ly: number; color: string; size: number; op: number }[] = [];
   for (let i = 0; i < numPulses; i++) {
-    const wIdx = i % numWaves;
-    const w = waves[wIdx];
-    const speed = 0.6 + (i % 7) * 0.25;
-    const xProg = ((i * 131 + frame * speed) % (width + 60)) / width;
-    const px = xProg * width;
-    const py = w.y
-      + Math.sin(px * w.freq + w.phase + frame * 0.025) * w.amp
-      + Math.sin(px * w.freq * 0.6 + w.phase * 1.4 + frame * 0.018) * w.amp * 0.4;
-    const colors = ["#00d4ff", "#0088ff", "#9944ee", "#00ccaa"];
-    pulseDots.push({
-      wx: px, wy: py,
-      size: 1.5 + (i % 4),
+    if (netLines.length === 0) break;
+    const lineIdx = i % netLines.length;
+    const line = netLines[lineIdx];
+    const speed = 0.005 + (i % 6) * 0.002;
+    const progress = ((frame * speed + i * 0.15) % 1);
+    const lx = line.x1 + (line.x2 - line.x1) * progress;
+    const ly = line.y1 + (line.y2 - line.y1) * progress;
+    const colors = ["#00ddff", "#8855ee", "#00aaff", "#bb44ff", "#00ffcc"];
+    pulses.push({
+      lx, ly,
       color: colors[i % colors.length],
-      opacity: 0.5 + Math.sin(frame * 0.06 + i * 1.3) * 0.4,
+      size: 2 + (i % 3),
+      op: 0.5 + Math.sin(frame * 0.06 + i * 2) * 0.35,
     });
   }
 
-  // Dot texture points on brain surface
-  const dotCount = 120;
-  const surfaceDots: { dx: number; dy: number; op: number }[] = [];
-  for (let i = 0; i < dotCount; i++) {
-    const angle = (i / dotCount) * Math.PI * 2 + i * 0.3;
-    const r = 0.15 + (i % 7) * 0.035;
-    const dx = cx + Math.cos(angle) * r * brainScale + Math.sin(i * 2.1) * brainScale * 0.05;
-    const dy = cy + Math.sin(angle) * r * brainScale * 0.85 + Math.cos(i * 1.7) * brainScale * 0.04;
-    const op = 0.15 + Math.sin(frame * 0.04 + i * 0.5) * 0.12;
-    surfaceDots.push({ dx, dy, op });
+  // Sparkle/star particles floating around
+  const numStars = 50;
+  const stars: { sx: number; sy: number; sr: number; sop: number }[] = [];
+  for (let i = 0; i < numStars; i++) {
+    const sx = ((i * 83.7 + Math.sin(frame * 0.005 + i * 1.1) * 8) % width + width) % width;
+    const sy = ((i * 149.3 + Math.cos(frame * 0.007 + i * 0.9) * 6) % height + height) % height;
+    const sr = 0.6 + (i % 4) * 0.5;
+    const sop = 0.1 + Math.sin(frame * 0.04 + i * 2.7) * 0.35;
+    stars.push({ sx, sy, sr, sop: Math.max(0, sop) });
+  }
+
+  // Bright sparkle flashes (cross-shaped)
+  const numFlashes = 8;
+  const flashes: { fx: number; fy: number; fop: number; fsize: number }[] = [];
+  for (let i = 0; i < numFlashes; i++) {
+    const fx = ((i * 173 + 50) % width);
+    const fy = ((i * 211 + 80) % height);
+    const cycle = (frame * 0.02 + i * 1.5) % (Math.PI * 2);
+    const fop = Math.max(0, Math.sin(cycle) * 0.6 - 0.2);
+    flashes.push({ fx, fy, fop, fsize: 4 + (i % 3) * 3 });
   }
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#060a1f" }}>
-      <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
-        <defs>
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="8" result="b" />
-            <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-          </filter>
-          <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="16" result="b" />
-            <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-          </filter>
-          <filter id="dotGlow" x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur stdDeviation="3" result="b" />
-            <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-          </filter>
+    <AbsoluteFill style={{ backgroundColor: "#0a0820" }}>
+      {/* Static brain image as base */}
+      <Img
+        src={staticFile("images/brain-hero.jpg")}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
 
-          {/* Brain teal-to-purple gradient fill */}
-          <linearGradient id="brainFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor={`rgba(0, 220, 255, ${0.08 * glowPulse})`} />
-            <stop offset="40%" stopColor={`rgba(0, 140, 255, ${0.06 * glowPulse})`} />
-            <stop offset="100%" stopColor={`rgba(120, 40, 180, ${0.08 * glowPulse})`} />
-          </linearGradient>
+      {/* Animated overlay */}
+      <AbsoluteFill>
+        <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}
+          style={{ position: "absolute", top: 0, left: 0 }}>
+          <defs>
+            <filter id="pulseGlow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="4" result="b" />
+              <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+            <filter id="sparkGlow" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="2" result="b" />
+              <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+            {/* Subtle animated vignette overlay for depth */}
+            <radialGradient id="vignette" cx="55%" cy="40%" r="55%">
+              <stop offset="0%" stopColor="rgba(0,0,0,0)" />
+              <stop offset="70%" stopColor="rgba(0,0,0,0)" />
+              <stop offset="100%" stopColor={`rgba(10, 8, 32, ${0.3 + glowPulse * 0.1})`} />
+            </radialGradient>
+            {/* Pulsing glow behind brain center */}
+            <radialGradient id="centerGlow" cx="55%" cy="40%" r="30%">
+              <stop offset="0%" stopColor={`rgba(0, 180, 255, ${0.06 * glowPulse})`} />
+              <stop offset="50%" stopColor={`rgba(120, 50, 200, ${0.04 * glowPulse})`} />
+              <stop offset="100%" stopColor="rgba(0,0,0,0)" />
+            </radialGradient>
+          </defs>
 
-          {/* Brain stroke gradient: teal top → purple bottom */}
-          <linearGradient id="brainStroke" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#00dcff" />
-            <stop offset="35%" stopColor="#0088ff" />
-            <stop offset="70%" stopColor="#6644cc" />
-            <stop offset="100%" stopColor="#9933aa" />
-          </linearGradient>
+          {/* Subtle pulsing glow over brain area */}
+          <rect x={0} y={0} width={width} height={height} fill="url(#centerGlow)" />
 
-          {/* Fold gradient */}
-          <linearGradient id="foldStroke" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="rgba(0, 200, 255, 0.5)" />
-            <stop offset="50%" stopColor="rgba(80, 120, 255, 0.4)" />
-            <stop offset="100%" stopColor="rgba(140, 60, 200, 0.35)" />
-          </linearGradient>
+          {/* Neural network lines */}
+          {netLines.map((l, i) => (
+            <line
+              key={`nl${i}`}
+              x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
+              stroke={`rgba(100, 140, 255, ${0.06 + Math.sin(frame * 0.015 + i) * 0.03})`}
+              strokeWidth={0.5}
+            />
+          ))}
 
-          {/* Ambient glow behind brain */}
-          <radialGradient id="ambientGlow" cx="50%" cy="48%" r="45%">
-            <stop offset="0%" stopColor={`rgba(0, 160, 255, ${0.12 * glowPulse})`} />
-            <stop offset="40%" stopColor={`rgba(100, 40, 200, ${0.08 * glowPulse})`} />
-            <stop offset="100%" stopColor="rgba(0,0,0,0)" />
-          </radialGradient>
-        </defs>
+          {/* Network nodes */}
+          {netNodes.map((n, i) => (
+            <circle
+              key={`nn${i}`}
+              cx={n.x} cy={n.y} r={n.size}
+              fill={i % 2 === 0 ? "#4488ff" : "#9955dd"}
+              opacity={0.25 + Math.sin(frame * 0.03 + i * 1.7) * 0.15}
+              filter="url(#sparkGlow)"
+            />
+          ))}
 
-        {/* Ambient background glow */}
-        <ellipse cx={cx} cy={cy} rx={brainScale * 0.5} ry={brainScale * 0.45} fill="url(#ambientGlow)" />
+          {/* Traveling light pulses */}
+          {pulses.map((p, i) => (
+            <circle
+              key={`tp${i}`}
+              cx={p.lx} cy={p.ly}
+              r={p.size}
+              fill={p.color}
+              opacity={Math.max(0, p.op)}
+              filter="url(#pulseGlow)"
+            />
+          ))}
 
-        {/* Neural network connections (behind brain) */}
-        {netConns.map((c, i) => (
-          <line
-            key={`nc${i}`}
-            x1={c.x1} y1={c.y1} x2={c.x2} y2={c.y2}
-            stroke={`rgba(0, 160, 255, ${0.08 + Math.sin(frame * 0.02 + i) * 0.04})`}
-            strokeWidth={0.6}
-          />
-        ))}
-
-        {/* Neural network nodes */}
-        {netNodes.map((n, i) => (
-          <circle
-            key={`nn${i}`}
-            cx={n.x} cy={n.y} r={n.size}
-            fill={i % 2 === 0 ? "#00aaff" : "#8844cc"}
-            opacity={0.3 + Math.sin(frame * 0.03 + i * 2) * 0.2}
-            filter="url(#dotGlow)"
-          />
-        ))}
-
-        {/* Wave lines */}
-        {waves.map((w, i) => (
-          <path
-            key={`wv${i}`}
-            d={wavePath(w.y, w.amp, w.freq, w.phase)}
-            fill="none"
-            stroke={w.color}
-            strokeWidth={1}
-          />
-        ))}
-
-        {/* Brain filled shape (semi-transparent) */}
-        <path d={brainPath} fill="url(#brainFill)" />
-
-        {/* Brain outline with gradient stroke */}
-        <path
-          d={brainPath}
-          fill="none"
-          stroke="url(#brainStroke)"
-          strokeWidth={3}
-          opacity={0.8 + glowPulse * 0.2}
-          filter="url(#glow)"
-        />
-
-        {/* Second outline for extra glow aura */}
-        <path
-          d={brainPath}
-          fill="none"
-          stroke="url(#brainStroke)"
-          strokeWidth={6}
-          opacity={0.15}
-          filter="url(#glowStrong)"
-        />
-
-        {/* Cortex fold lines — visible and detailed */}
-        {foldPaths.map((fd, i) => (
-          <path
-            key={`fold${i}`}
-            d={fd}
-            fill="none"
-            stroke="url(#foldStroke)"
-            strokeWidth={1.5}
-            opacity={0.5 + Math.sin(frame * 0.02 + i * 0.8) * 0.15}
-            filter="url(#glow)"
-          />
-        ))}
-
-        {/* Dot texture on brain surface */}
-        {surfaceDots.map((dot, i) => (
-          <circle
-            key={`sd${i}`}
-            cx={dot.dx} cy={dot.dy}
-            r={0.8 + (i % 3) * 0.3}
-            fill={i % 3 === 0 ? "#00ccff" : i % 3 === 1 ? "#7744dd" : "#0088ff"}
-            opacity={dot.op}
-          />
-        ))}
-
-        {/* Traveling light pulses on waves */}
-        {pulseDots.map((p, i) => (
-          <circle
-            key={`pd${i}`}
-            cx={p.wx} cy={p.wy}
-            r={p.size}
-            fill={p.color}
-            opacity={Math.max(0, p.opacity)}
-            filter="url(#dotGlow)"
-          />
-        ))}
-
-        {/* Scattered star particles */}
-        {Array.from({ length: 40 }).map((_, i) => {
-          const sx = ((i * 89 + frame * 0.08) % width);
-          const sy = ((i * 163 + Math.sin(frame * 0.012 + i) * 15) % height);
-          const sop = 0.15 + Math.sin(frame * 0.04 + i * 2.3) * 0.25;
-          return (
+          {/* Star particles */}
+          {stars.map((s, i) => (
             <circle
               key={`st${i}`}
-              cx={sx} cy={sy}
-              r={0.8 + (i % 3) * 0.4}
+              cx={s.sx} cy={s.sy}
+              r={s.sr}
               fill="#ffffff"
-              opacity={Math.max(0, sop)}
+              opacity={s.sop}
             />
-          );
-        })}
-      </svg>
+          ))}
+
+          {/* Sparkle flashes (cross-shaped bright stars) */}
+          {flashes.map((f, i) => f.fop > 0.05 && (
+            <g key={`fl${i}`} opacity={f.fop} filter="url(#pulseGlow)">
+              <line
+                x1={f.fx - f.fsize} y1={f.fy}
+                x2={f.fx + f.fsize} y2={f.fy}
+                stroke="#ffffff" strokeWidth={1}
+              />
+              <line
+                x1={f.fx} y1={f.fy - f.fsize}
+                x2={f.fx} y2={f.fy + f.fsize}
+                stroke="#ffffff" strokeWidth={1}
+              />
+              <circle cx={f.fx} cy={f.fy} r={1.5} fill="#ffffff" />
+            </g>
+          ))}
+
+          {/* Vignette overlay */}
+          <rect x={0} y={0} width={width} height={height} fill="url(#vignette)" />
+        </svg>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
