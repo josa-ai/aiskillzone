@@ -66,7 +66,7 @@ export function HomepageContent() {
       {/* Money on the Table */}
       <section className="relative py-14 md:py-24 bg-surface-container-low grain-overlay">
         <GradientDots duration={40} dotSize={2} spacing={20} />
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold font-heading mb-4">
               Money on the Table
