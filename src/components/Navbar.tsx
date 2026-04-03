@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu } from "lucide-react";
@@ -68,9 +69,14 @@ export function Navbar() {
       >
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <span className="text-2xl font-bold tracking-tighter text-slate-900 font-heading">
-            AISkillZone
-          </span>
+          <Image
+            src="/images/logo-aiskillzone.png"
+            alt="AISkillZone"
+            width={400}
+            height={80}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -202,9 +208,13 @@ export function Navbar() {
             <SheetContent side="right" className="w-80 overflow-y-auto">
               <SheetHeader>
                 <SheetTitle>
-                  <span className="text-xl font-bold tracking-tighter text-slate-900 font-heading">
-                    AISkillZone
-                  </span>
+                  <Image
+                    src="/images/logo-aiskillzone.png"
+                    alt="AISkillZone"
+                    width={400}
+                    height={80}
+                    className="h-8 w-auto"
+                  />
                 </SheetTitle>
               </SheetHeader>
 

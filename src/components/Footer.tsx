@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { primaryServices } from "@/lib/services-data";
 
 export function Footer() {
@@ -6,9 +7,15 @@ export function Footer() {
     <footer className="bg-slate-100 w-full pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1">
-          <div className="text-xl font-bold text-slate-900 font-heading mb-6">
-            AISkillZone
-          </div>
+          <Link href="/" className="inline-block mb-6">
+            <Image
+              src="/images/logo-aiskillzone.png"
+              alt="AISkillZone"
+              width={400}
+              height={80}
+              className="h-8 w-auto"
+            />
+          </Link>
           <p className="text-sm leading-relaxed text-slate-500">
             Curating the future of enterprise intelligence through elite
             consulting and bespoke automation.
